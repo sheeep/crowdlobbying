@@ -27,7 +27,6 @@ class PoliticianFixture extends Fixture implements DependentFixtureInterface
 
     public function load(ObjectManager $manager)
     {
-        var_dump('importing: ' . $this->projectDir . '/import/politicians.csv');
         if (file_exists($this->projectDir . '/import/politicians.csv') && ($fp = fopen($this->projectDir . '/import/politicians.csv', "r")) !== false) {
             $line = 0;
             $languages = [
@@ -47,8 +46,8 @@ class PoliticianFixture extends Fixture implements DependentFixtureInterface
             $campaign = $this->getReference(CampaignFixture::CAMPAIGN_EID);
             while (($row = fgetcsv($fp, 0, ";")) !== FALSE) {
                 // the ";" because fuck Excel, that uses ";" instead of "," in the German version
-                if ($line == 0) { continue; }
                 $line++;
+                if ($line == 1) { continue; }
 
                 $entry = [
                     'lang' => $row[1] ?? 'd',
@@ -71,7 +70,7 @@ class PoliticianFixture extends Fixture implements DependentFixtureInterface
                 ];
 
                 $region = $regionRepo->findOneBy(['short' => $entry['region']]);
-                $party = $partyRepo->findOneBy(['short' => $entry['short']]);
+                $party = $partyRepo->findOneBy(['short' => $entry['party']]);
                 if ($region && $party) {
                     $politician = new Politician();
                     $politician->setName($entry['prename'] . ' ' . $entry['lastname']);
@@ -123,6 +122,7 @@ class PoliticianFixture extends Fixture implements DependentFixtureInterface
     public function getDependencies(): array
     {
         return [
+            CampaignFixture::class,
             PoliticianTypeFixture::class,
             PartyFixture::class,
         ];

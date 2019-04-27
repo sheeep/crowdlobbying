@@ -35,7 +35,6 @@ class CampaignFixture extends Fixture implements DependentFixtureInterface
         return [
             RegionFixture::class,
             PoliticianTypeFixture::class,
-            PoliticianFixture::class,
         ];
     }
 }

@@ -18,15 +18,20 @@ class AppFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('de_CH');
-        /** @var Campaign $campaign */
-        $campaign = $this->getReference(CampaignFixture::CAMPAIGN_EID);
-        /** @var Argument[] $arguments */
-        $arguments = $manager->getRepository(Argument::class)->findAll();
-        $argLen = count($arguments);
         /** @var PersonRepository $personRepo */
         $personRepo = $manager->getRepository(Person::class);
-        foreach ($manager->getRepository(Politician::class)->findBy(['politicianType' => $this->getReference(PoliticianTypeFixture::POLITICIAN_TYPE_SR)]) as $politician) {
+        $politicianRepo = $manager->getRepository(Politician::class);
+        foreach ($politicianRepo->findBy(['politicianType' => $this->getReference(PoliticianTypeFixture::POLITICIAN_TYPE_SR)]) as $politician) {
             /** @var Politician $politician */
+            $politician = $politicianRepo->find($politician->getId());
+            /**
+             * Arguments and campaign need to be loaded inside the loop, as we'll clear the EM at the end of each itteration
+             */
+            /** @var Argument[] $arguments */
+            $arguments = $manager->getRepository(Argument::class)->findAll();
+            $argLen = count($arguments);
+            /** @var Campaign $campaign */
+            $campaign = $this->getReference(CampaignFixture::CAMPAIGN_EID);
             $len = rand(50, 250);
             for ($i=0; $i<$len; $i++) {
                 $email = $faker->email;
@@ -36,6 +41,9 @@ class AppFixtures extends Fixture implements DependentFixtureInterface
                     $person->setEmail($email);
                     $person->setFirstname($faker->firstName);
                     $person->setLastname($faker->lastName);
+                    $city = $faker->city;
+                    if (!$city) { $city = 'Zürich'; }
+                    $person->setCity($city);
 
                     $manager->persist($person);
                 }
@@ -49,6 +57,8 @@ class AppFixtures extends Fixture implements DependentFixtureInterface
 
                 $manager->persist($campaignEntry);
             }
+            $manager->flush();
+            $manager->clear();
         }
 
         $manager->flush();
