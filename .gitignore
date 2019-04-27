@@ -1,0 +1,20 @@
+.idea
+
+###> symfony/framework-bundle ###
+/www/.env
+/www/.env.local
+/www/.env.local.php
+/www/.env.*.local
+/www/public/bundles/
+/www/var/
+/www/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+/www/.phpunit
+/www/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/web-server-bundle ###
+/www/.web-server-pid
+###< symfony/web-server-bundle ###
