@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PageRepository")
@@ -17,6 +18,8 @@ class Page
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    use TimestampableEntity;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -37,6 +40,12 @@ class Page
      * @ORM\Column(type="text", nullable=true)
      */
     private $content;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Campaign", inversedBy="pages")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $campaign;
 
     public function __construct()
     {
@@ -106,6 +115,18 @@ class Page
     public function setContent(?string $content): self
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    public function getCampaign(): ?Campaign
+    {
+        return $this->campaign;
+    }
+
+    public function setCampaign(?Campaign $campaign): self
+    {
+        $this->campaign = $campaign;
 
         return $this;
     }

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PoliticianContactRepository")
@@ -17,65 +18,162 @@ class PoliticianContact
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $salutation;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
-    private $street;
+    private $prename;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      */
-    private $number;
+    private $lastname;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $postSalutation;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $company;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $address1;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $address2;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $zip;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $city;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $phone;
+    private $email;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $mobile;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $email;
+    private $phone;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $fax;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $website;
+
+    use TimestampableEntity;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getStreet(): ?string
+    public function getSalutation(): ?string
     {
-        return $this->street;
+        return $this->salutation;
     }
 
-    public function setStreet(string $street): self
+    public function setSalutation(?string $salutation): self
     {
-        $this->street = $street;
+        $this->salutation = $salutation;
 
         return $this;
     }
 
-    public function getNumber(): ?int
+    public function getPrename(): ?string
     {
-        return $this->number;
+        return $this->prename;
     }
 
-    public function setNumber(int $number): self
+    public function setPrename(string $prename): self
     {
-        $this->number = $number;
+        $this->prename = $prename;
+
+        return $this;
+    }
+
+    public function getLastname(): ?string
+    {
+        return $this->lastname;
+    }
+
+    public function setLastname(string $lastname): self
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    public function getPostSalutation(): ?string
+    {
+        return $this->postSalutation;
+    }
+
+    public function setPostSalutation(?string $postSalutation): self
+    {
+        $this->postSalutation = $postSalutation;
+
+        return $this;
+    }
+
+    public function getCompany(): ?string
+    {
+        return $this->company;
+    }
+
+    public function setCompany(?string $company): self
+    {
+        $this->company = $company;
+
+        return $this;
+    }
+
+    public function getAddress1(): ?string
+    {
+        return $this->address1;
+    }
+
+    public function setAddress1(?string $address1): self
+    {
+        $this->address1 = $address1;
+
+        return $this;
+    }
+
+    public function getAddress2(): ?string
+    {
+        return $this->address2;
+    }
+
+    public function setAddress2(?string $address2): self
+    {
+        $this->address2 = $address2;
 
         return $this;
     }
@@ -97,33 +195,9 @@ class PoliticianContact
         return $this->city;
     }
 
-    public function setCity(string $city): self
+    public function setCity(?string $city): self
     {
         $this->city = $city;
-
-        return $this;
-    }
-
-    public function getPhone(): ?int
-    {
-        return $this->phone;
-    }
-
-    public function setPhone(int $phone): self
-    {
-        $this->phone = $phone;
-
-        return $this;
-    }
-
-    public function getMobile(): ?int
-    {
-        return $this->mobile;
-    }
-
-    public function setMobile(int $mobile): self
-    {
-        $this->mobile = $mobile;
 
         return $this;
     }
@@ -133,10 +207,59 @@ class PoliticianContact
         return $this->email;
     }
 
-    public function setEmail(string $email): self
+    public function setEmail(?string $email): self
     {
         $this->email = $email;
 
         return $this;
     }
+
+    public function getMobile(): ?string
+    {
+        return $this->mobile;
+    }
+
+    public function setMobile(?string $mobile): self
+    {
+        $this->mobile = $mobile;
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(?string $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getFax(): ?string
+    {
+        return $this->fax;
+    }
+
+    public function setFax(?string $fax): self
+    {
+        $this->fax = $fax;
+
+        return $this;
+    }
+
+    public function getWebsite(): ?string
+    {
+        return $this->website;
+    }
+
+    public function setWebsite(?string $website): self
+    {
+        $this->website = $website;
+
+        return $this;
+    }
+
 }

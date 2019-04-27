@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CampaignRepository")
@@ -18,13 +20,16 @@ class Campaign
      */
     private $id;
 
+    use TimestampableEntity;
+
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=128, unique=true)
+     * @Gedmo\Slug(fields={"name"})
      */
     private $slug;
 
@@ -54,14 +59,20 @@ class Campaign
     private $regions;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $politicianType;
-
-    /**
      * @ORM\OneToMany(targetEntity="App\Entity\WipCount", mappedBy="campaign", orphanRemoval=true)
      */
     private $wipCounts;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Page", mappedBy="campaign", orphanRemoval=true)
+     */
+    private $pages;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\PoliticianType")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $politicianType;
 
     public function __construct()
     {
@@ -69,6 +80,7 @@ class Campaign
         $this->arguments = new ArrayCollection();
         $this->regions = new ArrayCollection();
         $this->wipCounts = new ArrayCollection();
+        $this->pages = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -212,18 +224,6 @@ class Campaign
         return $this;
     }
 
-    public function getPoliticianType(): ?int
-    {
-        return $this->politicianType;
-    }
-
-    public function setPoliticianType(int $politicianType): self
-    {
-        $this->politicianType = $politicianType;
-
-        return $this;
-    }
-
     /**
      * @return Collection|WipCount[]
      */
@@ -251,6 +251,49 @@ class Campaign
                 $wipCount->setCampaign(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Page[]
+     */
+    public function getPages(): Collection
+    {
+        return $this->pages;
+    }
+
+    public function addPage(Page $page): self
+    {
+        if (!$this->pages->contains($page)) {
+            $this->pages[] = $page;
+            $page->setCampaign($this);
+        }
+
+        return $this;
+    }
+
+    public function removePage(Page $page): self
+    {
+        if ($this->pages->contains($page)) {
+            $this->pages->removeElement($page);
+            // set the owning side to null (unless already changed)
+            if ($page->getCampaign() === $this) {
+                $page->setCampaign(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getPoliticianType(): ?PoliticianType
+    {
+        return $this->politicianType;
+    }
+
+    public function setPoliticianType(?PoliticianType $politicianType): self
+    {
+        $this->politicianType = $politicianType;
 
         return $this;
     }

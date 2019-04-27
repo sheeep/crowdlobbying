@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PartyRepository")
@@ -18,13 +20,16 @@ class Party
      */
     private $id;
 
+    use TimestampableEntity;
+
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=128, unique=true)
+     * @Gedmo\Slug(fields={"short"})
      */
     private $slug;
 
@@ -37,6 +42,11 @@ class Party
      * @ORM\OneToOne(targetEntity="App\Entity\File", cascade={"persist", "remove"})
      */
     private $logo;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $short;
 
     public function __construct()
     {
@@ -111,6 +121,18 @@ class Party
     public function setLogo(?File $logo): self
     {
         $this->logo = $logo;
+
+        return $this;
+    }
+
+    public function getShort(): ?string
+    {
+        return $this->short;
+    }
+
+    public function setShort(string $short): self
+    {
+        $this->short = $short;
 
         return $this;
     }

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CampaignEntryRepository")
@@ -15,6 +16,8 @@ class CampaignEntry
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    use TimestampableEntity;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -42,6 +45,12 @@ class CampaignEntry
      * @ORM\ManyToOne(targetEntity="App\Entity\Argument")
      */
     private $preparedArgument;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Politician")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $politician;
 
     public function getId(): ?int
     {
@@ -104,6 +113,18 @@ class CampaignEntry
     public function setPreparedArgument(?Argument $preparedArgument): self
     {
         $this->preparedArgument = $preparedArgument;
+
+        return $this;
+    }
+
+    public function getPolitician(): ?Politician
+    {
+        return $this->politician;
+    }
+
+    public function setPolitician(?Politician $politician): self
+    {
+        $this->politician = $politician;
 
         return $this;
     }

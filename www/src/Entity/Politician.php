@@ -3,9 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\SoftDeleteable\Traits\SoftDeleteableEntity;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PoliticianRepository")
+ * @Gedmo\SoftDeleteable()
  */
 class Politician
 {
@@ -16,30 +20,24 @@ class Politician
      */
     private $id;
 
+    use TimestampableEntity;
+    use SoftDeleteableEntity;
+
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=128, unique=true)
+     * @Gedmo\Slug(fields={"name"})
      */
     private $slug;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $type;
 
     /**
      * @ORM\Column(type="datetime")
      */
     private $since;
-
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $deletedAt;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Region", inversedBy="politicians")
@@ -57,6 +55,17 @@ class Politician
      * @ORM\JoinColumn(nullable=false)
      */
     private $party;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\PoliticianType")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $politicianType;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lang;
 
     public function getId(): ?int
     {
@@ -83,18 +92,6 @@ class Politician
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
-
-        return $this;
-    }
-
-    public function getType(): ?int
-    {
-        return $this->type;
-    }
-
-    public function setType(int $type): self
-    {
-        $this->type = $type;
 
         return $this;
     }
@@ -155,6 +152,30 @@ class Politician
     public function setParty(?Party $party): self
     {
         $this->party = $party;
+
+        return $this;
+    }
+
+    public function getPoliticianType(): ?PoliticianType
+    {
+        return $this->politicianType;
+    }
+
+    public function setPoliticianType(?PoliticianType $politicianType): self
+    {
+        $this->politicianType = $politicianType;
+
+        return $this;
+    }
+
+    public function getLang(): ?string
+    {
+        return $this->lang;
+    }
+
+    public function setLang(string $lang): self
+    {
+        $this->lang = $lang;
 
         return $this;
     }

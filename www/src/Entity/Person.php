@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PersonRepository")
@@ -17,6 +18,8 @@ class Person
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    use TimestampableEntity;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -37,6 +40,11 @@ class Person
      * @ORM\OneToMany(targetEntity="App\Entity\CampaignEntry", mappedBy="person", orphanRemoval=true)
      */
     private $campaignEntries;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $city;
 
     public function __construct()
     {
@@ -111,6 +119,18 @@ class Person
                 $campaignEntry->setPerson(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city): self
+    {
+        $this->city = $city;
 
         return $this;
     }

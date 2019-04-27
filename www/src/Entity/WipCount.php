@@ -3,18 +3,26 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\WipCountRepository")
  */
 class WipCount
 {
+    const WIP_COUNT_TYPE_UNKNOWN = 0;
+    const WIP_COUNT_TYPE_YES = 1;
+    const WIP_COUNT_TYPE_NO = 2;
+    const WIP_COUNT_TYPE_NONE = 3;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    use TimestampableEntity;
 
     /**
      * @ORM\Column(type="integer")
