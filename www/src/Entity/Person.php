@@ -46,6 +46,11 @@ class Person
      */
     private $city;
 
+    public function __toString()
+    {
+        return $this->getFirstname() . ' ' . $this->getLastname();
+    }
+
     public function __construct()
     {
         $this->campaignEntries = new ArrayCollection();

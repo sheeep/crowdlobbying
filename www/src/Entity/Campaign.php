@@ -74,6 +74,11 @@ class Campaign
      */
     private $politicianType;
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     public function __construct()
     {
         $this->campaignEntries = new ArrayCollection();

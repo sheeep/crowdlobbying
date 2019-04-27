@@ -47,6 +47,11 @@ class Page
      */
     private $campaign;
 
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
+
     public function __construct()
     {
         $this->files = new ArrayCollection();

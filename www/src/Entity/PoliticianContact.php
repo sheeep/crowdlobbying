@@ -87,6 +87,24 @@ class PoliticianContact
      */
     private $website;
 
+    public function __toString()
+    {
+        $contents = [
+            $this->getSalutation(),
+            $this->getPrename(),
+            $this->getLastname(),
+            $this->getPostSalutation(),
+        ];
+
+        $string = '';
+        foreach ($contents as $content) {
+            if ($content) {
+                $string .= $content . ' ';
+            }
+        }
+        return trim($string);
+    }
+
     use TimestampableEntity;
 
     public function getId(): ?int
