@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CrowdLobbying{% endblock %}
+
+{% block body %}
+<div class="container">
+    {% for campaign in campaigns %}
+        <div class="row">
+            <div class="col">
+                <a href="https://{{ campaign.slug }}.{{ app.request.host }}/">{{ campaign }}</a>
+            </div>
+        </div>
+    {% else %}
+        <div class="row"><div class="col">Keine Kampagnen gefunden... #sadTimes</div></div>
+    {% endfor %}
+</div>
+{% endblock %}

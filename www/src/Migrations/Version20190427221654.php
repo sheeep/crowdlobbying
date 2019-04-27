@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190427173101 extends AbstractMigration
+final class Version20190427221654 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -32,7 +32,7 @@ final class Version20190427173101 extends AbstractMigration
         $this->addSql('CREATE TABLE politician_contact (id INT AUTO_INCREMENT NOT NULL, salutation VARCHAR(255) DEFAULT NULL, prename VARCHAR(255) NOT NULL, lastname VARCHAR(255) NOT NULL, post_salutation VARCHAR(255) DEFAULT NULL, company VARCHAR(255) DEFAULT NULL, address1 VARCHAR(255) DEFAULT NULL, address2 VARCHAR(255) DEFAULT NULL, zip INT DEFAULT NULL, city VARCHAR(255) DEFAULT NULL, email VARCHAR(255) DEFAULT NULL, mobile VARCHAR(255) DEFAULT NULL, phone VARCHAR(255) DEFAULT NULL, fax VARCHAR(255) DEFAULT NULL, website VARCHAR(255) DEFAULT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE politician (id INT AUTO_INCREMENT NOT NULL, region_id INT DEFAULT NULL, contact_id INT NOT NULL, party_id INT NOT NULL, politician_type_id INT NOT NULL, name VARCHAR(255) NOT NULL, slug VARCHAR(128) NOT NULL, since DATETIME NOT NULL, lang VARCHAR(255) NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, deleted_at DATETIME DEFAULT NULL, UNIQUE INDEX UNIQ_B39BFB49989D9B62 (slug), INDEX IDX_B39BFB4998260155 (region_id), UNIQUE INDEX UNIQ_B39BFB49E7A1254A (contact_id), INDEX IDX_B39BFB49213C1059 (party_id), INDEX IDX_B39BFB49C1694E4F (politician_type_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE party (id INT AUTO_INCREMENT NOT NULL, logo_id INT DEFAULT NULL, name VARCHAR(255) NOT NULL, slug VARCHAR(128) NOT NULL, short VARCHAR(255) NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, UNIQUE INDEX UNIQ_89954EE0989D9B62 (slug), UNIQUE INDEX UNIQ_89954EE0F98F144A (logo_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE campaign_entry (id INT AUTO_INCREMENT NOT NULL, person_id INT NOT NULL, campaign_id INT NOT NULL, prepared_argument_id INT DEFAULT NULL, politician_id INT NOT NULL, argument LONGTEXT DEFAULT NULL, opt_in_information TINYINT(1) NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX IDX_6524F91F217BBB47 (person_id), INDEX IDX_6524F91FF639F774 (campaign_id), INDEX IDX_6524F91F4C93DDA1 (prepared_argument_id), INDEX IDX_6524F91F899F0176 (politician_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE campaign_entry (id INT AUTO_INCREMENT NOT NULL, person_id INT NOT NULL, campaign_id INT NOT NULL, politician_id INT NOT NULL, argument_id INT NOT NULL, opt_in_information TINYINT(1) NOT NULL, color VARCHAR(255) NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX IDX_6524F91F217BBB47 (person_id), INDEX IDX_6524F91FF639F774 (campaign_id), INDEX IDX_6524F91F899F0176 (politician_id), INDEX IDX_6524F91F3DD48F21 (argument_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE file (id INT AUTO_INCREMENT NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE person (id INT AUTO_INCREMENT NOT NULL, firstname VARCHAR(255) NOT NULL, lastname VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE wip_count (id INT AUTO_INCREMENT NOT NULL, campaign_id INT NOT NULL, politician_id INT NOT NULL, status INT NOT NULL, voted INT DEFAULT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX IDX_EF24D854F639F774 (campaign_id), INDEX IDX_EF24D854899F0176 (politician_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
@@ -50,8 +50,8 @@ final class Version20190427173101 extends AbstractMigration
         $this->addSql('ALTER TABLE party ADD CONSTRAINT FK_89954EE0F98F144A FOREIGN KEY (logo_id) REFERENCES file (id)');
         $this->addSql('ALTER TABLE campaign_entry ADD CONSTRAINT FK_6524F91F217BBB47 FOREIGN KEY (person_id) REFERENCES person (id)');
         $this->addSql('ALTER TABLE campaign_entry ADD CONSTRAINT FK_6524F91FF639F774 FOREIGN KEY (campaign_id) REFERENCES campaign (id)');
-        $this->addSql('ALTER TABLE campaign_entry ADD CONSTRAINT FK_6524F91F4C93DDA1 FOREIGN KEY (prepared_argument_id) REFERENCES argument (id)');
         $this->addSql('ALTER TABLE campaign_entry ADD CONSTRAINT FK_6524F91F899F0176 FOREIGN KEY (politician_id) REFERENCES politician (id)');
+        $this->addSql('ALTER TABLE campaign_entry ADD CONSTRAINT FK_6524F91F3DD48F21 FOREIGN KEY (argument_id) REFERENCES argument (id)');
         $this->addSql('ALTER TABLE wip_count ADD CONSTRAINT FK_EF24D854F639F774 FOREIGN KEY (campaign_id) REFERENCES campaign (id)');
         $this->addSql('ALTER TABLE wip_count ADD CONSTRAINT FK_EF24D854899F0176 FOREIGN KEY (politician_id) REFERENCES politician (id)');
         $this->addSql('ALTER TABLE argument ADD CONSTRAINT FK_D113B0AF639F774 FOREIGN KEY (campaign_id) REFERENCES campaign (id)');
@@ -79,7 +79,7 @@ final class Version20190427173101 extends AbstractMigration
         $this->addSql('ALTER TABLE page_file DROP FOREIGN KEY FK_B5B2ACA93CB796C');
         $this->addSql('ALTER TABLE party DROP FOREIGN KEY FK_89954EE0F98F144A');
         $this->addSql('ALTER TABLE campaign_entry DROP FOREIGN KEY FK_6524F91F217BBB47');
-        $this->addSql('ALTER TABLE campaign_entry DROP FOREIGN KEY FK_6524F91F4C93DDA1');
+        $this->addSql('ALTER TABLE campaign_entry DROP FOREIGN KEY FK_6524F91F3DD48F21');
         $this->addSql('DROP TABLE politician_type');
         $this->addSql('DROP TABLE region');
         $this->addSql('DROP TABLE campaign');

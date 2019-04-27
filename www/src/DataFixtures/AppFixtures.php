@@ -52,8 +52,9 @@ class AppFixtures extends Fixture implements DependentFixtureInterface
                 $campaignEntry->setOptInInformation((bool) (rand(0, 10) < 5));
                 $campaignEntry->setPerson($person);
                 $campaignEntry->setCampaign($campaign);
-                $campaignEntry->setPreparedArgument($arguments[(rand(0, 77) % $argLen)]);
+                $campaignEntry->setArgument($arguments[(rand(0, 77) % $argLen)]);
                 $campaignEntry->setPolitician($politician);
+                $campaignEntry->setColor($campaignEntry->getRandomColor());
 
                 $manager->persist($campaignEntry);
             }

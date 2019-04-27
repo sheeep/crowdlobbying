@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Politician;
+use App\Entity\PoliticianType;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -17,6 +18,19 @@ class PoliticianRepository extends ServiceEntityRepository
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Politician::class);
+    }
+
+    /** @return Politician[] */
+    public function findLatestByTypeAndRegions(PoliticianType $politicianType, $regions): array
+    {
+        return $this->createQueryBuilder('e')
+            ->andWhere('e.politicianType = :politicianType')
+            ->setParameter('politicianType', $politicianType)
+            ->andWhere('e.region IN (:regions)')
+            ->setParameter('regions', $regions)
+            ->orderBy('e.name', 'ASC')
+            ->getQuery()
+            ->getResult();
     }
 
     // /**
