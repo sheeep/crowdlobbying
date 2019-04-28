@@ -14,6 +14,7 @@ def generate_header(salutation, name, surname, address, zip, city, phone, email)
     This function generates the header pdf page
     """
     # first we take the html file and parse it as a string
+    print('generating header page', surname, name)
     with open('header.html', 'r') as myfile:
         data = myfile.read()
         to_write = data.format(salutation, surname, name)
@@ -25,6 +26,7 @@ def generate_messages(message, senders, index):
     """
     This function generates the messages pdf page
     """
+    print('generating message page', index)
     config = configparser.ConfigParser()
     config.read('pdfconfig.ini')
 
@@ -42,9 +44,6 @@ def generate_messages(message, senders, index):
 
     with open('message.html', 'r') as myfile:
         data = myfile.read()
-        print(data)
-        print(message)
-        print(address_string)
         to_write = data.format(index, message, address_string)
         pdfkit.from_string(to_write, '/tmp/message' + index + '.pdf')
     
@@ -55,8 +54,7 @@ def stich_together(header_page, message_pages, name, surname):
     """
     This function stiches multiple pdfs together
     """
-    print(header_page)
-    print(message_pages)
+    print('merging page', surname, name)
     # get the current date
     date = str(datetime.datetime.now().day)
     # generate the filename based on date and name
