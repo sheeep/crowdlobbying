@@ -1,0 +1,83 @@
+{
+  "date": "2019-04-27T12:45:30.090Z",
+  "politicians": [
+    { 
+      "salutation": "Herr",
+      "name": "walter",
+      "surname": "walter",
+      "address": "Schlagbaumstrass 52",
+      "zip": "2900",
+      "city": "Nöd Züri",
+      "phone": "079 333 33 33",
+      "email": "hans@hans.com",
+      "id": "219",
+      "messages": [
+        {
+          "text": "ich finde das voll scheisse",
+          "senders": [
+            {
+              "name": "hannes muster",
+              "location": "zug"
+            },
+            {
+              "name": "hans dämpf",
+              "location": "zog"
+            }
+          ]
+        },
+        {
+          "text": "overhead undso",
+          "senders": [
+            {
+              "name": "dana wegmann",
+              "location": "zürich"
+            },
+            {
+              "name": "gianluigi joao",
+              "location": "zagreb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "salutation": "Frau",
+      "name": "beni",
+      "surname": "beni",
+      "address": "Benibaumstrasse 52b",
+      "zip": "2901",
+      "city": "Nöd Bern",
+      "phone": "079 333 33 34",
+      "email": "beni@beni.com",
+      "id": "220",
+      "messages": [
+        {
+          "text": "ich finde das voll scheisse",
+          "senders": [
+            {
+              "name": "hannes muster",
+              "location": "zug"
+            },
+            {
+              "name": "hans dämpf",
+              "location": "zog"
+            }
+        ]
+        },
+        {
+          "text": "overhead undso",
+          "senders": [
+            {
+              "name": "dana wegmann",
+              "location": "zürich"
+            },
+            {
+              "name": "gianluigi joao",
+              "location": "zagreb"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
