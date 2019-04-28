@@ -53,7 +53,7 @@ def stich_together(header_page, message_pages, name, surname):
     """
     print('merging page', surname, name)
     # get the current date
-    date = str(datetime.datetime.now().year) + str(datetime.datetime.now().month) + str(datetime.datetime.now().day)
+    date = str(datetime.datetime.now())[0:10]
     # generate the filename based on date and name
     filename = date + '_' + surname + '_' + name
     # generate the path from date
