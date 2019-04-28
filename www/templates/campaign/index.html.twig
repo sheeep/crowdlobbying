@@ -3,5 +3,84 @@
 {% block title %}{{ campaign }}{% endblock %}
 
 {% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Header</h1>
+                <button id="home-scroll" class="btn btn-primary">Scroll</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        {% if latestEntries|length %}
+            <div class="row">
+                <div class="col">
+                    <div id="home-caroussel">
+                        {% for entry in latestEntries %}
+                            <div class="home-caroussel-entry" style="background-color: {{ entry.color }};">
+                                <div class="meta">
+                                    <p>Von: {{ entry.person }}</p>
+                                    <p>An: {{ entry.politician }} ({{ entry.politician.party.short }}/{{ entry.politician.region.short }})</p>
+                                    <p>Betreff: {{ entry.campaign }}</p>
+                                </div>
+                                <p class="argument">
+                                    {{ entry.argument }}
+                                </p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <style>
+        #home-caroussel {
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+        
+        .home-caroussel-entry {
+            color: #FFFFFF;
+            padding: 15px;
+            margin: 0 5px;
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $('#home-scroll').on('click', function(e) {
+            e.preventDefault();
+            alert('scroll');
+        });
+
+        $('#home-caroussel').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            arrows: false,
+            dots: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    </script>
 {% endblock %}

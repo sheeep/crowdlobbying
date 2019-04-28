@@ -73,6 +73,17 @@ class CampaignEntry
         return array_pop($colors);
     }
 
+    public function getColor(): ?string
+    {
+        $color = $this->color;
+        if (!$color) {
+            $color = $this->getRandomColor();
+            $this->setColor($color);
+        }
+
+        return $color;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -124,11 +135,6 @@ class CampaignEntry
         $this->politician = $politician;
 
         return $this;
-    }
-
-    public function getColor(): ?string
-    {
-        return $this->color;
     }
 
     public function setColor(string $color): self
