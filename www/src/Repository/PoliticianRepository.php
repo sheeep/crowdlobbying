@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Campaign;
 use App\Entity\Politician;
 use App\Entity\PoliticianType;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -21,7 +22,7 @@ class PoliticianRepository extends ServiceEntityRepository
     }
 
     /** @return Politician[] */
-    public function findLatestByTypeAndRegions(PoliticianType $politicianType, $regions): array
+    public function findByTypeAndRegions(PoliticianType $politicianType, $regions): array
     {
         return $this->createQueryBuilder('e')
             ->andWhere('e.politicianType = :politicianType')
@@ -31,6 +32,12 @@ class PoliticianRepository extends ServiceEntityRepository
             ->orderBy('e.name', 'ASC')
             ->getQuery()
             ->getResult();
+    }
+
+    /** @return Politician[] */
+    public function findByCampaign(Campaign $campaign): array
+    {
+        return $this->findByTypeAndRegions($campaign->getPoliticianType(), $campaign->getRegions());
     }
 
     // /**

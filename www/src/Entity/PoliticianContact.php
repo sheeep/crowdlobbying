@@ -105,6 +105,16 @@ class PoliticianContact
         return trim($string);
     }
 
+    public function getAddressArray(): array
+    {
+        $address = [];
+        if ($this->getCompany()) { $address[] = $this->getCompany(); }
+        if ($this->getAddress1()) { $address[] = $this->getAddress1(); }
+        if ($this->getAddress2()) { $address[] = $this->getAddress2(); }
+
+        return $address;
+    }
+
     use TimestampableEntity;
 
     public function getId(): ?int
