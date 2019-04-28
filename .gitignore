@@ -18,3 +18,6 @@
 ###> symfony/web-server-bundle ###
 /www/.web-server-pid
 ###< symfony/web-server-bundle ###
+
+/python/twitter/twitterconfig.ini
+/data
