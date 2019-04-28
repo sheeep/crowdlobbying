@@ -5,6 +5,7 @@ namespace App\Command;
 use App\Entity\Campaign;
 use App\Entity\CampaignEntry;
 use App\Entity\Politician;
+use App\Repository\CampaignRepository;
 use App\Utils\JsonWriter;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
@@ -15,13 +16,13 @@ class WriteJsonCommand extends Command
 {
     protected static $defaultName = 'app:write-json';
 
-    protected $em;
     protected $jsonWriter;
+    protected $campaignRepository;
 
-    public function __construct(string $name = null, EntityManagerInterface $em, JsonWriter $jsonWriter)
+    public function __construct(string $name = null, JsonWriter $jsonWriter, CampaignRepository $campaignRepository)
     {
-        $this->em = $em;
         $this->jsonWriter = $jsonWriter;
+        $this->campaignRepository = $campaignRepository;
 
         parent::__construct(self::$defaultName);
     }
@@ -35,8 +36,8 @@ class WriteJsonCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        foreach ($this->em->getRepository(Campaign::class)->findActiveCampaigns() as $campaign) {
-            $this->jsonWriter->write($campaign, $this->em->getRepository(Politician::class), $this->em->getRepository(CampaignEntry::class));
+        foreach ($this->campaignRepository->findActiveCampaigns() as $campaign) {
+            $this->jsonWriter->write($campaign);
         }
     }
 }

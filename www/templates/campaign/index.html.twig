@@ -61,7 +61,9 @@
                                         ???
                                     {% endif %}
                             {% endspaceless %}</p>
-                            <a href="{{ path('app_campaign_lobby', {'campaign': campaign.slug, 'slug': politician.slug}) }}" class="btn btn-danger">yada yada!</a>
+                            {% if wipCount != constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}
+                                <a href="{{ path('app_campaign_lobby', {'campaign': campaign.slug, 'slug': politician.slug}) }}" class="btn btn-danger">yada yada!</a>
+                            {% endif %}
                         </div>
                     {% endfor %}
                 </div>

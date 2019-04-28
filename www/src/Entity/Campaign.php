@@ -46,16 +46,19 @@ class Campaign
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\CampaignEntry", mappedBy="campaign", orphanRemoval=true)
+     * @ORM\OrderBy({"id" = "DESC"})
      */
     private $campaignEntries;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Argument", mappedBy="campaign", orphanRemoval=true)
+     * @ORM\OrderBy({"argument" = "ASC"})
      */
     private $arguments;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Region")
+     * @ORM\OrderBy({"name" = "ASC"})
      */
     private $regions;
 
