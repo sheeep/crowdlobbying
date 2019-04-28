@@ -8,7 +8,7 @@ import sys
 import os
 
 
-def generate_header(salutation, name, surname, address, zip, city, phone, email):
+def generate_header(salutation, name, surname, postSalutation, address, zip, city, phone, email):
     """
     This function generates the header pdf page
     """
@@ -16,7 +16,7 @@ def generate_header(salutation, name, surname, address, zip, city, phone, email)
     print('generating header page', surname, name)
     with open('header.html', 'r') as myfile:
         data = myfile.read()
-        to_write = data.format(salutation, surname, name)
+        to_write = data.format(salutation, name, (surname + ' ' + postSalutation), str(datetime.datetime.now())[0:10])
         pdfkit.from_string(to_write, '/tmp/header.pdf')
     
     return open('/tmp/header.pdf', 'rb')
@@ -37,8 +37,6 @@ def generate_messages(message, senders, index):
         location = sender['location']
         address_string += base.format(name, location)
         
-
-
 
 
     with open('message.html', 'r') as myfile:
@@ -83,7 +81,7 @@ def stich_together(header_page, message_pages, name, surname):
     # close the file
     out_pdf.close()
     
-by_id = len(sys.argv) == 2
+by_id = (len(sys.argv) == 2)
 poli_id = -1
 if by_id:
     poli_id = sys.argv[1]
@@ -98,13 +96,14 @@ with open('../../data/messages.json') as json_file:
     # loop over politicans
     for poli in data['politicians']:
 
-        if((not by_id) or poli_id == poli['id']):
+        if((not by_id) or (int(poli_id) == poli['id'])):
 
             print (poli['name'])
             header_page = generate_header(
                 salutation=poli['salutation'],
                 name=poli['name'],
                 surname=poli['surname'],
+                postSalutation=poli['postSalutation'],
                 address=poli['address'],
                 zip=poli['zip'],
                 city=poli['city'],
