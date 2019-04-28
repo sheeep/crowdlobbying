@@ -26,7 +26,7 @@ class CampaignController extends AbstractController
 
         return $this->render('campaign/index.html.twig', [
             'campaign' => $campaign,
-            'politicians' => $politicianRepository->findLatestByTypeAndRegions($campaign->getPoliticianType(), $campaign->getRegions()),
+            'politicians' => $politicianRepository->findByCampaign($campaign),
             'latestEntries' => $entries,
         ]);
     }
