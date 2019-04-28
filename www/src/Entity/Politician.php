@@ -67,6 +67,11 @@ class Politician
      */
     private $lang;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $twitter;
+
     public function __toString()
     {
         return $this->getName();
@@ -181,6 +186,18 @@ class Politician
     public function setLang(string $lang): self
     {
         $this->lang = $lang;
+
+        return $this;
+    }
+
+    public function getTwitter(): ?string
+    {
+        return $this->twitter;
+    }
+
+    public function setTwitter(?string $twitter): self
+    {
+        $this->twitter = $twitter;
 
         return $this;
     }
