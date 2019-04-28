@@ -30,6 +30,11 @@ class Argument
      */
     private $campaign;
 
+    public function __toString()
+    {
+        return $this->getArgument();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

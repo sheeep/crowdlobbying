@@ -20,11 +20,6 @@ class CampaignEntry
     use TimestampableEntity;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
-     */
-    private $argument;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $optInInformation;
@@ -42,31 +37,56 @@ class CampaignEntry
     private $campaign;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Argument")
-     */
-    private $preparedArgument;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Politician")
      * @ORM\JoinColumn(nullable=false)
      */
     private $politician;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $color;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Argument")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $argument;
+
+    public function getRandomColor(): string
+    {
+        $colors = [
+            '#e33935',
+            '#d71a60',
+            '#8e24aa',
+            '#5e34b1',
+            '#3949aa',
+            '#1d88e5',
+            '#039be5',
+            '#00acc0',
+            '#01887b',
+            '#43a047',
+            '#e24b26',
+        ];
+        shuffle($colors);
+
+        return array_pop($colors);
+    }
+
+    public function getColor(): ?string
+    {
+        $color = $this->color;
+        if (!$color) {
+            $color = $this->getRandomColor();
+            $this->setColor($color);
+        }
+
+        return $color;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getArgument(): ?string
-    {
-        return $this->argument;
-    }
-
-    public function setArgument(?string $argument): self
-    {
-        $this->argument = $argument;
-
-        return $this;
     }
 
     public function getOptInInformation(): ?bool
@@ -105,18 +125,6 @@ class CampaignEntry
         return $this;
     }
 
-    public function getPreparedArgument(): ?Argument
-    {
-        return $this->preparedArgument;
-    }
-
-    public function setPreparedArgument(?Argument $preparedArgument): self
-    {
-        $this->preparedArgument = $preparedArgument;
-
-        return $this;
-    }
-
     public function getPolitician(): ?Politician
     {
         return $this->politician;
@@ -125,6 +133,25 @@ class CampaignEntry
     public function setPolitician(?Politician $politician): self
     {
         $this->politician = $politician;
+
+        return $this;
+    }
+
+    public function setColor(string $color): self
+    {
+        $this->color = $color;
+
+        return $this;
+    }
+
+    public function getArgument(): ?Argument
+    {
+        return $this->argument;
+    }
+
+    public function setArgument(?Argument $argument): self
+    {
+        $this->argument = $argument;
 
         return $this;
     }
