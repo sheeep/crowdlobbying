@@ -9,6 +9,7 @@ use App\Entity\Politician;
 use App\Form\PersonType;
 use App\Repository\ArgumentRepository;
 use App\Repository\CampaignEntryRepository;
+use App\Repository\PersonRepository;
 use App\Repository\PoliticianRepository;
 use App\Utils\JsonWriter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration as MVC;
@@ -43,7 +44,7 @@ class CampaignController extends AbstractController
      * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
      * @MVC\ParamConverter("politician", options={"mapping": {"slug": "slug"}})
      */
-    public function lobby(Campaign $campaign, Politician $politician, ArgumentRepository $argumentRepository, JsonWriter $jsonWriter, \Swift_Mailer $mailer, Request $request): Response
+    public function lobby(Campaign $campaign, Politician $politician, ArgumentRepository $argumentRepository, PersonRepository $personRepository, JsonWriter $jsonWriter, \Swift_Mailer $mailer, Request $request): Response
     {
         $person = new Person();
         $form = $this->createForm(PersonType::class, $person);
@@ -53,7 +54,17 @@ class CampaignController extends AbstractController
             $argument = $argumentRepository->findOneBy(['campaign' => $campaign, 'id' => $request->request->get('argument', 0)]);
             if ($argument) {
                 $em = $this->getDoctrine()->getManager();
-                $em->persist($person);
+                $testPerson = $personRepository->findOneBy(['email' => $person->getEmail()]);
+                if (!$testPerson) {
+                    // update person if something has changed
+                    // doctrine will take care of the changeset...
+                    $testPerson->setFirstname($person->getFirstname());
+                    $testPerson->setLastname($person->getLastname());
+                    $testPerson->setCity($person->getCity());
+                    $person = $testPerson;
+                } else {
+                    $em->persist($person);
+                }
 
                 $campaignEntry = new CampaignEntry();
                 $campaignEntry->setOptInInformation((bool) ($request->request->get('optInInformation', 0)));
