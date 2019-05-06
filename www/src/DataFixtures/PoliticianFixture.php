@@ -53,20 +53,21 @@ class PoliticianFixture extends Fixture implements DependentFixtureInterface
                     'lang' => $row[1] ?? 'd',
                     'region' => $row[2] ?? 'ZH',
                     'party' => $row[3] ?? 'Parteilos',
-                    'salutation' => $row[4] ?? '',
-                    'prename' => $row[5] ?? '',
-                    'lastname' => $row[6] ?? '',
-                    'postSalutation' => $row[7] ?? '',
-                    'company' => $row[8] ?? '',
-                    'address1' => $row[9] ?? '',
-                    'address2' => $row[10] ?? '',
-                    'zip' => $row[11] ?? '',
-                    'city' => $row[12] ?? '',
-                    'email' => $row[13] ?? '',
-                    'mobile' => $row[14] ?? '',
-                    'phone' => $row[15] ?? '',
-                    'fax' => $row[16] ?? '',
-                    'website' => $row[17] ?? '',
+                    'twitter' => $row[4] ?? '',
+                    'salutation' => $row[5] ?? '',
+                    'prename' => $row[6] ?? '',
+                    'lastname' => $row[7] ?? '',
+                    'postSalutation' => $row[8] ?? '',
+                    'company' => $row[9] ?? '',
+                    'address1' => $row[10] ?? '',
+                    'address2' => $row[11] ?? '',
+                    'zip' => $row[12] ?? '',
+                    'city' => $row[13] ?? '',
+                    'email' => $row[14] ?? '',
+                    'mobile' => $row[15] ?? '',
+                    'phone' => $row[16] ?? '',
+                    'fax' => $row[17] ?? '',
+                    'website' => $row[18] ?? '',
                 ];
 
                 $region = $regionRepo->findOneBy(['short' => $entry['region']]);
@@ -79,6 +80,7 @@ class PoliticianFixture extends Fixture implements DependentFixtureInterface
                     $politician->setRegion($region);
                     $politician->setParty($party);
                     $politician->setPoliticianType($politicianType);
+                    $politician->setTwitter($entry['twitter']);
 
                     $contact = new PoliticianContact();
                     $contact->setSalutation($entry['salutation']);

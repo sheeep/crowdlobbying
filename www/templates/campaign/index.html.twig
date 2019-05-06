@@ -32,11 +32,54 @@
                 </div>
             </div>
         {% endif %}
+        <div class="row" id="scroll-target">
+            <div class="col text-center">
+                <select id="region-selector" class="select2">
+                    <option value="0" selected>Kanton Wählen</option>
+                    {% for region in campaign.regions %}
+                        <option value="{{ region.id }}">{{ region }}</option>
+                    {% endfor %}
+                </select>
+                <br /><br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="politician-canvas">
+                    {% for politician in politicians %}
+                        <div class="politician-entry" data-region="{{ politician.region.id }}">
+                            ({{ campaign.entryCountByPolitician(politician) }})<br />
+                            &lt;&lt;Bild&gt;&gt; soomTM<br />
+                            <p><b>{{ politician }}</b> ({{ politician.party.short }}/{{ politician.region.short }})</p>
+                            <p>Stimmabsicht: {% spaceless %}
+                                    {% set wipCount = campaign.wipCountByPolitician(politician).status %}
+                                    {% if wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}
+                                        Ja (:
+                                    {% elseif wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_NO') %}
+                                        Nein :(
+                                    {% else %}
+                                        ???
+                                    {% endif %}
+                            {% endspaceless %}</p>
+                            {% if wipCount != constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}
+                                <a href="{{ path('app_campaign_lobby', {'campaign': campaign.slug, 'slug': politician.slug}) }}" class="btn btn-danger">yada yada!</a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe src="https://donorbox.org/embed/crowdlobbying-digitaler-pass" height="685px" width="100%" style="max-width:500px; min-width:310px; max-height:none!important" seamless="seamless" name="donorbox" frameborder="0" scrolling="no" allowpaymentrequest></iframe>
+            </div>
+        </div>
     </div>
 {% endblock %}
 
 {% block stylesheets %}
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <style>
         #home-caroussel {
             margin-top: 2em;
@@ -48,15 +91,42 @@
             padding: 15px;
             margin: 0 5px;
         }
+        
+        #politician-canvas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+        
+        .politician-entry {
+            background: lightgray;
+            padding: 15px;
+        }
     </style>
 {% endblock %}
 
 {% block javascripts %}
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script>
         $('#home-scroll').on('click', function(e) {
             e.preventDefault();
-            alert('scroll');
+
+            $('html, body').animate({ scrollTop: ($('#scroll-target').offset().top - 75)}, 2000);
+        });
+        
+        $('#region-selector').on('change', function() {
+            var value = $(this).val();
+            if (value > 0) {
+                $('#politician-canvas > .politician-entry').hide();
+                $('#politician-canvas > .politician-entry[data-region="' + value + '"]').show();
+            } else {
+                $('#politician-canvas > .politician-entry').show();
+            }
+        });
+
+        $(document).ready(function() {
+            $('.select2').select2();
         });
 
         $('#home-caroussel').slick({

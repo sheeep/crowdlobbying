@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
@@ -45,16 +46,19 @@ class Campaign
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\CampaignEntry", mappedBy="campaign", orphanRemoval=true)
+     * @ORM\OrderBy({"id" = "DESC"})
      */
     private $campaignEntries;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Argument", mappedBy="campaign", orphanRemoval=true)
+     * @ORM\OrderBy({"argument" = "ASC"})
      */
     private $arguments;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Region")
+     * @ORM\OrderBy({"name" = "ASC"})
      */
     private $regions;
 
@@ -86,6 +90,23 @@ class Campaign
         $this->regions = new ArrayCollection();
         $this->wipCounts = new ArrayCollection();
         $this->pages = new ArrayCollection();
+    }
+
+    public function getWipCountByPolitician(Politician $politician): ?WipCount
+    {
+        $criteria = Criteria::create()
+            ->andWhere(Criteria::expr()->eq('politician', $politician))
+            ->setMaxResults(1);
+
+        return $this->getWipCounts()->matching($criteria)->first();
+    }
+
+    public function getEntryCountByPolitician(Politician $politician): int
+    {
+        $criteria = Criteria::create()
+            ->andWhere(Criteria::expr()->eq('politician', $politician));
+
+        return count($this->getCampaignEntries()->matching($criteria));
     }
 
     public function getId(): ?int

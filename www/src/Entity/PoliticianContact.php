@@ -89,20 +89,7 @@ class PoliticianContact
 
     public function __toString()
     {
-        $contents = [
-            $this->getSalutation(),
-            $this->getPrename(),
-            $this->getLastname(),
-            $this->getPostSalutation(),
-        ];
-
-        $string = '';
-        foreach ($contents as $content) {
-            if ($content) {
-                $string .= $content . ' ';
-            }
-        }
-        return trim($string);
+        return $this->getNameString();
     }
 
     public function getAddressArray(): array
@@ -113,6 +100,27 @@ class PoliticianContact
         if ($this->getAddress2()) { $address[] = $this->getAddress2(); }
 
         return $address;
+    }
+
+    public function getAddressString(): string
+    {
+        return join(' ', $this->getAddressArray());
+    }
+
+    public function getNameArray(): array
+    {
+        $name = [];
+        if ($this->getSalutation()) { $name[] = $this->getSalutation(); }
+        if ($this->getPrename()) { $name[] = $this->getPrename(); }
+        if ($this->getLastname()) { $name[] = $this->getLastname(); }
+        if ($this->getPostSalutation()) { $name[] = $this->getPostSalutation(); }
+
+        return $name;
+    }
+
+    public function getNameString(): string
+    {
+        return join(' ', $this->getNameArray());
     }
 
     use TimestampableEntity;

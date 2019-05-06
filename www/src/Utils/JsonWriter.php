@@ -10,16 +10,20 @@ use Symfony\Component\Filesystem\Filesystem;
 class JsonWriter
 {
     protected $projectDir;
+    protected $politicianRepository;
+    protected $campaignEntryRepository;
 
-    public function __construct(string $projectDir)
+    public function __construct(string $projectDir, PoliticianRepository $politicianRepository, CampaignEntryRepository $campaignEntryRepository)
     {
         $this->projectDir = $projectDir;
+        $this->politicianRepository = $politicianRepository;
+        $this->campaignEntryRepository = $campaignEntryRepository;
     }
 
-    public function write(Campaign $campaign, PoliticianRepository $politicianRepository, CampaignEntryRepository $campaignEntryRepository): void
+    public function write(Campaign $campaign): void
     {// EntityManagerInterface $em,
         $data = ['date' => date('Y-m-d H:i:s'), 'campaign' => $campaign->getName(), 'politicians' => []];
-        foreach ($politicianRepository->findByCampaign($campaign) as $politician) {
+        foreach ($this->politicianRepository->findByCampaign($campaign) as $politician) {
             $contact = $politician->getContact();
             $entry = [
                 'salutation' => $contact->getSalutation() ?: '',
@@ -39,7 +43,7 @@ class JsonWriter
             ];
             foreach ($campaign->getArguments() as $argument) {
                 $message = ['text' => $argument->getArgument(), 'senders' => []];
-                foreach ($campaignEntryRepository->findBy(['campaign' => $campaign, 'politician' => $politician, 'argument' => $argument], ['id' => 'ASC']) as $campaignEntry) {
+                foreach ($this->campaignEntryRepository->findBy(['campaign' => $campaign, 'politician' => $politician, 'argument' => $argument], ['id' => 'ASC']) as $campaignEntry) {
                     $person = $campaignEntry->getPerson();
                     $message['senders'][] = [
                         'name' => $person->getFirstname() . ' ' . $person->getLastname(),
