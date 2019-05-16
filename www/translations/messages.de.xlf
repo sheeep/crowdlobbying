@@ -204,10 +204,10 @@
                                     onclick="utils.scrollTo(&amp;quot;#terms-of-use&amp;quot;, { offset: document.querySelector(&amp;quot;.header&amp;quot;).offsetHeight * -1 })"&gt;Nutzungsbedingungen&lt;/a&gt;
                             sowie die &lt;a
                                     onclick="utils.scrollTo(&amp;quot;#privacy&amp;quot;, { offset: document.querySelector(&amp;quot;.header&amp;quot;).offsetHeight * -1 })"&gt;Datenschutzbestimmungen&lt;/a&gt;.</source>
-        <target>Mit Ihrer Eingabe akzeptieren Sie unsere &lt;a
-                                    onclick="utils.scrollTo(&amp;quot;#terms-of-use&amp;quot;, { offset: document.querySelector(&amp;quot;.header&amp;quot;).offsetHeight * -1 })"&gt;Nutzungsbedingungen&lt;/a&gt;
-                            sowie die &lt;a
-                                                    onclick="utils.scrollTo(&amp;quot;#privacy&amp;quot;, { offset: document.querySelector(&amp;quot;.header&amp;quot;).offsetHeight * -1 })"&gt;Datenschutzbestimmungen&lt;/a&gt;.</target>
+        <target><![CDATA[Mit Ihrer Eingabe akzeptieren Sie unsere <a
+                                    onclick="utils.scrollTo(&quot;#terms-of-use&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">Nutzungsbedingungen</a>
+                            sowie die <a
+                                                    onclick="utils.scrollTo(&quot;#privacy&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">Datenschutzbestimmungen</a>.]]></target>
       </segment>
     </unit>
     <unit id="fU3.Emj" name="Spenden">
@@ -245,7 +245,7 @@
       </notes>
       <segment>
         <source>[[DONORBOX]]</source>
-        <target></target>
+        <target><![CDATA[<script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe src="https://donorbox.org/embed/crowdlobbying-digitaler-pass" height="685px" width="100%" style="max-width:500px; min-width:310px; max-height:none!important" seamless="seamless" name="donorbox" frameborder="0" scrolling="no" allowpaymentrequest></iframe>]]></target>
       </segment>
     </unit>
     <unit id="VR71bJL" name="Bankverbindung">
@@ -266,8 +266,8 @@
       <segment>
         <source>Verein PublicBeta&lt;br&gt;Crowd-Lobbying&lt;br&gt;4051 Basel&lt;br&gt;IBAN CH58 0900 0000 1509 7572 2&lt;br&gt;Post-Konto
                                                                                                                           15-97572-2</source>
-        <target>Verein PublicBeta&lt;br&gt;Crowd-Lobbying&lt;br&gt;4051 Basel&lt;br&gt;IBAN CH58 0900 0000 1509 7572 2&lt;br&gt;Post-Konto
-                                                                                                                          15-97572-2</target>
+        <target><![CDATA[Verein PublicBeta<br>Crowd-Lobbying<br>4051 Basel<br>IBAN CH58 0900 0000 1509 7572 2<br>Post-Konto
+                                                                                                                          15-97572-2]]></target>
       </segment>
     </unit>
     <unit id="MFDlgfK" name="Teilen">
@@ -305,13 +305,13 @@
                                 gegen eine E-ID von von privaten Unternehmen bist.&lt;/p&gt;
                             &lt;p&gt;Es würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.&lt;/p&gt;
                             &lt;p&gt;Vielen Dank und freundliche Grüsse&lt;/p&gt;</source>
-        <target>&lt;p&gt;Hallo&lt;/p&gt;
-                            &lt;p&gt;Ich habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf&lt;/p&gt;
-                            &lt;p&gt;https://www.digitaler-pass.ch/&lt;/p&gt;
-                            &lt;p&gt;kannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du
-                                gegen eine E-ID von von privaten Unternehmen bist.&lt;/p&gt;
-                            &lt;p&gt;Es würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.&lt;/p&gt;
-                            &lt;p&gt;Vielen Dank und freundliche Grüsse&lt;/p&gt;</target>
+        <target><![CDATA[<p>Hallo</p>
+                            <p>Ich habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf</p>
+                            <p>https://www.digitaler-pass.ch/</p>
+                            <p>kannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du
+                                gegen eine E-ID von von privaten Unternehmen bist.</p>
+                            <p>Es würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.</p>
+                            <p>Vielen Dank und freundliche Grüsse</p>]]></target>
       </segment>
     </unit>
     <unit id="BE6acrE" name="96882f9">
@@ -649,19 +649,19 @@
                                 dass der digitale Pass weiterhin vom Staat an die Bevölkerung ausgegeben wird. Die Kampagne wird
                                 u.a. unterstützt von der Stiftung für Konsumentenschutz, der Digitalen Gesellschaft, der
                                 Demokratie-Plattform WeCollect und dem Verein PublicBeta.&lt;/p&gt;</source>
-        <target>&lt;p&gt;Weil der Bund vor zehn Jahren mit der Einführung eines elektronischen Passes (E-ID) gescheitert
+        <target><![CDATA[<p>Weil der Bund vor zehn Jahren mit der Einführung eines elektronischen Passes (E-ID) gescheitert
                             ist, will er die Aufgabe nun verschiedenen Grosskonzernen überlassen. Noch kann das Parlament
-                            dies stoppen.&lt;/p&gt;
-                            &lt;h2&gt;Wofür braucht es eine staatlich geprüfte digitale Identität?&lt;/h2&gt;
-                            &lt;p&gt;Die elektronische Identität (E-ID) ist der digitale Pass. Die NutzerInnen einer E-ID sollen bei
+                            dies stoppen.</p>
+                            <h2>Wofür braucht es eine staatlich geprüfte digitale Identität?</h2>
+                            <p>Die elektronische Identität (E-ID) ist der digitale Pass. Die NutzerInnen einer E-ID sollen bei
                                 E-Government-Angeboten, beim Online-Shopping und weiteren Online-Dienstleistungen wie
                                 Versicherungen eindeutig Identifizierbar sein. Damit sollen Risiken wie Identitätsklau und
                                 Manipulationen im Netz verunmöglicht werden. Besonders bei sensiblen Vorgängen wie
                                 Gesundheitsdaten, bei Abstimmungen und Wahlen im Netz, der E-Steuerrechnung und im
                                 Online-Banking würde die E-ID eine zentrale Rolle spielen. Im Vergleich mit anderen Staaten ist
-                                die Schweiz in Sachen elektronischer Identität in den letzten Jahren in Rückstand geraten.&lt;/p&gt;
-                            &lt;h2&gt;Welche Lösung schlägt der Bundesrat vor?&lt;/h2&gt;
-                            &lt;p&gt;Das Gesetz über elektronische Identifizierungsdienste sieht eine Rollenteilung zwischen Staat und
+                                die Schweiz in Sachen elektronischer Identität in den letzten Jahren in Rückstand geraten.</p>
+                            <h2>Welche Lösung schlägt der Bundesrat vor?</h2>
+                            <p>Das Gesetz über elektronische Identifizierungsdienste sieht eine Rollenteilung zwischen Staat und
                                 Privaten vor. Der Staat gibt die E-ID nicht mehr selber heraus. Die technische Lösung für die
                                 E-ID kommt von privaten Anbietern, den sogenannten Identitätsdienstleistern (IdP). Diese sollen
                                 für den Vertrieb und den Aufbau der elektronischen Identität zuständig sein, und der Bund nur
@@ -669,18 +669,18 @@
                                 dessen Stelle treten grosse Privatbanken, wie die UBS, private Versicherungsgesellschaften, wie
                                 die CSS Versicherung, oder staatsnahe Giganten, wie die Post. Diese Schweizer Grossfirmen wären
                                 unter dem Dach des Konglomerats «SwissSign» fortan im Besitz der Daten und der
-                                Persönlichkeitsprofile, die durch die Benutzung der E-ID entstehen.&lt;/p&gt;
-                            &lt;h2&gt;Warum ist dieser Schritt so gefährlich?&lt;/h2&gt;
-                            &lt;p&gt;Die Sicherung der Identität ist seit jeher eine staatlich-hoheitliche Aufgabe, die unter
+                                Persönlichkeitsprofile, die durch die Benutzung der E-ID entstehen.</p>
+                            <h2>Warum ist dieser Schritt so gefährlich?</h2>
+                            <p>Die Sicherung der Identität ist seit jeher eine staatlich-hoheitliche Aufgabe, die unter
                                 demokratische Kontrolle gehört. Es ist unverständlich, dass der Bund ausschliesslich private
                                 Akteure als E-ID-Aussteller festschreibt. Damit erhalten die privaten E-ID-Aussteller grosse
                                 Freiheit in der Speicherung und Verwendung unserer Daten und dem Bund bleibt nur eine schwache
-                                Kontrollfunktion.&lt;/p&gt;
-                            &lt;h2&gt;Wer unterstützt das Crowd-Lobbying?&lt;/h2&gt;
-                            &lt;p&gt;Wir sind ein breiter Zusammenschluss von Organisationen und Netzwerken, die sich dafür einsetzen,
+                                Kontrollfunktion.</p>
+                            <h2>Wer unterstützt das Crowd-Lobbying?</h2>
+                            <p>Wir sind ein breiter Zusammenschluss von Organisationen und Netzwerken, die sich dafür einsetzen,
                                 dass der digitale Pass weiterhin vom Staat an die Bevölkerung ausgegeben wird. Die Kampagne wird
                                 u.a. unterstützt von der Stiftung für Konsumentenschutz, der Digitalen Gesellschaft, der
-                                Demokratie-Plattform WeCollect und dem Verein PublicBeta.&lt;/p&gt;</target>
+                                Demokratie-Plattform WeCollect und dem Verein PublicBeta.</p>]]></target>
       </segment>
     </unit>
     <unit id="JNlyIR5" name="Nach&#10;                        oben">
@@ -740,8 +740,8 @@
       <segment>
         <source>&lt;p&gt;Che Wagner&lt;br&gt;Tel. +41 76 230 75 29&lt;br&gt;&lt;a href="mailto:che.wagner@publicbeta.ch"&gt;che.wagner@publicbeta.ch&lt;/a&gt;
                         &lt;/p&gt;</source>
-        <target>&lt;p&gt;Che Wagner&lt;br&gt;Tel. +41 76 230 75 29&lt;br&gt;&lt;a href="mailto:che.wagner@publicbeta.ch"&gt;che.wagner@publicbeta.ch&lt;/a&gt;
-                        &lt;/p&gt;</target>
+        <target><![CDATA[<p>Che Wagner<br>Tel. +41 76 230 75 29<br><a href="mailto:che.wagner@publicbeta.ch">che.wagner@publicbeta.ch</a>
+                        </p>]]></target>
       </segment>
     </unit>
     <unit id="uKYFGSP" name="Impressum">
@@ -761,7 +761,7 @@
       </notes>
       <segment>
         <source>&lt;p&gt;Daniel Graf&lt;br&gt;Dammerkirchstr. 44&lt;br&gt;CH-4056 Basel&lt;/p&gt;</source>
-        <target>&lt;p&gt;Daniel Graf&lt;br&gt;Dammerkirchstr. 44&lt;br&gt;CH-4056 Basel&lt;/p&gt;</target>
+        <target><![CDATA[<p>Daniel Graf<br>Dammerkirchstr. 44<br>CH-4056 Basel</p>]]></target>
       </segment>
     </unit>
     <unit id="32cAxL4" name="Nutzungsbedingungen">
@@ -795,12 +795,12 @@
                             aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
                             velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
                             pariatur?&lt;/p&gt;</source>
-        <target>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        <target><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
                         voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
-                        &lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
                             totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
                             dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
                             fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
@@ -809,7 +809,7 @@
                             enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
                             aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
                             velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-                            pariatur?&lt;/p&gt;</target>
+                            pariatur?</p>]]></target>
       </segment>
     </unit>
     <unit id="9iT88Ny" name="Datenschutz">
@@ -838,15 +838,15 @@
                             Informationen. Einige Daten geben Sie bei der Registrierung für Dienstleistungen selbst bekannt.
                             Andere, nicht persönliche Daten werden aufgrund von technischen Abläufen gespeichert,
                             beispielsweise IP-Adressen.&lt;/p&gt;</source>
-        <target>&lt;p&gt;Der Schutz der Privatsphäre und namentlich der Datenschutz sind uns wichtig. Gestützt auf Artikel
+        <target><![CDATA[<p>Der Schutz der Privatsphäre und namentlich der Datenschutz sind uns wichtig. Gestützt auf Artikel
                         13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes
                         (Datenschutzgesetz, DSG) hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz
                         vor Missbrauch ihrer persönlichen Daten. Wir halten diese Bestimmungen ein. Persönliche Daten
-                        werden streng vertraulich behandelt und weder an Dritte verkauft noch weitergegeben.&lt;/p&gt;
-                        &lt;p&gt;Wenn Sie unsere Website besuchen oder unsere E-Mails lesen, speichern wir verschiedene
+                        werden streng vertraulich behandelt und weder an Dritte verkauft noch weitergegeben.</p>
+                        <p>Wenn Sie unsere Website besuchen oder unsere E-Mails lesen, speichern wir verschiedene
                             Informationen. Einige Daten geben Sie bei der Registrierung für Dienstleistungen selbst bekannt.
                             Andere, nicht persönliche Daten werden aufgrund von technischen Abläufen gespeichert,
-                            beispielsweise IP-Adressen.&lt;/p&gt;</target>
+                            beispielsweise IP-Adressen.</p>]]></target>
       </segment>
     </unit>
     <unit id="8702EHz" name="Verein Public Beta, Basel">
