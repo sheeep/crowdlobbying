@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="fr">
-  <file id="messages.de">
+  <file id="messages.fr">
     <unit id="CCsQTdX" name="Herzlichen Dank für Ihre Nachricht">
       <notes>
         <note category="file-source" priority="1">templates/campaign/thanks.html.twig:11</note>
@@ -245,7 +245,7 @@
       </notes>
       <segment>
         <source>[[DONORBOX]]</source>
-        <target><![CDATA[<script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe src="https://donorbox.org/embed/crowdlobbying-digitaler-pass" height="685px" width="100%" style="max-width:500px; min-width:310px; max-height:none!important" seamless="seamless" name="donorbox" frameborder="0" scrolling="no" allowpaymentrequest></iframe>]]></target>
+        <target><![CDATA[<script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe src="https://donorbox.org/embed/crowd-lobbying-digitaler-pass-2-2" height="685px" width="100%" style="max-width:500px; min-width:310px; max-height:none!important" seamless="seamless" name="donorbox" frameborder="0" scrolling="no" allowpaymentrequest></iframe>]]></target>
       </segment>
     </unit>
     <unit id="VR71bJL" name="Bankverbindung">
