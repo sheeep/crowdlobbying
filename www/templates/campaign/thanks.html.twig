@@ -1,80 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ campaign }}{% endblock %}
+{% set headerClass = 'force-background' %}
 
 {% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>Thanks....</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="colored-entry" style="background-color: {{ campaignEntry.color }};">
-                    <div class="meta">
-                        <p>Von: {{ campaignEntry.person }}</p>
-                        <p>An: {{ campaignEntry.politician }} ({{ campaignEntry.politician.party.short }}/{{ campaignEntry.politician.region.short }})</p>
-                        <p>Betreff: {{ campaignEntry.campaign }}</p>
+    <section class="act">
+        <div class="viewport-width">
+            <div class="page-width">
+                <div class="layout-width">
+                    <div class="readable-width">
+                        <div class="act__richtext richtext center-text"><h1>{% trans %}Herzlichen Dank für Ihre Nachricht{% endtrans %}</h1>
+                            <p>{% trans %}Bitte helfen Sie mit und teilen Sie Ihr Argument mit Ihren FreundInnen, Familien,
+                                    Verwandten und Bekannten.{% endtrans %}</p></div>
+                        <div class="act__my-message">
+                            <blockquote class="card blue" style="background-color: {{ campaignEntry.color }};">
+                                <header class="card__header"><cite class="card__meta"><span class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ campaignEntry.politician }}</strong> ({{ campaignEntry.politician.party.short }}/{{ campaignEntry.politician.region.short }})</span><span
+                                                class="card__meta-line">{% trans %}Von:{% endtrans %} {{ campaignEntry.person }}, {{ campaignEntry.person.city }}</span><span
+                                                class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ campaignEntry.campaign }}</span></cite></header>
+                                <p class="card__quote">{% trans %}«{% endtrans %}{{ campaignEntry.argument }}{% trans %}»{% endtrans %}</p></blockquote>
+                        </div>
+                        <div class="act__richtext richtext center-text"><p><a href="{{ path('app_campaign_statements', {'campaign': campaign.slug}) }}">{% trans %}Alle Nachrichten
+                                        ansehen{% endtrans %}</a><br><a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}">{% trans %}Weitere Person lobbyieren{% endtrans %}</a></p></div>
                     </div>
-                    <p class="argument">
-                        {{ campaignEntry.argument }}
-                    </p>
                 </div>
             </div>
         </div>
-        <div class="row share-row">
-            <div class="col text-center">
-                <a href="{{ path('app_campaign_statement', {'campaign': campaignEntry.campaign, 'id': campaignEntry.id}) }}" class="btn btn-primary">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-            </div>
-            <div class="col text-center">
-                <a href="{{ path('app_campaign_statement', {'campaign': campaignEntry.campaign, 'id': campaignEntry.id}) }}" class="btn btn-info">
-                    <i class="fab fa-twitter"></i>
-                </a>
-            </div>
-            <div class="col text-center">
-                <a href="{{ path('app_campaign_statement', {'campaign': campaignEntry.campaign, 'id': campaignEntry.id}) }}" class="btn btn-success">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-            <div class="col text-center">
-                <a href="{{ path('app_campaign_statement', {'campaign': campaignEntry.campaign, 'id': campaignEntry.id}) }}" class="btn btn-warning">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>Bla bla bla, noch jemanden anschreiben? in deinem kanton gäbe es noch ...</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe src="https://donorbox.org/embed/crowdlobbying-digitaler-pass" height="685px" width="100%" style="max-width:500px; min-width:310px; max-height:none!important" seamless="seamless" name="donorbox" frameborder="0" scrolling="no" allowpaymentrequest></iframe>
-            </div>
-        </div>
-    </div>
-{% endblock %}
-
-{% block stylesheets %}
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <style>
-        .colored-entry {
-            padding: 15px;
-            color: #ffffff;
-        }
-        
-        .share-row {
-            margin: 25px 0;
-        }
-        
-        .share-row .btn {
-            cursor: pointer;
-        }
-    </style>
-{% endblock %}
-
-{% block javascripts %}
+    </section>
+    {% include 'campaign/Partials/donate.html.twig' %}
 {% endblock %}

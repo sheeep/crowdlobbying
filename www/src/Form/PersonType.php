@@ -24,6 +24,7 @@ class PersonType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Person::class,
+            'csrf_protection' => false,
         ]);
     }
 }

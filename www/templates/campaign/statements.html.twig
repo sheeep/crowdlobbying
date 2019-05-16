@@ -1,74 +1,69 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ campaign }}{% endblock %}
+{% set sectionColor = 'dark' %}
 
 {% block body %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <div id="statements-wrapper">
-                    {% if campaignEntry %}
-                        <div class="colored-entry" style="background-color: {{ campaignEntry.color }};">
-                            <div class="meta">
-                                <p>Von: {{ campaignEntry.person }}</p>
-                                <p>An: {{ campaignEntry.politician }} ({{ campaignEntry.politician.party.short }}/{{ campaignEntry.politician.region.short }})</p>
-                                <p>Betreff: {{ campaignEntry.campaign }}</p>
+    <section class="messages-grid">
+        <div class="viewport-width">
+            <div class="page-width mobile-fullwidth">
+                <div class="layout-width mobile-fullwidth">
+                    <div class="messages-grid__cards">
+                        {% if campaignEntry %}
+                            <div class="messages-grid__slide">
+                                <blockquote class="card pink" style="background-color: {{ campaignEntry.color }};">
+                                    <header class="card__header"><cite class="card__meta"><span
+                                                    class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ campaignEntry.politician }}</strong> ({{ campaignEntry.politician.party.short }}/{{ campaignEntry.politician.region.short }})</span><span
+                                                    class="card__meta-line">{% trans %}Von:{% endtrans %} {{ campaignEntry.person }}, {{ campaignEntry.person.city }}</span><span
+                                                    class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ campaignEntry.campaign }}</span></cite></header>
+                                    <p class="card__quote">{% trans %}«{% endtrans %}{{ campaignEntry.argument }}{% trans %}»{% endtrans %}</p></blockquote>
                             </div>
-                            <p class="argument">
-                                {{ campaignEntry.argument }}
-                            </p>
-                        </div>
-                    {% endif %}
-                    {% for entry in campaign.campaignEntries %}
-                        {% if not campaignEntry or campaignEntry.id != entry.id %}
-                            <div class="colored-entry" style="background-color: {{ entry.color }};">
-                                <div class="meta">
-                                    <p>Von: {{ entry.person }}</p>
-                                    <p>An: {{ entry.politician }} ({{ entry.politician.party.short }}/{{ entry.politician.region.short }})</p>
-                                    <p>Betreff: {{ entry.campaign }}</p>
+                        {% endif %}
+                        {% for entry in campaign.campaignEntries %}
+                            {% if not campaignEntry or campaignEntry.id != entry.id %}
+                                <div class="messages-grid__slide">
+                                    <blockquote class="card pink" style="background-color: {{ entry.color }};">
+                                        <header class="card__header"><cite class="card__meta"><span
+                                                        class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ entry.politician }}</strong> ({{ entry.politician.party.short }}/{{ entry.politician.region.short }})</span><span
+                                                        class="card__meta-line">{% trans %}Von:{% endtrans %} {{ entry.person }}, {{ entry.person.city }}</span><span
+                                                        class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ entry.campaign }}</span></cite></header>
+                                        <p class="card__quote">{% trans %}«{% endtrans %}{{ entry.argument }}{% trans %}»{% endtrans %}</p></blockquote>
                                 </div>
-                                <p class="argument">
-                                    {{ entry.argument }}
-                                </p>
+                            {% endif %}
+                            {% if loop.index == 3 %}
+                                <div class="messages-grid__slide donate-a">
+                                    <section class="messages-grid__donate richtext center-text"><h1>{% trans %}Spenden{% endtrans %}</h1>
+                                        <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p><a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#donate">
+                                            <button class="action-button">{% trans %}Jetzt spenden{% endtrans %}</button>
+                                        </a></section>
+                                </div>
+                            {% elseif loop.index == 4 %}
+                                <div class="messages-grid__slide donate-b">
+                                    <section class="messages-grid__donate richtext center-text"><h1>{% trans %}Spenden{% endtrans %}</h1>
+                                        <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p><a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#donate">
+                                            <button class="action-button">{% trans %}Jetzt spenden{% endtrans %}</button>
+                                        </a></section>
+                                </div>
+                            {% endif %}
+                        {% else %}
+                            <div class="messages-grid__slide donate-a">
+                                <section class="messages-grid__donate richtext center-text"><h1>{% trans %}Spenden{% endtrans %}</h1>
+                                    <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p><a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#donate">
+                                        <button class="action-button">{% trans %}Jetzt spenden{% endtrans %}</button>
+                                    </a></section>
                             </div>
-                        {% endif %}
-                        {% if loop.index == 6 %}
-                            <div>
-                                <script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe src="https://donorbox.org/embed/crowdlobbying-digitaler-pass" height="685px" width="100%" style="max-width:500px; min-width:310px; max-height:none!important" seamless="seamless" name="donorbox" frameborder="0" scrolling="no" allowpaymentrequest></iframe>
+                            <div class="messages-grid__slide donate-b">
+                                <section class="messages-grid__donate richtext center-text"><h1>{% trans %}Spenden{% endtrans %}</h1>
+                                    <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p><a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#donate">
+                                        <button class="action-button">{% trans %}Jetzt spenden{% endtrans %}</button>
+                                    </a></section>
                             </div>
-                        {% endif %}
-                    {% else %}
-                        <script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe src="https://donorbox.org/embed/crowdlobbying-digitaler-pass" height="685px" width="100%" style="max-width:500px; min-width:310px; max-height:none!important" seamless="seamless" name="donorbox" frameborder="0" scrolling="no" allowpaymentrequest></iframe>
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <a id="help-button" class="btn btn-primary" href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}">Mithelfen</a>
-{% endblock %}
-
-{% block stylesheets %}
-    <style>
-        #statements-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            grid-gap: 20px;
-            margin: 20px 0;
-        }
-        
-        .colored-entry {
-            padding: 15px;
-            color: #ffffff;
-        }
-        
-        #help-button {
-            position: fixed;
-            bottom: 35px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    </style>
-{% endblock %}
-
-{% block javascripts %}
+    </section>
+    <div class="floating-cta"><a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#how-it-works">
+            <button class="action-button medium">{% trans %}Mitmachen{% endtrans %}</button>
+        </a></div>
 {% endblock %}

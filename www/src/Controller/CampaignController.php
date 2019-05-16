@@ -19,7 +19,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/", host="{campaign}.localhost", requirements={"campaign"="[\w-]+"})
+ * @Route("/{_locale}", host="{campaign}.localhost", requirements={"campaign"="[\w-]+", "_locale"="de|fr|"})
  */
 class CampaignController extends AbstractController
 {
@@ -36,6 +36,7 @@ class CampaignController extends AbstractController
             'campaign' => $campaign,
             'politicians' => $politicianRepository->findByCampaign($campaign),
             'latestEntries' => $entries,
+            'total' => count($campaignEntryRepository->findBy(['campaign' => $campaign])),
         ]);
     }
 
@@ -50,12 +51,12 @@ class CampaignController extends AbstractController
         $form = $this->createForm(PersonType::class, $person);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid() && $this->isCsrfTokenValid('person', $request->request->get('token'))) {
             $argument = $argumentRepository->findOneBy(['campaign' => $campaign, 'id' => $request->request->get('argument', 0)]);
             if ($argument) {
                 $em = $this->getDoctrine()->getManager();
                 $testPerson = $personRepository->findOneBy(['email' => $person->getEmail()]);
-                if (!$testPerson) {
+                if ($testPerson) {
                     // update person if something has changed
                     // doctrine will take care of the changeset...
                     $testPerson->setFirstname($person->getFirstname());
@@ -101,6 +102,7 @@ class CampaignController extends AbstractController
             'campaign' => $campaign,
             'politician' => $politician,
             'form' => $form->createView(),
+            'person' => $person,
         ]);
     }
 
