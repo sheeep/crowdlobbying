@@ -20,7 +20,6 @@
                                 </label>
                             {% endfor %}
                         </div>
-                        {{ dump(person) }}
                         <div class="act__center-col center-text richtext"><h2>{% trans %}Absender{% endtrans %}</h2>
                             <div class="mdc-text-field mdc-text-field--outlined act__input"><input
                                         class="mdc-text-field__input" id="tf-outlined" name="person[firstname]"{% if person and person.firstname %} value="{{ person.firstname }}"{% endif %} type="text">
