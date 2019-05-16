@@ -1,156 +1,127 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ campaign }}{% endblock %}
-
 {% block body %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col text-center">
-                <h1>Header</h1>
-                <button id="home-scroll" class="btn btn-primary">Scroll</button>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        {% if latestEntries|length %}
-            <div class="row">
-                <div class="col">
-                    <div id="home-caroussel">
-                        {% for entry in latestEntries %}
-                            <div class="home-caroussel-entry" style="background-color: {{ entry.color }};">
-                                <div class="meta">
-                                    <p>Von: {{ entry.person }}</p>
-                                    <p>An: {{ entry.politician }} ({{ entry.politician.party.short }}/{{ entry.politician.region.short }})</p>
-                                    <p>Betreff: {{ entry.campaign }}</p>
-                                </div>
-                                <p class="argument">
-                                    {{ entry.argument }}
-                                </p>
-                            </div>
-                        {% endfor %}
+<section class="hero">
+    <div class="hero__inner">
+        <div class="viewport-width">
+            <div class="page-width">
+                <div class="layout-width">
+                    <div class="hero__content"><h2>{% trans %}Crowd-Lobbying{% endtrans %}</h2>
+                        <h1>{% trans %}Wir wollen keinen digitalen Pass von der UBS, Swisscom oder der Swica!{% endtrans %}</h1>
+                        <p>{{ total }} {% trans %}Nachrichten an den Ständerat verschickt{% endtrans %}</p>
+                        <button class="action-button medium"
+                                onclick="utils.scrollTo(&quot;.how-it-works&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">
+                            {% trans %}Mitmachen{% endtrans %}
+                        </button>
                     </div>
                 </div>
             </div>
-        {% endif %}
-        <div class="row" id="scroll-target">
-            <div class="col text-center">
-                <select id="region-selector" class="select2">
-                    <option value="0" selected>Kanton Wählen</option>
-                    {% for region in campaign.regions %}
-                        <option value="{{ region.id }}">{{ region }}</option>
-                    {% endfor %}
-                </select>
-                <br /><br />
-            </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <div id="politician-canvas">
-                    {% for politician in politicians %}
-                        <div class="politician-entry" data-region="{{ politician.region.id }}">
-                            ({{ campaign.entryCountByPolitician(politician) }})<br />
-                            &lt;&lt;Bild&gt;&gt; soomTM<br />
-                            <p><b>{{ politician }}</b> ({{ politician.party.short }}/{{ politician.region.short }})</p>
-                            <p>Stimmabsicht: {% spaceless %}
-                                    {% set wipCount = campaign.wipCountByPolitician(politician).status %}
-                                    {% if wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}
-                                        Ja (:
-                                    {% elseif wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_NO') %}
-                                        Nein :(
-                                    {% else %}
-                                        ???
-                                    {% endif %}
-                            {% endspaceless %}</p>
-                            {% if wipCount != constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}
-                                <a href="{{ path('app_campaign_lobby', {'campaign': campaign.slug, 'slug': politician.slug}) }}" class="btn btn-danger">yada yada!</a>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
+    </div>
+</section>
+{% if latestEntries|length %}
+    <section class="messages-carousel">
+        <div class="messages-carousel__cards">
+            {% for entry in latestEntries %}
+                <div class="messages-carousel__slide">
+                    <blockquote class="card pink" style="background-color: {{ entry.color }};">
+                        <header class="card__header"><cite class="card__meta"><span class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ entry.politician }}</strong> ({{ entry.politician.party.short }}/{{ entry.politician.region.short }})</span><span
+                                        class="card__meta-line">{% trans %}Von:{% endtrans %} {{ entry.person }}, {{ entry.person.city }}</span><span class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ entry.campaign }}</span></cite>
+                        </header>
+                        <p class="card__quote">{% trans %}«{% endtrans %}{{ entry.argument }}{% trans %}»{% endtrans %}</p></blockquote>
                 </div>
-            </div>
+            {% endfor %}
         </div>
-        <div class="row">
-            <div class="col">
-                <script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe src="https://donorbox.org/embed/crowdlobbying-digitaler-pass" height="685px" width="100%" style="max-width:500px; min-width:310px; max-height:none!important" seamless="seamless" name="donorbox" frameborder="0" scrolling="no" allowpaymentrequest></iframe>
+    </section>
+{% endif %}
+<section class="campaign-info">
+    <div class="viewport-width">
+        <div class="page-width">
+            <div class="layout-width">
+                <div class="campaign-info__content"><p class="lead">{% trans %}Der Bundesrat plant einen historischen
+                            Systemwechsel: Der digitale Schweizer Pass (E-ID) soll neu von privaten Unternehmen ausgestellt
+                            werden. Nur der Ständerat kann den Fehlentscheid noch stoppen.{% endtrans %}</p>
+                    <p>{% trans %}Beteiligen Sie sich jetzt am Crowd-Lobbying. Überzeugen Sie die Ständerätin oder den Ständerat
+                            aus Ihrem Kanton davon, dass Sie den digitalen Pass nicht im Swisscom-Shop oder in einer
+                            UBS-Filiale beziehen wollen!{% endtrans %}</p>
+                    <p>
+                        <a onclick="utils.scrollTo(&quot;.faq&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">{% trans %}Mehr
+                                erfahren{% endtrans %}</a></p></div>
             </div>
         </div>
     </div>
-{% endblock %}
-
-{% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-    <style>
-        #home-caroussel {
-            margin-top: 2em;
-            margin-bottom: 2em;
-        }
-        
-        .home-caroussel-entry {
-            color: #FFFFFF;
-            padding: 15px;
-            margin: 0 5px;
-        }
-        
-        #politician-canvas {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-gap: 20px;
-        }
-        
-        .politician-entry {
-            background: lightgray;
-            padding: 15px;
-        }
-    </style>
-{% endblock %}
-
-{% block javascripts %}
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    <script>
-        $('#home-scroll').on('click', function(e) {
-            e.preventDefault();
-
-            $('html, body').animate({ scrollTop: ($('#scroll-target').offset().top - 75)}, 2000);
-        });
-        
-        $('#region-selector').on('change', function() {
-            var value = $(this).val();
-            if (value > 0) {
-                $('#politician-canvas > .politician-entry').hide();
-                $('#politician-canvas > .politician-entry[data-region="' + value + '"]').show();
-            } else {
-                $('#politician-canvas > .politician-entry').show();
-            }
-        });
-
-        $(document).ready(function() {
-            $('.select2').select2();
-        });
-
-        $('#home-caroussel').slick({
-            centerMode: true,
-            centerPadding: '60px',
-            slidesToShow: 3,
-            arrows: false,
-            dots: false,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 2
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    </script>
+</section>
+<section class="how-it-works" id="how-it-works">
+    <div class="viewport-width">
+        <div class="page-width">
+            <div class="layout-width"><h1 class="how-it-works__title">{% trans %}So einfach geht Crowd-Lobbying:{% endtrans %}</h1>
+                <ol class="how-it-works__steps">
+                    <li class="how-it-works__step"><span class="how-it-works__ordinal">1.</span> {% trans %}Wählen Sie Ihren
+                            Kanton.{% endtrans %}
+                    </li>
+                    <li class="how-it-works__step"><span class="how-it-works__ordinal">2.</span> {% trans %}Wählen Sie ein Mitglied
+                            des Ständerates.{% endtrans %}
+                    </li>
+                    <li class="how-it-works__step"><span class="how-it-works__ordinal">3.</span> {% trans %}Entscheiden Sie sich
+                            für eine Nachricht.{% endtrans %}
+                    </li>
+                </ol>
+                <div class="how-it-works__richtext"><p>{% trans %}Wir verschicken Ihre Nachricht per SMS, E-Mail, Post oder Fax an
+                            das von Ihnen gewählte Mitglied des Ständerates.{% endtrans %}</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="officials">
+    <div class="viewport-width">
+        <div class="page-width">
+            <div class="layout-width">
+                <div class="officials__canton-chooser">
+                    <div class="mdc-select mdc-select--outlined officials__select"><i
+                                class="mdc-select__dropdown-icon"></i> <select class="mdc-select__native-control">
+                            <option value disabled="disabled" selected="selected"></option>
+                            {% for region in campaign.regions %}
+                                <option value="{{ region.id }}">{{ region }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch"><label class="mdc-floating-label">{% trans %}Kanton
+                                        wählen{% endtrans %}</label></div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="officials__list">
+                    {% for politician in politicians %}
+                        <section class="official officials__card" data-region="{{ politician.region.id }}">
+                            <div class="official__portrait"
+                                 style="background-image: url(&quot;/assets/officials/{{ politician }}.jpg&quot;)">
+                                {% set voteCount = campaign.entryCountByPolitician(politician) %}
+                                <div class="badge official__badge">{{ voteCount > 999 ? '999+' : voteCount }}</div>
+                            </div>
+                            {% set wipCount = campaign.wipCountByPolitician(politician).status %}
+                            <div class="official__footer"><span class="official__name"><strong>{{ politician }}</strong> ({{ politician.party.short }}/{{ politician.region.short }})</span><span
+                                        class="official__state {% if wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}with-us{% elseif wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_NO') %}against-us{% else %}unknown{% endif %}" title="{% if wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}{% trans %}mit uns{% endtrans %}{% elseif wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_NO') %}{% trans %}gegen uns{% endtrans %}{% else %}{% trans %}unbekannt{% endtrans %}{% endif %}">{% trans %}Stimmabsicht{% endtrans %}</span><a
+                                        href="{{ path('app_campaign_lobby', {'campaign': campaign.slug, 'slug': politician.slug}) }}">
+                                    <button class="action-button small official__button{{ wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') ? ' visually-hidden' }}">{% trans %}Lobbyieren{% endtrans %}</button>
+                                </a></div>
+                        </section>
+                    {% endfor %}
+                </div>
+                <div class="officials__explanation readable-width"><h2 class="officials__title">{% trans %}Lobby-Status{% endtrans %}</h2>
+                    <div class="officials__states"><span class="officials__state against-us">{% trans %}gegen uns{% endtrans %}</span><span
+                                class="officials__state unknown">{% trans %}unbekannt{% endtrans %}</span><span class="officials__state with-us">{% trans %}mit uns{% endtrans %}</span>
+                    </div>
+                    <div class="officials__richtext richtext"><p class="lead">{% trans %}Wer hat welche Stimmabstichten? Der
+                                Lobby-Status zeigt Ihnen, wem Sie eine Nachricht schicken sollten. Gemeinsam wollen wir
+                                PolitikerInnen überzeugen, die noch keine feste Meinung geäussert haben oder die unserem
+                                Anliegen kritisch gegenüber stehen. Wer für unser Anliegen eintritt, erhält keine
+                                Nachrichten mehr.{% endtrans %}</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'campaign/Partials/donate.html.twig' %}
 {% endblock %}

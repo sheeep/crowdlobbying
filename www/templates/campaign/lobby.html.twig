@@ -1,70 +1,90 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ campaign }}{% endblock %}
+{% set headerClass = 'force-background' %}
+{% set hasFAQ = false %}
 
 {% block body %}
-    <div class="container">
-        {{ form_start(form) }}
-            {% for argument in campaign.arguments %}
-                <div class="row">
-                    <div class="col">
-                        <label class="argument-wrapper">
-                            <input type="radio" name="argument" value="{{ argument.id }}" />
-                            <div class="argument">
-                                {{ argument }}
+    <section class="act">
+        <div class="viewport-width">
+            <div class="page-width">
+                <div class="layout-width">
+                    <div class="act__richtext act__center-col center-text richtext"><h1>{% trans %}Wählen Sie eine Nachricht{% endtrans %}</h1>
+                        <p>{% trans %}An:{% endtrans %} <strong>{{ politician }}</strong> ({{ politician.party.short }}/{{ politician.region.short }})<br>{% trans %}Betreff:{% endtrans %} {{ campaign }}</p></div>
+                    <form name="person" class="act__form" action="{{ path('app_campaign_lobby', {'campaign': campaign.slug, 'slug': politician.slug}) }}" method="post">
+                        <div class="act__select-message">
+                            {% for argument in campaign.arguments %}
+                                <label for="argument-{{ loop.index }}">
+                                    <input type="radio" name="argument" id="argument-{{ loop.index }}" value="{{ argument.id }}" style="visibility: hidden;" />
+                                    <blockquote class="act__message" onclick="app.act.selectMessage()">{% trans %}«{% endtrans %}{{ argument }}{% trans %}»{% endtrans %}
+                                    </blockquote>
+                                </label>
+                            {% endfor %}
+                        </div>
+                        {{ dump(person) }}
+                        <div class="act__center-col center-text richtext"><h2>{% trans %}Absender{% endtrans %}</h2>
+                            <div class="mdc-text-field mdc-text-field--outlined act__input"><input
+                                        class="mdc-text-field__input" id="tf-outlined" name="person[firstname]"{% if person and person.firstname %} value="{{ person.firstname }}"{% endif %} type="text">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch"><label class="mdc-floating-label"
+                                                                                   for="tf-outlined">{% trans %}Vorname*{% endtrans %}</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
                             </div>
-                        </label>
-                    </div>
+                            <div class="mdc-text-field mdc-text-field--outlined act__input"><input
+                                        class="mdc-text-field__input" id="tf-outlined" name="person[lastname]"{% if person and person.lastname %} value="{{ person.lastname }}"{% endif %} type="text">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch"><label class="mdc-floating-label"
+                                                                                   for="tf-outlined">{% trans %}Nachname*{% endtrans %}</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined act__input"><input
+                                        class="mdc-text-field__input" id="tf-outlined" name="person[email]"{% if person and person.email %} value="{{ person.email }}"{% endif %} type="email">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch"><label class="mdc-floating-label"
+                                                                                   for="tf-outlined">{% trans %}E-Mail*{% endtrans %}</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined act__input"><input
+                                        class="mdc-text-field__input" id="tf-outlined" name="person[city]"{% if person and person.city %} value="{{ person.city }}"{% endif %} type="text">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch"><label class="mdc-floating-label"
+                                                                                   for="tf-outlined">{% trans %}Ort*{% endtrans %}</label></div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-form-field act__input">
+                                <div class="mdc-checkbox"><input class="mdc-checkbox__native-control" id="checkbox-1"
+                                                                 type="checkbox" value="1" name="optInInformation">
+                                    <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                    </div>
+                                </div>
+                                <label for="checkbox-1">{% trans %}Ich möchte informiert bleiben lorem ipsum dolor{% endtrans %}</label></div>
+                            <input type="hidden" name="color" id="card-color">
+                            <input type="hidden" name="token" value="{{ csrf_token('person') }}" />
+                            <button class="action-button medium act__button" type="submit">{% trans %}Abschicken{% endtrans %}</button>
+                        </div>
+                    </form>
+                    <div class="act__legal act__center-col richtext"><p>{% trans %}Mit Ihrer Eingabe akzeptieren Sie unsere <a
+                                    onclick="utils.scrollTo(&quot;#terms-of-use&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">Nutzungsbedingungen</a>
+                            sowie die <a
+                                    onclick="utils.scrollTo(&quot;#privacy&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">Datenschutzbestimmungen</a>.{% endtrans %}
+                        </p></div>
                 </div>
-            {% endfor %}
-            {{ form_row(form.firstname) }}
-            {{ form_row(form.lastname) }}
-            {{ form_row(form.email) }}
-            {{ form_row(form.city) }}
-            <div>
-                <label>
-                    <input type="checkbox" value="1" name="optInInformation"> Blablabla, mehr infos und so #DatenSammlung
-                </label>
             </div>
-            <div class="text-right">
-                <button type="submit" class="btn btn-primary">Senden</button>
-            </div>
-        {{ form_end(form) }}
-    </div>
-{% endblock %}
-
-{% block stylesheets %}
-    <style>
-        label.argument-wrapper {
-            display: block;
-            margin: 15px 0;
-            background-color: lightgray;
-            cursor: pointer;
-        }
-        
-        label.argument-wrapper input {
-            display: none;
-        }
-
-        label.argument-wrapper .argument {
-            background-color: lightgray;
-            padding: 15px;
-        }
-        
-        label.argument-wrapper input:checked + .argument {
-            background-color: gray;
-        }
-    </style>
-{% endblock %}
-
-{% block javascripts %}
-    <script>
-    $('form[name="person"]').on('submit', function(e) {
-        var val = $('form[name="person"] label.argument-wrapper input[type="radio"]:checked').val();
-        if (typeof val === 'undefined' || val < 1) {
-            e.preventDefault();
-            return false;
-        }
-    });
-    </script>
+        </div>
+    </section>
 {% endblock %}

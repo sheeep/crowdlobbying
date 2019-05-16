@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="fr">
+  <file id="messages.fr">
+    <unit id="CCsQTdX" name="Herzlichen Dank für Ihre Nachricht">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/thanks.html.twig:11</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Herzlichen Dank für Ihre Nachricht</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="r_Eowdu" name="134d7e4">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/thanks.html.twig:12</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Bitte helfen Sie mit und teilen Sie Ihr Argument mit Ihren FreundInnen, Familien,
+                                    Verwandten und Bekannten.</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="eCPlVT." name="An:">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/thanks.html.twig:16</note>
+        <note category="file-source" priority="1">templates/campaign/lobby.html.twig:12</note>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:28</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:15</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:26</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>An:</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="_4TuU6q" name="Von:">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/thanks.html.twig:17</note>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:29</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:16</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:27</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Von:</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="xcRoAOS" name="Betreff:">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/thanks.html.twig:18</note>
+        <note category="file-source" priority="1">templates/campaign/lobby.html.twig:12</note>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:29</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:17</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:28</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Betreff:</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="poEKQq2" name="«">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/thanks.html.twig:19</note>
+        <note category="file-source" priority="1">templates/campaign/lobby.html.twig:18</note>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:31</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:18</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:29</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>«</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="B_g_P38" name="»">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/thanks.html.twig:19</note>
+        <note category="file-source" priority="1">templates/campaign/lobby.html.twig:18</note>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:31</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:18</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:29</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>»</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="ixP5jyz" name="Alle Nachrichten&#10;                                        ansehen">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/thanks.html.twig:21</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Alle Nachrichten
+                                        ansehen</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="Z4Al9MD" name="Weitere Person lobbyieren">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/thanks.html.twig:22</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Weitere Person lobbyieren</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="LzYUzBW" name="Wählen Sie eine Nachricht">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/lobby.html.twig:11</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Wählen Sie eine Nachricht</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id=".sA.Buo" name="Absender">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/lobby.html.twig:24</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Absender</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="2.puWq4" name="Vorname*">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/lobby.html.twig:30</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Vorname*</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="H8fghvj" name="Nachname*">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/lobby.html.twig:40</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Nachname*</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="Z8sLaSq" name="E-Mail*">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/lobby.html.twig:50</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>E-Mail*</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="0f9_Wnl" name="Ort*">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/lobby.html.twig:60</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Ort*</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="_qM_y3K" name="Ich möchte informiert bleiben lorem ipsum dolor">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/lobby.html.twig:75</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Ich möchte informiert bleiben lorem ipsum dolor</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="hXLWOak" name="Abschicken">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/lobby.html.twig:78</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Abschicken</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="rWaBp_U" name="a62a567">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/lobby.html.twig:81</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Mit Ihrer Eingabe akzeptieren Sie unsere &lt;a
+                                    onclick="utils.scrollTo(&amp;quot;#terms-of-use&amp;quot;, { offset: document.querySelector(&amp;quot;.header&amp;quot;).offsetHeight * -1 })"&gt;Nutzungsbedingungen&lt;/a&gt;
+                            sowie die &lt;a
+                                    onclick="utils.scrollTo(&amp;quot;#privacy&amp;quot;, { offset: document.querySelector(&amp;quot;.header&amp;quot;).offsetHeight * -1 })"&gt;Datenschutzbestimmungen&lt;/a&gt;.</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="fU3.Emj" name="Spenden">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/Partials/donate.html.twig:5</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:34</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:41</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:49</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:55</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Spenden</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="tMVJqBI" name="Mit Ihrer Spende bringen wir diese Kampagne weiter.">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/Partials/donate.html.twig:6</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:35</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:42</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:50</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:56</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Mit Ihrer Spende bringen wir diese Kampagne weiter.</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="CztUn1t" name="[[DONORBOX]]">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/Partials/donate.html.twig:8</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>[[DONORBOX]]</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="VR71bJL" name="Bankverbindung">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/Partials/donate.html.twig:10</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Bankverbindung</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="vuEy5Lo" name="0fee24f">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/Partials/donate.html.twig:11</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Verein PublicBeta&lt;br&gt;Crowd-Lobbying&lt;br&gt;4051 Basel&lt;br&gt;IBAN CH58 0900 0000 1509 7572 2&lt;br&gt;Post-Konto
+                                                                                                                          15-97572-2</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="MFDlgfK" name="Teilen">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/Partials/donate.html.twig:21</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Teilen</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="1wuRGDJ" name="1cdd0d3">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/Partials/donate.html.twig:22</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Bitte helfen Sie mit und teilen Sie die Kampagne mit Ihren FreundInnen, Familien, Verwandten und
+                            Bekannten.</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="rJSTjEy" name="2cd82a4">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/Partials/donate.html.twig:33</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>&lt;p&gt;Hallo&lt;/p&gt;
+                            &lt;p&gt;Ich habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf&lt;/p&gt;
+                            &lt;p&gt;https://www.digitaler-pass.ch/&lt;/p&gt;
+                            &lt;p&gt;kannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du
+                                gegen eine E-ID von von privaten Unternehmen bist.&lt;/p&gt;
+                            &lt;p&gt;Es würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.&lt;/p&gt;
+                            &lt;p&gt;Vielen Dank und freundliche Grüsse&lt;/p&gt;</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="BE6acrE" name="96882f9">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/Partials/donate.html.twig:41</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Hallo\n\nIch habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf \n\nhttps://www.digitaler-pass.ch/\n\nkannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du gegen eine E-ID von von privaten Unternehmen bist.\n\nEs würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.\n\nVielen Dank und freundliche Grüsse</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="2xfq0_2" name="kopieren">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/Partials/donate.html.twig:43</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>kopieren</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="StN12dL" name="Crowd-Lobbying">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:9</note>
+        <note category="file-source" priority="1">templates/base.html.twig:54</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Crowd-Lobbying</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="JvVkEXq" name="Wir wollen keinen digitalen Pass von der UBS, Swisscom oder der Swica!">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:10</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Wir wollen keinen digitalen Pass von der UBS, Swisscom oder der Swica!</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="VF4IF4g" name="Nachrichten an den Ständerat verschickt">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:11</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Nachrichten an den Ständerat verschickt</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="JhfoRZx" name="Mitmachen">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:14</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:67</note>
+        <note category="file-source" priority="1">templates/base.html.twig:175</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Mitmachen</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="DWIij_l" name="fc67d48">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:41</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Der Bundesrat plant einen historischen
+                            Systemwechsel: Der digitale Schweizer Pass (E-ID) soll neu von privaten Unternehmen ausgestellt
+                            werden. Nur der Ständerat kann den Fehlentscheid noch stoppen.</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="bh2seUC" name="e07dd37">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:44</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Beteiligen Sie sich jetzt am Crowd-Lobbying. Überzeugen Sie die Ständerätin oder den Ständerat
+                            aus Ihrem Kanton davon, dass Sie den digitalen Pass nicht im Swisscom-Shop oder in einer
+                            UBS-Filiale beziehen wollen!</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="j6NcCID" name="Mehr&#10;                                erfahren">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:48</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Mehr
+                                erfahren</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="DT0BsyW" name="So einfach geht Crowd-Lobbying:">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:57</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>So einfach geht Crowd-Lobbying:</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="1YvPt79" name="Wählen Sie Ihren&#10;                            Kanton.">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:59</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Wählen Sie Ihren
+                            Kanton.</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="dfRzttR" name="Wählen Sie ein Mitglied&#10;                            des Ständerates.">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:62</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Wählen Sie ein Mitglied
+                            des Ständerates.</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="ixaoIKE" name="Entscheiden Sie sich&#10;                            für eine Nachricht.">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:65</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Entscheiden Sie sich
+                            für eine Nachricht.</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="CRFcw3a" name="4bec2ee">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:69</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Wir verschicken Ihre Nachricht per SMS, E-Mail, Post oder Fax an
+                            das von Ihnen gewählte Mitglied des Ständerates.</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="zVsw0a_" name="Kanton&#10;                                        wählen">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:89</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Kanton
+                                        wählen</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="xRHYT.e" name="mit uns">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:105</note>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:114</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>mit uns</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="8zkoEXi" name="gegen uns">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:105</note>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:113</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>gegen uns</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="pBjmnp_" name="unbekannt">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:105</note>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:114</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>unbekannt</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="YxZ9.2W" name="Stimmabsicht">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:105</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Stimmabsicht</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="JxnNI0w" name="Lobbyieren">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:107</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Lobbyieren</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="ixKP3XQ" name="Lobby-Status">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:112</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Lobby-Status</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="xjfl_eA" name="7ee821c">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/index.html.twig:116</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Wer hat welche Stimmabstichten? Der
+                                Lobby-Status zeigt Ihnen, wem Sie eine Nachricht schicken sollten. Gemeinsam wollen wir
+                                PolitikerInnen überzeugen, die noch keine feste Meinung geäussert haben oder die unserem
+                                Anliegen kritisch gegenüber stehen. Wer für unser Anliegen eintritt, erhält keine
+                                Nachrichten mehr.</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="R7nEkeq" name="Jetzt spenden">
+      <notes>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:36</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:43</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:51</note>
+        <note category="file-source" priority="1">templates/campaign/statements.html.twig:57</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Jetzt spenden</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="LSZsoJJ" name="Campaign Title">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:8</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Campaign Title</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="ogqbaLN" name="Campaign Description">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:9</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Campaign Description</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="Ff7W_uU" name="Digitaler Schweizer Pass (E-ID)">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:64</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Digitaler Schweizer Pass (E-ID)</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="rlXpwFC" name="5139590">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:65</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>&lt;p&gt;Weil der Bund vor zehn Jahren mit der Einführung eines elektronischen Passes (E-ID) gescheitert
+                            ist, will er die Aufgabe nun verschiedenen Grosskonzernen überlassen. Noch kann das Parlament
+                            dies stoppen.&lt;/p&gt;
+                            &lt;h2&gt;Wofür braucht es eine staatlich geprüfte digitale Identität?&lt;/h2&gt;
+                            &lt;p&gt;Die elektronische Identität (E-ID) ist der digitale Pass. Die NutzerInnen einer E-ID sollen bei
+                                E-Government-Angeboten, beim Online-Shopping und weiteren Online-Dienstleistungen wie
+                                Versicherungen eindeutig Identifizierbar sein. Damit sollen Risiken wie Identitätsklau und
+                                Manipulationen im Netz verunmöglicht werden. Besonders bei sensiblen Vorgängen wie
+                                Gesundheitsdaten, bei Abstimmungen und Wahlen im Netz, der E-Steuerrechnung und im
+                                Online-Banking würde die E-ID eine zentrale Rolle spielen. Im Vergleich mit anderen Staaten ist
+                                die Schweiz in Sachen elektronischer Identität in den letzten Jahren in Rückstand geraten.&lt;/p&gt;
+                            &lt;h2&gt;Welche Lösung schlägt der Bundesrat vor?&lt;/h2&gt;
+                            &lt;p&gt;Das Gesetz über elektronische Identifizierungsdienste sieht eine Rollenteilung zwischen Staat und
+                                Privaten vor. Der Staat gibt die E-ID nicht mehr selber heraus. Die technische Lösung für die
+                                E-ID kommt von privaten Anbietern, den sogenannten Identitätsdienstleistern (IdP). Diese sollen
+                                für den Vertrieb und den Aufbau der elektronischen Identität zuständig sein, und der Bund nur
+                                noch als schwache Kontrollbehörde eingesetzt werden. Das Passbüro wird damit abgeschafft. An
+                                dessen Stelle treten grosse Privatbanken, wie die UBS, private Versicherungsgesellschaften, wie
+                                die CSS Versicherung, oder staatsnahe Giganten, wie die Post. Diese Schweizer Grossfirmen wären
+                                unter dem Dach des Konglomerats «SwissSign» fortan im Besitz der Daten und der
+                                Persönlichkeitsprofile, die durch die Benutzung der E-ID entstehen.&lt;/p&gt;
+                            &lt;h2&gt;Warum ist dieser Schritt so gefährlich?&lt;/h2&gt;
+                            &lt;p&gt;Die Sicherung der Identität ist seit jeher eine staatlich-hoheitliche Aufgabe, die unter
+                                demokratische Kontrolle gehört. Es ist unverständlich, dass der Bund ausschliesslich private
+                                Akteure als E-ID-Aussteller festschreibt. Damit erhalten die privaten E-ID-Aussteller grosse
+                                Freiheit in der Speicherung und Verwendung unserer Daten und dem Bund bleibt nur eine schwache
+                                Kontrollfunktion.&lt;/p&gt;
+                            &lt;h2&gt;Wer unterstützt das Crowd-Lobbying?&lt;/h2&gt;
+                            &lt;p&gt;Wir sind ein breiter Zusammenschluss von Organisationen und Netzwerken, die sich dafür einsetzen,
+                                dass der digitale Pass weiterhin vom Staat an die Bevölkerung ausgegeben wird. Die Kampagne wird
+                                u.a. unterstützt von der Stiftung für Konsumentenschutz, der Digitalen Gesellschaft, der
+                                Demokratie-Plattform WeCollect und dem Verein PublicBeta.&lt;/p&gt;</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="JNlyIR5" name="Nach&#10;                        oben">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:106</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Nach
+                        oben</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="t977_c." name="Über uns">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:118</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Über uns</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="BwW7fJr" name="46fe775">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:119</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Crowd-Lobbying ist eine unabhängige Schweizer Kampagnenplattform. Wir ermöglichen Menschen,
+                                Nachrichten an das Parlament zu schicken, die ihnen am Herzen liegen. Gemeinsam setzen wir
+                                uns ein für eine Schweiz, in der wir leben wollen. Die Plattform ist ein Community-Projekt
+                                und wurde an den Campaign Hackdays 2019 entwickelt.</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="Z1o7sYJ" name="Medienkontakt">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:123</note>
+        <note category="file-source" priority="1">templates/base.html.twig:183</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Medienkontakt</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="nj6Ynzk" name="167c73b">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:124</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>&lt;p&gt;Che Wagner&lt;br&gt;Tel. +41 76 230 75 29&lt;br&gt;&lt;a href="mailto:che.wagner@publicbeta.ch"&gt;che.wagner@publicbeta.ch&lt;/a&gt;
+                        &lt;/p&gt;</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="uKYFGSP" name="Impressum">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:126</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Impressum</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="FCV.dXf" name="&lt;p&gt;Daniel Graf&lt;br&gt;Dammerkirchstr. 44&lt;br&gt;CH-4056 Basel&lt;/p&gt;">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:127</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>&lt;p&gt;Daniel Graf&lt;br&gt;Dammerkirchstr. 44&lt;br&gt;CH-4056 Basel&lt;/p&gt;</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="32cAxL4" name="Nutzungsbedingungen">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:135</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Nutzungsbedingungen</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="xydkvbA" name="35f62d5">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:136</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+                        &lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                            fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
+                            porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia
+                            non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
+                            enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+                            aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
+                            velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
+                            pariatur?&lt;/p&gt;</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="9iT88Ny" name="Datenschutz">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:151</note>
+        <note category="file-source" priority="1">templates/base.html.twig:186</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Datenschutz</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="i5cuUpP" name="626acd5">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:152</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>&lt;p&gt;Der Schutz der Privatsphäre und namentlich der Datenschutz sind uns wichtig. Gestützt auf Artikel
+                        13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes
+                        (Datenschutzgesetz, DSG) hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz
+                        vor Missbrauch ihrer persönlichen Daten. Wir halten diese Bestimmungen ein. Persönliche Daten
+                        werden streng vertraulich behandelt und weder an Dritte verkauft noch weitergegeben.&lt;/p&gt;
+                        &lt;p&gt;Wenn Sie unsere Website besuchen oder unsere E-Mails lesen, speichern wir verschiedene
+                            Informationen. Einige Daten geben Sie bei der Registrierung für Dienstleistungen selbst bekannt.
+                            Andere, nicht persönliche Daten werden aufgrund von technischen Abläufen gespeichert,
+                            beispielsweise IP-Adressen.&lt;/p&gt;</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="8702EHz" name="Verein Public Beta, Basel">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:162</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Verein Public Beta, Basel</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="Gd1Zciu" name="v.1.0.0-alpha.10">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:163</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>v.1.0.0-alpha.10</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="4E0kxSs" name="Startseite">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:173</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Startseite</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="0UrF4I." name="Ständerätinnen&#10;                                und Ständeräte">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:178</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Ständerätinnen
+                                und Ständeräte</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="TsSTbEF" name="Nachrichten-Feed">
+      <notes>
+        <note category="file-source" priority="1">templates/base.html.twig:180</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>Nachrichten-Feed</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="EaYsI0E" name="city">
+      <notes>
+        <note category="file-source" priority="1">src/Form/PersonType.php:15</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>city</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="giREF.l" name="email">
+      <notes>
+        <note category="file-source" priority="1">src/Form/PersonType.php:15</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>email</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="VbXFH4Z" name="lastname">
+      <notes>
+        <note category="file-source" priority="1">src/Form/PersonType.php:15</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>lastname</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="TP3eab3" name="firstname">
+      <notes>
+        <note category="file-source" priority="1">src/Form/PersonType.php:15</note>
+        <note category="state" priority="1">new</note>
+      </notes>
+      <segment>
+        <source>firstname</source>
+        <target></target>
+      </segment>
+    </unit>
+  </file>
+</xliff>
