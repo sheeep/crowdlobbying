@@ -6,6 +6,7 @@ use App\Entity\Campaign;
 use App\Entity\CampaignEntry;
 use App\Entity\Person;
 use App\Entity\Politician;
+use App\Entity\Region;
 use App\Form\PersonType;
 use App\Repository\ArgumentRepository;
 use App\Repository\CampaignEntryRepository;
@@ -24,16 +25,17 @@ use Symfony\Component\Routing\Annotation\Route;
 class CampaignController extends AbstractController
 {
     /**
-     * @Route("/{region}", name="app_campaign_index", methods={"GET"})
+     * @Route("/{region}", name="app_campaign_index", methods={"GET"}, requirements={"region"="\d+"}, defaults={"region"=0})
      * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
+     * @MVC\ParamConverter("region", options={"mapping": {"region": "id"}})
      */
-    public function index($region, Campaign $campaign, PoliticianRepository $politicianRepository, CampaignEntryRepository $campaignEntryRepository): Response
+    public function index(Campaign $campaign, Region $region = null, PoliticianRepository $politicianRepository, CampaignEntryRepository $campaignEntryRepository): Response
     {
         $entries = $campaignEntryRepository->findBy(['campaign' => $campaign], ['id' => 'desc'], 10);
         shuffle($entries);
 
         if ($region) {
-            $politicians = $politicianRepository->findByTypeAndRegions($campaign->getPoliticianType(), [$region])
+            $politicians = $politicianRepository->findByTypeAndRegions($campaign->getPoliticianType(), [$region]);
         } else {
             $politicians = $politicianRepository->findByCampaign($campaign);
         }
