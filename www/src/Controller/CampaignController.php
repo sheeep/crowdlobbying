@@ -80,7 +80,7 @@ class CampaignController extends AbstractController
 
                 $jsonWriter->write($campaign);
                 // @TODO call PDF generator
-                $message = (new \Swift_Message('Crowd-Lobbying: Keinen digitalen Pass von privaten Unternehmen!'))
+                $message = (new \Swift_Message('Crowd-Lobbying'))
                     ->setFrom('send@example.com')
                     ->setTo($person->getEmail())
                     ->setBody(
@@ -91,7 +91,7 @@ class CampaignController extends AbstractController
                                 'politician' => $politician,
                             ]
                         ),
-                        'text/plain'
+                        'text/html'
                     );
 
                 $mailer->send($message);
