@@ -5,6 +5,8 @@ easy_admin:
       class: App\Entity\Campaign
     CampaignEntry:
       class: App\Entity\CampaignEntry
+    Argument:
+      class: App\Entity\Argument
     WipCount:
       class: App\Entity\WipCount
     Person:

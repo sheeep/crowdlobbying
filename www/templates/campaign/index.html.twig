@@ -96,7 +96,7 @@
                     {% for politician in politicians %}
                         <section class="official officials__card" data-region="{{ politician.region.id }}">
                             <div class="official__portrait"
-                                 style="background-image: url(&quot;/assets/officials/{{ politician }}.jpg&quot;)">
+                                 style="background-image: url('/assets/officials/{{ politician }}.jpg')">
                                 {% set voteCount = campaign.entryCountByPolitician(politician) %}
                                 <div class="badge official__badge">{{ voteCount > 999 ? '999+' : voteCount }}</div>
                             </div>

@@ -93,6 +93,7 @@ class CampaignController extends AbstractController
                         ),
                         'text/plain'
                     );
+
                 $mailer->send($message);
                 return $this->redirectToRoute('app_campaign_thanks', ['campaign' => $campaign->getSlug(), 'id' => $campaignEntry->getId()]);
             }
