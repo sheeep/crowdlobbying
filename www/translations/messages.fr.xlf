@@ -8,7 +8,7 @@
       </notes>
       <segment>
         <source>Herzlichen Dank für Ihre Nachricht</source>
-        <target>Herzlichen Dank für Ihre Nachricht</target>
+        <target>Nous vous remercions pour votre message.</target>
       </segment>
     </unit>
     <unit id="r_Eowdu" name="134d7e4">
@@ -19,8 +19,7 @@
       <segment>
         <source>Bitte helfen Sie mit und teilen Sie Ihr Argument mit Ihren FreundInnen, Familien,
                                     Verwandten und Bekannten.</source>
-        <target>Bitte helfen Sie mit und teilen Sie Ihr Argument mit Ihren FreundInnen, Familien,
-                                                    Verwandten und Bekannten.</target>
+        <target>Nous vous prions de participer et de partager cette campagne avec vos amies et amis, familles, proches et connaissances.</target>
       </segment>
     </unit>
     <unit id="eCPlVT." name="An:">
@@ -34,7 +33,7 @@
       </notes>
       <segment>
         <source>An:</source>
-        <target>An:</target>
+        <target>À:</target>
       </segment>
     </unit>
     <unit id="_4TuU6q" name="Von:">
@@ -47,7 +46,7 @@
       </notes>
       <segment>
         <source>Von:</source>
-        <target>Von:</target>
+        <target>De:</target>
       </segment>
     </unit>
     <unit id="xcRoAOS" name="Betreff:">
@@ -61,7 +60,7 @@
       </notes>
       <segment>
         <source>Betreff:</source>
-        <target>Betreff:</target>
+        <target>Objet:</target>
       </segment>
     </unit>
     <unit id="poEKQq2" name="«">
@@ -100,8 +99,7 @@
       <segment>
         <source>Alle Nachrichten
                                         ansehen</source>
-        <target>Alle Nachrichten
-                                        ansehen</target>
+        <target>Voir tous les messages</target>
       </segment>
     </unit>
     <unit id="Z4Al9MD" name="Weitere Person lobbyieren">
@@ -111,7 +109,7 @@
       </notes>
       <segment>
         <source>Weitere Person lobbyieren</source>
-        <target>Weitere Person lobbyieren</target>
+        <target>Continuer à faire du lobbying</target>
       </segment>
     </unit>
     <unit id="LzYUzBW" name="Wählen Sie eine Nachricht">
@@ -121,7 +119,7 @@
       </notes>
       <segment>
         <source>Wählen Sie eine Nachricht</source>
-        <target>Wählen Sie eine Nachricht</target>
+        <target>Sélectionnez un message</target>
       </segment>
     </unit>
     <unit id=".sA.Buo" name="Absender">
@@ -131,7 +129,7 @@
       </notes>
       <segment>
         <source>Absender</source>
-        <target>Absender</target>
+        <target>Expéditeur</target>
       </segment>
     </unit>
     <unit id="2.puWq4" name="Vorname*">
@@ -141,7 +139,7 @@
       </notes>
       <segment>
         <source>Vorname*</source>
-        <target>Vorname*</target>
+        <target>Prénom*</target>
       </segment>
     </unit>
     <unit id="H8fghvj" name="Nachname*">
@@ -151,7 +149,7 @@
       </notes>
       <segment>
         <source>Nachname*</source>
-        <target>Nachname*</target>
+        <target>Nom*</target>
       </segment>
     </unit>
     <unit id="Z8sLaSq" name="E-Mail*">
@@ -161,7 +159,7 @@
       </notes>
       <segment>
         <source>E-Mail*</source>
-        <target>E-Mail*</target>
+        <target>E-mail* (ne sera pas publié)</target>
       </segment>
     </unit>
     <unit id="0f9_Wnl" name="Ort*">
@@ -171,7 +169,7 @@
       </notes>
       <segment>
         <source>Ort*</source>
-        <target>Ort*</target>
+        <target>Lieu*</target>
       </segment>
     </unit>
     <unit id="_qM_y3K" name="Ich möchte informiert bleiben lorem ipsum dolor">
@@ -181,7 +179,7 @@
       </notes>
       <segment>
         <source>Ich möchte informiert bleiben lorem ipsum dolor</source>
-        <target>Ich möchte informiert bleiben lorem ipsum dolor</target>
+        <target>J’aimerais rester informé.</target>
       </segment>
     </unit>
     <unit id="hXLWOak" name="Abschicken">
@@ -191,7 +189,7 @@
       </notes>
       <segment>
         <source>Abschicken</source>
-        <target>Abschicken</target>
+        <target>Envoyer</target>
       </segment>
     </unit>
     <unit id="rWaBp_U" name="a62a567">
@@ -204,10 +202,10 @@
                                     onclick="utils.scrollTo(&amp;quot;#terms-of-use&amp;quot;, { offset: document.querySelector(&amp;quot;.header&amp;quot;).offsetHeight * -1 })"&gt;Nutzungsbedingungen&lt;/a&gt;
                             sowie die &lt;a
                                     onclick="utils.scrollTo(&amp;quot;#privacy&amp;quot;, { offset: document.querySelector(&amp;quot;.header&amp;quot;).offsetHeight * -1 })"&gt;Datenschutzbestimmungen&lt;/a&gt;.</source>
-        <target><![CDATA[Mit Ihrer Eingabe akzeptieren Sie unsere <a
-                                    onclick="utils.scrollTo(&quot;#terms-of-use&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">Nutzungsbedingungen</a>
-                            sowie die <a
-                                                    onclick="utils.scrollTo(&quot;#privacy&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">Datenschutzbestimmungen</a>.]]></target>
+        <target><![CDATA[En participant vous acceptez nos <a
+                                    onclick="utils.scrollTo(&quot;#terms-of-use&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">conditions d’utilisation</a>
+                            ainsi que la politique de <a
+                                                    onclick="utils.scrollTo(&quot;#privacy&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">confidentialité des données</a>.]]></target>
       </segment>
     </unit>
     <unit id="fU3.Emj" name="Spenden">
@@ -221,7 +219,7 @@
       </notes>
       <segment>
         <source>Spenden</source>
-        <target>Spenden</target>
+        <target>Faire un don</target>
       </segment>
     </unit>
     <unit id="tMVJqBI" name="Mit Ihrer Spende bringen wir diese Kampagne weiter.">
@@ -235,7 +233,7 @@
       </notes>
       <segment>
         <source>Mit Ihrer Spende bringen wir diese Kampagne weiter.</source>
-        <target>Mit Ihrer Spende bringen wir diese Kampagne weiter.</target>
+        <target>Ensemble, nous sommes plus forts : Soutenez le crowd-lobbying par votre don. Merci beaucoup !</target>
       </segment>
     </unit>
     <unit id="CztUn1t" name="[[DONORBOX]]">
@@ -255,7 +253,7 @@
       </notes>
       <segment>
         <source>Bankverbindung</source>
-        <target>Bankverbindung</target>
+        <target>Coordonnées bancaires</target>
       </segment>
     </unit>
     <unit id="vuEy5Lo" name="0fee24f">
@@ -266,8 +264,12 @@
       <segment>
         <source>Verein PublicBeta&lt;br&gt;Crowd-Lobbying&lt;br&gt;4051 Basel&lt;br&gt;IBAN CH58 0900 0000 1509 7572 2&lt;br&gt;Post-Konto
                                                                                                                           15-97572-2</source>
-        <target><![CDATA[Verein PublicBeta<br>Crowd-Lobbying<br>4051 Basel<br>IBAN CH58 0900 0000 1509 7572 2<br>Post-Konto
-                                                                                                                          15-97572-2]]></target>
+        <target><![CDATA[Verein PublicBeta<br>
+Crowd-Lobbying <br>
+4001 Bâle <br>
+IBAN CH 58 0900 0000 1509 7572 2 <br>
+Compte postal 15-97572-2
+]]></target>
       </segment>
     </unit>
     <unit id="MFDlgfK" name="Teilen">
@@ -277,7 +279,7 @@
       </notes>
       <segment>
         <source>Teilen</source>
-        <target>Teilen</target>
+        <target>Partager</target>
       </segment>
     </unit>
     <unit id="1wuRGDJ" name="1cdd0d3">
@@ -288,8 +290,7 @@
       <segment>
         <source>Bitte helfen Sie mit und teilen Sie die Kampagne mit Ihren FreundInnen, Familien, Verwandten und
                             Bekannten.</source>
-        <target>Bitte helfen Sie mit und teilen Sie die Kampagne mit Ihren FreundInnen, Familien, Verwandten und
-                            Bekannten.</target>
+        <target>Nous vous prions de participer et de partager cette campagne avec vos amies et amis, familles, proches et connaissances.                            Bekannten.</target>
       </segment>
     </unit>
     <unit id="rJSTjEy" name="2cd82a4">
@@ -305,13 +306,12 @@
                                 gegen eine E-ID von von privaten Unternehmen bist.&lt;/p&gt;
                             &lt;p&gt;Es würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.&lt;/p&gt;
                             &lt;p&gt;Vielen Dank und freundliche Grüsse&lt;/p&gt;</source>
-        <target><![CDATA[<p>Hallo</p>
-                            <p>Ich habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf</p>
-                            <p>https://www.digitaler-pass.ch/</p>
-                            <p>kannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du
-                                gegen eine E-ID von von privaten Unternehmen bist.</p>
-                            <p>Es würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.</p>
-                            <p>Vielen Dank und freundliche Grüsse</p>]]></target>
+        <target><![CDATA[<p>Salut</p>
+                            <p>Je viens de faire du lobbying contre la e-ID. Ça paraît compliqué ? Rien de plus simple que cela. Sur</p>
+                            <p>https://www.crowd-lobbying.ch</p>
+                            <p>tu peux envoyer un argument à une conseillère ou à un conseiller aux Etats de ton choix, qui explique pourquoi tu es contraire à un passeport numérique délivré par une entreprise privée.</p>
+                            <p>Ça me ferait plaisir si toi aussi tu soutenais ce projet.</p>
+                            <p>Merci beaucoup et meilleures salutations</p>]]></target>
       </segment>
     </unit>
     <unit id="BE6acrE" name="96882f9">
@@ -321,7 +321,12 @@
       </notes>
       <segment>
         <source>Hallo\n\nIch habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf \n\nhttps://www.digitaler-pass.ch/\n\nkannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du gegen eine E-ID von von privaten Unternehmen bist.\n\nEs würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.\n\nVielen Dank und freundliche Grüsse</source>
-        <target>Hallo\n\nIch habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf \n\nhttps://www.digitaler-pass.ch/\n\nkannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du gegen eine E-ID von von privaten Unternehmen bist.\n\nEs würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.\n\nVielen Dank und freundliche Grüsse</target>
+        <target><![CDATA[<p>Salut</p>
+                            <p>Je viens de faire du lobbying contre la e-ID. Ça paraît compliqué ? Rien de plus simple que cela. Sur</p>
+                            <p>https://www.crowd-lobbying.ch</p>
+                            <p>tu peux envoyer un argument à une conseillère ou à un conseiller aux Etats de ton choix, qui explique pourquoi tu es contraire à un passeport numérique délivré par une entreprise privée.</p>
+                            <p>Ça me ferait plaisir si toi aussi tu soutenais ce projet.</p>
+                            <p>Merci beaucoup et meilleures salutations</p>]]></target>
       </segment>
     </unit>
     <unit id="2xfq0_2" name="kopieren">
@@ -331,7 +336,7 @@
       </notes>
       <segment>
         <source>kopieren</source>
-        <target>kopieren</target>
+        <target>Copier le texte</target>
       </segment>
     </unit>
     <unit id="StN12dL" name="Crowd-Lobbying">
@@ -352,7 +357,7 @@
       </notes>
       <segment>
         <source>Wir wollen keinen digitalen Pass von der UBS, Swisscom oder der Swica!</source>
-        <target>Wir wollen keinen digitalen Pass von der UBS, Swisscom oder der Swica!</target>
+        <target>Nous ne voulons pas de passeport numérique (e-ID) de l’UBS, de Swisscom ou de l’assurance CSS !</target>
       </segment>
     </unit>
     <unit id="VF4IF4g" name="Nachrichten an den Ständerat verschickt">
@@ -362,7 +367,7 @@
       </notes>
       <segment>
         <source>Nachrichten an den Ständerat verschickt</source>
-        <target>Nachrichten an den Ständerat verschickt</target>
+        <target>messages envoyés au Conseil des Etats.</target>
       </segment>
     </unit>
     <unit id="JhfoRZx" name="Mitmachen">
@@ -374,7 +379,7 @@
       </notes>
       <segment>
         <source>Mitmachen</source>
-        <target>Mitmachen</target>
+        <target>Participer</target>
       </segment>
     </unit>
     <unit id="DWIij_l" name="fc67d48">
@@ -386,9 +391,7 @@
         <source>Der Bundesrat plant einen historischen
                             Systemwechsel: Der digitale Schweizer Pass (E-ID) soll neu von privaten Unternehmen ausgestellt
                             werden. Nur der Ständerat kann den Fehlentscheid noch stoppen.</source>
-        <target>Der Bundesrat plant einen historischen
-                            Systemwechsel: Der digitale Schweizer Pass (E-ID) soll neu von privaten Unternehmen ausgestellt
-                            werden. Nur der Ständerat kann den Fehlentscheid noch stoppen.</target>
+        <target>Le Conseil fédéral envisage un retournement de dimension historique : le passeport Suisse numérique (e-ID) serait dorénavant émis par des entreprises privées. Seul le Conseil des États peut encore empêcher que cette pratique douteuse soit mise en place.</target>
       </segment>
     </unit>
     <unit id="bh2seUC" name="e07dd37">
@@ -400,9 +403,8 @@
         <source>Beteiligen Sie sich jetzt am Crowd-Lobbying. Überzeugen Sie die Ständerätin oder den Ständerat
                             aus Ihrem Kanton davon, dass Sie den digitalen Pass nicht im Swisscom-Shop oder in einer
                             UBS-Filiale beziehen wollen!</source>
-        <target>Beteiligen Sie sich jetzt am Crowd-Lobbying. Überzeugen Sie die Ständerätin oder den Ständerat
-                            aus Ihrem Kanton davon, dass Sie den digitalen Pass nicht im Swisscom-Shop oder in einer
-                            UBS-Filiale beziehen wollen!</target>
+        <target><![CDATA[<p>Participez maintenant au Crowd-Lobbying. Convainquez la conseillère ou le conseiller aux Etats de votre canton que vous ne voulez pas aller retirer votre passeport numérique auprès d’un Swisscom Shop ou d’une succursale de l’UBS !</p>
+<p>La campagne est soutenue par la Fondation pour la protection des consommateurs suisse, la Fédération romande des consommateurs, la Société Numérique, la plateforme WeCollect et l’association PublicBeta.</p>]]></target>
       </segment>
     </unit>
     <unit id="j6NcCID" name="Mehr&#10;                                erfahren">
@@ -413,8 +415,7 @@
       <segment>
         <source>Mehr
                                 erfahren</source>
-        <target>Mehr
-                                erfahren</target>
+        <target>En savoir plus</target>
       </segment>
     </unit>
     <unit id="DT0BsyW" name="So einfach geht Crowd-Lobbying:">
@@ -424,7 +425,7 @@
       </notes>
       <segment>
         <source>So einfach geht Crowd-Lobbying:</source>
-        <target>So einfach geht Crowd-Lobbying:</target>
+        <target>Le Crowd-Lobbying est aussi simple que cela :</target>
       </segment>
     </unit>
     <unit id="1YvPt79" name="Wählen Sie Ihren&#10;                            Kanton.">
@@ -435,8 +436,7 @@
       <segment>
         <source>Wählen Sie Ihren
                             Kanton.</source>
-        <target>Wählen Sie Ihren
-                            Kanton.</target>
+        <target> Sélectionnez votre canton.</target>
       </segment>
     </unit>
     <unit id="dfRzttR" name="Wählen Sie ein Mitglied&#10;                            des Ständerates.">
@@ -447,8 +447,7 @@
       <segment>
         <source>Wählen Sie ein Mitglied
                             des Ständerates.</source>
-        <target>Wählen Sie ein Mitglied
-                            des Ständerates.</target>
+        <target>Sélectionnez un membre du Conseil des Etats.</target>
       </segment>
     </unit>
     <unit id="ixaoIKE" name="Entscheiden Sie sich&#10;                            für eine Nachricht.">
@@ -459,8 +458,7 @@
       <segment>
         <source>Entscheiden Sie sich
                             für eine Nachricht.</source>
-        <target>Entscheiden Sie sich
-                            für eine Nachricht.</target>
+        <target>Optez pour un message.</target>
       </segment>
     </unit>
     <unit id="CRFcw3a" name="4bec2ee">
@@ -471,8 +469,7 @@
       <segment>
         <source>Wir verschicken Ihre Nachricht per SMS, E-Mail, Post oder Fax an
                             das von Ihnen gewählte Mitglied des Ständerates.</source>
-        <target>Wir verschicken Ihre Nachricht per SMS, E-Mail, Post oder Fax an
-                            das von Ihnen gewählte Mitglied des Ständerates.</target>
+        <target>Au bon moment, nous envoyons les messages recueillis par SMS, e-mail, poste ou fax au membre du Conseil des Etats que vous avez choisi.</target>
       </segment>
     </unit>
     <unit id="zVsw0a_" name="Kanton&#10;                                        wählen">
@@ -483,8 +480,7 @@
       <segment>
         <source>Kanton
                                         wählen</source>
-        <target>Kanton
-                                        wählen</target>
+        <target>Sélectionner un canton</target>
       </segment>
     </unit>
     <unit id="xRHYT.e" name="mit uns">
@@ -495,7 +491,7 @@
       </notes>
       <segment>
         <source>mit uns</source>
-        <target>mit uns</target>
+        <target>Pour nous</target>
       </segment>
     </unit>
     <unit id="8zkoEXi" name="gegen uns">
@@ -506,7 +502,7 @@
       </notes>
       <segment>
         <source>gegen uns</source>
-        <target>gegen uns</target>
+        <target>Contre nous</target>
       </segment>
     </unit>
     <unit id="pBjmnp_" name="unbekannt">
@@ -517,7 +513,7 @@
       </notes>
       <segment>
         <source>unbekannt</source>
-        <target>unbekannt</target>
+        <target>Inconnue</target>
       </segment>
     </unit>
     <unit id="YxZ9.2W" name="Stimmabsicht">
@@ -527,7 +523,7 @@
       </notes>
       <segment>
         <source>Stimmabsicht</source>
-        <target>Stimmabsicht</target>
+        <target>Intention de vote</target>
       </segment>
     </unit>
     <unit id="JxnNI0w" name="Lobbyieren">
@@ -537,7 +533,7 @@
       </notes>
       <segment>
         <source>Lobbyieren</source>
-        <target>Lobbyieren</target>
+        <target>Faire du lobbying</target>
       </segment>
     </unit>
     <unit id="ixKP3XQ" name="Lobby-Status">
@@ -547,7 +543,7 @@
       </notes>
       <segment>
         <source>Lobby-Status</source>
-        <target>Lobby-Status</target>
+        <target>Statut-Lobby</target>
       </segment>
     </unit>
     <unit id="xjfl_eA" name="7ee821c">
@@ -561,11 +557,7 @@
                                 PolitikerInnen überzeugen, die noch keine feste Meinung geäussert haben oder die unserem
                                 Anliegen kritisch gegenüber stehen. Wer für unser Anliegen eintritt, erhält keine
                                 Nachrichten mehr.</source>
-        <target>Wer hat welche Stimmabstichten? Der
-                                Lobby-Status zeigt Ihnen, wem Sie eine Nachricht schicken sollten. Gemeinsam wollen wir
-                                PolitikerInnen überzeugen, die noch keine feste Meinung geäussert haben oder die unserem
-                                Anliegen kritisch gegenüber stehen. Wer für unser Anliegen eintritt, erhält keine
-                                Nachrichten mehr.</target>
+        <target>Qui a quelles intentions de vote ? Le Statut-Lobby vous montre à qui vous devriez envoyer un message. Ensemble, nous voulons convaincre les politiciens et politiciennes qui n’ont pas encore d’avis sur le sujet, ou qui ont montré une position contraire à la notre à ce sujet. Les personnes qui se sont prononcés en faveur de notre cause ne recevront plus de messages.</target>
       </segment>
     </unit>
     <unit id="R7nEkeq" name="Jetzt spenden">
@@ -578,7 +570,7 @@
       </notes>
       <segment>
         <source>Jetzt spenden</source>
-        <target>Jetzt spenden</target>
+        <target>Donner maintenant</target>
       </segment>
     </unit>
     <unit id="LSZsoJJ" name="Campaign Title">
@@ -588,7 +580,7 @@
       </notes>
       <segment>
         <source>Campaign Title</source>
-        <target>Campaign Title</target>
+        <target>Crowd-Lobbying passeport numérique (e-ID)</target>
       </segment>
     </unit>
     <unit id="ogqbaLN" name="Campaign Description">
@@ -598,7 +590,7 @@
       </notes>
       <segment>
         <source>Campaign Description</source>
-        <target>Campaign Description</target>
+        <target>Crowd-Lobbying est une plateforme de campagne suisse indépendante. Nous permettons aux gens d’envoyer des messages au parlement qui leur tiennent à cœur.</target>
       </segment>
     </unit>
     <unit id="Ff7W_uU" name="Digitaler Schweizer Pass (E-ID)">
@@ -608,7 +600,7 @@
       </notes>
       <segment>
         <source>Digitaler Schweizer Pass (E-ID)</source>
-        <target>Digitaler Schweizer Pass (E-ID)</target>
+        <target>Le passeport suisse numérique (e-ID)</target>
       </segment>
     </unit>
     <unit id="rlXpwFC" name="5139590">
@@ -649,38 +641,15 @@
                                 dass der digitale Pass weiterhin vom Staat an die Bevölkerung ausgegeben wird. Die Kampagne wird
                                 u.a. unterstützt von der Stiftung für Konsumentenschutz, der Digitalen Gesellschaft, der
                                 Demokratie-Plattform WeCollect und dem Verein PublicBeta.&lt;/p&gt;</source>
-        <target><![CDATA[<p>Weil der Bund vor zehn Jahren mit der Einführung eines elektronischen Passes (E-ID) gescheitert
-                            ist, will er die Aufgabe nun verschiedenen Grosskonzernen überlassen. Noch kann das Parlament
-                            dies stoppen.</p>
-                            <h2>Wofür braucht es eine staatlich geprüfte digitale Identität?</h2>
-                            <p>Die elektronische Identität (E-ID) ist der digitale Pass. Die NutzerInnen einer E-ID sollen bei
-                                E-Government-Angeboten, beim Online-Shopping und weiteren Online-Dienstleistungen wie
-                                Versicherungen eindeutig Identifizierbar sein. Damit sollen Risiken wie Identitätsklau und
-                                Manipulationen im Netz verunmöglicht werden. Besonders bei sensiblen Vorgängen wie
-                                Gesundheitsdaten, bei Abstimmungen und Wahlen im Netz, der E-Steuerrechnung und im
-                                Online-Banking würde die E-ID eine zentrale Rolle spielen. Im Vergleich mit anderen Staaten ist
-                                die Schweiz in Sachen elektronischer Identität in den letzten Jahren in Rückstand geraten.</p>
-                            <h2>Welche Lösung schlägt der Bundesrat vor?</h2>
-                            <p>Das Gesetz über elektronische Identifizierungsdienste sieht eine Rollenteilung zwischen Staat und
-                                Privaten vor. Der Staat gibt die E-ID nicht mehr selber heraus. Die technische Lösung für die
-                                E-ID kommt von privaten Anbietern, den sogenannten Identitätsdienstleistern (IdP). Diese sollen
-                                für den Vertrieb und den Aufbau der elektronischen Identität zuständig sein, und der Bund nur
-                                noch als schwache Kontrollbehörde eingesetzt werden. Das Passbüro wird damit abgeschafft. An
-                                dessen Stelle treten grosse Privatbanken, wie die UBS, private Versicherungsgesellschaften, wie
-                                die CSS Versicherung, oder staatsnahe Giganten, wie die Post. Diese Schweizer Grossfirmen wären
-                                unter dem Dach des Konglomerats «SwissSign» fortan im Besitz der Daten und der
-                                Persönlichkeitsprofile, die durch die Benutzung der E-ID entstehen.</p>
-                            <h2>Warum ist dieser Schritt so gefährlich?</h2>
-                            <p>Die Sicherung der Identität ist seit jeher eine staatlich-hoheitliche Aufgabe, die unter
-                                demokratische Kontrolle gehört. Es ist unverständlich, dass der Bund ausschliesslich private
-                                Akteure als E-ID-Aussteller festschreibt. Damit erhalten die privaten E-ID-Aussteller grosse
-                                Freiheit in der Speicherung und Verwendung unserer Daten und dem Bund bleibt nur eine schwache
-                                Kontrollfunktion.</p>
-                            <h2>Wer unterstützt das Crowd-Lobbying?</h2>
-                            <p>Wir sind ein breiter Zusammenschluss von Organisationen und Netzwerken, die sich dafür einsetzen,
-                                dass der digitale Pass weiterhin vom Staat an die Bevölkerung ausgegeben wird. Die Kampagne wird
-                                u.a. unterstützt von der Stiftung für Konsumentenschutz, der Digitalen Gesellschaft, der
-                                Demokratie-Plattform WeCollect und dem Verein PublicBeta.</p>]]></target>
+        <target><![CDATA[<p>Il y a dix ans, le projet d’introduction d’un moyen d’identification électronique par la Confédération a échoué. Désormais, elle veut déléguer cette tâche à différentes grandes entreprises. Cela peut encore être empêché par le parlement.</p>
+<h2>Pourquoi a-t-on besoin d’une identité numérique reconnue par l’Etat ?</h2>
+<p>L’identité électronique (e-ID) correspond au passeport numérique. L’identité des utilisateurs de l’e-ID doit être vérifiable lors de l’utilisation d’offres relatives à l’e-Government, l’achat en ligne et d’autres services en ligne tels que des assurances. De cette manière, des risques comme le vol d’identité et des manipulations en ligne devraient être minimisées. Notamment lors de procédures sensibles concernant des données médicales, des votations ou élections en ligne, la facture d’impôt numérique ou des opérations bancaires en ligne, la e-ID jouerait un rôle central. Comparé à d’autres états, la Suisse a pris du retard ces dernières années en ce qui concerne les moyens d’identification électronique.</p>
+<h2>Quelle solution le Conseil fédéral propose-t-il ?</h2>
+<p>La Loi fédérale sur les services d’identification électronique prévoit un partage des tâches entre l’Etat et le marché. L’Etat n’émet pas son propre moyen d’identification électronique. La solution technique des e-IDs provient d’opérateurs privés, de dits fournisseurs d’identité. Ces derniers sont responsables de la distribution et de l’élaboration de l’identité électronique, la Confédération ne représente plus qu’une autorité de contrôle faible. Le bureau des passeports est ainsi supprimé et remplacé par des grandes banques privées comme l’UBS, des sociétés d’assurances privées telles que la CSS Assurance ou des grandes entreprises proches de l’Etat tel que la poste. Ces grandes entreprises suisses, réunies sous l’égide du conglomérat «SwissSign», seraient dorénavant en possession des données et profils personnels issues de l’utilisation de l’e-ID.</p>
+<h2>Pourquoi est-ce que ce retournement est-il aussi dangereux ?</h2>
+<p>L’établissement de l’identité a toujours été une tâche de puissance publique, qui requiert un contrôle démocratique. Il est incompréhensible que la Confédération définisse uniquement des acteurs privés comme fournisseurs de moyens d’identité électronique. Ainsi les fournisseurs privés de l’e-ID obtiennent une grande liberté quant à la sauvegarde et l’utilisation de nos données – le rôle de la Confédération est réduit à une faible fonction de contrôle.</p>
+<h2>Qui soutient la campagne ?</h2>
+<p>La campagne est soutenue par la Fondation pour la protection des consommateurs suisse, la Fédération romande des consommateurs, la Société Numérique, la plateforme WeCollect et l’association PublicBeta.</p>]]></target>
       </segment>
     </unit>
     <unit id="JNlyIR5" name="Nach&#10;                        oben">
@@ -691,8 +660,7 @@
       <segment>
         <source>Nach
                         oben</source>
-        <target>Nach
-                        oben</target>
+        <target>Vers le haut</target>
       </segment>
     </unit>
     <unit id="t977_c." name="Über uns">
@@ -702,7 +670,7 @@
       </notes>
       <segment>
         <source>Über uns</source>
-        <target>Über uns</target>
+        <target>Qui sommes-nous ?</target>
       </segment>
     </unit>
     <unit id="BwW7fJr" name="46fe775">
@@ -715,10 +683,8 @@
                                 Nachrichten an das Parlament zu schicken, die ihnen am Herzen liegen. Gemeinsam setzen wir
                                 uns ein für eine Schweiz, in der wir leben wollen. Die Plattform ist ein Community-Projekt
                                 und wurde an den Campaign Hackdays 2019 entwickelt.</source>
-        <target>Crowd-Lobbying ist eine unabhängige Schweizer Kampagnenplattform. Wir ermöglichen Menschen,
-                                                Nachrichten an das Parlament zu schicken, die ihnen am Herzen liegen. Gemeinsam setzen wir
-                                                uns ein für eine Schweiz, in der wir leben wollen. Die Plattform ist ein Community-Projekt
-                                                und wurde an den Campaign Hackdays 2019 entwickelt.</target>
+        <target>Crowd-Lobbying est une plateforme de campagne suisse indépendante. Nous permettons aux personnes intéressés d’envoyer des messages au parlement qui leur tiennent à cœur.
+Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre. La plateforme est un projet communautaire. L’idée a été développée lors des Campaign-Hackdays 2019.</target>
       </segment>
     </unit>
     <unit id="Z1o7sYJ" name="Medienkontakt">
@@ -729,7 +695,7 @@
       </notes>
       <segment>
         <source>Medienkontakt</source>
-        <target>Medienkontakt</target>
+        <target>Contact médias</target>
       </segment>
     </unit>
     <unit id="nj6Ynzk" name="167c73b">
@@ -740,8 +706,7 @@
       <segment>
         <source>&lt;p&gt;Che Wagner&lt;br&gt;Tel. +41 76 230 75 29&lt;br&gt;&lt;a href="mailto:che.wagner@publicbeta.ch"&gt;che.wagner@publicbeta.ch&lt;/a&gt;
                         &lt;/p&gt;</source>
-        <target><![CDATA[<p>Che Wagner<br>Tel. +41 76 230 75 29<br><a href="mailto:che.wagner@publicbeta.ch">che.wagner@publicbeta.ch</a>
-                        </p>]]></target>
+        <target><![CDATA[<p>Che Wagner<br>Tel. +41 76 230 75 29<br><a href="mailto:che.wagner@publicbeta.ch">che.wagner@publicbeta.ch</a></p>]]></target>
       </segment>
     </unit>
     <unit id="uKYFGSP" name="Impressum">
@@ -761,7 +726,7 @@
       </notes>
       <segment>
         <source>&lt;p&gt;Daniel Graf&lt;br&gt;Dammerkirchstr. 44&lt;br&gt;CH-4056 Basel&lt;/p&gt;</source>
-        <target><![CDATA[<p>Daniel Graf<br>Dammerkirchstr. 44<br>CH-4056 Basel</p>]]></target>
+        <target><![CDATA[<p>Daniel Graf<br>Dammerkirchstr. 44<br>CH-4056 Bâle, <a href="http://www.publicbeta.ch" target="_blank">www.publicbeta.ch</a><br> Pascal Wacker, Backend, <a href="http://www.pascalwacker.ch" target="_blank">www.pascalwacker.ch</a><br> René Keller, Frontend, <a href="http://www.pixelherz.com" target="_blank">www.pixelherz.com</a><br> Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">www.raymann.cc</a></p>]]></target>
       </segment>
     </unit>
     <unit id="32cAxL4" name="Nutzungsbedingungen">
@@ -771,7 +736,7 @@
       </notes>
       <segment>
         <source>Nutzungsbedingungen</source>
-        <target>Nutzungsbedingungen</target>
+        <target>Conditions d’utilisation</target>
       </segment>
     </unit>
     <unit id="xydkvbA" name="35f62d5">
@@ -795,21 +760,7 @@
                             aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
                             velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
                             pariatur?&lt;/p&gt;</source>
-        <target><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                            fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
-                            porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia
-                            non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
-                            enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                            aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
-                            velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-                            pariatur?</p>]]></target>
+        <target><![CDATA[<p>Crowd-Lobbying correspond à transparence. En utilisant la plateforme, vous consentez à ce que votre message soit publié. Les parlementaires reçoivent les messages recueillis en un document – avec prénom, nom et lieu des expéditeurs respectifs. Nous publions le message sous la même forme sur le site web de la campagne, un choix sera également publié sur nos réseaux sociaux.</p>]]></target>
       </segment>
     </unit>
     <unit id="9iT88Ny" name="Datenschutz">
@@ -820,7 +771,7 @@
       </notes>
       <segment>
         <source>Datenschutz</source>
-        <target>Datenschutz</target>
+        <target>Confidentialité</target>
       </segment>
     </unit>
     <unit id="i5cuUpP" name="626acd5">
@@ -838,15 +789,7 @@
                             Informationen. Einige Daten geben Sie bei der Registrierung für Dienstleistungen selbst bekannt.
                             Andere, nicht persönliche Daten werden aufgrund von technischen Abläufen gespeichert,
                             beispielsweise IP-Adressen.&lt;/p&gt;</source>
-        <target><![CDATA[<p>Der Schutz der Privatsphäre und namentlich der Datenschutz sind uns wichtig. Gestützt auf Artikel
-                        13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes
-                        (Datenschutzgesetz, DSG) hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz
-                        vor Missbrauch ihrer persönlichen Daten. Wir halten diese Bestimmungen ein. Persönliche Daten
-                        werden streng vertraulich behandelt und weder an Dritte verkauft noch weitergegeben.</p>
-                        <p>Wenn Sie unsere Website besuchen oder unsere E-Mails lesen, speichern wir verschiedene
-                            Informationen. Einige Daten geben Sie bei der Registrierung für Dienstleistungen selbst bekannt.
-                            Andere, nicht persönliche Daten werden aufgrund von technischen Abläufen gespeichert,
-                            beispielsweise IP-Adressen.</p>]]></target>
+        <target><![CDATA[<p>Nous attachons la plus grande importance à la protection de votre sphère privée, et notamment de vos données. Conformément à l’article 13 de la Constitution suisse et de la législation en matière de protection des données (Loi sur la protection des données, LDP), toute personne a droit au respect de sa sphère privée et à une protection contre l’emploi abusif des données qui la concernent. Nous respectons ces dispositions. Les données personnelles sont traitées de manière strictement confidentielle et ne peuvent être ni vendues ni transmises à des tiers.</p> <p>Lorsque vous visitez notre site Internet ou lisez nos e-mails, nous enregistrons diverses informations. Certaines données sont communiquées par vous-même lors de l’enregistrement pour des prestations de service. D’autres données personnelles sont enregistrées en raison de processus techniques, par exemple adresses IP.</p> <p>Pour cette plateforme nous utilisons les outils de fournisseurs tiers suivants:</p> <ul> <li>Mailchimp pour les e-mails de la campagne</li> <li>Facebook, Twitter et Whatsapp pour le partage de contenus</li> <li>Stripe et Donorbox pour les dons</li> <li>Google Analytics pour des analyses web</li> </ul> <p>Si vous désirez plus d'informations, envoyez-nous un e-mail à l’adresse suivante: <a href="mailto:privacy@publicbeta.ch">privacy@publicbeta.ch</a>.</p>]]></target>
       </segment>
     </unit>
     <unit id="8702EHz" name="Verein Public Beta, Basel">
@@ -856,7 +799,7 @@
       </notes>
       <segment>
         <source>Verein Public Beta, Basel</source>
-        <target>Verein Public Beta, Basel</target>
+        <target>Verein PublicBeta, Bâle</target>
       </segment>
     </unit>
     <unit id="Gd1Zciu" name="v.1.0.0-alpha.10">
@@ -876,7 +819,7 @@
       </notes>
       <segment>
         <source>Startseite</source>
-        <target>Startseite</target>
+        <target>Page d'accueil</target>
       </segment>
     </unit>
     <unit id="0UrF4I." name="Ständerätinnen&#10;                                und Ständeräte">
@@ -887,8 +830,7 @@
       <segment>
         <source>Ständerätinnen
                                 und Ständeräte</source>
-        <target>Ständerätinnen
-                                und Ständeräte</target>
+        <target>Conseillères et Conseillers aux Etats</target>
       </segment>
     </unit>
     <unit id="TsSTbEF" name="Nachrichten-Feed">
@@ -898,7 +840,7 @@
       </notes>
       <segment>
         <source>Nachrichten-Feed</source>
-        <target>Nachrichten-Feed</target>
+        <target>Actualités</target>
       </segment>
     </unit>
     <unit id="EaYsI0E" name="city">

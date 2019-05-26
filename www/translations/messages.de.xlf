@@ -19,8 +19,7 @@
       <segment>
         <source>Bitte helfen Sie mit und teilen Sie Ihr Argument mit Ihren FreundInnen, Familien,
                                     Verwandten und Bekannten.</source>
-        <target>Bitte helfen Sie mit und teilen Sie Ihr Argument mit Ihren FreundInnen, Familien,
-                                                    Verwandten und Bekannten.</target>
+        <target>Bitte helfen Sie mit und teilen Sie die Kampagne mit Ihren FreundInnen, Familien, Verwandten und Bekannten.</target>
       </segment>
     </unit>
     <unit id="eCPlVT." name="An:">
@@ -161,7 +160,7 @@
       </notes>
       <segment>
         <source>E-Mail*</source>
-        <target>E-Mail*</target>
+        <target>E-Mail* (wird nicht veröffentlicht)</target>
       </segment>
     </unit>
     <unit id="0f9_Wnl" name="Ort*">
@@ -181,7 +180,7 @@
       </notes>
       <segment>
         <source>Ich möchte informiert bleiben lorem ipsum dolor</source>
-        <target>Ich möchte informiert bleiben lorem ipsum dolor</target>
+        <target>Ich möchte informiert bleiben.</target>
       </segment>
     </unit>
     <unit id="hXLWOak" name="Abschicken">
@@ -235,7 +234,7 @@
       </notes>
       <segment>
         <source>Mit Ihrer Spende bringen wir diese Kampagne weiter.</source>
-        <target>Mit Ihrer Spende bringen wir diese Kampagne weiter.</target>
+        <target>Gemeinsam sind wir stärker: Unterstützen Sie das Crowd-Lobbying mit Ihrer Spende. Vielen Dank!</target>
       </segment>
     </unit>
     <unit id="CztUn1t" name="[[DONORBOX]]">
@@ -321,7 +320,8 @@
       </notes>
       <segment>
         <source>Hallo\n\nIch habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf \n\nhttps://www.digitaler-pass.ch/\n\nkannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du gegen eine E-ID von von privaten Unternehmen bist.\n\nEs würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.\n\nVielen Dank und freundliche Grüsse</source>
-        <target>Hallo\n\nIch habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf \n\nhttps://www.digitaler-pass.ch/\n\nkannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du gegen eine E-ID von von privaten Unternehmen bist.\n\nEs würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.\n\nVielen Dank und freundliche Grüsse</target>
+        <target>Hallo\n\nIch habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf \n\nhttps://www.crowd-lobbying.ch/\n\nkannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du gegen einen digitalen Pass von von privaten Unternehmen bist.\n\nIch würde mich freuen, wenn Du dieses Projekt auch unterstützen würdest.\n\n
+Vielen Dank und freundliche Grüsse</target>
       </segment>
     </unit>
     <unit id="2xfq0_2" name="kopieren">
@@ -331,7 +331,7 @@
       </notes>
       <segment>
         <source>kopieren</source>
-        <target>kopieren</target>
+        <target>Text kopieren</target>
       </segment>
     </unit>
     <unit id="StN12dL" name="Crowd-Lobbying">
@@ -352,7 +352,7 @@
       </notes>
       <segment>
         <source>Wir wollen keinen digitalen Pass von der UBS, Swisscom oder der Swica!</source>
-        <target>Wir wollen keinen digitalen Pass von der UBS, Swisscom oder der Swica!</target>
+        <target>Wir wollen keinen digitalen Pass (E-ID) von der UBS, Swisscom oder der CSS Versicherung!</target>
       </segment>
     </unit>
     <unit id="VF4IF4g" name="Nachrichten an den Ständerat verschickt">
@@ -386,9 +386,7 @@
         <source>Der Bundesrat plant einen historischen
                             Systemwechsel: Der digitale Schweizer Pass (E-ID) soll neu von privaten Unternehmen ausgestellt
                             werden. Nur der Ständerat kann den Fehlentscheid noch stoppen.</source>
-        <target>Der Bundesrat plant einen historischen
-                            Systemwechsel: Der digitale Schweizer Pass (E-ID) soll neu von privaten Unternehmen ausgestellt
-                            werden. Nur der Ständerat kann den Fehlentscheid noch stoppen.</target>
+        <target>Der Bundesrat plant einen historischen Systemwechsel: Der digitale Schweizer Pass (E-ID) soll neu von privaten Unternehmen ausgestellt werden. Nur die Mitglieder des Ständerats können den Fehlentscheid noch stoppen.</target>
       </segment>
     </unit>
     <unit id="bh2seUC" name="e07dd37">
@@ -400,9 +398,8 @@
         <source>Beteiligen Sie sich jetzt am Crowd-Lobbying. Überzeugen Sie die Ständerätin oder den Ständerat
                             aus Ihrem Kanton davon, dass Sie den digitalen Pass nicht im Swisscom-Shop oder in einer
                             UBS-Filiale beziehen wollen!</source>
-        <target>Beteiligen Sie sich jetzt am Crowd-Lobbying. Überzeugen Sie die Ständerätin oder den Ständerat
-                            aus Ihrem Kanton davon, dass Sie den digitalen Pass nicht im Swisscom-Shop oder in einer
-                            UBS-Filiale beziehen wollen!</target>
+        <target><![CDATA[<p>Beteiligen Sie sich jetzt am Crowd-Lobbying. Überzeugen Sie die Ständerätin oder den Ständerat aus Ihrem Kanton davon, dass Sie den digitalen Pass nicht im Swisscom-Shop oder in einer UBS-Filiale beziehen wollen!</p>
+<p>Die Kampagne wird unterstützt von der Stiftung Konsumentenschutz Schweiz, der Fédération romande des consommateurs, der digitalen Gesellschaft, der Plattform WeCollect und dem Verein PublicBeta.</p>]]></target>
       </segment>
     </unit>
     <unit id="j6NcCID" name="Mehr&#10;                                erfahren">
@@ -413,8 +410,7 @@
       <segment>
         <source>Mehr
                                 erfahren</source>
-        <target>Mehr
-                                erfahren</target>
+        <target>Mehr erfahren</target>
       </segment>
     </unit>
     <unit id="DT0BsyW" name="So einfach geht Crowd-Lobbying:">
@@ -459,8 +455,7 @@
       <segment>
         <source>Entscheiden Sie sich
                             für eine Nachricht.</source>
-        <target>Entscheiden Sie sich
-                            für eine Nachricht.</target>
+        <target>Entscheiden Sie sich für eine Nachricht.</target>
       </segment>
     </unit>
     <unit id="CRFcw3a" name="4bec2ee">
@@ -471,8 +466,7 @@
       <segment>
         <source>Wir verschicken Ihre Nachricht per SMS, E-Mail, Post oder Fax an
                             das von Ihnen gewählte Mitglied des Ständerates.</source>
-        <target>Wir verschicken Ihre Nachricht per SMS, E-Mail, Post oder Fax an
-                            das von Ihnen gewählte Mitglied des Ständerates.</target>
+        <target>Wir verschicken die gesammelten Nachricht im richtigen Moment per SMS, E-Mail, Post oder Fax an das von Ihnen gewählte Mitglied des Ständerates.</target>
       </segment>
     </unit>
     <unit id="zVsw0a_" name="Kanton&#10;                                        wählen">
@@ -483,8 +477,7 @@
       <segment>
         <source>Kanton
                                         wählen</source>
-        <target>Kanton
-                                        wählen</target>
+        <target>Kanton wählen</target>
       </segment>
     </unit>
     <unit id="xRHYT.e" name="mit uns">
@@ -561,11 +554,7 @@
                                 PolitikerInnen überzeugen, die noch keine feste Meinung geäussert haben oder die unserem
                                 Anliegen kritisch gegenüber stehen. Wer für unser Anliegen eintritt, erhält keine
                                 Nachrichten mehr.</source>
-        <target>Wer hat welche Stimmabstichten? Der
-                                Lobby-Status zeigt Ihnen, wem Sie eine Nachricht schicken sollten. Gemeinsam wollen wir
-                                PolitikerInnen überzeugen, die noch keine feste Meinung geäussert haben oder die unserem
-                                Anliegen kritisch gegenüber stehen. Wer für unser Anliegen eintritt, erhält keine
-                                Nachrichten mehr.</target>
+        <target>Wer hat welche Stimmabstichten? Der Lobby-Status zeigt Ihnen, wem Sie eine Nachricht schicken sollten. Gemeinsam wollen wir PolitikerInnen überzeugen, die noch keine feste Meinung geäussert haben oder die unserem Anliegen kritisch gegenüber stehen. Wer für unser Anliegen eintritt, erhält keine Nachrichten mehr.</target>
       </segment>
     </unit>
     <unit id="R7nEkeq" name="Jetzt spenden">
@@ -588,7 +577,7 @@
       </notes>
       <segment>
         <source>Campaign Title</source>
-        <target>Campaign Title</target>
+        <target>Crowd-Lobbying digitaler Pass (E-ID)</target>
       </segment>
     </unit>
     <unit id="ogqbaLN" name="Campaign Description">
@@ -598,7 +587,7 @@
       </notes>
       <segment>
         <source>Campaign Description</source>
-        <target>Campaign Description</target>
+        <target> Crowd-Lobbying ist eine unabhängige Schweizer Kampagnenplattform. Wir ermöglichen Menschen, Nachrichten an das Parlament zu schicken, die ihnen am Herzen liegen.</target>
       </segment>
     </unit>
     <unit id="Ff7W_uU" name="Digitaler Schweizer Pass (E-ID)">
@@ -649,33 +638,13 @@
                                 dass der digitale Pass weiterhin vom Staat an die Bevölkerung ausgegeben wird. Die Kampagne wird
                                 u.a. unterstützt von der Stiftung für Konsumentenschutz, der Digitalen Gesellschaft, der
                                 Demokratie-Plattform WeCollect und dem Verein PublicBeta.&lt;/p&gt;</source>
-        <target><![CDATA[<p>Weil der Bund vor zehn Jahren mit der Einführung eines elektronischen Passes (E-ID) gescheitert
-                            ist, will er die Aufgabe nun verschiedenen Grosskonzernen überlassen. Noch kann das Parlament
-                            dies stoppen.</p>
-                            <h2>Wofür braucht es eine staatlich geprüfte digitale Identität?</h2>
-                            <p>Die elektronische Identität (E-ID) ist der digitale Pass. Die NutzerInnen einer E-ID sollen bei
-                                E-Government-Angeboten, beim Online-Shopping und weiteren Online-Dienstleistungen wie
-                                Versicherungen eindeutig Identifizierbar sein. Damit sollen Risiken wie Identitätsklau und
-                                Manipulationen im Netz verunmöglicht werden. Besonders bei sensiblen Vorgängen wie
-                                Gesundheitsdaten, bei Abstimmungen und Wahlen im Netz, der E-Steuerrechnung und im
-                                Online-Banking würde die E-ID eine zentrale Rolle spielen. Im Vergleich mit anderen Staaten ist
-                                die Schweiz in Sachen elektronischer Identität in den letzten Jahren in Rückstand geraten.</p>
-                            <h2>Welche Lösung schlägt der Bundesrat vor?</h2>
-                            <p>Das Gesetz über elektronische Identifizierungsdienste sieht eine Rollenteilung zwischen Staat und
-                                Privaten vor. Der Staat gibt die E-ID nicht mehr selber heraus. Die technische Lösung für die
-                                E-ID kommt von privaten Anbietern, den sogenannten Identitätsdienstleistern (IdP). Diese sollen
-                                für den Vertrieb und den Aufbau der elektronischen Identität zuständig sein, und der Bund nur
-                                noch als schwache Kontrollbehörde eingesetzt werden. Das Passbüro wird damit abgeschafft. An
-                                dessen Stelle treten grosse Privatbanken, wie die UBS, private Versicherungsgesellschaften, wie
-                                die CSS Versicherung, oder staatsnahe Giganten, wie die Post. Diese Schweizer Grossfirmen wären
-                                unter dem Dach des Konglomerats «SwissSign» fortan im Besitz der Daten und der
-                                Persönlichkeitsprofile, die durch die Benutzung der E-ID entstehen.</p>
-                            <h2>Warum ist dieser Schritt so gefährlich?</h2>
-                            <p>Die Sicherung der Identität ist seit jeher eine staatlich-hoheitliche Aufgabe, die unter
-                                demokratische Kontrolle gehört. Es ist unverständlich, dass der Bund ausschliesslich private
-                                Akteure als E-ID-Aussteller festschreibt. Damit erhalten die privaten E-ID-Aussteller grosse
-                                Freiheit in der Speicherung und Verwendung unserer Daten und dem Bund bleibt nur eine schwache
-                                Kontrollfunktion.</p>
+        <target><![CDATA[<p>Weil der Bund vor zehn Jahren mit der Einführung eines elektronischen Passes (E-ID) gescheitert ist, will er die Aufgabe nun verschiedenen Grosskonzernen überlassen. Noch kann das Parlament dies stoppen.</p>
+<h2>Wofür braucht es eine staatlich geprüfte digitale Identität?</h2>
+<p>Die elektronische Identität (E-ID) ist der digitale Pass. Die NutzerInnen einer E-ID sollen bei E-Government-Angeboten, beim Online-Shopping und weiteren Online-Dienstleistungen wie Versicherungen eindeutig Identifizierbar sein. Damit sollen Risiken wie Identitätsklau und Manipulationen im Netz verringert werden. Besonders bei sensiblen Vorgängen wie Gesundheitsdaten, bei Abstimmungen und Wahlen im Netz, der E-Steuerrechnung und im Online-Banking würde die E-ID eine zentrale Rolle spielen. Im Vergleich mit anderen Staaten ist die Schweiz in Sachen elektronischer Identität in den letzten Jahren in Rückstand geraten.</p>
+<h2>Welche Lösung schlägt der Bundesrat vor?</h2>
+<p>Das Gesetz über elektronische Identifizierungsdienste sieht eine Rollenteilung zwischen Staat und Privaten vor. Der Staat gibt die E-ID nicht mehr selber heraus. Die technische Lösung für die E-ID kommt von privaten Anbietern, den sogenannten Identitätsdienstleistern (IdP). Diese sollen für den Vertrieb und den Aufbau der elektronischen Identität zuständig sein, und der Bund nur noch als schwache Kontrollbehörde eingesetzt werden. Das Passbüro wird damit abgeschafft. An dessen Stelle treten grosse Privatbanken, wie die UBS, private Versicherungsgesellschaften, wie die CSS Versicherung, oder staatsnahe Giganten, wie die Post. Diese Schweizer Grossfirmen wären unter dem Dach des Konglomerats «SwissSign» fortan im Besitz der Daten und der Persönlichkeitsprofile, die durch die Benutzung der E-ID entstehen.</p>
+<h2>Warum ist dieser Schritt so gefährlich?</h2>
+<p>Die Sicherung der Identität ist seit jeher eine staatlich-hoheitliche Aufgabe, die unter demokratische Kontrolle gehört. Es ist unverständlich, dass der Bund ausschliesslich private Akteure als E-ID-Aussteller festschreibt. Damit erhalten die privaten E-ID-Aussteller grosse Freiheit in der Speicherung und Verwendung unserer Daten und dem Bund bleibt nur eine schwache Kontrollfunktion.</p>
                             <h2>Wer unterstützt das Crowd-Lobbying?</h2>
                             <p>Wir sind ein breiter Zusammenschluss von Organisationen und Netzwerken, die sich dafür einsetzen,
                                 dass der digitale Pass weiterhin vom Staat an die Bevölkerung ausgegeben wird. Die Kampagne wird
@@ -715,10 +684,7 @@
                                 Nachrichten an das Parlament zu schicken, die ihnen am Herzen liegen. Gemeinsam setzen wir
                                 uns ein für eine Schweiz, in der wir leben wollen. Die Plattform ist ein Community-Projekt
                                 und wurde an den Campaign Hackdays 2019 entwickelt.</source>
-        <target>Crowd-Lobbying ist eine unabhängige Schweizer Kampagnenplattform. Wir ermöglichen Menschen,
-                                                Nachrichten an das Parlament zu schicken, die ihnen am Herzen liegen. Gemeinsam setzen wir
-                                                uns ein für eine Schweiz, in der wir leben wollen. Die Plattform ist ein Community-Projekt
-                                                und wurde an den Campaign Hackdays 2019 entwickelt.</target>
+        <target>Crowd-Lobbying ist eine unabhängige Schweizer Kampagnenplattform. Wir ermöglichen Menschen, Nachrichten an das Parlament zu schicken, die ihnen am Herzen liegen. Gemeinsam setzen wir uns ein für eine Schweiz, in der wir leben wollen. Die Plattform ist ein Community-Projekt. Die Idee wurde an den Campaign Hackdays 2019 entwickelt.</target>
       </segment>
     </unit>
     <unit id="Z1o7sYJ" name="Medienkontakt">
@@ -761,7 +727,10 @@
       </notes>
       <segment>
         <source>&lt;p&gt;Daniel Graf&lt;br&gt;Dammerkirchstr. 44&lt;br&gt;CH-4056 Basel&lt;/p&gt;</source>
-        <target><![CDATA[<p>Daniel Graf<br>Dammerkirchstr. 44<br>CH-4056 Basel</p>]]></target>
+        <target><![CDATA[<p>Daniel Graf, Dammerkirchstr. 44, CH-4056 Basel, <a href="http://www.publicbeta.ch" target="_blank">www.publicbeta.ch</a><br>
+Pascal Wacker, Backend, <a href="http://www.pascalwacker.ch" target="_blank">www.pascalwacker.ch</a><br>
+René Keller, Frontend, <a href="http://www.pixelherz.com" target="_blank">www.pixelherz.com</a><br>
+Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">www.raymann.cc</a></p>]]></target>
       </segment>
     </unit>
     <unit id="32cAxL4" name="Nutzungsbedingungen">
@@ -795,21 +764,7 @@
                             aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
                             velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
                             pariatur?&lt;/p&gt;</source>
-        <target><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                            fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
-                            porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia
-                            non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
-                            enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                            aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
-                            velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-                            pariatur?</p>]]></target>
+        <target><![CDATA[<p>Crowd-Lobbying steht für Transparenz. Mit der Nutzung der Plattform sind Sie einverstanden, dass Ihre Nachricht veröffentlicht wird. Die ParlamentarierInnen erhalten die gesammelten Nachrichten in einem Dokument  – mit Vornamen, Namen und Ort der jeweiligen AbsenderInnen. Die Nachrichten publizieren wir in gleicher Form auf der Kampagnen-Webseite sowie eine Auswahl auf unseren Social Media-Kanälen.</p>]]></target>
       </segment>
     </unit>
     <unit id="9iT88Ny" name="Datenschutz">
@@ -838,15 +793,16 @@
                             Informationen. Einige Daten geben Sie bei der Registrierung für Dienstleistungen selbst bekannt.
                             Andere, nicht persönliche Daten werden aufgrund von technischen Abläufen gespeichert,
                             beispielsweise IP-Adressen.&lt;/p&gt;</source>
-        <target><![CDATA[<p>Der Schutz der Privatsphäre und namentlich der Datenschutz sind uns wichtig. Gestützt auf Artikel
-                        13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes
-                        (Datenschutzgesetz, DSG) hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz
-                        vor Missbrauch ihrer persönlichen Daten. Wir halten diese Bestimmungen ein. Persönliche Daten
-                        werden streng vertraulich behandelt und weder an Dritte verkauft noch weitergegeben.</p>
-                        <p>Wenn Sie unsere Website besuchen oder unsere E-Mails lesen, speichern wir verschiedene
-                            Informationen. Einige Daten geben Sie bei der Registrierung für Dienstleistungen selbst bekannt.
-                            Andere, nicht persönliche Daten werden aufgrund von technischen Abläufen gespeichert,
-                            beispielsweise IP-Adressen.</p>]]></target>
+        <target><![CDATA[<p>Der Schutz der Privatsphäre und namentlich der Datenschutz sind uns wichtig. Gestützt auf Artikel 13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes (Datenschutzgesetz, DSG) hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz vor Missbrauch ihrer persönlichen Daten. Wir halten diese Bestimmungen ein. Persönliche Daten werden streng vertraulich behandelt und weder an Dritte verkauft noch weitergegeben.</p>
+<p>Wenn Sie unsere Website besuchen oder unsere E-Mails lesen, speichern wir verschiedene Informationen. Einige Daten geben Sie bei der Registrierung für Dienstleistungen selbst bekannt. Andere, nicht persönliche Daten werden aufgrund von technischen Abläufen gespeichert, beispielsweise IP-Adressen.</p>
+<p>Für diese Plattform setzen wir folgende Werkzeuge von Drittanbietern ein:</p>
+<ul>
+<li>Mailchimp für Kampagnen-Emails</li>
+<li>Facebook, Twitter und Whatsapp für das Teilen von Inhalten</li>
+<li>Stripe und Donorbox für Spenden</li>
+<li>Google Analytics für Webanalysen</li>
+</ul>
+<p>Für mehr Informationen, wenden Sie sich an: <a href="mailto:privacy@publicbeta.ch">privacy@publicbeta.ch</a>.</p>]]></target>
       </segment>
     </unit>
     <unit id="8702EHz" name="Verein Public Beta, Basel">
@@ -856,17 +812,7 @@
       </notes>
       <segment>
         <source>Verein Public Beta, Basel</source>
-        <target>Verein Public Beta, Basel</target>
-      </segment>
-    </unit>
-    <unit id="Gd1Zciu" name="v.1.0.0-alpha.10">
-      <notes>
-        <note category="file-source" priority="1">templates/base.html.twig:163</note>
-        <note category="state" priority="1">new</note>
-      </notes>
-      <segment>
-        <source>v.1.0.0-alpha.10</source>
-        <target>v.1.0.0-alpha.10</target>
+        <target>Verein PublicBeta, Basel</target>
       </segment>
     </unit>
     <unit id="4E0kxSs" name="Startseite">
