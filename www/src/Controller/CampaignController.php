@@ -15,6 +15,7 @@ use App\Repository\PoliticianRepository;
 use App\Utils\JsonWriter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration as MVC;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,26 +26,60 @@ use Symfony\Component\Routing\Annotation\Route;
 class CampaignController extends AbstractController
 {
     /**
-     * @Route("/{region}", name="app_campaign_index", methods={"GET"}, requirements={"region"="\d+"}, defaults={"region"=0})
+     * @Route("/", name="app_campaign_index", methods={"GET"}, requirements={"region"="\d+"})
      * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
-     * @MVC\ParamConverter("region", options={"mapping": {"region": "id"}})
      */
-    public function index(Campaign $campaign, Region $region = null, PoliticianRepository $politicianRepository, CampaignEntryRepository $campaignEntryRepository): Response
+    public function index(Campaign $campaign, PoliticianRepository $politicianRepository, CampaignEntryRepository $campaignEntryRepository, Request $request): Response
     {
+        if ($request->getMethod() == 'GET' && $request->getLocale() != $request->get('_locale')) {
+            return $this->redirectToRoute('app_campaign_index', ['campaign' => $campaign->getSlug(), '_locale' => $request->getLocale()]);
+        }
+
         $entries = $campaignEntryRepository->findBy(['campaign' => $campaign], ['id' => 'desc'], 10);
         shuffle($entries);
 
-        if ($region) {
-            $politicians = $politicianRepository->findByTypeAndRegions($campaign->getPoliticianType(), [$region]);
-        } else {
-            $politicians = $politicianRepository->findByCampaign($campaign);
+        return $this->render('campaign/index.html.twig', [
+            'campaign' => $campaign,
+            'politicians' => $politicianRepository->findByCampaign($campaign),
+            'latestEntries' => $entries,
+            'total' => count($campaignEntryRepository->findBy(['campaign' => $campaign])),
+        ]);
+    }
+
+    /**
+     * @Route("/{region}", name="app_campaign_region_redirect", methods={"GET"}, requirements={"region"="\d+"})
+     * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
+     * @MVC\ParamConverter("region", options={"mapping": {"region": "id"}})
+     */
+    public function regionRedirect(Campaign $campaign, Region $region = null, Request $request): RedirectResponse
+    {
+        if ($request->getMethod() == 'GET' && $request->getLocale() != $request->get('_locale')) {
+            return $this->redirectToRoute('app_campaign_region_redirect', ['campaign' => $campaign->getSlug(), 'region' => $region->getId(), '_locale' => $request->getLocale()]);
         }
+
+        return $this->redirectToRoute('app_campaign_region', ['campaign' => $campaign->getSlug(), 'region' => $region->getSlug(), '_locale' => $request->getLocale()]);
+    }
+
+    /**
+     * @Route("/{region}", name="app_campaign_region", methods={"GET"}, requirements={"region"="[\w-]+"})
+     * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
+     * @MVC\ParamConverter("region", options={"mapping": {"region": "slug"}})
+     */
+    public function region(Campaign $campaign, Region $region = null, Request $request, PoliticianRepository $politicianRepository, CampaignEntryRepository $campaignEntryRepository): Response
+    {
+        if ($request->getMethod() == 'GET' && $request->getLocale() != $request->get('_locale')) {
+            return $this->redirectToRoute('app_campaign_region', ['campaign' => $campaign->getSlug(), 'region' => $region->getSlug(), '_locale' => $request->getLocale()]);
+        }
+
+        $entries = $campaignEntryRepository->findBy(['campaign' => $campaign], ['id' => 'desc'], 10);
+        shuffle($entries);
 
         return $this->render('campaign/index.html.twig', [
             'campaign' => $campaign,
-            'politicians' => $politicians,
+            'politicians' => $politicianRepository->findByTypeAndRegions($campaign->getPoliticianType(), [$region]),
             'latestEntries' => $entries,
             'total' => count($campaignEntryRepository->findBy(['campaign' => $campaign])),
+            'region' => $region,
         ]);
     }
 
@@ -55,6 +90,10 @@ class CampaignController extends AbstractController
      */
     public function lobby(Campaign $campaign, Politician $politician, ArgumentRepository $argumentRepository, PersonRepository $personRepository, JsonWriter $jsonWriter, \Swift_Mailer $mailer, Request $request): Response
     {
+        if ($request->getMethod() == 'GET' && $request->getLocale() != $request->get('_locale')) {
+            return $this->redirectToRoute('app_campaign_lobby', ['campaign' => $campaign->getSlug(), 'slug' => $politician->getSlug(), '_locale' => $request->getLocale()]);
+        }
+
         $person = new Person();
         $form = $this->createForm(PersonType::class, $person);
         $form->handleRequest($request);
@@ -120,8 +159,12 @@ class CampaignController extends AbstractController
      * @Route("/thanks/{id}", name="app_campaign_thanks", methods={"GET"}, requirements={"id"="\d+"})
      * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
      */
-    public function thanks(Campaign $campaign, CampaignEntry $campaignEntry): Response
+    public function thanks(Campaign $campaign, CampaignEntry $campaignEntry, Request $request): Response
     {
+        if ($request->getMethod() == 'GET' && $request->getLocale() != $request->get('_locale')) {
+            return $this->redirectToRoute('app_campaign_thanks', ['campaign' => $campaign->getSlug(), 'id' => $campaignEntry->getId(), '_locale' => $request->getLocale()]);
+        }
+
         return $this->render('campaign/thanks.html.twig', [
             'campaign' => $campaign,
             'campaignEntry' => $campaignEntry,
@@ -133,8 +176,15 @@ class CampaignController extends AbstractController
      * @Route("/statement/{id}", name="app_campaign_statement", methods={"GET"}, requirements={"id"="\d+"})
      * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
      */
-    public function statements(Campaign $campaign, CampaignEntry $campaignEntry = null): Response
+    public function statements(Campaign $campaign, Request $request, CampaignEntry $campaignEntry = null): Response
     {
+        if ($request->getMethod() == 'GET' && $request->getLocale() != $request->get('_locale')) {
+            if ($request->query->get('id', 0) > 0) {
+                return $this->redirectToRoute('app_campaign_statement', ['campaign' => $campaign->getSlug(), 'id' => $request->query->get('id'), '_locale' => $request->getLocale()]);
+            }
+            return $this->redirectToRoute('app_campaign_statements', ['campaign' => $campaign->getSlug(), '_locale' => $request->getLocale()]);
+        }
+
         return $this->render('campaign/statements.html.twig', [
             'campaign' => $campaign,
             'campaignEntry' => $campaignEntry,
