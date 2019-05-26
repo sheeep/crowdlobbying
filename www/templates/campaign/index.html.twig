@@ -10,7 +10,7 @@
                         <h1>{% trans %}Wir wollen keinen digitalen Pass von der UBS, Swisscom oder der Swica!{% endtrans %}</h1>
                         <p>{{ total }} {% trans %}Nachrichten an den Ständerat verschickt{% endtrans %}</p>
                         <button class="action-button medium"
-                                onclick="utils.scrollTo(&quot;.how-it-works&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">
+                                onclick="utils.scrollTo('.how-it-works', { offset: document.querySelector('.header').offsetHeight * -1 })">
                             {% trans %}Mitmachen{% endtrans %}
                         </button>
                     </div>
@@ -45,7 +45,7 @@
                             aus Ihrem Kanton davon, dass Sie den digitalen Pass nicht im Swisscom-Shop oder in einer
                             UBS-Filiale beziehen wollen!{% endtrans %}</p>
                     <p>
-                        <a onclick="utils.scrollTo(&quot;.faq&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">{% trans %}Mehr
+                        <a onclick="utils.scrollTo('.faq', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Mehr
                                 erfahren{% endtrans %}</a></p></div>
             </div>
         </div>
@@ -78,11 +78,6 @@
             <div class="layout-width">
                 <div class="officials__canton-chooser">
                     <div class="mdc-select mdc-select--outlined officials__select"><i class="mdc-select__dropdown-icon"></i>
-                        <script type="application/javascript">
-                            function reloadWithRegion(value) {
-                                window.location.href = '/{{ app.request.locale }}/' + value + '#how-it-works';
-                            }
-                        </script>
                         <select class="mdc-select__native-control" onchange="reloadWithRegion(this.value)">
                             <option value disabled="disabled"{{ not (region is defined) or not region ? ' selected="selected"' }}></option>
 

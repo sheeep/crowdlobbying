@@ -134,7 +134,7 @@
         <div class="page-width">
             <div class="layout-width scroll-to-top__inner">
                 <button class="action-button outline icon icon--up"
-                        onclick="utils.scrollTo(&quot;body&quot;)">{% trans %}Nach
+                        onclick="utils.scrollTo('body')">{% trans %}Nach
                         oben{% endtrans %}
                 </button>
             </div>
@@ -218,22 +218,22 @@
                                               href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}">{% trans %}Startseite{% endtrans %}</a>
                     </li>
                     <li class="menu__item"><a class="menu__link"
-                                              onclick="app.menu.hide(); utils.scrollTo(&quot;.how-it-works&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">{% trans %}Mitmachen{% endtrans %}</a>
+                                              onclick="app.menu.hide(); utils.scrollTo('.how-it-works', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Mitmachen{% endtrans %}</a>
                     </li>
                     <li class="menu__item"><a class="menu__link"
-                                              onclick="app.menu.hide(); utils.scrollTo(&quot;#donate&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">{% trans %}Spenden{% endtrans %}</a>
+                                              onclick="app.menu.hide(); utils.scrollTo('#donate', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Spenden{% endtrans %}</a>
                     </li>
                     <li class="menu__item"><a class="menu__link"
-                                              onclick="app.menu.hide(); utils.scrollTo(&quot;.how-it-works&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">{% trans %}Ständerätinnen
+                                              onclick="app.menu.hide(); utils.scrollTo('.how-it-works', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Ständerätinnen
                                 und Ständeräte{% endtrans %}</a></li>
                     <li class="menu__item"><a class="menu__link" onclick="app.menu.hide()"
                                               href="{{ path('app_campaign_statements', {'campaign': campaign.slug}) }}">{% trans %}Nachrichten-Feed{% endtrans %}</a>
                     </li>
                     <li class="menu__item"><a class="menu__link"
-                                              onclick="app.menu.hide(); utils.scrollTo(&quot;#media-contact&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">{% trans %}Medienkontakt{% endtrans %}</a>
+                                              onclick="app.menu.hide(); utils.scrollTo('#media-contact', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Medienkontakt{% endtrans %}</a>
                     </li>
                     <li class="menu__item"><a class="menu__link"
-                                              onclick="app.menu.hide(); utils.scrollTo(&quot;#privacy&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">{% trans %}Datenschutz{% endtrans %}</a>
+                                              onclick="app.menu.hide(); utils.scrollTo('#privacy', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Datenschutz{% endtrans %}</a>
                     </li>
                 </ul>
             </div>
@@ -243,7 +243,12 @@
 <script async src="/assets/app-70f6d3ccce.js"></script>
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139693155-2"></script>
-<script>window.dataLayer = window.dataLayer || [];
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function reloadWithRegion(value) {
+    window.location.href = '/{{ app.request.locale }}/' + value + '#how-it-works';
+  }
 
   function gtag() {
     dataLayer.push(arguments);
