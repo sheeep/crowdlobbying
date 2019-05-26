@@ -133,7 +133,7 @@ class CampaignController extends AbstractController
                     ->setTo($person->getEmail())
                     ->setBody(
                         $this->renderView(
-                            'emails/confirmation.txt.twig',
+                            'emails/confirmation.html.twig',
                             [
                                 'person' => $person,
                                 'politician' => $politician,

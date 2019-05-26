@@ -82,7 +82,7 @@
                             <option value disabled="disabled"{{ not (region is defined) or not region ? ' selected="selected"' }}></option>
                             <script type="application/javascript">
                                 function reloadWithRegion(id) {
-                                    window.location.href = window.location.hostname + '/' + id + '#how-it-works';
+                                    window.location.href = '/{{ app.request.locale }}/' + id + '#how-it-works';
                                 }
                             </script>
                             {% for dbRegion in campaign.regions %}
