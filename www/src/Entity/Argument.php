@@ -3,12 +3,14 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
+use Gedmo\Translatable\Translatable;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArgumentRepository")
  */
-class Argument
+class Argument implements Translatable
 {
     /**
      * @ORM\Id()
@@ -21,6 +23,7 @@ class Argument
 
     /**
      * @ORM\Column(type="text")
+     * @Gedmo\Translatable
      */
     private $argument;
 
@@ -30,9 +33,21 @@ class Argument
      */
     private $campaign;
 
+    /**
+     * @Gedmo\Locale
+     * Used locale to override Translation listener`s locale
+     * this is not a mapped field of entity metadata, just a simple property
+     */
+    private $locale;
+
     public function __toString()
     {
         return $this->getArgument();
+    }
+
+    public function setTranslatableLocale($locale): void
+    {
+        $this->locale = $locale;
     }
 
     public function getId(): ?int
