@@ -80,8 +80,13 @@
                     <div class="mdc-select mdc-select--outlined officials__select"><i
                                 class="mdc-select__dropdown-icon"></i> <select class="mdc-select__native-control">
                             <option value disabled="disabled" selected="selected"></option>
+                            <script type="application/javascript">
+                                function reloadWithRegion(id) {
+                                    window.location.href = window.location.hostname + '/{{ id }}' + '#how-it-works';
+                                }
+                            </script>
                             {% for region in campaign.regions %}
-                                <option value="{{ region.id }}" onclick="window.location.href = window.location.protocol + window.location.hostname + '/{{ region.id }}' + '#how-it-works'">{{ region }}</option>
+                                <option value="{{ region.id }}" onclick="reloadWithRegion({{ region.id }})">{{ region }}</option>
                             {% endfor %}
                         </select>
                         <div class="mdc-notched-outline">
