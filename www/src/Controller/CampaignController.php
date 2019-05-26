@@ -61,7 +61,7 @@ class CampaignController extends AbstractController
     }
 
     /**
-     * @Route("/{region}", name="app_campaign_region", methods={"GET"}, requirements={"region"="[\w-]+"})
+     * @Route("/{region}", name="app_campaign_region", methods={"GET"}, requirements={"region"="[\w]{2}"})
      * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
      * @MVC\ParamConverter("region", options={"mapping": {"region": "slug"}})
      */
