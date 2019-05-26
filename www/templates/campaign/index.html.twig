@@ -77,14 +77,11 @@
         <div class="page-width">
             <div class="layout-width">
                 <div class="officials__canton-chooser">
-                    <div class="mdc-select mdc-select--outlined officials__select"><i
-                                class="mdc-select__dropdown-icon"></i>
+                    <div class="mdc-select mdc-select--outlined officials__select"><i class="mdc-select__dropdown-icon"></i>
                         <script type="application/javascript">
-                          function reloadWithRegion(value) {
-                            window.location.href = '/{{ app.request.locale }}/' + value + '#how-it-works';
-                          }
-
-
+                            function reloadWithRegion(value) {
+                                window.location.href = '/{{ app.request.locale }}/' + value + '#how-it-works';
+                            }
                         </script>
                         <select class="mdc-select__native-control" onchange="reloadWithRegion(this.value)">
                             <option value disabled="disabled"{{ not (region is defined) or not region ? ' selected="selected"' }}></option>
