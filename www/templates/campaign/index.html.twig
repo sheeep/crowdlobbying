@@ -78,15 +78,19 @@
             <div class="layout-width">
                 <div class="officials__canton-chooser">
                     <div class="mdc-select mdc-select--outlined officials__select"><i
-                                class="mdc-select__dropdown-icon"></i> <select class="mdc-select__native-control">
+                                class="mdc-select__dropdown-icon"></i>
+                        <script type="application/javascript">
+                          function reloadWithRegion(value) {
+                            window.location.href = '/{{ app.request.locale }}/' + value + '#how-it-works';
+                          }
+
+
+                        </script>
+                        <select class="mdc-select__native-control" onchange="reloadWithRegion(this.value)">
                             <option value disabled="disabled"{{ not (region is defined) or not region ? ' selected="selected"' }}></option>
-                            <script type="application/javascript">
-                                function reloadWithRegion(id) {
-                                    window.location.href = '/{{ app.request.locale }}/' + id + '#how-it-works';
-                                }
-                            </script>
+
                             {% for dbRegion in campaign.regions %}
-                                <option value="{{ dbRegion.id }}"{{ region is defined and region and region.id == dbRegion.id ? ' selected="selected"' }} onclick="reloadWithRegion({{ dbRegion.id }})">{{ dbRegion }}</option>
+                                <option value="{{ dbRegion.id }}"{{ region is defined and region and region.id == dbRegion.id ? ' selected="selected"' }}>{{ dbRegion }}</option>
                             {% endfor %}
                         </select>
                         <div class="mdc-notched-outline">
