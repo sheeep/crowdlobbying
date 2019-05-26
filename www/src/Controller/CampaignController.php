@@ -24,17 +24,23 @@ use Symfony\Component\Routing\Annotation\Route;
 class CampaignController extends AbstractController
 {
     /**
-     * @Route("/", name="app_campaign_index", methods={"GET"})
+     * @Route("/{region}", name="app_campaign_index", methods={"GET"})
      * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
      */
-    public function index(Campaign $campaign, PoliticianRepository $politicianRepository, CampaignEntryRepository $campaignEntryRepository): Response
+    public function index($region, Campaign $campaign, PoliticianRepository $politicianRepository, CampaignEntryRepository $campaignEntryRepository): Response
     {
         $entries = $campaignEntryRepository->findBy(['campaign' => $campaign], ['id' => 'desc'], 10);
         shuffle($entries);
 
+        if ($region) {
+            $politicians = $politicianRepository->findByTypeAndRegions($campaign->getPoliticianType(), [$region])
+        } else {
+            $politicians = $politicianRepository->findByCampaign($campaign);
+        }
+
         return $this->render('campaign/index.html.twig', [
             'campaign' => $campaign,
-            'politicians' => $politicianRepository->findByCampaign($campaign),
+            'politicians' => $politicians,
             'latestEntries' => $entries,
             'total' => count($campaignEntryRepository->findBy(['campaign' => $campaign])),
         ]);
@@ -79,8 +85,9 @@ class CampaignController extends AbstractController
                 $em->flush();
 
                 $jsonWriter->write($campaign);
+
                 // @TODO call PDF generator
-                $message = (new \Swift_Message('Crowd-Lobbying: Keinen digitalen Pass von privaten Unternehmen!'))
+                $message = (new \Swift_Message('Crowd-Lobbying'))
                     ->setFrom('send@example.com')
                     ->setTo($person->getEmail())
                     ->setBody(
@@ -91,8 +98,9 @@ class CampaignController extends AbstractController
                                 'politician' => $politician,
                             ]
                         ),
-                        'text/plain'
+                        'text/html'
                     );
+
                 $mailer->send($message);
                 return $this->redirectToRoute('app_campaign_thanks', ['campaign' => $campaign->getSlug(), 'id' => $campaignEntry->getId()]);
             }
