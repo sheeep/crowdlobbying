@@ -774,15 +774,7 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
         <note category="state" priority="1">new</note>
       </notes>
       <segment>
-        <source>&lt;p&gt;Der Schutz der Privatsphäre und namentlich der Datenschutz sind uns wichtig. Gestützt auf Artikel
-                        13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes
-                        (Datenschutzgesetz, DSG) hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz
-                        vor Missbrauch ihrer persönlichen Daten. Wir halten diese Bestimmungen ein. Persönliche Daten
-                        werden streng vertraulich behandelt und weder an Dritte verkauft noch weitergegeben.&lt;/p&gt;
-                        &lt;p&gt;Wenn Sie unsere Website besuchen oder unsere E-Mails lesen, speichern wir verschiedene
-                            Informationen. Einige Daten geben Sie bei der Registrierung für Dienstleistungen selbst bekannt.
-                            Andere, nicht persönliche Daten werden aufgrund von technischen Abläufen gespeichert,
-                            beispielsweise IP-Adressen.&lt;/p&gt;</source>
+        <source>DatenschutzText</source>
         <target><![CDATA[<p>Der Schutz der Privatsphäre und namentlich der Datenschutz sind uns wichtig. Gestützt auf Artikel 13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes (Datenschutzgesetz, DSG) hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz vor Missbrauch ihrer persönlichen Daten. Wir halten diese Bestimmungen ein. Persönliche Daten werden streng vertraulich behandelt und weder an Dritte verkauft noch weitergegeben.</p>
 <p>Wenn Sie unsere Website besuchen oder unsere E-Mails lesen, speichern wir verschiedene Informationen. Einige Daten geben Sie bei der Registrierung für Dienstleistungen selbst bekannt. Andere, nicht persönliche Daten werden aufgrund von technischen Abläufen gespeichert, beispielsweise IP-Adressen.</p>
 <p>Für diese Plattform setzen wir folgende Werkzeuge von Drittanbietern ein:</p>

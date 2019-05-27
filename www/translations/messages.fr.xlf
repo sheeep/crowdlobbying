@@ -772,15 +772,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
         <note category="state" priority="1">new</note>
       </notes>
       <segment>
-        <source>&lt;p&gt;Der Schutz der Privatsphäre und namentlich der Datenschutz sind uns wichtig. Gestützt auf Artikel
-                        13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes
-                        (Datenschutzgesetz, DSG) hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz
-                        vor Missbrauch ihrer persönlichen Daten. Wir halten diese Bestimmungen ein. Persönliche Daten
-                        werden streng vertraulich behandelt und weder an Dritte verkauft noch weitergegeben.&lt;/p&gt;
-                        &lt;p&gt;Wenn Sie unsere Website besuchen oder unsere E-Mails lesen, speichern wir verschiedene
-                            Informationen. Einige Daten geben Sie bei der Registrierung für Dienstleistungen selbst bekannt.
-                            Andere, nicht persönliche Daten werden aufgrund von technischen Abläufen gespeichert,
-                            beispielsweise IP-Adressen.&lt;/p&gt;</source>
+        <source>DatenschutzText</source>
         <target><![CDATA[<p>Nous attachons la plus grande importance à la protection de votre sphère privée, et notamment de vos données. Conformément à l’article 13 de la Constitution suisse et de la législation en matière de protection des données (Loi sur la protection des données, LDP), toute personne a droit au respect de sa sphère privée et à une protection contre l’emploi abusif des données qui la concernent. Nous respectons ces dispositions. Les données personnelles sont traitées de manière strictement confidentielle et ne peuvent être ni vendues ni transmises à des tiers.</p> <p>Lorsque vous visitez notre site Internet ou lisez nos e-mails, nous enregistrons diverses informations. Certaines données sont communiquées par vous-même lors de l’enregistrement pour des prestations de service. D’autres données personnelles sont enregistrées en raison de processus techniques, par exemple adresses IP.</p> <p>Pour cette plateforme nous utilisons les outils de fournisseurs tiers suivants:</p> <ul> <li>Mailchimp pour les e-mails de la campagne</li> <li>Facebook, Twitter et Whatsapp pour le partage de contenus</li> <li>Stripe et Donorbox pour les dons</li> <li>Google Analytics pour des analyses web</li> </ul> <p>Si vous désirez plus d'informations, envoyez-nous un e-mail à l’adresse suivante: <a href="mailto:privacy@publicbeta.ch">privacy@publicbeta.ch</a>.</p>]]></target>
       </segment>
     </unit>
