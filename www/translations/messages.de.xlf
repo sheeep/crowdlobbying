@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="de">
   <file id="messages.de">
+    <unit id="Er4zMM6" name="/assets/meta/crowd-lobbying-og-image.jpg">
+      <segment>
+        <source>/assets/meta/crowd-lobbying-og-image.jpg</source>
+        <target>/assets/meta/crowd-lobbying-eID-de.jpg</target>
+      </segment>
+    </unit>
     <unit id="CCsQTdX" name="Herzlichen Dank für Ihre Nachricht">
       <notes>
         <note category="file-source" priority="1">templates/campaign/thanks.html.twig:11</note>
