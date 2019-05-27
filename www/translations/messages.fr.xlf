@@ -726,7 +726,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
       </notes>
       <segment>
         <source>&lt;p&gt;Daniel Graf&lt;br&gt;Dammerkirchstr. 44&lt;br&gt;CH-4056 Basel&lt;/p&gt;</source>
-        <target><![CDATA[<p>Daniel Graf<br>Dammerkirchstr. 44<br>CH-4056 Bâle, <a href="http://www.publicbeta.ch" target="_blank">www.publicbeta.ch</a><br> Pascal Wacker, Backend, <a href="http://www.pascalwacker.ch" target="_blank">www.pascalwacker.ch</a><br> René Keller, Frontend, <a href="http://www.pixelherz.com" target="_blank">www.pixelherz.com</a><br> Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">www.raymann.cc</a></p>]]></target>
+        <target><![CDATA[<p>Daniel Graf<br>Dammerkirchstr. 44<br>CH-4056 Bâle, <a href="http://www.publicbeta.ch" target="_blank">www.publicbeta.ch</a><br>Samuel Furter, Backend, <a href="https://github.com/nivida" target="_blank">github.com/nivida</a><br>Pascal Wacker, Backend, <a href="https://pascalwacker.ch" target="_blank">pascalwacker.ch</a><br> René Keller, Frontend, <a href="http://www.pixelherz.com" target="_blank">www.pixelherz.com</a><br> Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">www.raymann.cc</a></p>]]></target>
       </segment>
     </unit>
     <unit id="32cAxL4" name="Nutzungsbedingungen">

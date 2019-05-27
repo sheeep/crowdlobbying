@@ -305,12 +305,10 @@
                             &lt;p&gt;Es würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.&lt;/p&gt;
                             &lt;p&gt;Vielen Dank und freundliche Grüsse&lt;/p&gt;</source>
         <target><![CDATA[<p>Hallo</p>
-                            <p>Ich habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf</p>
-                            <p>https://www.digitaler-pass.ch/</p>
-                            <p>kannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du
-                                gegen eine E-ID von von privaten Unternehmen bist.</p>
-                            <p>Es würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.</p>
-                            <p>Vielen Dank und freundliche Grüsse</p>]]></target>
+<p>Ich will keinen digitalen Pass von der UBS, Swisscom oder der CSS Versicherung. Und du? Hilf bitte auch mit beim Lobbying. Geht ganz einfach: Auf </p>
+<p>https://www.crowd-lobbying.ch</p>
+<p>kannst du einer Ständerätin oder einem Ständerat mitteilen, warum du dagegen bist.</p>
+<p>Vielen Dank und freundliche Grüsse</p>]]></target>
       </segment>
     </unit>
     <unit id="BE6acrE" name="96882f9">
@@ -728,7 +726,7 @@ Vielen Dank und freundliche Grüsse</target>
       <segment>
         <source>&lt;p&gt;Daniel Graf&lt;br&gt;Dammerkirchstr. 44&lt;br&gt;CH-4056 Basel&lt;/p&gt;</source>
         <target><![CDATA[<p>Daniel Graf, Dammerkirchstr. 44, CH-4056 Basel, <a href="http://www.publicbeta.ch" target="_blank">www.publicbeta.ch</a><br>
-Pascal Wacker, Backend, <a href="http://www.pascalwacker.ch" target="_blank">www.pascalwacker.ch</a><br>
+Samuel Furter, Backend, <a href="https://github.com/nivida" target="_blank">github.com/nivida</a><br>Pascal Wacker, Backend, <a href="https://pascalwacker.ch" target="_blank">pascalwacker.ch</a><br>
 René Keller, Frontend, <a href="http://www.pixelherz.com" target="_blank">www.pixelherz.com</a><br>
 Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">www.raymann.cc</a></p>]]></target>
       </segment>
