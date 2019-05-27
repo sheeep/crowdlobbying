@@ -312,7 +312,7 @@
                             &lt;p&gt;Vielen Dank und freundliche Grüsse&lt;/p&gt;</source>
         <target><![CDATA[<p>Hallo</p>
 <p>Ich will keinen digitalen Pass von der UBS, Swisscom oder der CSS Versicherung. Und du? Hilf bitte auch mit beim Lobbying. Geht ganz einfach: Auf </p>
-<p>https://www.crowd-lobbying.ch</p>
+<p>https://www.crowdlobbying.ch</p>
 <p>kannst du einer Ständerätin oder einem Ständerat mitteilen, warum du dagegen bist.</p>
 <p>Vielen Dank und freundliche Grüsse</p>]]></target>
       </segment>
@@ -324,7 +324,7 @@
       </notes>
       <segment>
         <source>Hallo\n\nIch habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf \n\nhttps://www.digitaler-pass.ch/\n\nkannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du gegen eine E-ID von von privaten Unternehmen bist.\n\nEs würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.\n\nVielen Dank und freundliche Grüsse</source>
-        <target>Hallo\n\nIch habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf \n\nhttps://www.crowd-lobbying.ch/\n\nkannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du gegen einen digitalen Pass von von privaten Unternehmen bist.\n\nIch würde mich freuen, wenn Du dieses Projekt auch unterstützen würdest.\n\n
+        <target>Hallo\n\nIch habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf \n\nhttps://www.crowdlobbying.ch/\n\nkannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du gegen einen digitalen Pass von von privaten Unternehmen bist.\n\nIch würde mich freuen, wenn Du dieses Projekt auch unterstützen würdest.\n\n
 Vielen Dank und freundliche Grüsse</target>
       </segment>
     </unit>
@@ -747,7 +747,7 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
         <target>Nutzungsbedingungen</target>
       </segment>
     </unit>
-    <unit id="xydkvbA" name="35f62d5">
+    <unit id="xydkvbA" name="NutzungsbedingungenText">
       <notes>
         <note category="file-source" priority="1">templates/base.html.twig:136</note>
         <note category="state" priority="1">new</note>
@@ -768,7 +768,7 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
         <target>Datenschutz</target>
       </segment>
     </unit>
-    <unit id="i5cuUpP" name="626acd5">
+    <unit id="i5cuUpP" name="DatenschutzText">
       <notes>
         <note category="file-source" priority="1">templates/base.html.twig:152</note>
         <note category="state" priority="1">new</note>

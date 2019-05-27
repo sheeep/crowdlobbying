@@ -314,7 +314,7 @@ Compte postal 15-97572-2
                             &lt;p&gt;Vielen Dank und freundliche Grüsse&lt;/p&gt;</source>
         <target><![CDATA[<p>Salut</p>
                             <p>Je viens de faire du lobbying contre la e-ID. Ça paraît compliqué ? Rien de plus simple que cela. Sur</p>
-                            <p>https://www.crowd-lobbying.ch</p>
+                            <p>https://www.crowdlobbying.ch</p>
                             <p>tu peux envoyer un argument à une conseillère ou à un conseiller aux Etats de ton choix, qui explique pourquoi tu es contraire à un passeport numérique délivré par une entreprise privée.</p>
                             <p>Ça me ferait plaisir si toi aussi tu soutenais ce projet.</p>
                             <p>Merci beaucoup et meilleures salutations</p>]]></target>
@@ -329,7 +329,7 @@ Compte postal 15-97572-2
         <source>Hallo\n\nIch habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf \n\nhttps://www.digitaler-pass.ch/\n\nkannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du gegen eine E-ID von von privaten Unternehmen bist.\n\nEs würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.\n\nVielen Dank und freundliche Grüsse</source>
         <target><![CDATA[<p>Salut</p>
                             <p>Je viens de faire du lobbying contre la e-ID. Ça paraît compliqué ? Rien de plus simple que cela. Sur</p>
-                            <p>https://www.crowd-lobbying.ch</p>
+                            <p>https://www.crowdlobbying.ch</p>
                             <p>tu peux envoyer un argument à une conseillère ou à un conseiller aux Etats de ton choix, qui explique pourquoi tu es contraire à un passeport numérique délivré par une entreprise privée.</p>
                             <p>Ça me ferait plaisir si toi aussi tu soutenais ce projet.</p>
                             <p>Merci beaucoup et meilleures salutations</p>]]></target>
@@ -745,7 +745,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
         <target>Conditions d’utilisation</target>
       </segment>
     </unit>
-    <unit id="xydkvbA" name="35f62d5">
+    <unit id="xydkvbA" name="NutzungsbedingungenText">
       <notes>
         <note category="file-source" priority="1">templates/base.html.twig:136</note>
         <note category="state" priority="1">new</note>
@@ -766,7 +766,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
         <target>Confidentialité</target>
       </segment>
     </unit>
-    <unit id="i5cuUpP" name="626acd5">
+    <unit id="i5cuUpP" name="DatenschutzText">
       <notes>
         <note category="file-source" priority="1">templates/base.html.twig:152</note>
         <note category="state" priority="1">new</note>
