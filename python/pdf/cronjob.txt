@@ -1,0 +1,2 @@
+Cronjob fuckery: `/usr/local/bin/php /home/danielg3/www/crowdlobbying.ch/www/bin/console app:write-json && /bin/rm -rf /home/danielg3/www/crowdlobbying.ch/data/20* && /usr/bin/cd /home/danielg3/www/crowdlobbying.ch/python/pdf && /usr/local/bin/python3 /home/danielg3/www/crowdlobbying.ch/python/pdf/json_to_pdf.py && /bin/rm -rf /home/danielg3/www/pdf.crowdlobbying.ch/20*.pdf && /bin/mv /home/danielg3/www/crowdlobbying.ch/data/20*/* /home/danielg3/www/pdf.crowdlobbying.ch/`
+Note: We should clean this shit up
