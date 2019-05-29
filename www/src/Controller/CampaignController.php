@@ -12,7 +12,6 @@ use App\Repository\ArgumentRepository;
 use App\Repository\CampaignEntryRepository;
 use App\Repository\PersonRepository;
 use App\Repository\PoliticianRepository;
-use App\Utils\JsonWriter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration as MVC;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -88,7 +87,7 @@ class CampaignController extends AbstractController
      * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
      * @MVC\ParamConverter("politician", options={"mapping": {"slug": "slug"}})
      */
-    public function lobby(Campaign $campaign, Politician $politician, ArgumentRepository $argumentRepository, PersonRepository $personRepository, JsonWriter $jsonWriter, \Swift_Mailer $mailer, Request $request): Response
+    public function lobby(Campaign $campaign, Politician $politician, ArgumentRepository $argumentRepository, PersonRepository $personRepository, \Swift_Mailer $mailer, Request $request): Response
     {
         if ($request->getMethod() == 'GET' && $request->getLocale() != $request->get('_locale')) {
             return $this->redirectToRoute('app_campaign_lobby', ['campaign' => $campaign->getSlug(), 'slug' => $politician->getSlug(), '_locale' => $request->getLocale()]);
@@ -114,6 +113,7 @@ class CampaignController extends AbstractController
                     $em->persist($person);
                 }
 
+                $person->setLanguage($request->getLocale());
                 $campaignEntry = new CampaignEntry();
                 $campaignEntry->setOptInInformation((bool) ($request->request->get('optInInformation', 0)));
                 $campaignEntry->setPerson($person);
@@ -125,7 +125,7 @@ class CampaignController extends AbstractController
                 $em->persist($campaignEntry);
                 $em->flush();
 
-                $jsonWriter->write($campaign);
+                //$jsonWriter->write($campaign);
 
                 // @TODO call PDF generator
                 $message = (new \Swift_Message('Crowd-Lobbying'))

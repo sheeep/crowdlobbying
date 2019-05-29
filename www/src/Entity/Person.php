@@ -48,6 +48,11 @@ class Person
      */
     private $city;
 
+    /**
+     * @ORM\Column(type="string", length=2, nullable=true)
+     */
+    private $language;
+
     public function __toString()
     {
         return $this->getFirstname() . ' ' . $this->getLastname();
@@ -138,6 +143,18 @@ class Person
     public function setCity(string $city): self
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    public function getLanguage(): ?string
+    {
+        return $this->language;
+    }
+
+    public function setLanguage(?string $language): self
+    {
+        $this->language = $language;
 
         return $this;
     }
