@@ -1,0 +1,1 @@
+To install a package in a folder, let's say `lib` use: `python3 -m pip install <package> -t lib`

@@ -1,20 +1,22 @@
+import sys
+import os
+sys.path.append('/home/danielg3/www/crowdlobbying.ch/python/pdf/lib')
+os.chdir("/home/danielg3/www/crowdlobbying.ch/python/pdf")
+
 import configparser
 import PyPDF2
 import json
 import datetime
 import pdfkit
-
-import sys
-import os
-
+import re
 
 def generate_header(salutation, name, surname, postSalutation, address, zip, city, phone, email):
     """
     This function generates the header pdf page
     """
     # first we take the html file and parse it as a string
-    print('generating header page', surname, name)
-    with open('header.html', 'r') as myfile:
+    #print('generating header page', surname, name)
+    with open('/home/danielg3/www/crowdlobbying.ch/python/pdf/header.html', 'r', encoding='utf-8') as myfile:
         data = myfile.read()
         to_write = data.format(salutation, name, (surname + ' ' + postSalutation), str(datetime.datetime.now())[0:10])
         pdfkit.from_string(to_write, '/tmp/header.pdf')
@@ -39,7 +41,7 @@ def generate_messages(message, senders, index):
         
 
 
-    with open('message.html', 'r') as myfile:
+    with open('/home/danielg3/www/crowdlobbying.ch/python/pdf/message.html', 'r', encoding='utf-8') as myfile:
         data = myfile.read()
         to_write = data.format(index, message, address_string)
         pdfkit.from_string(to_write, '/tmp/message' + index + '.pdf')
@@ -51,15 +53,15 @@ def stich_together(header_page, message_pages, name, surname):
     """
     This function stiches multiple pdfs together
     """
-    print('merging page', surname, name)
+    #print('merging page', surname, name)
     # get the current date
     date = str(datetime.datetime.now())[0:10]
     # generate the filename based on date and name
     filename = date + '_' + surname + '_' + name
     # generate the path from date
-    path = '../../data/' + date
+    path = '/home/danielg3/www/crowdlobbying.ch/data/' + date
     # generate the filepath with filename
-    complete_file_path = path + '/' + filename
+    complete_file_path = path + '/' + filename + '.pdf'
     # make the needed directories
     os.makedirs(path, exist_ok=True)
 
@@ -87,7 +89,7 @@ if by_id:
     poli_id = sys.argv[1]
 
 # open the json file
-with open('../../data/messages.json') as json_file:
+with open('/home/danielg3/www/crowdlobbying.ch/data/messages.json', encoding='utf-8') as json_file:
     # read out the data from the json file
     data = json.load(json_file)
 
@@ -98,7 +100,7 @@ with open('../../data/messages.json') as json_file:
 
         if((not by_id) or (int(poli_id) == poli['id'])):
 
-            print (poli['name'])
+            #print (poli['name'])
             header_page = generate_header(
                 salutation=poli['salutation'],
                 name=poli['name'],
@@ -121,11 +123,13 @@ with open('../../data/messages.json') as json_file:
                 ))
                 index += 1
 
+            sanitizedName = re.sub('[^0-9a-zA-Z]+', '', poli['name'])
+            sanitizedSurname = re.sub('[^0-9a-zA-Z]+', '', poli['surname'])
             stich_together(
                 header_page=header_page,
                 message_pages=message_pages,
-                name=poli['name'],
-                surname=poli['surname']
+                name=sanitizedName,
+                surname=sanitizedSurname
             )
 
 
