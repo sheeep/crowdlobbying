@@ -45,7 +45,7 @@ config['PARTY'][party] = str(datetime.datetime.now())
 config.write(cfgfile)
 cfgfile.close()
 
-message = 'Nachricht an {} {} {} #eID #crowdlobbying www.crowd-lobbying.ch'.format(sr, name, party)
+message = 'Nachricht an {} {} {} #eID #crowdlobbying www.crowdlobbying.ch'.format(sr, name, party)
 
 if len(sys.argv) == 5:
     filename = '../../data/card.jpg'
