@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller;
 
 use App\Entity\Campaign;
@@ -16,7 +18,7 @@ class DefaultController extends AbstractController
     public function index(CampaignRepository $campaignRepository, Request $request)
     {
         $campaigns = $campaignRepository->findActiveCampaigns();
-        if (count($campaigns) == 1) {
+        if (1 === \count($campaigns)) {
             /** @var Campaign $campaign */
             $campaign = array_shift($campaigns);
 

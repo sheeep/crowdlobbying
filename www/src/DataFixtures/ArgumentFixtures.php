@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DataFixtures;
 
 use App\Entity\Argument;
@@ -10,10 +12,10 @@ use Faker\Factory;
 
 class ArgumentFixtures extends Fixture implements DependentFixtureInterface
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $faker = Factory::create('de_CH');
-        for ($i=0; $i<5; $i = $i+2) {
+        for ($i = 0; $i < 5; $i = $i + 2) {
             $argument = new Argument();
             $argument->setArgument($faker->text);
             $argument->setCampaign($this->getReference(CampaignFixture::CAMPAIGN_EID));

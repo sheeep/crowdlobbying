@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Utils;
 
 use App\Entity\Campaign;
@@ -30,7 +32,7 @@ class JsonWriter
                 'name' => $contact->getPrename() ?: '',
                 'surname' => $contact->getLastname() ?: '',
                 'postSalutation' => $contact->getPostSalutation() ?: '',
-                'address' => join('<br>', $contact->getAddressArray()),
+                'address' => implode('<br>', $contact->getAddressArray()),
                 'zip' => $contact->getZip() ?: '',
                 'city' => $contact->getCity() ?: '',
                 'email' => $contact->getEmail() ?: '',

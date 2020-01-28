@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -13,14 +15,13 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Person
 {
+    use TimestampableEntity;
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
     private $id;
-
-    use TimestampableEntity;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -53,14 +54,14 @@ class Person
      */
     private $language;
 
-    public function __toString()
-    {
-        return $this->getFirstname() . ' ' . $this->getLastname();
-    }
-
     public function __construct()
     {
         $this->campaignEntries = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->getFirstname() . ' ' . $this->getLastname();
     }
 
     public function getId(): ?int

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -14,14 +16,13 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
  */
 class Campaign
 {
+    use TimestampableEntity;
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
     private $id;
-
-    use TimestampableEntity;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -78,11 +79,6 @@ class Campaign
      */
     private $politicianType;
 
-    public function __toString()
-    {
-        return $this->getName();
-    }
-
     public function __construct()
     {
         $this->campaignEntries = new ArrayCollection();
@@ -90,6 +86,11 @@ class Campaign
         $this->regions = new ArrayCollection();
         $this->wipCounts = new ArrayCollection();
         $this->pages = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 
     public function getWipCountByPolitician(Politician $politician): ?WipCount
@@ -106,7 +107,7 @@ class Campaign
         $criteria = Criteria::create()
             ->andWhere(Criteria::expr()->eq('politician', $politician));
 
-        return count($this->getCampaignEntries()->matching($criteria));
+        return \count($this->getCampaignEntries()->matching($criteria));
     }
 
     public function getId(): ?int

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DataFixtures;
 
 use App\Entity\Argument;
@@ -15,7 +17,7 @@ use Faker\Factory;
 
 class AppFixtures extends Fixture implements DependentFixtureInterface
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $faker = Factory::create('de_CH');
         /** @var PersonRepository $personRepo */
@@ -25,15 +27,15 @@ class AppFixtures extends Fixture implements DependentFixtureInterface
             /** @var Politician $politician */
             $politician = $politicianRepo->find($politician->getId());
             /**
-             * Arguments and campaign need to be loaded inside the loop, as we'll clear the EM at the end of each itteration
+             * Arguments and campaign need to be loaded inside the loop, as we'll clear the EM at the end of each itteration.
              */
             /** @var Argument[] $arguments */
             $arguments = $manager->getRepository(Argument::class)->findAll();
-            $argLen = count($arguments);
+            $argLen = \count($arguments);
             /** @var Campaign $campaign */
             $campaign = $this->getReference(CampaignFixture::CAMPAIGN_EID);
-            $len = rand(50, 250);
-            for ($i=0; $i<$len; $i++) {
+            $len = random_int(50, 250);
+            for ($i = 0; $i < $len; ++$i) {
                 $email = $faker->email;
                 $person = $personRepo->findOneBy(['email' => $email]);
                 if (!$person) {
@@ -42,17 +44,19 @@ class AppFixtures extends Fixture implements DependentFixtureInterface
                     $person->setFirstname($faker->firstName);
                     $person->setLastname($faker->lastName);
                     $city = $faker->city;
-                    if (!$city) { $city = 'Zürich'; }
+                    if (!$city) {
+                        $city = 'Zürich';
+                    }
                     $person->setCity($city);
 
                     $manager->persist($person);
                 }
 
                 $campaignEntry = new CampaignEntry();
-                $campaignEntry->setOptInInformation((bool) (rand(0, 10) < 5));
+                $campaignEntry->setOptInInformation((bool) (random_int(0, 10) < 5));
                 $campaignEntry->setPerson($person);
                 $campaignEntry->setCampaign($campaign);
-                $campaignEntry->setArgument($arguments[(rand(0, 77) % $argLen)]);
+                $campaignEntry->setArgument($arguments[(random_int(0, 77) % $argLen)]);
                 $campaignEntry->setPolitician($politician);
                 $campaignEntry->setColor($campaignEntry->getRandomColor());
 

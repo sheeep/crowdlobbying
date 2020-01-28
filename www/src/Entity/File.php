@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -10,14 +12,13 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
  */
 class File
 {
+    use TimestampableEntity;
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
     private $id;
-
-    use TimestampableEntity;
 
     public function getId(): ?int
     {

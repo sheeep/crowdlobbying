@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DataFixtures;
 
 use App\Entity\Region;
@@ -8,7 +10,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 class RegionFixture extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $regions = [
             'ZH' => 'Zürich',

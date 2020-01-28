@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DataFixtures;
 
 use App\Entity\Campaign;
@@ -12,14 +14,14 @@ class CampaignFixture extends Fixture implements DependentFixtureInterface
 {
     public const CAMPAIGN_EID = 'eid';
 
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $campaign = new Campaign();
         $campaign->setName('E-ID');
         $campaign->setStart(new \DateTime('2019-04-25'));
         $campaign->setEnd(new \DateTime('2019-05-01'));
         foreach ($manager->getRepository(Region::class)->findAll() as $region) {
-            /** @var Region $region */
+            /* @var Region $region */
             $campaign->addRegion($region);
         }
         $campaign->setPoliticianType($this->getReference(PoliticianTypeFixture::POLITICIAN_TYPE_SR));

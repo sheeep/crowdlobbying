@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -13,14 +15,13 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
  */
 class Region
 {
+    use TimestampableEntity;
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
     private $id;
-
-    use TimestampableEntity;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -43,14 +44,14 @@ class Region
      */
     private $short;
 
-    public function __toString()
-    {
-        return $this->getName();
-    }
-
     public function __construct()
     {
         $this->politicians = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 
     public function getId(): ?int

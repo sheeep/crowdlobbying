@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DataFixtures;
 
 use App\Entity\PoliticianType;
@@ -10,7 +12,7 @@ class PoliticianTypeFixture extends Fixture
 {
     public const POLITICIAN_TYPE_SR = 'sr';
 
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $politicianType = new PoliticianType();
         $politicianType->setName('Ständerat');

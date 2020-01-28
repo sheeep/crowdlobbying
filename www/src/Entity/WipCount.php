@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -10,10 +12,11 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
  */
 class WipCount
 {
-    const WIP_COUNT_TYPE_UNKNOWN = 0;
-    const WIP_COUNT_TYPE_YES = 1;
-    const WIP_COUNT_TYPE_NO = 2;
-    const WIP_COUNT_TYPE_NONE = 3;
+    use TimestampableEntity;
+    public const WIP_COUNT_TYPE_UNKNOWN = 0;
+    public const WIP_COUNT_TYPE_YES = 1;
+    public const WIP_COUNT_TYPE_NO = 2;
+    public const WIP_COUNT_TYPE_NONE = 3;
 
     /**
      * @ORM\Id()
@@ -21,8 +24,6 @@ class WipCount
      * @ORM\Column(type="integer")
      */
     private $id;
-
-    use TimestampableEntity;
 
     /**
      * @ORM\Column(type="integer")

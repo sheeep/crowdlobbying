@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -12,14 +14,13 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
  */
 class Page
 {
+    use TimestampableEntity;
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
     private $id;
-
-    use TimestampableEntity;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -47,14 +48,14 @@ class Page
      */
     private $campaign;
 
-    public function __toString()
-    {
-        return $this->getTitle();
-    }
-
     public function __construct()
     {
         $this->files = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->getTitle();
     }
 
     public function getId(): ?int

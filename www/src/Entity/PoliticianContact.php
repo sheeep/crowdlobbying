@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -10,6 +12,7 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
  */
 class PoliticianContact
 {
+    use TimestampableEntity;
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -95,35 +98,47 @@ class PoliticianContact
     public function getAddressArray(): array
     {
         $address = [];
-        if ($this->getCompany()) { $address[] = $this->getCompany(); }
-        if ($this->getAddress1()) { $address[] = $this->getAddress1(); }
-        if ($this->getAddress2()) { $address[] = $this->getAddress2(); }
+        if ($this->getCompany()) {
+            $address[] = $this->getCompany();
+        }
+        if ($this->getAddress1()) {
+            $address[] = $this->getAddress1();
+        }
+        if ($this->getAddress2()) {
+            $address[] = $this->getAddress2();
+        }
 
         return $address;
     }
 
     public function getAddressString(): string
     {
-        return join(' ', $this->getAddressArray());
+        return implode(' ', $this->getAddressArray());
     }
 
     public function getNameArray(): array
     {
         $name = [];
-        if ($this->getSalutation()) { $name[] = $this->getSalutation(); }
-        if ($this->getPrename()) { $name[] = $this->getPrename(); }
-        if ($this->getLastname()) { $name[] = $this->getLastname(); }
-        if ($this->getPostSalutation()) { $name[] = $this->getPostSalutation(); }
+        if ($this->getSalutation()) {
+            $name[] = $this->getSalutation();
+        }
+        if ($this->getPrename()) {
+            $name[] = $this->getPrename();
+        }
+        if ($this->getLastname()) {
+            $name[] = $this->getLastname();
+        }
+        if ($this->getPostSalutation()) {
+            $name[] = $this->getPostSalutation();
+        }
 
         return $name;
     }
 
     public function getNameString(): string
     {
-        return join(' ', $this->getNameArray());
+        return implode(' ', $this->getNameArray());
     }
-
-    use TimestampableEntity;
 
     public function getId(): ?int
     {
@@ -297,5 +312,4 @@ class PoliticianContact
 
         return $this;
     }
-
 }

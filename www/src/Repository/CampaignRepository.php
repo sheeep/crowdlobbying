@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Repository;
 
 use App\Entity\Campaign;
@@ -22,7 +24,10 @@ class CampaignRepository extends ServiceEntityRepository
     /** @return Campaign[] */
     public function findActiveCampaigns(\DateTime $dateTime = null): array
     {
-        if (!$dateTime) { $dateTime = new \DateTime(); }
+        if (!$dateTime) {
+            $dateTime = new \DateTime();
+        }
+
         return $this->createQueryBuilder('e')
             ->andWhere('e.start <= :dateTime')
             ->andWhere('e.end >= :dateTime')

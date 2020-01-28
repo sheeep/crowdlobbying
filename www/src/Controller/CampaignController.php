@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller;
 
 use App\Entity\Campaign;
@@ -30,7 +32,7 @@ class CampaignController extends AbstractController
      */
     public function index(Campaign $campaign, PoliticianRepository $politicianRepository, CampaignEntryRepository $campaignEntryRepository, Request $request): Response
     {
-        if ($request->getMethod() == 'GET' && $request->getLocale() != $request->get('_locale')) {
+        if ('GET' === $request->getMethod() && $request->getLocale() !== $request->get('_locale')) {
             return $this->redirectToRoute('app_campaign_index', ['campaign' => $campaign->getSlug(), '_locale' => $request->getLocale()]);
         }
 
@@ -41,7 +43,7 @@ class CampaignController extends AbstractController
             'campaign' => $campaign,
             'politicians' => $politicianRepository->findByCampaign($campaign),
             'latestEntries' => $entries,
-            'total' => count($campaignEntryRepository->findBy(['campaign' => $campaign])),
+            'total' => \count($campaignEntryRepository->findBy(['campaign' => $campaign])),
         ]);
     }
 
@@ -52,7 +54,7 @@ class CampaignController extends AbstractController
      */
     public function regionRedirect(Campaign $campaign, Region $region = null, Request $request): RedirectResponse
     {
-        if ($request->getMethod() == 'GET' && $request->getLocale() != $request->get('_locale')) {
+        if ('GET' === $request->getMethod() && $request->getLocale() !== $request->get('_locale')) {
             return $this->redirectToRoute('app_campaign_region_redirect', ['campaign' => $campaign->getSlug(), 'region' => $region->getId(), '_locale' => $request->getLocale()]);
         }
 
@@ -66,7 +68,7 @@ class CampaignController extends AbstractController
      */
     public function region(Campaign $campaign, Region $region = null, Request $request, PoliticianRepository $politicianRepository, CampaignEntryRepository $campaignEntryRepository): Response
     {
-        if ($request->getMethod() == 'GET' && $request->getLocale() != $request->get('_locale')) {
+        if ('GET' === $request->getMethod() && $request->getLocale() !== $request->get('_locale')) {
             return $this->redirectToRoute('app_campaign_region', ['campaign' => $campaign->getSlug(), 'region' => $region->getSlug(), '_locale' => $request->getLocale()]);
         }
 
@@ -77,7 +79,7 @@ class CampaignController extends AbstractController
             'campaign' => $campaign,
             'politicians' => $politicianRepository->findByTypeAndRegions($campaign->getPoliticianType(), [$region]),
             'latestEntries' => $entries,
-            'total' => count($campaignEntryRepository->findBy(['campaign' => $campaign])),
+            'total' => \count($campaignEntryRepository->findBy(['campaign' => $campaign])),
             'region' => $region,
         ]);
     }
@@ -89,7 +91,7 @@ class CampaignController extends AbstractController
      */
     public function lobby(Campaign $campaign, Politician $politician, ArgumentRepository $argumentRepository, PersonRepository $personRepository, \Swift_Mailer $mailer, Request $request): Response
     {
-        if ($request->getMethod() == 'GET' && $request->getLocale() != $request->get('_locale')) {
+        if ('GET' === $request->getMethod() && $request->getLocale() !== $request->get('_locale')) {
             return $this->redirectToRoute('app_campaign_lobby', ['campaign' => $campaign->getSlug(), 'slug' => $politician->getSlug(), '_locale' => $request->getLocale()]);
         }
 
@@ -143,6 +145,7 @@ class CampaignController extends AbstractController
                     );
 
                 $mailer->send($message);
+
                 return $this->redirectToRoute('app_campaign_thanks', ['campaign' => $campaign->getSlug(), 'id' => $campaignEntry->getId()]);
             }
         }
@@ -161,7 +164,7 @@ class CampaignController extends AbstractController
      */
     public function thanks(Campaign $campaign, CampaignEntry $campaignEntry, Request $request): Response
     {
-        if ($request->getMethod() == 'GET' && $request->getLocale() != $request->get('_locale')) {
+        if ('GET' === $request->getMethod() && $request->getLocale() !== $request->get('_locale')) {
             return $this->redirectToRoute('app_campaign_thanks', ['campaign' => $campaign->getSlug(), 'id' => $campaignEntry->getId(), '_locale' => $request->getLocale()]);
         }
 
@@ -178,10 +181,11 @@ class CampaignController extends AbstractController
      */
     public function statements(Campaign $campaign, Request $request, CampaignEntry $campaignEntry = null): Response
     {
-        if ($request->getMethod() == 'GET' && $request->getLocale() != $request->get('_locale')) {
+        if ('GET' === $request->getMethod() && $request->getLocale() !== $request->get('_locale')) {
             if ($request->query->get('id', 0) > 0) {
                 return $this->redirectToRoute('app_campaign_statement', ['campaign' => $campaign->getSlug(), 'id' => $request->query->get('id'), '_locale' => $request->getLocale()]);
             }
+
             return $this->redirectToRoute('app_campaign_statements', ['campaign' => $campaign->getSlug(), '_locale' => $request->getLocale()]);
         }
 

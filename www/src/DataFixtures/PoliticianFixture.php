@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DataFixtures;
 
 use App\Entity\Campaign;
@@ -25,9 +27,9 @@ class PoliticianFixture extends Fixture implements DependentFixtureInterface
         $this->projectDir = $projectDir;
     }
 
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
-        if (file_exists($this->projectDir . '/import/politicians.csv') && ($fp = fopen($this->projectDir . '/import/politicians.csv', "r")) !== false) {
+        if (file_exists($this->projectDir . '/import/politicians.csv') && false !== ($fp = fopen($this->projectDir . '/import/politicians.csv', 'r'))) {
             $line = 0;
             $languages = [
                 'd' => 'de',
@@ -44,10 +46,12 @@ class PoliticianFixture extends Fixture implements DependentFixtureInterface
             $politicianType = $this->getReference(PoliticianTypeFixture::POLITICIAN_TYPE_SR);
             /** @var Campaign $campaign */
             $campaign = $this->getReference(CampaignFixture::CAMPAIGN_EID);
-            while (($row = fgetcsv($fp, 0, ";")) !== FALSE) {
+            while (false !== ($row = fgetcsv($fp, 0, ';'))) {
                 // the ";" because fuck Excel, that uses ";" instead of "," in the German version
-                $line++;
-                if ($line == 1) { continue; }
+                ++$line;
+                if (1 === $line) {
+                    continue;
+                }
 
                 $entry = [
                     'lang' => $row[1] ?? 'd',
@@ -104,7 +108,7 @@ class PoliticianFixture extends Fixture implements DependentFixtureInterface
                     $manager->persist($politician);
 
                     $wipCount = new WipCount();
-                    $wipCount->setStatus(rand(WipCount::WIP_COUNT_TYPE_UNKNOWN, WipCount::WIP_COUNT_TYPE_NO));
+                    $wipCount->setStatus(random_int(WipCount::WIP_COUNT_TYPE_UNKNOWN, WipCount::WIP_COUNT_TYPE_NO));
                     $wipCount->setCampaign($campaign);
                     $wipCount->setPolitician($politician);
 
