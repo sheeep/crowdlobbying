@@ -41,14 +41,6 @@ class Commission
     private $abbreviation;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(type="string", unique=true)
-     * @Gedmo\Slug(fields={"name"})
-     */
-    private $slug;
-
-    /**
      * @var PoliticianType
      * @ORM\OneToOne(targetEntity="App\Entity\PoliticianType")
      * @ORM\JoinColumn(name="politician_type_id", referencedColumnName="id")
@@ -101,18 +93,6 @@ class Commission
     public function setAbbreviation(string $abbreviation): self
     {
         $this->abbreviation = $abbreviation;
-
-        return $this;
-    }
-
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
 
         return $this;
     }
