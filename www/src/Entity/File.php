@@ -13,6 +13,7 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
 class File
 {
     use TimestampableEntity;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

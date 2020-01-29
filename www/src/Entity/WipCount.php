@@ -13,6 +13,7 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
 class WipCount
 {
     use TimestampableEntity;
+
     public const WIP_COUNT_TYPE_UNKNOWN = 0;
     public const WIP_COUNT_TYPE_YES = 1;
     public const WIP_COUNT_TYPE_NO = 2;

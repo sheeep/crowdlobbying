@@ -15,6 +15,7 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
 class Page
 {
     use TimestampableEntity;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

@@ -16,6 +16,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Person
 {
     use TimestampableEntity;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

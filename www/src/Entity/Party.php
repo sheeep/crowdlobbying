@@ -16,6 +16,7 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
 class Party
 {
     use TimestampableEntity;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

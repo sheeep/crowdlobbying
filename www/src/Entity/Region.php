@@ -16,6 +16,7 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
 class Region
 {
     use TimestampableEntity;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

@@ -17,6 +17,7 @@ class Politician
 {
     use TimestampableEntity;
     use SoftDeleteableEntity;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

@@ -17,6 +17,7 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
 class Campaign
 {
     use TimestampableEntity;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

@@ -15,6 +15,7 @@ use Gedmo\Translatable\Translatable;
 class Argument implements Translatable
 {
     use TimestampableEntity;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -23,6 +24,7 @@ class Argument implements Translatable
     private $id;
 
     /**
+     * @var string
      * @ORM\Column(type="text")
      * @Gedmo\Translatable
      */
@@ -43,7 +45,7 @@ class Argument implements Translatable
 
     public function __toString()
     {
-        return $this->getArgument();
+        return $this->argument;
     }
 
     public function setTranslatableLocale($locale): void
