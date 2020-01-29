@@ -22,7 +22,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/{_locale}", host="{campaign}.localhost", requirements={"campaign"="[\w-]+", "_locale"="de|fr|"})
+ * @Route(
+ *     "/{_locale}",
+ *     host="{campaign}.{domain}",
+ *     defaults={"domain"="%domain%"},
+ *     requirements={"campaign"="[\w-]+", "_locale"="de|fr|", "domain"="%domain%"}
+ * )
  */
 class CampaignController extends AbstractController
 {
