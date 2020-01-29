@@ -42,10 +42,16 @@ class WipCount
     private $campaign;
 
     /**
+     * @var Politician
      * @ORM\ManyToOne(targetEntity="App\Entity\Politician")
      * @ORM\JoinColumn(nullable=false)
      */
     private $politician;
+
+    public function __toString(): string
+    {
+        return (string) $this->politician->getName();
+    }
 
     public function getId(): ?int
     {

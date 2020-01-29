@@ -3,6 +3,18 @@ easy_admin:
   entities:
     Campaign:
       class: App\Entity\Campaign
+      form:
+        fields:
+          - name
+          - slug
+          - start
+          - end
+          - arguments
+          - regions
+          - wipCounts
+          - pages
+          - politicianType
+
     CampaignEntry:
       class: App\Entity\CampaignEntry
     Argument:

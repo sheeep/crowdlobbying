@@ -49,10 +49,16 @@ class CampaignEntry
     private $color;
 
     /**
+     * @var Argument
      * @ORM\ManyToOne(targetEntity="App\Entity\Argument")
      * @ORM\JoinColumn(nullable=false)
      */
     private $argument;
+
+    public function __toString(): string
+    {
+        return (string) $this->argument->getArgument();
+    }
 
     public function getRandomColor(): string
     {
