@@ -33,3 +33,5 @@ easy_admin:
       class: App\Entity\Politician
     PoliticianContact:
       class: App\Entity\PoliticianContact
+    Commission:
+      class: App\Entity\Commission
