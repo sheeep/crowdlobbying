@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
@@ -128,7 +129,7 @@ class Commission
         return $this;
     }
 
-    public function getMembers(): ArrayCollection
+    public function getMembers(): Collection
     {
         return $this->members;
     }
@@ -147,7 +148,7 @@ class Commission
         return $this;
     }
 
-    public function setMembers(ArrayCollection $members): self
+    public function setMembers(Collection $members): self
     {
         $this->members = $members;
 
