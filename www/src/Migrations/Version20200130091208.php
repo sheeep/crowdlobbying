@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200129162147 extends AbstractMigration
+final class Version20200130091208 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -22,8 +22,7 @@ final class Version20200129162147 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf('mysql' !== $this->connection->getDatabasePlatform()->getName(), 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('DROP INDEX UNIQ_1C650158989D9B62 ON commission');
-        $this->addSql('ALTER TABLE commission DROP slug');
+        $this->addSql('ALTER TABLE politician ADD image VARCHAR(255) NOT NULL');
     }
 
     public function down(Schema $schema): void
@@ -31,7 +30,6 @@ final class Version20200129162147 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf('mysql' !== $this->connection->getDatabasePlatform()->getName(), 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE commission ADD slug VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`');
-        $this->addSql('CREATE UNIQUE INDEX UNIQ_1C650158989D9B62 ON commission (slug)');
+        $this->addSql('ALTER TABLE politician DROP image');
     }
 }

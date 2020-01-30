@@ -31,6 +31,30 @@ easy_admin:
       class: App\Entity\PoliticianType
     Politician:
       class: App\Entity\Politician
+      form:
+        fields:
+          - name
+          - slug
+          - since
+          - lang
+          - twitter
+          - { property: 'imageFile', type: 'vich_image' }
+          - region
+          - contact
+          - party
+          - politicianType
+      list:
+        fields:
+          - name
+          - { property: 'image', type: 'image', base_path: '%app.path.politician_images%' }
+          - region
+          - party
+          - lang
+          - twitter
+      show:
+        fields:
+          - { property: 'image', type: 'image', base_path: '%app.path.politician_images%' }
+
     PoliticianContact:
       class: App\Entity\PoliticianContact
     Commission:

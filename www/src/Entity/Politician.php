@@ -8,10 +8,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\SoftDeleteable\Traits\SoftDeleteableEntity;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
+use Symfony\Component\HttpFoundation\File\File as SymfonyFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PoliticianRepository")
  * @Gedmo\SoftDeleteable()
+ * @Vich\Uploadable
  */
 class Politician
 {
@@ -73,6 +76,20 @@ class Politician
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $twitter;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
+    /**
+     * @var SymfonyFile
+     *
+     * @Vich\UploadableField(mapping="politician_images", fileNameProperty="image")
+     */
+    private $imageFile;
 
     public function __toString()
     {
@@ -202,5 +219,33 @@ class Politician
         $this->twitter = $twitter;
 
         return $this;
+    }
+
+    public function setImageFile(SymfonyFile $image = null): self
+    {
+        $this->imageFile = $image;
+
+        if ($image) {
+            $this->updatedAt = new \DateTime();
+        }
+
+        return $this;
+    }
+
+    public function getImageFile(): ?SymfonyFile
+    {
+        return $this->imageFile;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image ?? '';
+
+        return $this;
+    }
+
+    public function getImage(): string
+    {
+        return $this->image;
     }
 }

@@ -6,6 +6,7 @@
 parameters:
     locale: 'de'
     domain: '%env(DOMAIN)%'
+    app.path.politician_images: /uploads/images/politicians
 
 services:
     # default configuration for services in *this* file
