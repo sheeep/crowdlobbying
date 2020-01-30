@@ -183,8 +183,7 @@
         <div class="page-width">
             <div class="layout-width">
                 <ul class="menu__items">
-                    <li class="menu__item"><a class="menu__link" onclick="app.menu.hide()"
-                                              href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}">{% trans %}Startseite{% endtrans %}</a>
+                    <li class="menu__item"><a class="menu__link" onclick="app.menu.hide()" href="{% if campaign is defined %}{{ path('app_campaign_index', {'campaign': campaign.slug}) }}{% else %}{{ path('default_index') }}{% endif %}">{% trans %}Startseite{% endtrans %}</a>
                     </li>
                     <li class="menu__item"><a class="menu__link"
                                               onclick="app.menu.hide(); utils.scrollTo('.how-it-works', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Mitmachen{% endtrans %}</a>
@@ -196,7 +195,7 @@
                                               onclick="app.menu.hide(); utils.scrollTo('.how-it-works', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Ständerätinnen
                                 und Ständeräte{% endtrans %}</a></li>
                     <li class="menu__item"><a class="menu__link" onclick="app.menu.hide()"
-                                              href="{{ path('app_campaign_statements', {'campaign': campaign.slug}) }}">{% trans %}Nachrichten-Feed{% endtrans %}</a>
+                                              href="{% if campaign is defined %}{{ path('app_campaign_index', {'campaign': campaign.slug}) }}{% else %}{{ path('default_index') }}{% endif %}">{% trans %}Nachrichten-Feed{% endtrans %}</a>
                     </li>
                     <li class="menu__item"><a class="menu__link"
                                               onclick="app.menu.hide(); utils.scrollTo('#media-contact', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Medienkontakt{% endtrans %}</a>
