@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace App\Repository;
 
 use App\Entity\Campaign;
+use App\Entity\Commission;
 use App\Entity\Politician;
 use App\Entity\PoliticianType;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -37,37 +39,24 @@ class PoliticianRepository extends ServiceEntityRepository
     }
 
     /** @return Politician[] */
+    public function findByCommissions(Collection $commissions): array
+    {
+        $politicians = [];
+
+        /** @var Commission $commission */
+        foreach ($commissions as $commission) {
+            $politicians += $commission->getMembers()->toArray();
+        }
+
+        return $politicians;
+    }
+
+    /** @return Politician[] */
     public function findByCampaign(Campaign $campaign): array
     {
-        return $this->findByTypeAndRegions($campaign->getPoliticianType(), $campaign->getRegions());
-    }
+        $byTypeAndReqions = $this->findByTypeAndRegions($campaign->getPoliticianType(), $campaign->getRegions());
+        $byCommissions = $this->findByCommissions($campaign->getCommissions());
 
-    // /**
-    //  * @return Politician[] Returns an array of Politician objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        return array_unique(array_merge($byTypeAndReqions, $byCommissions));
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Politician
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

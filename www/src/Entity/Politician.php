@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\SoftDeleteable\Traits\SoftDeleteableEntity;
@@ -90,6 +92,16 @@ class Politician
      * @Vich\UploadableField(mapping="politician_images", fileNameProperty="image")
      */
     private $imageFile;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Commission", mappedBy="members")
+     */
+    private $commissions;
+
+    public function __construct()
+    {
+        $this->commissions = new ArrayCollection();
+    }
 
     public function __toString()
     {
@@ -247,5 +259,31 @@ class Politician
     public function getImage(): ?string
     {
         return $this->image;
+    }
+
+    public function getCommissions(): Collection
+    {
+        return $this->commissions;
+    }
+
+    public function setCommissions(Collection $commissions): self
+    {
+        $this->commissions = $commissions;
+
+        return $this;
+    }
+
+    public function addCommission(Commission $commission): self
+    {
+        $this->commissions->add($commission);
+
+        return $this;
+    }
+
+    public function removeCommission(Commission $commission): self
+    {
+        $this->commissions->removeElement($commission);
+
+        return $this;
     }
 }

@@ -80,6 +80,15 @@ class Campaign
      */
     private $politicianType;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Commission")
+     * @ORM\JoinTable(name="campaigns_commissions",
+     *      joinColumns={@ORM\JoinColumn(name="campaign_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="commission_id", referencedColumnName="id", unique=true)}
+     *      )
+     */
+    private $commissions;
+
     public function __construct()
     {
         $this->campaignEntries = new ArrayCollection();
@@ -87,6 +96,7 @@ class Campaign
         $this->regions = new ArrayCollection();
         $this->wipCounts = new ArrayCollection();
         $this->pages = new ArrayCollection();
+        $this->commissions = new ArrayCollection();
     }
 
     public function __toString(): string
@@ -322,6 +332,32 @@ class Campaign
     public function setPoliticianType(?PoliticianType $politicianType): self
     {
         $this->politicianType = $politicianType;
+
+        return $this;
+    }
+
+    public function getCommissions(): Collection
+    {
+        return $this->commissions;
+    }
+
+    public function setCommissions(Collection $commissions): self
+    {
+        $this->commissions = $commissions;
+
+        return $this;
+    }
+
+    public function addCommission(Commission $commission): self
+    {
+        $this->commissions->add($commission);
+
+        return $this;
+    }
+
+    public function removeCommission(Commission $commission): self
+    {
+        $this->commissions->removeElement($commission);
 
         return $this;
     }

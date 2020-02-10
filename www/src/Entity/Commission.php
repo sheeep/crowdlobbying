@@ -40,24 +40,26 @@ class Commission
     private $abbreviation;
 
     /**
-     * @var PoliticianType
+     * @var PoliticianType|null
      * @ORM\OneToOne(targetEntity="App\Entity\PoliticianType")
      * @ORM\JoinColumn(name="politician_type_id", referencedColumnName="id")
      */
     private $politicianType;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Politician")
-     * @ORM\JoinTable(name="commissions_politicians",
-     *     joinColumns={@ORM\JoinColumn(name="commission_id", referencedColumnName="id")},
-     *     inverseJoinColumns={@ORM\JoinColumn(name="politician_id", referencedColumnName="id", unique=true)}
-     * )
+     * @ORM\ManyToMany(targetEntity="App\Entity\Politician", inversedBy="commissions")
+     * @ORM\JoinTable(name="commissions_politicians")
      */
     private $members;
 
     public function __construct()
     {
         $this->members = new ArrayCollection();
+    }
+
+    public function __toString(): string
+    {
+        return (string) $this->getAbbreviation();
     }
 
     public function getId(): ?int
@@ -101,7 +103,7 @@ class Commission
         return $this->politicianType;
     }
 
-    public function setPoliticianType(PoliticianType $politicianType): self
+    public function setPoliticianType(?PoliticianType $politicianType): self
     {
         $this->politicianType = $politicianType;
 
@@ -115,6 +117,7 @@ class Commission
 
     public function addMember(Politician $member): self
     {
+        $member->addCommission($this);
         $this->members->add($member);
 
         return $this;
@@ -122,6 +125,7 @@ class Commission
 
     public function removeMember(Politician $member): self
     {
+        $member->removeCommission($this);
         $this->members->removeElement($member);
 
         return $this;

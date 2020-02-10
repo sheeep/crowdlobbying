@@ -14,6 +14,7 @@ easy_admin:
           - wipCounts
           - pages
           - politicianType
+          - commissions
 
     CampaignEntry:
       class: App\Entity\CampaignEntry
@@ -43,6 +44,7 @@ easy_admin:
           - contact
           - party
           - politicianType
+          - commissions
       list:
         fields:
           - name
