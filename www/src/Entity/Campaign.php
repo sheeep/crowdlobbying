@@ -110,7 +110,13 @@ class Campaign
             ->andWhere(Criteria::expr()->eq('politician', $politician))
             ->setMaxResults(1);
 
-        return $this->getWipCounts()->matching($criteria)->first();
+        $result = $this->getWipCounts()->matching($criteria)->first();
+
+        if (false === $result) {
+            return null;
+        }
+
+        return $result;
     }
 
     public function getEntryCountByPolitician(Politician $politician): int

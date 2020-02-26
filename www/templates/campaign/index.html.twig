@@ -103,7 +103,10 @@
                                 {% set voteCount = campaign.entryCountByPolitician(politician) %}
                                 <div class="badge official__badge">{{ voteCount > 999 ? '999+' : voteCount }}</div>
                             </div>
-                            {% set wipCount = campaign.wipCountByPolitician(politician).status %}
+                            {% set wipCount = 0 %}
+                            {% if campaign.wipCountByPolitician(politician) %}
+                                {% set wipCount = campaign.wipCountByPolitician(politician).status %}
+                            {% endif %}
                             <div class="official__footer"><span class="official__name"><strong>{{ politician }}</strong> ({{ politician.party.short }}/{{ politician.region.short }})</span><span
                                         class="official__state {% if wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}with-us{% elseif wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_NO') %}against-us{% else %}unknown{% endif %}" title="{% if wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}{% trans %}mit uns{% endtrans %}{% elseif wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_NO') %}{% trans %}gegen uns{% endtrans %}{% else %}{% trans %}unbekannt{% endtrans %}{% endif %}">{% trans %}Stimmabsicht{% endtrans %}</span><a
                                         href="{{ path('app_campaign_lobby', {'campaign': campaign.slug, 'slug': politician.slug}) }}">
