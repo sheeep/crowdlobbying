@@ -10,9 +10,12 @@ use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
+use Symfony\Component\HttpFoundation\File\File as SymfonyFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CampaignRepository")
+ * @Vich\Uploadable
  */
 class Campaign
 {
@@ -89,6 +92,97 @@ class Campaign
      */
     private $commissions;
 
+    /**
+     * @ORM\Column(type="string")
+     * @Gedmo\Translatable
+     */
+    private $campaignTitle;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Gedmo\Translatable
+     */
+    private $campaignDescription;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Gedmo\Translatable
+     */
+    private $ogCampaignDescription;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255)
+     */
+    private $ogImageDe;
+
+    /**
+     * @var SymfonyFile
+     * @Vich\UploadableField(mapping="campaign_images", fileNameProperty="ogImageDe")
+     */
+    private $ogImageFileDe;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255)
+     */
+    private $ogImageFr;
+
+    /**
+     * @var SymfonyFile
+     * @Vich\UploadableField(mapping="campaign_images", fileNameProperty="ogImageFr")
+     */
+    private $ogImageFileFr;
+
+    /**
+     * @ORM\Column(type="string")
+     * @Gedmo\Translatable
+     */
+    private $hero;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Gedmo\Translatable
+     */
+    private $campaignInfoLead;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Gedmo\Translatable
+     */
+    private $campaignInfo;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Gedmo\Translatable
+     */
+    private $donorBox;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Gedmo\Translatable()
+     */
+    private $shareTextBox;
+
+    /**
+     * @ORM\Column(type="string")
+     * @Gedmo\Translatable
+     */
+    private $faqTitle;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Gedmo\Translatable()
+     */
+    private $faqText;
+
+    /**
+     * @Gedmo\Locale
+     * Used locale to override Translation listener`s locale
+     * this is not a mapped field of entity metadata, just a simple property
+     */
+    private $locale;
+
     public function __construct()
     {
         $this->campaignEntries = new ArrayCollection();
@@ -102,6 +196,11 @@ class Campaign
     public function __toString(): string
     {
         return $this->name;
+    }
+
+    public function setTranslatableLocale($locale): void
+    {
+        $this->locale = $locale;
     }
 
     public function getWipCountByPolitician(Politician $politician): ?WipCount
@@ -364,6 +463,182 @@ class Campaign
     public function removeCommission(Commission $commission): self
     {
         $this->commissions->removeElement($commission);
+
+        return $this;
+    }
+
+    public function getCampaignTitle(): ?string
+    {
+        return $this->campaignTitle;
+    }
+
+    public function setCampaignTitle(string $campaignTitle = null): self
+    {
+        $this->campaignTitle = $campaignTitle;
+
+        return $this;
+    }
+
+    public function getCampaignDescription(): ?string
+    {
+        return $this->campaignDescription;
+    }
+
+    public function setCampaignDescription(string $campaignDescription = null): self
+    {
+        $this->campaignDescription = $campaignDescription;
+
+        return $this;
+    }
+
+    public function getOgCampaignDescription(): ?string
+    {
+        return $this->ogCampaignDescription;
+    }
+
+    public function setOgCampaignDescription(string $ogCampaignDescription = null): self
+    {
+        $this->ogCampaignDescription = $ogCampaignDescription;
+
+        return $this;
+    }
+
+    public function setOgImageFileDe(SymfonyFile $ogImage = null): self
+    {
+        $this->ogImageFileDe = $ogImage;
+
+        if ($ogImage) {
+            $this->updatedAt = new \DateTime();
+        }
+
+        return $this;
+    }
+
+    public function getOgImageFileDe(): ?SymfonyFile
+    {
+        return $this->ogImageFileDe;
+    }
+
+    public function setOgImageDe(?string $ogImage): self
+    {
+        $this->ogImageDe = $ogImage ?? '';
+
+        return $this;
+    }
+
+    public function getOgImageDe(): ?string
+    {
+        return $this->ogImageDe;
+    }
+
+    public function setOgImageFileFr(SymfonyFile $ogImage = null): self
+    {
+        $this->ogImageFileFr = $ogImage;
+
+        if ($ogImage) {
+            $this->updatedAt = new \DateTime();
+        }
+
+        return $this;
+    }
+
+    public function getOgImageFileFr(): ?SymfonyFile
+    {
+        return $this->ogImageFileFr;
+    }
+
+    public function setOgImageFr(?string $ogImage): self
+    {
+        $this->ogImageFr = $ogImage ?? '';
+
+        return $this;
+    }
+
+    public function getOgImageFr(): ?string
+    {
+        return $this->ogImageFr;
+    }
+
+    public function getHero(): ?string
+    {
+        return $this->hero;
+    }
+
+    public function setHero(string $hero = null): self
+    {
+        $this->hero = $hero;
+
+        return $this;
+    }
+
+    public function getCampaignInfoLead(): ?string
+    {
+        return $this->campaignInfoLead;
+    }
+
+    public function setCampaignInfoLead(string $campaignInfoLead = null): self
+    {
+        $this->campaignInfoLead = $campaignInfoLead;
+
+        return $this;
+    }
+
+    public function getCampaignInfo(): ?string
+    {
+        return $this->campaignInfo;
+    }
+
+    public function setCampaignInfo(string $campaignInfo = null): self
+    {
+        $this->campaignInfo = $campaignInfo;
+
+        return $this;
+    }
+
+    public function getDonorBox(): ?string
+    {
+        return $this->donorBox;
+    }
+
+    public function setDonorBox(string $donorBox = null): self
+    {
+        $this->donorBox = $donorBox;
+
+        return $this;
+    }
+
+    public function getShareTextBox(): ?string
+    {
+        return $this->shareTextBox;
+    }
+
+    public function setShareTextBox(string $shareTextBox = null): self
+    {
+        $this->shareTextBox = $shareTextBox;
+
+        return $this;
+    }
+
+    public function getFaqTitle(): ?string
+    {
+        return $this->faqTitle;
+    }
+
+    public function setFaqTitle(string $faqTitle = null): self
+    {
+        $this->faqTitle = $faqTitle;
+
+        return $this;
+    }
+
+    public function getFaqText(): ?string
+    {
+        return $this->faqText;
+    }
+
+    public function setFaqText(string $faqText = null): self
+    {
+        $this->faqText = $faqText;
 
         return $this;
     }

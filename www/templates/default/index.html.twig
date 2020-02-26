@@ -3,15 +3,17 @@
 {% block title %}CrowdLobbying{% endblock %}
 
 {% block body %}
-<div class="container">
-    {% for campaign in campaigns %}
-        <div class="row">
-            <div class="col">
-                <a href="https://{{ campaign.slug }}.{{ app.request.host }}/">{{ campaign }}</a>
+    <section class="hero">
+        <div class="hero__inner">
+            <div class="viewport-width">
+                <div class="page-width">
+                    <div class="layout-width">
+                        <div class="hero__content"><h2>{% trans %}Crowd-Lobbying{% endtrans %}</h2>
+                            <h1>{% trans %}Unsere aktuellen Kampagnen{% endtrans %}</h1>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    {% else %}
-        <div class="row"><div class="col">Keine Kampagnen gefunden... #sadTimes</div></div>
-    {% endfor %}
-</div>
+    </section>
 {% endblock %}

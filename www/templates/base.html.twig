@@ -1,23 +1,34 @@
 {% if sectionColor is not defined %}{% set sectionColor = '' %}{% endif %}
 {% if headerClass is not defined %}{% set headerClass = '' %}{% endif %}
 {% if hasFAQ is not defined %}{% set hasFAQ = true %}{% endif %}
+
+{% set title = 'default_title' | trans %}
+{% set description = 'default_description' | trans %}
+{% set ogImage = '/assets/meta/crowd-lobbying-og-image.jpg' | trans %}
+{% set ogDescription = 'default_og_description' | trans %}
+
+{% if campaign is defined %}
+    {% set description = campaign.campaignDescription | trim %}
+    {% set title = campaign.campaignTitle %}
+    {% set ogImage = vich_uploader_asset(campaign, 'ogImageFile' ~ (app.request.locale | capitalize)) %}
+    {% set ogDescription = campaign.ogCampaignDescription %}
+{% endif %}
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>{% trans %}Campaign Title{% endtrans %}</title>
-    <meta name="description" content="{% trans %}Campaign Description{% endtrans %}">
-    <meta property="og:image" content="{% trans %}/assets/meta/crowd-lobbying-og-image.jpg{% endtrans %}">
-    <meta property=og:title content="{% trans %}Crowd-Lobbying digitalen Pass (E-ID){% endtrans %}"/>
-    <meta property=og:description
-          content="{% trans %}Nachrichten an den Ständerat: Wir wollen keinen digitalen Pass (E-ID) von der UBS, Swisscom oder der CSS Versicherung!{% endtrans %}"/>
-    <meta property=og:url content="https://crowdlobbying.ch"/>
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta property="og:image" content="{{ ogImage }}">
+    <meta property=og:title content="{{ title }}"/>
+    <meta property=og:description content="{{ ogDescription }}"/>
+    <meta property=og:url content="{{ app.request.schemeAndHttpHost }}"/>
     <meta name=twitter:card content=summary_large_image/>
-    <meta name=twitter:description
-          content="{% trans %}Nachrichten an den Ständerat: Wir wollen keinen digitalen Pass (E-ID) von der UBS, Swisscom oder der CSS Versicherung!{% endtrans %}"/>
-    <meta name=twitter:title content="{% trans %}Crowd-Lobbying digitalen Pass (E-ID){% endtrans %}"/>
+    <meta name=twitter:description content="{{ ogDescription }}"/>
+    <meta name=twitter:title content="{{ title }}"/>
     <meta name=twitter:site content="@crowd_lobbying"/>
-    <meta name=twitter:image content="{% trans %}/assets/meta/crowd-lobbying-og-image.jpg{% endtrans %}"/>
+    <meta name=twitter:image content="{{ ogImage }}"/>
     <meta name=twitter:creator content="@crowd_lobbying"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <meta name="theme-color" content="#ffffff">
@@ -73,57 +84,23 @@
             <div class="page-width">
                 <div class="layout-width">
                     <div class="richtext readable-width">
-                        <h1>{% trans %}Digitaler Schweizer Pass (E-ID){% endtrans %}</h1>
-                        {% trans %}<p>Weil der Bund vor zehn Jahren mit der Einführung eines elektronischen Passes
-                            (E-ID) gescheitert
-                            ist, will er die Aufgabe nun verschiedenen Grosskonzernen überlassen. Noch kann das
-                            Parlament
-                            dies stoppen.</p>
-                            <h2>Wofür braucht es eine staatlich geprüfte digitale Identität?</h2>
-                            <p>Die elektronische Identität (E-ID) ist der digitale Pass. Die NutzerInnen einer E-ID
-                                sollen bei
-                                E-Government-Angeboten, beim Online-Shopping und weiteren Online-Dienstleistungen wie
-                                Versicherungen eindeutig Identifizierbar sein. Damit sollen Risiken wie Identitätsklau
-                                und
-                                Manipulationen im Netz verunmöglicht werden. Besonders bei sensiblen Vorgängen wie
-                                Gesundheitsdaten, bei Abstimmungen und Wahlen im Netz, der E-Steuerrechnung und im
-                                Online-Banking würde die E-ID eine zentrale Rolle spielen. Im Vergleich mit anderen
-                                Staaten ist
-                                die Schweiz in Sachen elektronischer Identität in den letzten Jahren in Rückstand
-                                geraten.</p>
-                            <h2>Welche Lösung schlägt der Bundesrat vor?</h2>
-                            <p>Das Gesetz über elektronische Identifizierungsdienste sieht eine Rollenteilung zwischen
-                                Staat und
-                                Privaten vor. Der Staat gibt die E-ID nicht mehr selber heraus. Die technische Lösung
-                                für die
-                                E-ID kommt von privaten Anbietern, den sogenannten Identitätsdienstleistern (IdP). Diese
-                                sollen
-                                für den Vertrieb und den Aufbau der elektronischen Identität zuständig sein, und der
-                                Bund nur
-                                noch als schwache Kontrollbehörde eingesetzt werden. Das Passbüro wird damit
-                                abgeschafft. An
-                                dessen Stelle treten grosse Privatbanken, wie die UBS, private
-                                Versicherungsgesellschaften, wie
-                                die CSS Versicherung, oder staatsnahe Giganten, wie die Post. Diese Schweizer
-                                Grossfirmen wären
-                                unter dem Dach des Konglomerats «SwissSign» fortan im Besitz der Daten und der
-                                Persönlichkeitsprofile, die durch die Benutzung der E-ID entstehen.</p>
-                            <h2>Warum ist dieser Schritt so gefährlich?</h2>
-                            <p>Die Sicherung der Identität ist seit jeher eine staatlich-hoheitliche Aufgabe, die unter
-                                demokratische Kontrolle gehört. Es ist unverständlich, dass der Bund ausschliesslich
-                                private
-                                Akteure als E-ID-Aussteller festschreibt. Damit erhalten die privaten E-ID-Aussteller
-                                grosse
-                                Freiheit in der Speicherung und Verwendung unserer Daten und dem Bund bleibt nur eine
-                                schwache
-                                Kontrollfunktion.</p>
-                            <h2>Wer unterstützt das Crowd-Lobbying?</h2>
-                            <p>Wir sind ein breiter Zusammenschluss von Organisationen und Netzwerken, die sich dafür
-                                einsetzen,
-                                dass der digitale Pass weiterhin vom Staat an die Bevölkerung ausgegeben wird. Die
-                                Kampagne wird
-                                u.a. unterstützt von der Stiftung für Konsumentenschutz, der Digitalen Gesellschaft, der
-                                Demokratie-Plattform WeCollect und dem Verein PublicBeta.</p>{% endtrans %}</div>
+                        {% if campaign is defined %}
+                            <h1>{{ campaign.faqTitle }}</h1>
+                            {{ campaign.faqText | raw }}
+                        {% else %}
+                            <div class="row">
+                                <div class="col">
+                                    <ul>
+                                        {% for campaign in campaigns %}
+                                            <li><a href="https://{{ campaign.slug }}.{{ app.request.host }}/">{{ campaign }}</a></li>
+                                        {% else %}
+                                            <li>Keine Kampagnen gefunden... #sadTimes</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
@@ -134,8 +111,7 @@
         <div class="page-width">
             <div class="layout-width scroll-to-top__inner">
                 <button class="action-button outline icon icon--up"
-                        onclick="utils.scrollTo('body')">{% trans %}Nach
-                        oben{% endtrans %}
+                        onclick="utils.scrollTo('body')">{% trans %}Nach oben{% endtrans %}
                 </button>
             </div>
         </div>
@@ -147,16 +123,24 @@
             <div class="layout-width">
                 <section class="cols footer__section footer__about">
                     <div class="col col-6"><h2 class="no-space">{% trans %}Über uns{% endtrans %}</h2>
-                        <p>{% trans %}Crowd-Lobbying ist eine unabhängige Schweizer Kampagnenplattform. Wir ermöglichen Menschen,
+                        <p>{% trans %}
+                                Crowd-Lobbying ist eine unabhängige Schweizer Kampagnenplattform. Wir ermöglichen Menschen,
                                 Nachrichten an das Parlament zu schicken, die ihnen am Herzen liegen. Gemeinsam setzen wir
                                 uns ein für eine Schweiz, in der wir leben wollen. Die Plattform ist ein Community-Projekt
-                                und wurde an den Campaign Hackdays 2019 entwickelt.{% endtrans %}</p></div>
-                    <div class="col col-3"><h2 class="no-space"
-                                               id="media-contact">{% trans %}Medienkontakt{% endtrans %}</h2>
-                        {% trans %}<p>Che Wagner<br>Tel. +41 76 230 75 29<br><a href="mailto:che.wagner@publicbeta.ch">che.wagner@publicbeta.ch</a>
-                        </p>{% endtrans %}</div>
+                                und wurde an den Campaign Hackdays 2019 entwickelt.
+                            {% endtrans %}
+                        </p>
+                    </div>
+                    <div class="col col-3"><h2 class="no-space" id="media-contact">{% trans %}Medienkontakt{% endtrans %}</h2>
+                        {% trans %}
+                            <p>
+                                Che Wagner<br>Tel. +41 76 230 75 29<br><a href="mailto:che.wagner@publicbeta.ch">che.wagner@publicbeta.ch</a>
+                            </p>
+                        {% endtrans %}
+                    </div>
                     <div class="col col-3"><h2 class="no-space">{% trans %}Impressum{% endtrans %}</h2>
-                        {% trans %}<p>Daniel Graf<br>Dammerkirchstr. 44<br>CH-4056 Basel</p>{% endtrans %}</div>
+                        {% trans %}<p>Daniel Graf<br>Dammerkirchstr. 44<br>CH-4056 Basel</p>{% endtrans %}
+                    </div>
                 </section>
             </div>
         </div>
@@ -171,9 +155,10 @@
                     <h2>{% trans %}Datenschutz{% endtrans %}</h2>
                     {% trans %}DatenschutzText{% endtrans %}
                     <hr>
-                    <p class="no-space">© 2019 <a
-                                href="https://www.publicbeta.ch/">{% trans %}Verein Public Beta, Basel{% endtrans %}</a>,
-                        {% trans %}v.1.0.0-alpha.10{% endtrans %}</p></section>
+                    <p class="no-space">
+                        © 2019 <a href="https://www.publicbeta.ch/">{% trans %}Verein Public Beta, Basel{% endtrans %}</a>,{% trans %}v.1.0.0-alpha.10{% endtrans %}
+                    </p>
+                </section>
             </div>
         </div>
     </div>
@@ -183,26 +168,13 @@
         <div class="page-width">
             <div class="layout-width">
                 <ul class="menu__items">
-                    <li class="menu__item"><a class="menu__link" onclick="app.menu.hide()" href="{% if campaign is defined %}{{ path('app_campaign_index', {'campaign': campaign.slug}) }}{% else %}{{ path('default_index') }}{% endif %}">{% trans %}Startseite{% endtrans %}</a>
-                    </li>
-                    <li class="menu__item"><a class="menu__link"
-                                              onclick="app.menu.hide(); utils.scrollTo('.how-it-works', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Mitmachen{% endtrans %}</a>
-                    </li>
-                    <li class="menu__item"><a class="menu__link"
-                                              onclick="app.menu.hide(); utils.scrollTo('#donate', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Spenden{% endtrans %}</a>
-                    </li>
-                    <li class="menu__item"><a class="menu__link"
-                                              onclick="app.menu.hide(); utils.scrollTo('.how-it-works', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Ständerätinnen
-                                und Ständeräte{% endtrans %}</a></li>
-                    <li class="menu__item"><a class="menu__link" onclick="app.menu.hide()"
-                                              href="{% if campaign is defined %}{{ path('app_campaign_index', {'campaign': campaign.slug}) }}{% else %}{{ path('default_index') }}{% endif %}">{% trans %}Nachrichten-Feed{% endtrans %}</a>
-                    </li>
-                    <li class="menu__item"><a class="menu__link"
-                                              onclick="app.menu.hide(); utils.scrollTo('#media-contact', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Medienkontakt{% endtrans %}</a>
-                    </li>
-                    <li class="menu__item"><a class="menu__link"
-                                              onclick="app.menu.hide(); utils.scrollTo('#privacy', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Datenschutz{% endtrans %}</a>
-                    </li>
+                    <li class="menu__item"><a class="menu__link" onclick="app.menu.hide()" href="{% if campaign is defined %}{{ path('app_campaign_index', {'campaign': campaign.slug}) }}{% else %}{{ path('default_index') }}{% endif %}">{% trans %}Startseite{% endtrans %}</a></li>
+                    <li class="menu__item"><a class="menu__link" onclick="app.menu.hide(); utils.scrollTo('.how-it-works', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Mitmachen{% endtrans %}</a></li>
+                    <li class="menu__item"><a class="menu__link" onclick="app.menu.hide(); utils.scrollTo('#donate', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Spenden{% endtrans %}</a></li>
+                    <li class="menu__item"><a class="menu__link" onclick="app.menu.hide(); utils.scrollTo('.how-it-works', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Ständerätinnen und Ständeräte{% endtrans %}</a></li>
+                    <li class="menu__item"><a class="menu__link" onclick="app.menu.hide()" href="{% if campaign is defined %}{{ path('app_campaign_index', {'campaign': campaign.slug}) }}{% else %}{{ path('default_index') }}{% endif %}">{% trans %}Nachrichten-Feed{% endtrans %}</a></li>
+                    <li class="menu__item"><a class="menu__link" onclick="app.menu.hide(); utils.scrollTo('#media-contact', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Medienkontakt{% endtrans %}</a></li>
+                    <li class="menu__item"><a class="menu__link" onclick="app.menu.hide(); utils.scrollTo('#privacy', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Datenschutz{% endtrans %}</a></li>
                 </ul>
             </div>
         </div>
@@ -212,17 +184,18 @@
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139693155-2"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
 
-  function reloadWithRegion(value) {
-    window.location.href = '/{{ app.request.locale }}/' + value + '#how-it-works';
-  }
+    function reloadWithRegion(value) {
+        window.location.href = '/{{ app.request.locale }}/' + value + '#how-it-works';
+    }
 
-  function gtag() {
-    dataLayer.push(arguments);
-  }
+    function gtag() {
+        dataLayer.push(arguments);
+    }
 
-  gtag('js', new Date());
-  gtag('config', 'UA-139693155-2');</script><!--crowd-lobbying-frontend v.1.0.0-alpha.10+537
-    --></body>
+    gtag('js', new Date());
+    gtag('config', 'UA-139693155-2');</script>
+    <!-- crowd-lobbying-frontend v.1.0.0-alpha.10+537 -->
+</body>
 </html>

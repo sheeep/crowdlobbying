@@ -3,13 +3,22 @@
         <div class="page-width">
             <div class="layout-width">
                 <div class="richtext readable-width"><h1>{% trans %}Spenden{% endtrans %}</h1>
-                    <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p></div>
+                    <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p>
+                </div>
                 <div class="donorbox__inner readable-width">
-                    {% trans %}[[DONORBOX]]{% endtrans %}
+                    {{ campaign.donorBox | raw }}
                 </div>
                 <div class="richtext readable-width"><h2 class="no-space-top">{% trans %}Bankverbindung{% endtrans %}</h2>
-                    <p>{% trans %}Verein PublicBeta<br>Crowd-Lobbying<br>4051 Basel<br>IBAN CH58 0900 0000 1509 7572 2<br>Post-Konto
-                                                                                                                          15-97572-2{% endtrans %}</p></div>
+                    <p>
+                        {% trans %}
+                            Verein PublicBeta<br>
+                            Crowd-Lobbying<br>
+                            4051 Basel<br>
+                            IBAN CH58 0900 0000 1509 7572 2<br>
+                            Post-Konto 15-97572-2
+                        {% endtrans %}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -19,8 +28,12 @@
         <div class="page-width">
             <div class="layout-width">
                 <div class="share__richtext richtext readable-width"><h1>{% trans %}Teilen{% endtrans %}</h1>
-                    <p>{% trans %}Bitte helfen Sie mit und teilen Sie die Kampagne mit Ihren FreundInnen, Familien, Verwandten und
-                            Bekannten.{% endtrans %}</p></div>
+                    <p>
+                        {% trans %}
+                            Bitte helfen Sie mit und teilen Sie die Kampagne mit Ihren FreundInnen, Familien, Verwandten und Bekannten.
+                        {% endtrans %}
+                    </p>
+                </div>
                 <div class="share__social readable-width">
                     <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="https://crowdlobbying.ch"
                          data-a2a-title="Crowd Lobbying"><a
@@ -30,16 +43,9 @@
                                 class="a2a_button_email action-button social email"></a></div>
                 </div>
                 <div class="share__textbox textbox readable-width">
-                    <div class="textbox__content">{% trans %}<p>Hallo</p>
-                            <p>Ich habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf</p>
-                            <p>https://www.digitaler-pass.ch/</p>
-                            <p>kannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du
-                                gegen eine E-ID von von privaten Unternehmen bist.</p>
-                            <p>Es würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.</p>
-                            <p>Vielen Dank und freundliche Grüsse</p>{% endtrans %}</div>
-                    <button class="action-button outline textbox__button"
-                            onclick="utils.copy('{% trans %}Hallo\n\nIch habe gerade gegen die E-ID lobbyiert. Tönt kompliziert? Ist aber ganz einfach. Auf \n\nhttps://www.digitaler-pass.ch/\n\nkannst du einer Ständerätin oder einem Ständerat deiner Wahl ein Argument schicken, wieso du gegen eine E-ID von von privaten Unternehmen bist.\n\nEs würde mir sehr viel bedeuten, wenn Du dieses Projekt ebenfalls unterstützen würdest.\n\nVielen Dank und freundliche Grüsse{% endtrans %}'); app.actionButton.showOverlay();"
-                            data-overlay-state="ok" data-overlay-label="kopiert" data-overlay-autohide="true">
+                    <div class="textbox__content">{{ campaign.shareTextBox | raw }}</div>
+                    {% set copyText = campaign.shareTextBox | replace({'<p>': '', '</p>': '\n\n'}) | escape('js') %}
+                    <button class="action-button outline textbox__button" onclick="utils.copy('{{ copyText }}'); app.actionButton.showOverlay();" data-overlay-state="ok" data-overlay-label="kopiert" data-overlay-autohide="true">
                         {% trans %}kopieren{% endtrans %}
                         <div class="action-button__overlay"></div>
                     </button>

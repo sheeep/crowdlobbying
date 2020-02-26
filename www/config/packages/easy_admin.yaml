@@ -15,6 +15,29 @@ easy_admin:
           - pages
           - politicianType
           - commissions
+          - campaignTitle
+          - campaignDescription
+          - ogCampaignDescription
+          - { property: 'ogImageFileDe', type: 'vich_image' }
+          - { property: 'ogImageFileFr', type: 'vich_image' }
+          - hero
+          - campaignInfoLead
+          - campaignInfo
+          - donorBox
+          - shareTextBox
+          - faqTitle
+          - faqText
+      list:
+        fields:
+            - name
+            - slug
+            - start
+            - end
+            - campaignTitle
+      show:
+        fields:
+          - { property: 'ogImageDe', type: 'image', base_path: '%app.path.campaign_images%' }
+          - { property: 'ogImageFr', type: 'image', base_path: '%app.path.campaign_images%' }
 
     CampaignEntry:
       class: App\Entity\CampaignEntry

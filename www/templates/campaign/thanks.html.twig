@@ -9,17 +9,26 @@
                 <div class="layout-width">
                     <div class="readable-width">
                         <div class="act__richtext richtext center-text"><h1>{% trans %}Herzlichen Dank für Ihre Nachricht{% endtrans %}</h1>
-                            <p>{% trans %}Bitte helfen Sie mit und teilen Sie Ihr Argument mit Ihren FreundInnen, Familien,
-                                    Verwandten und Bekannten.{% endtrans %}</p></div>
+                            <p>{% trans %}Bitte helfen Sie mit und teilen Sie Ihr Argument mit Ihren FreundInnen, Familien, Verwandten und Bekannten.{% endtrans %}</p>
+                        </div>
                         <div class="act__my-message">
                             <blockquote class="card blue" style="background-color: {{ campaignEntry.color }};">
-                                <header class="card__header"><cite class="card__meta"><span class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ campaignEntry.politician }}</strong> ({{ campaignEntry.politician.party.short }}/{{ campaignEntry.politician.region.short }})</span><span
-                                                class="card__meta-line">{% trans %}Von:{% endtrans %} {{ campaignEntry.person }}, {{ campaignEntry.person.city }}</span><span
-                                                class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ campaignEntry.campaign }}</span></cite></header>
-                                <p class="card__quote">{% trans %}«{% endtrans %}{{ campaignEntry.argument }}{% trans %}»{% endtrans %}</p></blockquote>
+                                <header class="card__header">
+                                    <cite class="card__meta">
+                                        <span class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ campaignEntry.politician }}</strong> ({{ campaignEntry.politician.party.short }}/{{ campaignEntry.politician.region.short }})</span>
+                                        <span class="card__meta-line">{% trans %}Von:{% endtrans %} {{ campaignEntry.person }}, {{ campaignEntry.person.city }}</span>
+                                        <span class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ campaignEntry.campaign }}</span>
+                                    </cite>
+                                </header>
+                                <p class="card__quote">{% trans %}«{% endtrans %}{{ campaignEntry.argument }}{% trans %}»{% endtrans %}</p>
+                            </blockquote>
                         </div>
-                        <div class="act__richtext richtext center-text"><p><a href="{{ path('app_campaign_statements', {'campaign': campaign.slug}) }}">{% trans %}Alle Nachrichten
-                                        ansehen{% endtrans %}</a><br><a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}">{% trans %}Weitere Person lobbyieren{% endtrans %}</a></p></div>
+                        <div class="act__richtext richtext center-text">
+                            <p>
+                                <a href="{{ path('app_campaign_statements', {'campaign': campaign.slug}) }}">{% trans %}Alle Nachrichten ansehen{% endtrans %}</a><br>
+                                <a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}">{% trans %}Weitere Person lobbyieren{% endtrans %}</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

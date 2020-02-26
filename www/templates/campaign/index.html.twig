@@ -7,10 +7,9 @@
             <div class="page-width">
                 <div class="layout-width">
                     <div class="hero__content"><h2>{% trans %}Crowd-Lobbying{% endtrans %}</h2>
-                        <h1>{% trans %}Wir wollen keinen digitalen Pass von der UBS, Swisscom oder der Swica!{% endtrans %}</h1>
+                        <h1>{{ campaign.hero }}</h1>
                         <p>{{ total }} {% trans %}Nachrichten an den Ständerat verschickt{% endtrans %}</p>
-                        <button class="action-button medium"
-                                onclick="utils.scrollTo('.how-it-works', { offset: document.querySelector('.header').offsetHeight * -1 })">
+                        <button class="action-button medium" onclick="utils.scrollTo('.how-it-works', { offset: document.querySelector('.header').offsetHeight * -1 })">
                             {% trans %}Mitmachen{% endtrans %}
                         </button>
                     </div>
@@ -25,8 +24,12 @@
             {% for entry in latestEntries %}
                 <div class="messages-carousel__slide">
                     <blockquote class="card pink" style="background-color: {{ entry.color }};">
-                        <header class="card__header"><cite class="card__meta"><span class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ entry.politician }}</strong> ({{ entry.politician.party.short }}/{{ entry.politician.region.short }})</span><span
-                                        class="card__meta-line">{% trans %}Von:{% endtrans %} {{ entry.person }}, {{ entry.person.city }}</span><span class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ entry.campaign }}</span></cite>
+                        <header class="card__header">
+                            <cite class="card__meta">
+                                <span class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ entry.politician }}</strong> ({{ entry.politician.party.short }}/{{ entry.politician.region.short }})</span>
+                                <span class="card__meta-line">{% trans %}Von:{% endtrans %} {{ entry.person }}, {{ entry.person.city }}</span>
+                                <span class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ entry.campaign }}</span>
+                            </cite>
                         </header>
                         <p class="card__quote">{% trans %}«{% endtrans %}{{ entry.argument }}{% trans %}»{% endtrans %}</p></blockquote>
                 </div>
@@ -38,15 +41,12 @@
     <div class="viewport-width">
         <div class="page-width">
             <div class="layout-width">
-                <div class="campaign-info__content"><p class="lead">{% trans %}Der Bundesrat plant einen historischen
-                            Systemwechsel: Der digitale Schweizer Pass (E-ID) soll neu von privaten Unternehmen ausgestellt
-                            werden. Nur der Ständerat kann den Fehlentscheid noch stoppen.{% endtrans %}</p>
-                    <p>{% trans %}Beteiligen Sie sich jetzt am Crowd-Lobbying. Überzeugen Sie die Ständerätin oder den Ständerat
-                            aus Ihrem Kanton davon, dass Sie den digitalen Pass nicht im Swisscom-Shop oder in einer
-                            UBS-Filiale beziehen wollen!{% endtrans %}</p>
+                <div class="campaign-info__content"><p class="lead">{{ campaign.campaignInfoLead }}</p>
+                    {{ campaign.campaignInfo | raw }}
                     <p>
-                        <a onclick="utils.scrollTo('.faq', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Mehr
-                                erfahren{% endtrans %}</a></p></div>
+                        <a onclick="utils.scrollTo('.faq', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Mehr erfahren{% endtrans %}</a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -56,18 +56,11 @@
         <div class="page-width">
             <div class="layout-width"><h1 class="how-it-works__title">{% trans %}So einfach geht Crowd-Lobbying:{% endtrans %}</h1>
                 <ol class="how-it-works__steps">
-                    <li class="how-it-works__step"><span class="how-it-works__ordinal">1.</span> {% trans %}Wählen Sie Ihren
-                            Kanton.{% endtrans %}
-                    </li>
-                    <li class="how-it-works__step"><span class="how-it-works__ordinal">2.</span> {% trans %}Wählen Sie ein Mitglied
-                            des Ständerates.{% endtrans %}
-                    </li>
-                    <li class="how-it-works__step"><span class="how-it-works__ordinal">3.</span> {% trans %}Entscheiden Sie sich
-                            für eine Nachricht.{% endtrans %}
-                    </li>
+                    <li class="how-it-works__step"><span class="how-it-works__ordinal">1.</span> {% trans %}Wählen Sie Ihren Kanton.{% endtrans %}</li>
+                    <li class="how-it-works__step"><span class="how-it-works__ordinal">2.</span> {% trans %}Wählen Sie ein Mitglied des Ständerates.{% endtrans %}</li>
+                    <li class="how-it-works__step"><span class="how-it-works__ordinal">3.</span> {% trans %}Entscheiden Sie sich für eine Nachricht.{% endtrans %}</li>
                 </ol>
-                <div class="how-it-works__richtext"><p>{% trans %}Wir verschicken Ihre Nachricht per SMS, E-Mail, Post oder Fax an
-                            das von Ihnen gewählte Mitglied des Ständerates.{% endtrans %}</p></div>
+                <div class="how-it-works__richtext"><p>{% trans %}Wir verschicken Ihre Nachricht per SMS, E-Mail, Post oder Fax an das von Ihnen gewählte Mitglied des Ständerates.{% endtrans %}</p></div>
             </div>
         </div>
     </div>
@@ -107,23 +100,40 @@
                             {% if campaign.wipCountByPolitician(politician) %}
                                 {% set wipCount = campaign.wipCountByPolitician(politician).status %}
                             {% endif %}
-                            <div class="official__footer"><span class="official__name"><strong>{{ politician }}</strong> ({{ politician.party.short }}/{{ politician.region.short }})</span><span
-                                        class="official__state {% if wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}with-us{% elseif wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_NO') %}against-us{% else %}unknown{% endif %}" title="{% if wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}{% trans %}mit uns{% endtrans %}{% elseif wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_NO') %}{% trans %}gegen uns{% endtrans %}{% else %}{% trans %}unbekannt{% endtrans %}{% endif %}">{% trans %}Stimmabsicht{% endtrans %}</span><a
-                                        href="{{ path('app_campaign_lobby', {'campaign': campaign.slug, 'slug': politician.slug}) }}">
-                                    <button class="action-button small official__button{{ wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') ? ' visually-hidden' }}">{% trans %}Lobbyieren{% endtrans %}</button>
-                                </a></div>
+                            <div class="official__footer">
+                                <span class="official__name">
+                                    <strong>{{ politician }}</strong> ({{ politician.party.short }}/{{ politician.region.short }})
+                                </span>
+                                <span class="official__state {% if wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}with-us{% elseif wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_NO') %}against-us{% else %}unknown{% endif %}" title="{% if wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}{% trans %}mit uns{% endtrans %}{% elseif wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_NO') %}{% trans %}gegen uns{% endtrans %}{% else %}{% trans %}unbekannt{% endtrans %}{% endif %}">
+                                    {% trans %}Stimmabsicht{% endtrans %}
+                                </span>
+                                <a href="{{ path('app_campaign_lobby', {'campaign': campaign.slug, 'slug': politician.slug}) }}">
+                                    <button class="action-button small official__button{{ wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') ? ' visually-hidden' }}">
+                                        {% trans %}Lobbyieren{% endtrans %}
+                                    </button>
+                                </a>
+                            </div>
                         </section>
                     {% endfor %}
                 </div>
-                <div class="officials__explanation readable-width"><h2 class="officials__title">{% trans %}Lobby-Status{% endtrans %}</h2>
-                    <div class="officials__states"><span class="officials__state against-us">{% trans %}gegen uns{% endtrans %}</span><span
-                                class="officials__state unknown">{% trans %}unbekannt{% endtrans %}</span><span class="officials__state with-us">{% trans %}mit uns{% endtrans %}</span>
+                <div class="officials__explanation readable-width">
+                    <h2 class="officials__title">{% trans %}Lobby-Status{% endtrans %}</h2>
+                    <div class="officials__states">
+                        <span class="officials__state against-us">{% trans %}gegen uns{% endtrans %}</span>
+                        <span class="officials__state unknown">{% trans %}unbekannt{% endtrans %}</span>
+                        <span class="officials__state with-us">{% trans %}mit uns{% endtrans %}</span>
                     </div>
-                    <div class="officials__richtext richtext"><p class="lead">{% trans %}Wer hat welche Stimmabstichten? Der
+                    <div class="officials__richtext richtext">
+                        <p class="lead">
+                            {% trans %}
+                                Wer hat welche Stimmabstichten? Der
                                 Lobby-Status zeigt Ihnen, wem Sie eine Nachricht schicken sollten. Gemeinsam wollen wir
                                 PolitikerInnen überzeugen, die noch keine feste Meinung geäussert haben oder die unserem
                                 Anliegen kritisch gegenüber stehen. Wer für unser Anliegen eintritt, erhält keine
-                                Nachrichten mehr.{% endtrans %}</p></div>
+                                Nachrichten mehr.
+                            {% endtrans %}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

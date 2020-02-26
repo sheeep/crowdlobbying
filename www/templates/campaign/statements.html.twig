@@ -11,51 +11,70 @@
                         {% if campaignEntry %}
                             <div class="messages-grid__slide">
                                 <blockquote class="card pink" style="background-color: {{ campaignEntry.color }};">
-                                    <header class="card__header"><cite class="card__meta"><span
-                                                    class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ campaignEntry.politician }}</strong> ({{ campaignEntry.politician.party.short }}/{{ campaignEntry.politician.region.short }})</span><span
-                                                    class="card__meta-line">{% trans %}Von:{% endtrans %} {{ campaignEntry.person }}, {{ campaignEntry.person.city }}</span><span
-                                                    class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ campaignEntry.campaign }}</span></cite></header>
-                                    <p class="card__quote">{% trans %}«{% endtrans %}{{ campaignEntry.argument }}{% trans %}»{% endtrans %}</p></blockquote>
+                                    <header class="card__header">
+                                        <cite class="card__meta">
+                                            <span class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ campaignEntry.politician }}</strong> ({{ campaignEntry.politician.party.short }}/{{ campaignEntry.politician.region.short }})</span>
+                                            <span class="card__meta-line">{% trans %}Von:{% endtrans %} {{ campaignEntry.person }}, {{ campaignEntry.person.city }}</span>
+                                            <span class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ campaignEntry.campaign }}</span>
+                                        </cite>
+                                    </header>
+                                    <p class="card__quote">{% trans %}«{% endtrans %}{{ campaignEntry.argument }}{% trans %}»{% endtrans %}</p>
+                                </blockquote>
                             </div>
                         {% endif %}
                         {% for entry in campaign.campaignEntries %}
                             {% if not campaignEntry or campaignEntry.id != entry.id %}
                                 <div class="messages-grid__slide">
                                     <blockquote class="card pink" style="background-color: {{ entry.color }};">
-                                        <header class="card__header"><cite class="card__meta"><span
-                                                        class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ entry.politician }}</strong> ({{ entry.politician.party.short }}/{{ entry.politician.region.short }})</span><span
-                                                        class="card__meta-line">{% trans %}Von:{% endtrans %} {{ entry.person }}, {{ entry.person.city }}</span><span
-                                                        class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ entry.campaign }}</span></cite></header>
-                                        <p class="card__quote">{% trans %}«{% endtrans %}{{ entry.argument }}{% trans %}»{% endtrans %}</p></blockquote>
+                                        <header class="card__header"><cite class="card__meta">
+                                                <span class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ entry.politician }}</strong> ({{ entry.politician.party.short }}/{{ entry.politician.region.short }})</span>
+                                                <span class="card__meta-line">{% trans %}Von:{% endtrans %} {{ entry.person }}, {{ entry.person.city }}</span>
+                                                <span class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ entry.campaign }}</span>
+                                            </cite>
+                                        </header>
+                                        <p class="card__quote">{% trans %}«{% endtrans %}{{ entry.argument }}{% trans %}»{% endtrans %}</p>
+                                    </blockquote>
                                 </div>
                             {% endif %}
                             {% if loop.index == 3 %}
                                 <div class="messages-grid__slide donate-a">
-                                    <section class="messages-grid__donate richtext center-text"><h1>{% trans %}Spenden{% endtrans %}</h1>
-                                        <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p><a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#donate">
+                                    <section class="messages-grid__donate richtext center-text">
+                                        <h1>{% trans %}Spenden{% endtrans %}</h1>
+                                        <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p>
+                                        <a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#donate">
                                             <button class="action-button">{% trans %}Jetzt spenden{% endtrans %}</button>
-                                        </a></section>
+                                        </a>
+                                    </section>
                                 </div>
                             {% elseif loop.index == 4 %}
                                 <div class="messages-grid__slide donate-b">
-                                    <section class="messages-grid__donate richtext center-text"><h1>{% trans %}Spenden{% endtrans %}</h1>
-                                        <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p><a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#donate">
+                                    <section class="messages-grid__donate richtext center-text">
+                                        <h1>{% trans %}Spenden{% endtrans %}</h1>
+                                        <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p>
+                                        <a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#donate">
                                             <button class="action-button">{% trans %}Jetzt spenden{% endtrans %}</button>
-                                        </a></section>
+                                        </a>
+                                    </section>
                                 </div>
                             {% endif %}
                         {% else %}
                             <div class="messages-grid__slide donate-a">
-                                <section class="messages-grid__donate richtext center-text"><h1>{% trans %}Spenden{% endtrans %}</h1>
-                                    <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p><a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#donate">
+                                <section class="messages-grid__donate richtext center-text">
+                                    <h1>{% trans %}Spenden{% endtrans %}</h1>
+                                    <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p>
+                                    <a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#donate">
                                         <button class="action-button">{% trans %}Jetzt spenden{% endtrans %}</button>
-                                    </a></section>
+                                    </a>
+                                </section>
                             </div>
                             <div class="messages-grid__slide donate-b">
-                                <section class="messages-grid__donate richtext center-text"><h1>{% trans %}Spenden{% endtrans %}</h1>
-                                    <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p><a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#donate">
+                                <section class="messages-grid__donate richtext center-text">
+                                    <h1>{% trans %}Spenden{% endtrans %}</h1>
+                                    <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p>
+                                    <a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#donate">
                                         <button class="action-button">{% trans %}Jetzt spenden{% endtrans %}</button>
-                                    </a></section>
+                                    </a>
+                                </section>
                             </div>
                         {% endfor %}
                     </div>
@@ -63,7 +82,9 @@
             </div>
         </div>
     </section>
-    <div class="floating-cta"><a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#how-it-works">
+    <div class="floating-cta">
+        <a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#how-it-works">
             <button class="action-button medium">{% trans %}Mitmachen{% endtrans %}</button>
-        </a></div>
+        </a>
+    </div>
 {% endblock %}
