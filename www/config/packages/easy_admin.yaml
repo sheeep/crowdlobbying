@@ -23,6 +23,10 @@ easy_admin:
           - hero
           - campaignInfoLead
           - campaignInfo
+          - howItWorksStep1
+          - howItWorksStep2
+          - howItWorksStep3
+          - howItWorksFinish
           - donorBox
           - shareTextBox
           - faqTitle

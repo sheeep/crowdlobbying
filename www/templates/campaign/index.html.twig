@@ -56,11 +56,11 @@
         <div class="page-width">
             <div class="layout-width"><h1 class="how-it-works__title">{% trans %}So einfach geht Crowd-Lobbying:{% endtrans %}</h1>
                 <ol class="how-it-works__steps">
-                    <li class="how-it-works__step"><span class="how-it-works__ordinal">1.</span> {% trans %}Wählen Sie Ihren Kanton.{% endtrans %}</li>
-                    <li class="how-it-works__step"><span class="how-it-works__ordinal">2.</span> {% trans %}Wählen Sie ein Mitglied des Ständerates.{% endtrans %}</li>
-                    <li class="how-it-works__step"><span class="how-it-works__ordinal">3.</span> {% trans %}Entscheiden Sie sich für eine Nachricht.{% endtrans %}</li>
+                    <li class="how-it-works__step"><span class="how-it-works__ordinal">1.</span>{{ campaign.howItWorksStep1 }}</li>
+                    <li class="how-it-works__step"><span class="how-it-works__ordinal">2.</span>{{ campaign.howItWorksStep2 }}</li>
+                    <li class="how-it-works__step"><span class="how-it-works__ordinal">3.</span>{{ campaign.howItWorksStep3 }}</li>
                 </ol>
-                <div class="how-it-works__richtext"><p>{% trans %}Wir verschicken Ihre Nachricht per SMS, E-Mail, Post oder Fax an das von Ihnen gewählte Mitglied des Ständerates.{% endtrans %}</p></div>
+                <div class="how-it-works__richtext"><p>{{ campaign.howItWorksFinish }}</p></div>
             </div>
         </div>
     </div>
@@ -69,26 +69,28 @@
     <div class="viewport-width">
         <div class="page-width">
             <div class="layout-width">
-                <div class="officials__canton-chooser">
-                    <div class="mdc-select mdc-select--outlined officials__select"><i class="mdc-select__dropdown-icon"></i>
-                        <select class="mdc-select__native-control" onchange="reloadWithRegion(this.value)">
-                            <option value disabled="disabled"{{ not (region is defined) or not region ? ' selected="selected"' }}></option>
+                {% if 0 == campaign.commissions | length %}
+                    <div class="officials__canton-chooser">
+                        <div class="mdc-select mdc-select--outlined officials__select"><i class="mdc-select__dropdown-icon"></i>
+                            <select class="mdc-select__native-control" onchange="reloadWithRegion(this.value)">
+                                <option value disabled="disabled"{{ not (region is defined) or not region ? ' selected="selected"' }}></option>
 
-                            {% for dbRegion in campaign.regions %}
-                                <option value="{{ dbRegion.id }}"{{ region is defined and region and region.id == dbRegion.id ? ' selected="selected"' }}>{{ dbRegion }}</option>
-                            {% endfor %}
-                        </select>
-                        <div class="mdc-notched-outline">
-                            <div class="mdc-notched-outline__leading"></div>
-                            <div class="mdc-notched-outline__notch">
-                                <label class="mdc-floating-label">
-                                    {% trans %}Kanton wählen{% endtrans %}
-                                </label>
+                                {% for dbRegion in campaign.regions %}
+                                    <option value="{{ dbRegion.id }}"{{ region is defined and region and region.id == dbRegion.id ? ' selected="selected"' }}>{{ dbRegion }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label class="mdc-floating-label">
+                                        {% trans %}Kanton wählen{% endtrans %}
+                                    </label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
                             </div>
-                            <div class="mdc-notched-outline__trailing"></div>
                         </div>
                     </div>
-                </div>
+                {% endif %}
                 <div class="officials__list">
                     {% for politician in politicians %}
                         <section class="official officials__card" data-region="{{ politician.region.id }}">

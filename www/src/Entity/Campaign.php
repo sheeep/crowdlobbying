@@ -153,6 +153,30 @@ class Campaign
     private $campaignInfo;
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     * @Gedmo\Translatable
+     */
+    private $howItWorksStep1;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     * @Gedmo\Translatable
+     */
+    private $howItWorksStep2;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     * @Gedmo\Translatable
+     */
+    private $howItWorksStep3;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     * @Gedmo\Translatable
+     */
+    private $howItWorksFinish;
+
+    /**
      * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable
      */
@@ -591,6 +615,54 @@ class Campaign
     public function setCampaignInfo(string $campaignInfo = null): self
     {
         $this->campaignInfo = $campaignInfo;
+
+        return $this;
+    }
+
+    public function getHowItWorksStep1(): ?string
+    {
+        return $this->howItWorksStep1;
+    }
+
+    public function setHowItWorksStep1(string $howItWorksStep1 = null): self
+    {
+        $this->howItWorksStep1 = $howItWorksStep1;
+
+        return $this;
+    }
+
+    public function getHowItWorksStep2(): ?string
+    {
+        return $this->howItWorksStep2;
+    }
+
+    public function setHowItWorksStep2(string $howItWorksStep2 = null): self
+    {
+        $this->howItWorksStep2 = $howItWorksStep2;
+
+        return $this;
+    }
+
+    public function getHowItWorksStep3(): ?string
+    {
+        return $this->howItWorksStep3;
+    }
+
+    public function setHowItWorksStep3(string $howItWorksStep3 = null): self
+    {
+        $this->howItWorksStep3 = $howItWorksStep3;
+
+        return $this;
+    }
+
+    public function getHowItWorksFinish(): ?string
+    {
+        return $this->howItWorksFinish;
+    }
+
+    public function setHowItWorksFinish(string $howItWorksFinish = null): self
+    {
+        $this->howItWorksFinish = $howItWorksFinish;
 
         return $this;
     }

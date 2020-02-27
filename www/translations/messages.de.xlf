@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="de">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de-CH" trgLang="de">
   <file id="messages.de">
     <unit id="CboJE2P" name="default_title">
       <notes>
@@ -220,13 +220,13 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
         <target>Spenden</target>
       </segment>
     </unit>
-    <unit id="d.GOauw" name="Ständerätinnen und Ständeräte">
+    <unit id="wsNShf1" name="Politikerinnen und Politiker">
       <notes>
         <note category="file-source" priority="1">www/templates/base.html.twig:174</note>
       </notes>
       <segment>
-        <source>Ständerätinnen und Ständeräte</source>
-        <target>Ständerätinnen und Ständeräte</target>
+        <source>Politikerinnen und Politiker</source>
+        <target>Politikerinnen und Politiker</target>
       </segment>
     </unit>
     <unit id="TsSTbEF" name="Nachrichten-Feed">
@@ -374,45 +374,9 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
         <target>So einfach geht Crowd-Lobbying:</target>
       </segment>
     </unit>
-    <unit id="X.n0O75" name="Wählen Sie Ihren Kanton.">
-      <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:59</note>
-      </notes>
-      <segment>
-        <source>Wählen Sie Ihren Kanton.</source>
-        <target>Wählen Sie Ihren Kanton.</target>
-      </segment>
-    </unit>
-    <unit id="pgMVXks" name="Wählen Sie ein Mitglied des Ständerates.">
-      <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:60</note>
-      </notes>
-      <segment>
-        <source>Wählen Sie ein Mitglied des Ständerates.</source>
-        <target>Wählen Sie ein Mitglied des Ständerates.</target>
-      </segment>
-    </unit>
-    <unit id="vX17n76" name="Entscheiden Sie sich für eine Nachricht.">
-      <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:61</note>
-      </notes>
-      <segment>
-        <source>Entscheiden Sie sich für eine Nachricht.</source>
-        <target>Entscheiden Sie sich für eine Nachricht.</target>
-      </segment>
-    </unit>
-    <unit id="usdK4SJ" name="be896d4">
-      <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:63</note>
-      </notes>
-      <segment>
-        <source>Wir verschicken Ihre Nachricht per SMS, E-Mail, Post oder Fax an das von Ihnen gewählte Mitglied des Ständerates.</source>
-        <target>Wir verschicken die gesammelten Nachricht im richtigen Moment per SMS, E-Mail, Post oder Fax an das von Ihnen gewählte Mitglied des Ständerates.</target>
-      </segment>
-    </unit>
     <unit id="F422kJB" name="Kanton wählen">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:85</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:86</note>
       </notes>
       <segment>
         <source>Kanton wählen</source>
@@ -421,8 +385,8 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
     </unit>
     <unit id="xRHYT.e" name="mit uns">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:107</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:124</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:109</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:126</note>
       </notes>
       <segment>
         <source>mit uns</source>
@@ -431,8 +395,8 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
     </unit>
     <unit id="8zkoEXi" name="gegen uns">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:107</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:122</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:109</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:124</note>
       </notes>
       <segment>
         <source>gegen uns</source>
@@ -441,8 +405,8 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
     </unit>
     <unit id="pBjmnp_" name="unbekannt">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:107</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:123</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:109</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:125</note>
       </notes>
       <segment>
         <source>unbekannt</source>
@@ -451,7 +415,7 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
     </unit>
     <unit id="YxZ9.2W" name="Stimmabsicht">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:108</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:110</note>
       </notes>
       <segment>
         <source>Stimmabsicht</source>
@@ -460,7 +424,7 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
     </unit>
     <unit id="JxnNI0w" name="Lobbyieren">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:112</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:114</note>
       </notes>
       <segment>
         <source>Lobbyieren</source>
@@ -469,7 +433,7 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
     </unit>
     <unit id="ixKP3XQ" name="Lobby-Status">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:120</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:122</note>
       </notes>
       <segment>
         <source>Lobby-Status</source>
@@ -478,7 +442,7 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
     </unit>
     <unit id="QHt036P" name="5969e0e">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:128</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:130</note>
       </notes>
       <segment>
         <source>                                Wer hat welche Stimmabstichten? Der
