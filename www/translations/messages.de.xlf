@@ -54,7 +54,7 @@
       </notes>
       <segment>
         <source>Nach oben</source>
-        <target></target>
+        <target>Nach oben</target>
       </segment>
     </unit>
     <unit id="t977_c." name="Über uns">
@@ -183,7 +183,7 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
       </notes>
       <segment>
         <source>v.1.0.0-alpha.10</source>
-        <target></target>
+        <target>v.1.0.0-alpha.10</target>
       </segment>
     </unit>
     <unit id="4E0kxSs" name="Startseite">
@@ -244,7 +244,7 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
       </notes>
       <segment>
         <source>Unsere aktuellen Kampagnen</source>
-        <target></target>
+        <target>Unsere aktuellen Kampagnen</target>
       </segment>
     </unit>
     <unit id="CCsQTdX" name="Herzlichen Dank für Ihre Nachricht">
@@ -362,7 +362,7 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
       </notes>
       <segment>
         <source>Mehr erfahren</source>
-        <target></target>
+        <target>Mehr erfahren</target>
       </segment>
     </unit>
     <unit id="DT0BsyW" name="So einfach geht Crowd-Lobbying:">
@@ -416,7 +416,7 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
       </notes>
       <segment>
         <source>Kanton wählen</source>
-        <target></target>
+        <target>Kanton wählen</target>
       </segment>
     </unit>
     <unit id="xRHYT.e" name="mit uns">
@@ -655,7 +655,7 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
       </notes>
       <segment>
         <source>city</source>
-        <target></target>
+        <target>Ort</target>
       </segment>
     </unit>
     <unit id="giREF.l" name="email">
@@ -664,7 +664,7 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
       </notes>
       <segment>
         <source>email</source>
-        <target></target>
+        <target>E-Mail</target>
       </segment>
     </unit>
     <unit id="VbXFH4Z" name="lastname">
@@ -673,7 +673,7 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
       </notes>
       <segment>
         <source>lastname</source>
-        <target></target>
+        <target>Nachname</target>
       </segment>
     </unit>
     <unit id="TP3eab3" name="firstname">
@@ -682,7 +682,55 @@ Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">ww
       </notes>
       <segment>
         <source>firstname</source>
-        <target></target>
+        <target>Vorname</target>
+      </segment>
+    </unit>
+    <unit id="YvUQ_.A" name="31c0a74">
+      <segment>
+        <source>31c0a74</source>
+        <target>Crowd-Lobbying ist eine unabhängige Schweizer Kampagnenplattform. Wir ermöglichen Menschen, Nachrichten an das Parlament zu schicken, die ihnen am Herzen liegen. Gemeinsam setzen wir uns ein für eine Schweiz, in der wir leben wollen. Die Plattform ist ein Community-Projekt. Die Idee wurde an den Campaign Hackdays 2019 entwickelt.</target>
+      </segment>
+    </unit>
+    <unit id="WP8ttNR" name="2b9510c">
+      <segment>
+        <source>2b9510c</source>
+        <target><![CDATA[<p>Che Wagner<br>Tel. +41 76 230 75 29<br><a href="mailto:che.wagner@publicbeta.ch">che.wagner@publicbeta.ch</a></p>]]></target>
+      </segment>
+    </unit>
+    <unit id="VFSB3xu" name="f6eb0d4">
+      <segment>
+        <source>f6eb0d4</source>
+        <target>Bitte helfen Sie mit und teilen Sie Ihr Argument mit Ihren FreundInnen, Familien, Verwandten und Bekannten.</target>
+      </segment>
+    </unit>
+    <unit id="GAg_k0K" name="be896d4">
+      <segment>
+        <source>be896d4</source>
+        <target>Wir verschicken die gesammelten Nachricht im richtigen Moment per SMS, E-Mail, Post oder Fax an das von Ihnen gewählte Mitglied des Ständerates.</target>
+      </segment>
+    </unit>
+    <unit id="Rq3yIF." name="5969e0e">
+      <segment>
+        <source>5969e0e</source>
+        <target>Wer hat welche Stimmabsichten? Der Lobby-Status zeigt Ihnen, wem Sie eine Nachricht schicken sollten. Gemeinsam wollen wir PolitikerInnen überzeugen, die noch keine feste Meinung geäussert haben oder die unserem Anliegen kritisch gegenüber stehen. Wer für unser Anliegen eintritt, erhält keine Nachrichten mehr.</target>
+      </segment>
+    </unit>
+    <unit id="UHKJosz" name="b65f465">
+      <segment>
+        <source>b65f465</source>
+        <target><![CDATA[Mit Ihrer Eingabe akzeptieren Sie unsere <a onclick="utils.scrollTo(&quot;#terms-of-use&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">Nutzungsbedingungen</a> sowie die <a onclick="utils.scrollTo(&quot;#privacy&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">Datenschutzbestimmungen</a>.]]></target>
+      </segment>
+    </unit>
+    <unit id="NGEePqf" name="3de4e40">
+      <segment>
+        <source>3de4e40</source>
+        <target><![CDATA[Verein PublicBeta<br>Crowd-Lobbying<br>4051 Basel<br>IBAN CH58 0900 0000 1509 7572 2<br>Post-Konto 15-97572-2]]></target>
+      </segment>
+    </unit>
+    <unit id="qAusaSH" name="4accb57">
+      <segment>
+        <source>4accb57</source>
+        <target>Bitte helfen Sie mit und teilen Sie die Kampagne mit Ihren FreundInnen, Familien, Verwandten und Bekannten.</target>
       </segment>
     </unit>
   </file>
