@@ -674,54 +674,5 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
         <target>Prénom</target>
       </segment>
     </unit>
-    <unit id="YvUQ_.A" name="31c0a74">
-      <segment>
-        <source>31c0a74</source>
-        <target>Crowd-Lobbying est une plateforme de campagne suisse indépendante. Nous permettons aux personnes intéressés d’envoyer des messages au parlement qui leur tiennent à cœur.
-Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre. La plateforme est un projet communautaire. L’idée a été développée lors des Campaign-Hackdays 2019.</target>
-      </segment>
-    </unit>
-    <unit id="WP8ttNR" name="2b9510c">
-      <segment>
-        <source>2b9510c</source>
-        <target><![CDATA[<p>Che Wagner<br>Tel. +41 76 230 75 29<br><a href="mailto:che.wagner@publicbeta.ch">che.wagner@publicbeta.ch</a></p>]]></target>
-      </segment>
-    </unit>
-    <unit id="VFSB3xu" name="f6eb0d4">
-      <segment>
-        <source>f6eb0d4</source>
-        <target>Nous vous prions de participer et de partager cette campagne avec vos amies et amis, familles, proches et connaissances.</target>
-      </segment>
-    </unit>
-    <unit id="GAg_k0K" name="be896d4">
-      <segment>
-        <source>be896d4</source>
-        <target>Au bon moment, nous envoyons les messages recueillis par SMS, e-mail, poste ou fax au membre du Conseil des Etats que vous avez choisi.</target>
-      </segment>
-    </unit>
-    <unit id="Rq3yIF." name="5969e0e">
-      <segment>
-        <source>5969e0e</source>
-        <target>Qui a quelles intentions de vote ? Le Statut-Lobby vous montre à qui vous devriez envoyer un message. Ensemble, nous voulons convaincre les politiciens et politiciennes qui n’ont pas encore d’avis sur le sujet, ou qui ont montré une position contraire à la notre à ce sujet. Les personnes qui se sont prononcés en faveur de notre cause ne recevront plus de messages.</target>
-      </segment>
-    </unit>
-    <unit id="UHKJosz" name="b65f465">
-      <segment>
-        <source>b65f465</source>
-        <target><![CDATA[En participant vous acceptez nos <a onclick="utils.scrollTo(&quot;#terms-of-use&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">conditions d’utilisation</a> ainsi que la politique de <a onclick="utils.scrollTo(&quot;#privacy&quot;, { offset: document.querySelector(&quot;.header&quot;).offsetHeight * -1 })">confidentialité des données</a>.]]></target>
-      </segment>
-    </unit>
-    <unit id="NGEePqf" name="3de4e40">
-      <segment>
-        <source>3de4e40</source>
-        <target><![CDATA[Verein PublicBeta<br>Crowd-Lobbying <br>4001 Bâle <br>IBAN CH 58 0900 0000 1509 7572 2 <br>Compte postal 15-97572-2]]></target>
-      </segment>
-    </unit>
-    <unit id="qAusaSH" name="4accb57">
-      <segment>
-        <source>4accb57</source>
-        <target>Nous vous prions de participer et de partager cette campagne avec vos amies et amis, familles, proches et connaissances.</target>
-      </segment>
-    </unit>
   </file>
 </xliff>
