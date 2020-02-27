@@ -93,19 +93,19 @@ class Campaign
     private $commissions;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      * @Gedmo\Translatable
      */
     private $campaignTitle;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable
      */
     private $campaignDescription;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable
      */
     private $ogCampaignDescription;
@@ -135,43 +135,43 @@ class Campaign
     private $ogImageFileFr;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      * @Gedmo\Translatable
      */
     private $hero;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable
      */
     private $campaignInfoLead;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable
      */
     private $campaignInfo;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable
      */
     private $donorBox;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable()
      */
     private $shareTextBox;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      * @Gedmo\Translatable
      */
     private $faqTitle;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable()
      */
     private $faqText;
