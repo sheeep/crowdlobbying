@@ -136,7 +136,7 @@ class CampaignController extends AbstractController
 
                 // @TODO call PDF generator
                 $message = (new \Swift_Message('Crowd-Lobbying'))
-                    ->setFrom('lobbying@publicbeta.ch')
+                    ->setFrom('crowd-lobbying@publicbeta.ch')
                     ->setTo($person->getEmail())
                     ->setBody(
                         $this->renderView(
