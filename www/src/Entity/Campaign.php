@@ -207,6 +207,18 @@ class Campaign
      */
     private $locale;
 
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255)
+     */
+    private $heroBackground;
+
+    /**
+     * @var SymfonyFile
+     * @Vich\UploadableField(mapping="campaign_images", fileNameProperty="heroBackground")
+     */
+    private $heroBackgroundFile;
+
     public function __construct()
     {
         $this->campaignEntries = new ArrayCollection();
@@ -711,6 +723,34 @@ class Campaign
     public function setFaqText(string $faqText = null): self
     {
         $this->faqText = $faqText;
+
+        return $this;
+    }
+
+    public function getHeroBackground(): ?string
+    {
+        return $this->heroBackground;
+    }
+
+    public function setHeroBackground(string $heroBackground = null): self
+    {
+        $this->heroBackground = $heroBackground;
+
+        return $this;
+    }
+
+    public function getHeroBackgroundFile(): ?SymfonyFile
+    {
+        return $this->heroBackgroundFile;
+    }
+
+    public function setHeroBackgroundFile(SymfonyFile $heroBackgroundFile = null): self
+    {
+        if ($heroBackgroundFile) {
+            $this->updatedAt = new \DateTime();
+        }
+
+        $this->heroBackgroundFile = $heroBackgroundFile;
 
         return $this;
     }

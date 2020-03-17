@@ -20,6 +20,7 @@ easy_admin:
           - ogCampaignDescription
           - { property: 'ogImageFileDe', type: 'vich_image' }
           - { property: 'ogImageFileFr', type: 'vich_image' }
+          - { property: 'heroBackgroundFile', type: 'vich_image' }
           - hero
           - campaignInfoLead
           - campaignInfo
@@ -42,6 +43,7 @@ easy_admin:
         fields:
           - { property: 'ogImageDe', type: 'image', base_path: '%app.path.campaign_images%' }
           - { property: 'ogImageFr', type: 'image', base_path: '%app.path.campaign_images%' }
+          - { property: 'heroBackground', type: 'image', base_path: '%app.path.campaign_images%' }
 
     CampaignEntry:
       class: App\Entity\CampaignEntry
