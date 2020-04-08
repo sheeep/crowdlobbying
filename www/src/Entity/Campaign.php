@@ -141,6 +141,12 @@ class Campaign
     private $hero;
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     * @Gedmo\Translatable
+     */
+    private $total;
+
+    /**
      * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable
      */
@@ -603,6 +609,18 @@ class Campaign
     public function setHero(string $hero = null): self
     {
         $this->hero = $hero;
+
+        return $this;
+    }
+
+    public function getTotal(): ?string
+    {
+        return $this->total;
+    }
+
+    public function setTotal(string $total = null): self
+    {
+        $this->total = $total;
 
         return $this;
     }

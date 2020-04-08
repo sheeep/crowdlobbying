@@ -9,7 +9,7 @@
                 <div class="layout-width">
                     <div class="hero__content"><h2>{% trans %}Crowd-Lobbying{% endtrans %}</h2>
                         <h1>{{ campaign.hero }}</h1>
-                        <p>{{ total }} {% trans %}Nachrichten an den Ständerat verschickt{% endtrans %}</p>
+                        <p>{{ total }} {{ campaign.total }}</p>
                         <button class="action-button medium" onclick="utils.scrollTo('.how-it-works', { offset: document.querySelector('.header').offsetHeight * -1 })">
                             {% trans %}Mitmachen{% endtrans %}
                         </button>
