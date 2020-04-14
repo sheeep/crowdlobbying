@@ -56,6 +56,13 @@ class CampaignEntry
      */
     private $argument;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $confirmed = false;
+
     public function __toString(): string
     {
         return (string) $this->argument->getArgument();
@@ -160,6 +167,18 @@ class CampaignEntry
     public function setArgument(?Argument $argument): self
     {
         $this->argument = $argument;
+
+        return $this;
+    }
+
+    public function isConfirmed(): bool
+    {
+        return $this->confirmed;
+    }
+
+    public function setConfirmed(bool $confirmed): self
+    {
+        $this->confirmed = $confirmed;
 
         return $this;
     }

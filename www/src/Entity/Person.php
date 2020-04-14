@@ -55,6 +55,27 @@ class Person
      */
     private $language;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $confirmed = false;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $confirmationToken;
+
+    /**
+     * @var \DateTime|null
+     *
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $confirmationExpires;
+
     public function __construct()
     {
         $this->campaignEntries = new ArrayCollection();
@@ -157,6 +178,42 @@ class Person
     public function setLanguage(?string $language): self
     {
         $this->language = $language;
+
+        return $this;
+    }
+
+    public function isConfirmed(): bool
+    {
+        return $this->confirmed;
+    }
+
+    public function setConfirmed(bool $confirmed): self
+    {
+        $this->confirmed = $confirmed;
+
+        return $this;
+    }
+
+    public function getConfirmationToken(): ?string
+    {
+        return $this->confirmationToken;
+    }
+
+    public function setConfirmationToken(?string $confirmationToken): self
+    {
+        $this->confirmationToken = $confirmationToken;
+
+        return $this;
+    }
+
+    public function getConfirmationExpires(): ?\DateTime
+    {
+        return $this->confirmationExpires;
+    }
+
+    public function setConfirmationExpires(?\DateTime $confirmationExpires): self
+    {
+        $this->confirmationExpires = $confirmationExpires;
 
         return $this;
     }

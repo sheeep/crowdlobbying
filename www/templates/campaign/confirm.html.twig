@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% set headerClass = 'force-background' %}
+
+{% block body %}
+    <section class="act">
+        <div class="viewport-width">
+            <div class="page-width">
+                <div class="layout-width">
+                    <div class="readable-width">
+                        <div class="act__richtext richtext center-text"><h1>{% trans %}Herzlichen Dank für Ihre Nachricht{% endtrans %}</h1>
+                            <p>{% trans %}Wir haben Ihnen soeben ein Mail mit Ihrer Nachricht geschickt. Bitte bestätigen Sie diese, damit wir Ihre Nachricht an die Parlamentsmitglieder weiterleiten können.{% endtrans %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'campaign/Partials/donate.html.twig' %}
+{% endblock %}
