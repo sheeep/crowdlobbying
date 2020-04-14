@@ -66,8 +66,13 @@ class CampaignController extends AbstractController
         $politicianRepository = $this->get(PoliticianRepository::class);
 
         $entries = $campaignEntryRepository->findBy(
-            ['campaign' => $campaign],
-            ['id' => 'desc'],
+            [
+                'campaign' => $campaign,
+                'confirmed' => true,
+            ],
+            [
+                'id' => 'desc',
+            ],
             10
         );
 
@@ -77,7 +82,10 @@ class CampaignController extends AbstractController
             'campaign' => $campaign,
             'politicians' => $politicianRepository->findByCampaign($campaign),
             'latestEntries' => $entries,
-            'total' => \count($campaignEntryRepository->findBy(['campaign' => $campaign])),
+            'total' => \count($campaignEntryRepository->findBy([
+                'campaign' => $campaign,
+                'confirmed' => true,
+            ])),
         ]);
     }
 
@@ -122,8 +130,13 @@ class CampaignController extends AbstractController
         $politicianRepository = $this->get(PoliticianRepository::class);
 
         $entries = $campaignEntryRepository->findBy(
-            ['campaign' => $campaign],
-            ['id' => 'desc'],
+            [
+                'campaign' => $campaign,
+                'confirmed' => true,
+            ],
+            [
+                'id' => 'desc',
+            ],
             10
         );
 
