@@ -199,12 +199,18 @@ class CampaignController extends AbstractController
 
                     $this->sendThanksMail($person, $politician, $campaign);
 
-                    return $this->redirectToRoute('app_campaign_thanks', ['campaign' => $campaign->getSlug(), 'id' => $campaignEntry->getId()]);
+                    return $this->redirectToRoute('app_campaign_thanks', [
+                        'campaign' => $campaign->getSlug(),
+                        'id' => $campaignEntry->getId(),
+                    ]);
                 }
 
                 $this->sendConfirmationMail($person, $politician, $campaign, $argument);
 
-                return $this->redirectToRoute('app_campaign_confirm', ['campaign' => $campaign->getSlug(), 'id' => $campaignEntry->getId()]);
+                return $this->redirectToRoute('app_campaign_confirm', [
+                    'campaign' => $campaign->getSlug(),
+                    'id' => $campaignEntry->getId(),
+                ]);
             }
         }
 
@@ -379,6 +385,9 @@ class CampaignController extends AbstractController
     {
         $router = $this->get('router');
 
+        /** @var Request $request */
+        $request = $this->get('request_stack')->getCurrentRequest();
+
         $message = (new \Swift_Message('Crowd-Lobbying: Bitte bestätigen Sie Ihre Nachricht '))
             ->setFrom('crowd-lobbying@publicbeta.ch')
             ->setTo($person->getEmail())
@@ -393,10 +402,12 @@ class CampaignController extends AbstractController
                             'slug' => $politician->getSlug(),
                             'campaign' => $campaign,
                             'token' => $person->getConfirmationToken(),
+                            '_locale' => $request->getLocale(),
                         ], UrlGeneratorInterface::ABSOLUTE_URL),
                         'urlDonate' => $router->generate('app_campaign_index', [
                             'slug' => null,
                             'campaign' => $campaign,
+                            '_locale' => $request->getLocale(),
                         ], UrlGeneratorInterface::ABSOLUTE_URL),
                     ]),
                 'text/html'
