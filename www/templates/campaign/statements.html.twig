@@ -24,17 +24,19 @@
                         {% endif %}
                         {% for entry in campaign.campaignEntries %}
                             {% if not campaignEntry or campaignEntry.id != entry.id %}
-                                <div class="messages-grid__slide">
-                                    <blockquote class="card pink" style="background-color: {{ entry.color }};">
-                                        <header class="card__header"><cite class="card__meta">
-                                                <span class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ entry.politician }}</strong> ({{ entry.politician.party.short }}/{{ entry.politician.region.short }})</span>
-                                                <span class="card__meta-line">{% trans %}Von:{% endtrans %} {{ entry.person }}, {{ entry.person.city }}</span>
-                                                <span class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ entry.campaign }}</span>
-                                            </cite>
-                                        </header>
-                                        <p class="card__quote">{% trans %}«{% endtrans %}{{ entry.argument }}{% trans %}»{% endtrans %}</p>
-                                    </blockquote>
-                                </div>
+                                {% if entry.confirmed %}
+                                    <div class="messages-grid__slide">
+                                        <blockquote class="card pink" style="background-color: {{ entry.color }};">
+                                            <header class="card__header"><cite class="card__meta">
+                                                    <span class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ entry.politician }}</strong> ({{ entry.politician.party.short }}/{{ entry.politician.region.short }})</span>
+                                                    <span class="card__meta-line">{% trans %}Von:{% endtrans %} {{ entry.person }}, {{ entry.person.city }}</span>
+                                                    <span class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ entry.campaign }}</span>
+                                                </cite>
+                                            </header>
+                                            <p class="card__quote">{% trans %}«{% endtrans %}{{ entry.argument }}{% trans %}»{% endtrans %}</p>
+                                        </blockquote>
+                                    </div>
+                                {% endif %}
                             {% endif %}
                             {% if loop.index == 3 %}
                                 <div class="messages-grid__slide donate-a">
