@@ -413,13 +413,13 @@ class CampaignController extends AbstractController
                         'argument' => $argument,
                         'urlConfirmation' => $router->generate('app_campaign_lobby_confirm', [
                             'slug' => $politician->getSlug(),
-                            'campaign' => $campaign,
+                            'campaign' => $campaign->getSlug(),
                             'token' => $person->getConfirmationToken(),
                             '_locale' => $request->getLocale(),
                         ], UrlGeneratorInterface::ABSOLUTE_URL),
                         'urlDonate' => $router->generate('app_campaign_index', [
                             'slug' => null,
-                            'campaign' => $campaign,
+                            'campaign' => $campaign->getSlug(),
                             '_locale' => $request->getLocale(),
                         ], UrlGeneratorInterface::ABSOLUTE_URL),
                     ]),
