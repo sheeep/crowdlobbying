@@ -271,10 +271,19 @@ class CampaignController extends AbstractController
         $person->setConfirmationToken(null);
         $person->setConfirmationExpires(null);
 
-        $campaignEntry->setConfirmed(true);
-
         $em->persist($person);
-        $em->persist($campaignEntry);
+
+        // Get all campaign entries of this confirmed person (if there are multiple)
+        $campaignEntries = $this->get(CampaignEntryRepository::class)->findBy([
+            'person' => $person,
+        ]);
+
+        // Set them confirmed
+        foreach ($campaignEntries as $entry) {
+            $entry->setConfirmed(true);
+            $em->persist($entry);
+        }
+
         $em->flush();
 
         $this->sendThanksMail($person, $politician, $campaign);
