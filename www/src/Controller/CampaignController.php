@@ -388,7 +388,7 @@ class CampaignController extends AbstractController
     {
         // @TODO call PDF generator
         $message = (new \Swift_Message('Crowd-Lobbying'))
-            ->setFrom('crowd-lobbying@publicbeta.ch')
+            ->setFrom('team@crowdlobbying.ch')
             ->setTo($person->getEmail())
             ->setBody(
                 $this->renderView(
@@ -410,8 +410,8 @@ class CampaignController extends AbstractController
         /** @var Request $request */
         $request = $this->get('request_stack')->getCurrentRequest();
 
-        $message = (new \Swift_Message('Crowd-Lobbying: Bitte bestätigen Sie Ihre Nachricht '))
-            ->setFrom('crowd-lobbying@publicbeta.ch')
+        $message = (new \Swift_Message('Crowd-Lobbying: Bitte bestätigen Sie Ihre Nachricht'))
+            ->setFrom('team@crowdlobbying.ch')
             ->setTo($person->getEmail())
             ->setBody(
                 $this->renderView(
