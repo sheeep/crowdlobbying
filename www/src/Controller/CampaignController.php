@@ -386,17 +386,18 @@ class CampaignController extends AbstractController
 
     private function sendThanksMail(Person $person, Politician $politician, Campaign $campaign): void
     {
+        $template = $this->get('twig')->createTemplate($campaign->getMailThanksText());
+
         // @TODO call PDF generator
         $message = (new \Swift_Message('Crowd-Lobbying'))
             ->setFrom('team@crowdlobbying.ch')
             ->setTo($person->getEmail())
             ->setBody(
-                $this->renderView(
-                    'emails/thanks.html.twig', [
-                        'person' => $person,
-                        'politician' => $politician,
-                        'campaign' => $campaign,
-                        ]),
+                $template->render([
+                    'person' => $person,
+                    'politician' => $politician,
+                    'campaign' => $campaign,
+                ]),
                 'text/html'
             );
 

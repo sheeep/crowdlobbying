@@ -33,6 +33,7 @@ easy_admin:
           - shareTextBox
           - faqTitle
           - faqText
+          - mailThanksText
       list:
         fields:
             - name

@@ -22,6 +22,7 @@ class Campaign
     use TimestampableEntity;
 
     /**
+     * @var int
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
@@ -29,22 +30,26 @@ class Campaign
     private $id;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=128, unique=true)
      * @Gedmo\Slug(fields={"name"})
      */
     private $slug;
 
     /**
+     * @var \DateTime
      * @ORM\Column(type="datetime")
      */
     private $start;
 
     /**
+     * @var \DateTime
      * @ORM\Column(type="datetime")
      */
     private $end;
@@ -93,18 +98,21 @@ class Campaign
     private $commissions;
 
     /**
+     * @var string|null
      * @ORM\Column(type="string", nullable=true)
      * @Gedmo\Translatable
      */
     private $campaignTitle;
 
     /**
+     * @var string|null
      * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable
      */
     private $campaignDescription;
 
     /**
+     * @var string|null
      * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable
      */
@@ -135,72 +143,84 @@ class Campaign
     private $ogImageFileFr;
 
     /**
+     * @var string|null
      * @ORM\Column(type="string", nullable=true)
      * @Gedmo\Translatable
      */
     private $hero;
 
     /**
+     * @var string|null
      * @ORM\Column(type="string", nullable=true)
      * @Gedmo\Translatable
      */
     private $total;
 
     /**
+     * @var string|null
      * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable
      */
     private $campaignInfoLead;
 
     /**
+     * @var string|null
      * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable
      */
     private $campaignInfo;
 
     /**
+     * @var string|null
      * @ORM\Column(type="string", nullable=true)
      * @Gedmo\Translatable
      */
     private $howItWorksStep1;
 
     /**
+     * @var string|null
      * @ORM\Column(type="string", nullable=true)
      * @Gedmo\Translatable
      */
     private $howItWorksStep2;
 
     /**
+     * @var string|null
      * @ORM\Column(type="string", nullable=true)
      * @Gedmo\Translatable
      */
     private $howItWorksStep3;
 
     /**
+     * @var string|null
      * @ORM\Column(type="string", nullable=true)
      * @Gedmo\Translatable
      */
     private $howItWorksFinish;
 
     /**
+     * @var string|null
      * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable
      */
     private $donorBox;
 
     /**
+     * @var string|null
      * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable()
      */
     private $shareTextBox;
 
     /**
+     * @var string|null
      * @ORM\Column(type="string", nullable=true)
      * @Gedmo\Translatable
      */
     private $faqTitle;
 
     /**
+     * @var string|null
      * @ORM\Column(type="text", nullable=true)
      * @Gedmo\Translatable()
      */
@@ -224,6 +244,12 @@ class Campaign
      * @Vich\UploadableField(mapping="campaign_images", fileNameProperty="heroBackground")
      */
     private $heroBackgroundFile;
+
+    /**
+     * @var string|null
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $mailThanksText;
 
     public function __construct()
     {
@@ -769,6 +795,18 @@ class Campaign
         }
 
         $this->heroBackgroundFile = $heroBackgroundFile;
+
+        return $this;
+    }
+
+    public function getMailThanksText(): ?string
+    {
+        return $this->mailThanksText;
+    }
+
+    public function setMailThanksText(?string $mailThanksText): self
+    {
+        $this->mailThanksText = $mailThanksText;
 
         return $this;
     }
