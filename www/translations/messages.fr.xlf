@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de-CH" trgLang="fr">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="fr">
   <file id="messages.fr">
     <unit id="CboJE2P" name="default_title">
       <notes>
@@ -41,7 +41,7 @@
       <notes>
         <note category="file-source" priority="1">www/templates/base.html.twig:76</note>
         <note category="file-source" priority="1">www/templates/default/index.html.twig:11</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:9</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:10</note>
       </notes>
       <segment>
         <source>Crowd-Lobbying</source>
@@ -66,45 +66,38 @@
         <target>Qui sommes-nous ?</target>
       </segment>
     </unit>
-    <unit id="5R3zTtD" name="31c0a74">
+    <unit id="S_2oHb5" name="0537cd2">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:126</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:127</note>
       </notes>
       <segment>
-        <source>                                Crowd-Lobbying ist eine unabhängige Schweizer Kampagnenplattform. Wir ermöglichen Menschen,
-                                Nachrichten an das Parlament zu schicken, die ihnen am Herzen liegen. Gemeinsam setzen wir
-                                uns ein für eine Schweiz, in der wir leben wollen. Die Plattform ist ein Community-Projekt
-                                und wurde an den Campaign Hackdays 2019 entwickelt.
-                            </source>
-        <target>Crowd-Lobbying est une plateforme de campagne suisse indépendante. Nous permettons aux personnes intéressés d’envoyer des messages au parlement qui leur tiennent à cœur.
-Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre. La plateforme est un projet communautaire. L’idée a été développée lors des Campaign-Hackdays 2019.</target>
+        <source>Crowd-Lobbying ist eine unabhängige Schweizer Kampagnenplattform. Wir ermöglichen Menschen, Nachrichten an das Parlament zu schicken, die ihnen am Herzen liegen. Gemeinsam setzen wir uns ein für eine Schweiz, in der wir leben wollen. Die Plattform ist ein Community-Projekt und wurde an den Campaign Hackdays 2019 entwickelt.</source>
+        <target>Crowd-Lobbying est une plateforme de campagne suisse indépendante. Nous permettons aux personnes intéressés d’envoyer des messages au parlement qui leur tiennent à cœur. Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre. La plateforme est un projet communautaire. L’idée a été développée lors des Campaign-Hackdays 2019.</target>
       </segment>
     </unit>
     <unit id="Z1o7sYJ" name="Medienkontakt">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:134</note>
-        <note category="file-source" priority="1">www/templates/base.html.twig:176</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:130</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:168</note>
       </notes>
       <segment>
         <source>Medienkontakt</source>
         <target>Contact médias</target>
       </segment>
     </unit>
-    <unit id="qLR457J" name="2b9510c">
+    <unit id="j7INtj8" name="06bbab7">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:135</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:131</note>
+        <note category="state" priority="1">new</note>
       </notes>
       <segment>
-        <source>                            &lt;p&gt;
-                                Che Wagner&lt;br&gt;Tel. +41 76 230 75 29&lt;br&gt;&lt;a href="mailto:che.wagner@publicbeta.ch"&gt;che.wagner@publicbeta.ch&lt;/a&gt;
-                            &lt;/p&gt;
-                        </source>
+        <source>&lt;p&gt;Che Wagner&lt;br&gt;Tel. +41 76 230 75 29&lt;br&gt;&lt;a href="mailto:che.wagner@publicbeta.ch"&gt;che.wagner@publicbeta.ch&lt;/a&gt;&lt;/p&gt;</source>
         <target><![CDATA[<p>Che Wagner<br>Tel. +41 76 230 75 29<br><a href="mailto:che.wagner@publicbeta.ch">che.wagner@publicbeta.ch</a></p>]]></target>
       </segment>
     </unit>
     <unit id="uKYFGSP" name="Impressum">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:141</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:133</note>
       </notes>
       <segment>
         <source>Impressum</source>
@@ -113,7 +106,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="FCV.dXf" name="&lt;p&gt;Daniel Graf&lt;br&gt;Dammerkirchstr. 44&lt;br&gt;CH-4056 Basel&lt;/p&gt;">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:142</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:134</note>
       </notes>
       <segment>
         <source>&lt;p&gt;Daniel Graf&lt;br&gt;Dammerkirchstr. 44&lt;br&gt;CH-4056 Basel&lt;/p&gt;</source>
@@ -122,7 +115,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="32cAxL4" name="Nutzungsbedingungen">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:152</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:144</note>
       </notes>
       <segment>
         <source>Nutzungsbedingungen</source>
@@ -131,7 +124,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="Xlm2CTL" name="NutzungsbedingungenText">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:153</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:145</note>
       </notes>
       <segment>
         <source>NutzungsbedingungenText</source>
@@ -140,8 +133,8 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="9iT88Ny" name="Datenschutz">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:155</note>
-        <note category="file-source" priority="1">www/templates/base.html.twig:177</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:147</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:169</note>
       </notes>
       <segment>
         <source>Datenschutz</source>
@@ -150,7 +143,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="21AlXgv" name="DatenschutzText">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:156</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:148</note>
       </notes>
       <segment>
         <source>DatenschutzText</source>
@@ -159,7 +152,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="8702EHz" name="Verein Public Beta, Basel">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:159</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:151</note>
       </notes>
       <segment>
         <source>Verein Public Beta, Basel</source>
@@ -168,7 +161,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="Gd1Zciu" name="v.1.0.0-alpha.10">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:159</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:151</note>
       </notes>
       <segment>
         <source>v.1.0.0-alpha.10</source>
@@ -177,7 +170,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="4E0kxSs" name="Startseite">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:171</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:163</note>
       </notes>
       <segment>
         <source>Startseite</source>
@@ -186,9 +179,9 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="JhfoRZx" name="Mitmachen">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:172</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:13</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:87</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:164</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:14</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:89</note>
       </notes>
       <segment>
         <source>Mitmachen</source>
@@ -197,11 +190,11 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="fU3.Emj" name="Spenden">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:173</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:42</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:52</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:63</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:72</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:165</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:44</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:54</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:65</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:74</note>
         <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:5</note>
       </notes>
       <segment>
@@ -211,7 +204,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="wsNShf1" name="Politikerinnen und Politiker">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:174</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:166</note>
       </notes>
       <segment>
         <source>Politikerinnen und Politiker</source>
@@ -220,7 +213,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="TsSTbEF" name="Nachrichten-Feed">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:175</note>
+        <note category="file-source" priority="1">www/templates/base.html.twig:167</note>
       </notes>
       <segment>
         <source>Nachrichten-Feed</source>
@@ -238,29 +231,21 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="CCsQTdX" name="Herzlichen Dank für Ihre Nachricht">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:11</note>
+        <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:12</note>
+        <note category="file-source" priority="1">www/templates/campaign/confirm.html.twig:11</note>
       </notes>
       <segment>
         <source>Herzlichen Dank für Ihre Nachricht</source>
         <target>Nous vous remercions pour votre message.</target>
       </segment>
     </unit>
-    <unit id="raVFpqy" name="f6eb0d4">
-      <notes>
-        <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:12</note>
-      </notes>
-      <segment>
-        <source>Bitte helfen Sie mit und teilen Sie Ihr Argument mit Ihren FreundInnen, Familien, Verwandten und Bekannten.</source>
-        <target>Nous vous prions de participer et de partager cette campagne avec vos amies et amis, familles, proches et connaissances.</target>
-      </segment>
-    </unit>
     <unit id="eCPlVT." name="An:">
       <notes>
         <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:18</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:29</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:30</note>
         <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:14</note>
         <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:16</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:30</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:31</note>
       </notes>
       <segment>
         <source>An:</source>
@@ -270,9 +255,9 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     <unit id="_4TuU6q" name="Von:">
       <notes>
         <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:19</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:30</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:31</note>
         <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:17</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:31</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:32</note>
       </notes>
       <segment>
         <source>Von:</source>
@@ -282,10 +267,10 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     <unit id="xcRoAOS" name="Betreff:">
       <notes>
         <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:20</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:31</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:32</note>
         <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:15</note>
         <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:18</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:32</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:33</note>
       </notes>
       <segment>
         <source>Betreff:</source>
@@ -295,10 +280,10 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     <unit id="poEKQq2" name="«">
       <notes>
         <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:23</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:34</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:35</note>
         <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:24</note>
         <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:21</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:35</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:36</note>
       </notes>
       <segment>
         <source>«</source>
@@ -308,10 +293,10 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     <unit id="B_g_P38" name="»">
       <notes>
         <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:23</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:34</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:35</note>
         <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:24</note>
         <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:21</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:35</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:36</note>
       </notes>
       <segment>
         <source>»</source>
@@ -336,18 +321,18 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
         <target>Continuer à faire du lobbying</target>
       </segment>
     </unit>
-    <unit id="VF4IF4g" name="Nachrichten an den Ständerat verschickt">
+    <unit id="45vpprg" name="08f2d16">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:11</note>
+        <note category="file-source" priority="1">www/templates/campaign/confirm.html.twig:12</note>
       </notes>
       <segment>
-        <source>Nachrichten an den Ständerat verschickt</source>
-        <target>messages envoyés au Conseil des Etats.</target>
+        <source>Wir haben Ihnen soeben ein Mail mit Ihrer Nachricht geschickt. Bitte bestätigen Sie diese, damit wir Ihre Nachricht an die Parlamentsmitglieder weiterleiten können.</source>
+        <target></target>
       </segment>
     </unit>
     <unit id="qF4Y0UE" name="Mehr erfahren">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:47</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:48</note>
       </notes>
       <segment>
         <source>Mehr erfahren</source>
@@ -356,7 +341,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="DT0BsyW" name="So einfach geht Crowd-Lobbying:">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:57</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:58</note>
       </notes>
       <segment>
         <source>So einfach geht Crowd-Lobbying:</source>
@@ -365,7 +350,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="F422kJB" name="Kanton wählen">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:86</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:87</note>
       </notes>
       <segment>
         <source>Kanton wählen</source>
@@ -374,8 +359,8 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="xRHYT.e" name="mit uns">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:109</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:126</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:110</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:127</note>
       </notes>
       <segment>
         <source>mit uns</source>
@@ -384,8 +369,8 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="8zkoEXi" name="gegen uns">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:109</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:124</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:110</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:125</note>
       </notes>
       <segment>
         <source>gegen uns</source>
@@ -394,8 +379,8 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="pBjmnp_" name="unbekannt">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:109</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:125</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:110</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:126</note>
       </notes>
       <segment>
         <source>unbekannt</source>
@@ -404,7 +389,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="YxZ9.2W" name="Stimmabsicht">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:110</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:111</note>
       </notes>
       <segment>
         <source>Stimmabsicht</source>
@@ -413,7 +398,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="JxnNI0w" name="Lobbyieren">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:114</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:115</note>
       </notes>
       <segment>
         <source>Lobbyieren</source>
@@ -422,7 +407,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="ixKP3XQ" name="Lobby-Status">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:122</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:123</note>
       </notes>
       <segment>
         <source>Lobby-Status</source>
@@ -431,7 +416,7 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="QHt036P" name="5969e0e">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:130</note>
+        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:131</note>
       </notes>
       <segment>
         <source>                                Wer hat welche Stimmabstichten? Der
@@ -528,10 +513,10 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="tMVJqBI" name="Mit Ihrer Spende bringen wir diese Kampagne weiter.">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:43</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:53</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:64</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:73</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:45</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:55</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:66</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:75</note>
         <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:6</note>
       </notes>
       <segment>
@@ -541,10 +526,10 @@ Ensemble, nous nous engageons pour une Suisse, dans laquelle nous voulons vivre.
     </unit>
     <unit id="R7nEkeq" name="Jetzt spenden">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:45</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:55</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:66</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:75</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:47</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:57</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:68</note>
+        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:77</note>
       </notes>
       <segment>
         <source>Jetzt spenden</source>
