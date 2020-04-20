@@ -88,7 +88,6 @@
     <unit id="j7INtj8" name="06bbab7">
       <notes>
         <note category="file-source" priority="1">www/templates/base.html.twig:131</note>
-        <note category="state" priority="1">new</note>
       </notes>
       <segment>
         <source>&lt;p&gt;Che Wagner&lt;br&gt;Tel. +41 76 230 75 29&lt;br&gt;&lt;a href="mailto:che.wagner@publicbeta.ch"&gt;che.wagner@publicbeta.ch&lt;/a&gt;&lt;/p&gt;</source>
@@ -536,32 +535,9 @@
         <target>Donner maintenant</target>
       </segment>
     </unit>
-    <unit id="VR71bJL" name="Bankverbindung">
-      <notes>
-        <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:11</note>
-      </notes>
-      <segment>
-        <source>Bankverbindung</source>
-        <target>Coordonnées bancaires</target>
-      </segment>
-    </unit>
-    <unit id="vcTewFl" name="3de4e40">
-      <notes>
-        <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:13</note>
-      </notes>
-      <segment>
-        <source>                            Verein PublicBeta&lt;br&gt;
-                            Crowd-Lobbying&lt;br&gt;
-                            4051 Basel&lt;br&gt;
-                            IBAN CH58 0900 0000 1509 7572 2&lt;br&gt;
-                            Post-Konto 15-97572-2
-                        </source>
-        <target><![CDATA[ Verein PublicBeta<br>Crowd-Lobbying<br>4001 Bâle<br>IBAN CH 58 0900 0000 1509 7572 2<br>Compte postal 15-97572-2]]></target>
-      </segment>
-    </unit>
     <unit id="MFDlgfK" name="Teilen">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:30</note>
+        <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:19</note>
       </notes>
       <segment>
         <source>Teilen</source>
@@ -570,7 +546,7 @@
     </unit>
     <unit id="DQXm3S4" name="4accb57">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:32</note>
+        <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:21</note>
       </notes>
       <segment>
         <source>                            Bitte helfen Sie mit und teilen Sie die Kampagne mit Ihren FreundInnen, Familien, Verwandten und Bekannten.
@@ -580,7 +556,7 @@
     </unit>
     <unit id="2xfq0_2" name="kopieren">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:49</note>
+        <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:38</note>
       </notes>
       <segment>
         <source>kopieren</source>
