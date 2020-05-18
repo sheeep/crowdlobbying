@@ -176,7 +176,7 @@ Gergergasse 30<br>
       </notes>
       <segment>
         <source>v.1.0.0-alpha.10</source>
-        <target>v.1.0.0-alpha.10</target>
+        <target>v.1.0.0-beta.10</target>
       </segment>
     </unit>
     <unit id="4E0kxSs" name="Startseite">
@@ -338,7 +338,7 @@ Gergergasse 30<br>
       </notes>
       <segment>
         <source>Wir haben Ihnen soeben ein Mail mit Ihrer Nachricht geschickt. Bitte bestätigen Sie diese, damit wir Ihre Nachricht an die Parlamentsmitglieder weiterleiten können.</source>
-        <target></target>
+        <target>Wir haben Ihnen soeben ein Mail mit Ihrer Nachricht geschickt. Bitte bestätigen Sie diese, damit wir Ihre Nachricht an die Parlamentsmitglieder weiterleiten können.</target>
       </segment>
     </unit>
     <unit id="qF4Y0UE" name="Mehr erfahren">
