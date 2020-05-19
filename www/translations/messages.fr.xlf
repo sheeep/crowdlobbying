@@ -109,7 +109,10 @@
       </notes>
       <segment>
         <source>&lt;p&gt;Daniel Graf&lt;br&gt;Dammerkirchstr. 44&lt;br&gt;CH-4056 Basel&lt;/p&gt;</source>
-        <target><![CDATA[<p>Daniel Graf<br>Dammerkirchstr. 44<br>CH-4056 Bâle, <a href="http://www.publicbeta.ch" target="_blank">www.publicbeta.ch</a><br>Samuel Furter, Backend, <a href="https://github.com/nivida" target="_blank">github.com/nivida</a><br>Pascal Wacker, Backend, <a href="https://pascalwacker.ch" target="_blank">pascalwacker.ch</a><br> René Keller, Frontend, <a href="http://www.pixelherz.com" target="_blank">www.pixelherz.com</a><br> Samuel Raymann, UI/UX-Design, <a href="http://www.raymann.cc" target="_blank">www.raymann.cc</a></p>]]></target>
+        <target><![CDATA[<p>Crowd-Lobbying<br>
+c/o PublicBeta<br>
+Gerbergasse 30<br>
+4001 Bâle</p>]]></target>
       </segment>
     </unit>
     <unit id="32cAxL4" name="Nutzungsbedingungen">
@@ -410,7 +413,7 @@
       </notes>
       <segment>
         <source>Lobby-Status</source>
-        <target>Statut-Lobby</target>
+        <target>Status-Lobby</target>
       </segment>
     </unit>
     <unit id="QHt036P" name="5969e0e">
@@ -424,7 +427,7 @@
                                 Anliegen kritisch gegenüber stehen. Wer für unser Anliegen eintritt, erhält keine
                                 Nachrichten mehr.
                             </source>
-        <target>Qui a quelles intentions de vote ? Le Statut-Lobby vous montre à qui vous devriez envoyer un message. Ensemble, nous voulons convaincre les politiciens et politiciennes qui n’ont pas encore d’avis sur le sujet, ou qui ont montré une position contraire à la notre à ce sujet. Les personnes qui se sont prononcés en faveur de notre cause ne recevront plus de messages.</target>
+        <target>Qui a quelles intentions de vote ? Le Status-Lobby vous montre à qui vous devriez envoyer un message. Ensemble, nous voulons convaincre les politiciens et politiciennes qui n’ont pas encore d’avis sur le sujet, ou qui ont montré une position contraire à la notre à ce sujet. Les personnes qui se sont prononcés en faveur de notre cause ne recevront plus de messages.</target>
       </segment>
     </unit>
     <unit id="LzYUzBW" name="Wählen Sie eine Nachricht">
