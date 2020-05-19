@@ -333,24 +333,41 @@ class CampaignController extends AbstractController
      */
     public function statements(Campaign $campaign, Request $request, CampaignEntry $campaignEntry = null): Response
     {
+        $campaignEntryRepository = $this->get(CampaignEntryRepository::class);
+
+        $entries = $campaignEntryRepository->findBy(
+            [
+                'campaign' => $campaign,
+                'confirmed' => true,
+            ],
+            [
+                'id' => 'desc',
+            ]
+        );
+
+        shuffle($entries);
+
         if ('GET' === $request->getMethod() && $request->getLocale() !== $request->get('_locale')) {
             if ($request->query->get('id', 0) > 0) {
                 return $this->redirectToRoute('app_campaign_statement', [
                     'campaign' => $campaign->getSlug(),
                     'id' => $request->query->get('id'),
                     '_locale' => $request->getLocale(),
+                    'entries' => $entries,
                 ]);
             }
 
             return $this->redirectToRoute('app_campaign_statements', [
                 'campaign' => $campaign->getSlug(),
                 '_locale' => $request->getLocale(),
+                'entries' => $entries,
             ]);
         }
 
         return $this->render('campaign/statements.html.twig', [
             'campaign' => $campaign,
             'campaignEntry' => $campaignEntry,
+            'entries' => $entries,
         ]);
     }
 

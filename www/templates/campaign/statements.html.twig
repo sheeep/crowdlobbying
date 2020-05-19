@@ -22,7 +22,7 @@
                                 </blockquote>
                             </div>
                         {% endif %}
-                        {% for entry in campaign.campaignEntries %}
+                        {% for entry in entries %}
                             {% if not campaignEntry or campaignEntry.id != entry.id %}
                                 {% if entry.confirmed %}
                                     <div class="messages-grid__slide">
