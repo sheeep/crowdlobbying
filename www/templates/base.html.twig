@@ -10,7 +10,7 @@
 {% if campaign is defined %}
     {% set description = campaign.campaignDescription | trim %}
     {% set title = campaign.campaignTitle %}
-    {% set ogImage = vich_uploader_asset(campaign, 'ogImageFile' ~ (app.request.locale | capitalize)) %}
+    {% set ogImage = app.request.getUriForPath(vich_uploader_asset(campaign, 'ogImageFile' ~ (app.request.locale | capitalize))) %}
     {% set ogDescription = campaign.ogCampaignDescription %}
 {% endif %}
 
