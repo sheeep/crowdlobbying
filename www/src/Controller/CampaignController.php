@@ -246,14 +246,17 @@ class CampaignController extends AbstractController
         $person = $this->get(PersonRepository::class)->findOneBy([
             'confirmationToken' => $token,
         ]);
-        $em = $this->getDoctrine()->getManager();
 
         if (null === $person) {
-            throw new \RuntimeException('Could not find confirmation token.');
+            return $this->redirectToRoute('app_campaign_index', [
+                'campaign' => $campaign->getSlug(),
+            ]);
         }
 
         if ($person->getConfirmationExpires() < new \DateTime()) {
-            throw new \RuntimeException('Confirmation token expired.');
+            return $this->redirectToRoute('app_campaign_index', [
+                'campaign' => $campaign->getSlug(),
+            ]);
         }
 
         /** @var CampaignEntry|null $campaignEntry */
@@ -264,13 +267,16 @@ class CampaignController extends AbstractController
         ]);
 
         if (null === $campaignEntry) {
-            throw new \RuntimeException('Could not find campaign.');
+            return $this->redirectToRoute('app_campaign_index', [
+                'campaign' => $campaign->getSlug(),
+            ]);
         }
 
         $person->setConfirmed(true);
         $person->setConfirmationToken(null);
         $person->setConfirmationExpires(null);
 
+        $em = $this->getDoctrine()->getManager();
         $em->persist($person);
 
         // Get all campaign entries of this confirmed person (if there are multiple)
