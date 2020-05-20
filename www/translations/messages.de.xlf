@@ -3,7 +3,7 @@
   <file id="messages.de">
     <unit id="CboJE2P" name="default_title">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:5</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:5</note>
       </notes>
       <segment>
         <source>default_title</source>
@@ -12,7 +12,7 @@
     </unit>
     <unit id="dxf4bY6" name="default_description">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:6</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:6</note>
       </notes>
       <segment>
         <source>default_description</source>
@@ -21,7 +21,7 @@
     </unit>
     <unit id="Er4zMM6" name="/assets/meta/crowd-lobbying-og-image.jpg">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:7</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:7</note>
       </notes>
       <segment>
         <source>/assets/meta/crowd-lobbying-og-image.jpg</source>
@@ -30,7 +30,7 @@
     </unit>
     <unit id="vaLAt3B" name="default_og_description">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:8</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:8</note>
       </notes>
       <segment>
         <source>default_og_description</source>
@@ -39,9 +39,9 @@
     </unit>
     <unit id="StN12dL" name="Crowd-Lobbying">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:76</note>
-        <note category="file-source" priority="1">www/templates/default/index.html.twig:11</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:10</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:76</note>
+        <note category="file-source" priority="1">20200520124005/templates/default/index.html.twig:11</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:10</note>
       </notes>
       <segment>
         <source>Crowd-Lobbying</source>
@@ -50,7 +50,7 @@
     </unit>
     <unit id="7RZServ" name="Nach oben">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:114</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:114</note>
       </notes>
       <segment>
         <source>Nach oben</source>
@@ -59,7 +59,7 @@
     </unit>
     <unit id="t977_c." name="Über uns">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:125</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:125</note>
       </notes>
       <segment>
         <source>Über uns</source>
@@ -68,7 +68,7 @@
     </unit>
     <unit id="S_2oHb5" name="0537cd2">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:127</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:127</note>
       </notes>
       <segment>
         <source>Crowd-Lobbying ist eine unabhängige Schweizer Kampagnenplattform. Wir ermöglichen Menschen, Nachrichten an das Parlament zu schicken, die ihnen am Herzen liegen. Gemeinsam setzen wir uns ein für eine Schweiz, in der wir leben wollen. Die Plattform ist ein Community-Projekt und wurde an den Campaign Hackdays 2019 entwickelt.</source>
@@ -77,8 +77,8 @@
     </unit>
     <unit id="Z1o7sYJ" name="Medienkontakt">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:130</note>
-        <note category="file-source" priority="1">www/templates/base.html.twig:168</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:130</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:168</note>
       </notes>
       <segment>
         <source>Medienkontakt</source>
@@ -87,7 +87,7 @@
     </unit>
     <unit id="j7INtj8" name="06bbab7">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:131</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:131</note>
       </notes>
       <segment>
         <source>&lt;p&gt;Che Wagner&lt;br&gt;Tel. +41 76 230 75 29&lt;br&gt;&lt;a href="mailto:che.wagner@publicbeta.ch"&gt;che.wagner@publicbeta.ch&lt;/a&gt;&lt;/p&gt;</source>
@@ -96,7 +96,7 @@
     </unit>
     <unit id="uKYFGSP" name="Impressum">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:133</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:133</note>
       </notes>
       <segment>
         <source>Impressum</source>
@@ -105,7 +105,7 @@
     </unit>
     <unit id="FCV.dXf" name="&lt;p&gt;Daniel Graf&lt;br&gt;Dammerkirchstr. 44&lt;br&gt;CH-4056 Basel&lt;/p&gt;">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:134</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:134</note>
       </notes>
       <segment>
         <source>&lt;p&gt;Daniel Graf&lt;br&gt;Dammerkirchstr. 44&lt;br&gt;CH-4056 Basel&lt;/p&gt;</source>
@@ -117,7 +117,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="32cAxL4" name="Nutzungsbedingungen">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:144</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:144</note>
       </notes>
       <segment>
         <source>Nutzungsbedingungen</source>
@@ -126,7 +126,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="Xlm2CTL" name="NutzungsbedingungenText">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:145</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:145</note>
       </notes>
       <segment>
         <source>NutzungsbedingungenText</source>
@@ -135,8 +135,8 @@ Gerbergasse 30<br>
     </unit>
     <unit id="9iT88Ny" name="Datenschutz">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:147</note>
-        <note category="file-source" priority="1">www/templates/base.html.twig:169</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:147</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:169</note>
       </notes>
       <segment>
         <source>Datenschutz</source>
@@ -145,7 +145,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="21AlXgv" name="DatenschutzText">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:148</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:148</note>
       </notes>
       <segment>
         <source>DatenschutzText</source>
@@ -163,7 +163,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="8702EHz" name="Verein Public Beta, Basel">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:151</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:151</note>
       </notes>
       <segment>
         <source>Verein Public Beta, Basel</source>
@@ -172,7 +172,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="Gd1Zciu" name="v.1.0.0-alpha.10">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:151</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:151</note>
       </notes>
       <segment>
         <source>v.1.0.0-alpha.10</source>
@@ -181,7 +181,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="4E0kxSs" name="Startseite">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:163</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:163</note>
       </notes>
       <segment>
         <source>Startseite</source>
@@ -190,9 +190,9 @@ Gerbergasse 30<br>
     </unit>
     <unit id="JhfoRZx" name="Mitmachen">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:164</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:14</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:89</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:164</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:14</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:89</note>
       </notes>
       <segment>
         <source>Mitmachen</source>
@@ -201,12 +201,12 @@ Gerbergasse 30<br>
     </unit>
     <unit id="fU3.Emj" name="Spenden">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:165</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:44</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:54</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:65</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:74</note>
-        <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:5</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:165</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:44</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:54</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:65</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:74</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/Partials/donate.html.twig:5</note>
       </notes>
       <segment>
         <source>Spenden</source>
@@ -215,7 +215,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="wsNShf1" name="Politikerinnen und Politiker">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:166</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:166</note>
       </notes>
       <segment>
         <source>Politikerinnen und Politiker</source>
@@ -224,7 +224,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="TsSTbEF" name="Nachrichten-Feed">
       <notes>
-        <note category="file-source" priority="1">www/templates/base.html.twig:167</note>
+        <note category="file-source" priority="1">20200520124005/templates/base.html.twig:167</note>
       </notes>
       <segment>
         <source>Nachrichten-Feed</source>
@@ -233,7 +233,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="oouqYus" name="Unsere aktuellen Kampagnen">
       <notes>
-        <note category="file-source" priority="1">www/templates/default/index.html.twig:12</note>
+        <note category="file-source" priority="1">20200520124005/templates/default/index.html.twig:12</note>
       </notes>
       <segment>
         <source>Unsere aktuellen Kampagnen</source>
@@ -242,8 +242,8 @@ Gerbergasse 30<br>
     </unit>
     <unit id="CCsQTdX" name="Herzlichen Dank für Ihre Nachricht">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:12</note>
-        <note category="file-source" priority="1">www/templates/campaign/confirm.html.twig:11</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/thanks.html.twig:12</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/confirm.html.twig:11</note>
       </notes>
       <segment>
         <source>Herzlichen Dank für Ihre Nachricht</source>
@@ -252,11 +252,11 @@ Gerbergasse 30<br>
     </unit>
     <unit id="eCPlVT." name="An:">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:18</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:30</note>
-        <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:14</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:16</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:31</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/thanks.html.twig:18</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:30</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/lobby.html.twig:14</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:16</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:31</note>
       </notes>
       <segment>
         <source>An:</source>
@@ -265,10 +265,10 @@ Gerbergasse 30<br>
     </unit>
     <unit id="_4TuU6q" name="Von:">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:19</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:31</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:17</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:32</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/thanks.html.twig:19</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:31</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:17</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:32</note>
       </notes>
       <segment>
         <source>Von:</source>
@@ -277,11 +277,11 @@ Gerbergasse 30<br>
     </unit>
     <unit id="xcRoAOS" name="Betreff:">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:20</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:32</note>
-        <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:15</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:18</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:33</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/thanks.html.twig:20</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:32</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/lobby.html.twig:15</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:18</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:33</note>
       </notes>
       <segment>
         <source>Betreff:</source>
@@ -290,11 +290,11 @@ Gerbergasse 30<br>
     </unit>
     <unit id="poEKQq2" name="«">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:23</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:35</note>
-        <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:24</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:21</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:36</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/thanks.html.twig:23</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:35</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/lobby.html.twig:24</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:21</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:36</note>
       </notes>
       <segment>
         <source>«</source>
@@ -303,11 +303,11 @@ Gerbergasse 30<br>
     </unit>
     <unit id="B_g_P38" name="»">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:23</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:35</note>
-        <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:24</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:21</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:36</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/thanks.html.twig:23</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:35</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/lobby.html.twig:24</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:21</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:36</note>
       </notes>
       <segment>
         <source>»</source>
@@ -316,7 +316,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="F7CcxSQ" name="Alle Nachrichten ansehen">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:28</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/thanks.html.twig:28</note>
       </notes>
       <segment>
         <source>Alle Nachrichten ansehen</source>
@@ -325,7 +325,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="Z4Al9MD" name="Weitere Person lobbyieren">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/thanks.html.twig:29</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/thanks.html.twig:29</note>
       </notes>
       <segment>
         <source>Weitere Person lobbyieren</source>
@@ -334,7 +334,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="45vpprg" name="08f2d16">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/confirm.html.twig:12</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/confirm.html.twig:12</note>
       </notes>
       <segment>
         <source>Wir haben Ihnen soeben ein Mail mit Ihrer Nachricht geschickt. Bitte bestätigen Sie diese, damit wir Ihre Nachricht an die Parlamentsmitglieder weiterleiten können.</source>
@@ -343,7 +343,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="qF4Y0UE" name="Mehr erfahren">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:48</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:48</note>
       </notes>
       <segment>
         <source>Mehr erfahren</source>
@@ -352,7 +352,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="DT0BsyW" name="So einfach geht Crowd-Lobbying:">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:58</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:58</note>
       </notes>
       <segment>
         <source>So einfach geht Crowd-Lobbying:</source>
@@ -361,7 +361,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="F422kJB" name="Kanton wählen">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:87</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:87</note>
       </notes>
       <segment>
         <source>Kanton wählen</source>
@@ -370,8 +370,8 @@ Gerbergasse 30<br>
     </unit>
     <unit id="xRHYT.e" name="mit uns">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:110</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:127</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:110</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:127</note>
       </notes>
       <segment>
         <source>mit uns</source>
@@ -380,8 +380,8 @@ Gerbergasse 30<br>
     </unit>
     <unit id="8zkoEXi" name="gegen uns">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:110</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:125</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:110</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:125</note>
       </notes>
       <segment>
         <source>gegen uns</source>
@@ -390,8 +390,8 @@ Gerbergasse 30<br>
     </unit>
     <unit id="pBjmnp_" name="unbekannt">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:110</note>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:126</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:110</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:126</note>
       </notes>
       <segment>
         <source>unbekannt</source>
@@ -400,7 +400,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="YxZ9.2W" name="Stimmabsicht">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:111</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:111</note>
       </notes>
       <segment>
         <source>Stimmabsicht</source>
@@ -409,7 +409,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="JxnNI0w" name="Lobbyieren">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:115</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:115</note>
       </notes>
       <segment>
         <source>Lobbyieren</source>
@@ -418,30 +418,25 @@ Gerbergasse 30<br>
     </unit>
     <unit id="ixKP3XQ" name="Lobby-Status">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:123</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:123</note>
       </notes>
       <segment>
         <source>Lobby-Status</source>
         <target>Lobby-Status</target>
       </segment>
     </unit>
-    <unit id="QHt036P" name="5969e0e">
+    <unit id="whxx3Ku" name="1b9b392">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/index.html.twig:131</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/index.html.twig:131</note>
       </notes>
       <segment>
-        <source>                                Wer hat welche Stimmabstichten? Der
-                                Lobby-Status zeigt Ihnen, wem Sie eine Nachricht schicken sollten. Gemeinsam wollen wir
-                                PolitikerInnen überzeugen, die noch keine feste Meinung geäussert haben oder die unserem
-                                Anliegen kritisch gegenüber stehen. Wer für unser Anliegen eintritt, erhält keine
-                                Nachrichten mehr.
-                            </source>
+        <source>Wer hat welche Stimmabstichten? Der Lobby-Status zeigt Ihnen, wem Sie eine Nachricht schicken sollten. Gemeinsam wollen wir PolitikerInnen überzeugen, die noch keine feste Meinung geäussert haben oder die unserem Anliegen kritisch gegenüber stehen. Wer für unser Anliegen eintritt, erhält keine Nachrichten mehr.</source>
         <target>Wer hat welche Stimmabsichten? Der Lobby-Status zeigt Ihnen, wem Sie eine Nachricht schicken sollten. Gemeinsam wollen wir PolitikerInnen überzeugen, die noch keine feste Meinung geäussert haben oder die unserem Anliegen kritisch gegenüber stehen. Wer für unser Anliegen eintritt, erhält keine Nachrichten mehr.</target>
       </segment>
     </unit>
     <unit id="LzYUzBW" name="Wählen Sie eine Nachricht">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:12</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/lobby.html.twig:12</note>
       </notes>
       <segment>
         <source>Wählen Sie eine Nachricht</source>
@@ -450,7 +445,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id=".sA.Buo" name="Absender">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:30</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/lobby.html.twig:30</note>
       </notes>
       <segment>
         <source>Absender</source>
@@ -459,7 +454,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="2.puWq4" name="Vorname*">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:36</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/lobby.html.twig:36</note>
       </notes>
       <segment>
         <source>Vorname*</source>
@@ -468,7 +463,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="H8fghvj" name="Nachname*">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:46</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/lobby.html.twig:46</note>
       </notes>
       <segment>
         <source>Nachname*</source>
@@ -477,7 +472,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="Z8sLaSq" name="E-Mail*">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:56</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/lobby.html.twig:56</note>
       </notes>
       <segment>
         <source>E-Mail*</source>
@@ -486,7 +481,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="0f9_Wnl" name="Ort*">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:66</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/lobby.html.twig:66</note>
       </notes>
       <segment>
         <source>Ort*</source>
@@ -495,7 +490,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="_qM_y3K" name="Ich möchte informiert bleiben lorem ipsum dolor">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:81</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/lobby.html.twig:81</note>
       </notes>
       <segment>
         <source>Ich möchte informiert bleiben lorem ipsum dolor</source>
@@ -504,7 +499,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="hXLWOak" name="Abschicken">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:85</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/lobby.html.twig:85</note>
       </notes>
       <segment>
         <source>Abschicken</source>
@@ -513,7 +508,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="ldnpprx" name="b65f465">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/lobby.html.twig:90</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/lobby.html.twig:90</note>
       </notes>
       <segment>
         <source>                                Mit Ihrer Eingabe akzeptieren Sie unsere &lt;a onclick="utils.scrollTo(&amp;quot;#terms-of-use&amp;quot;, { offset: document.querySelector(&amp;quot;.header&amp;quot;).offsetHeight * -1 })"&gt;Nutzungsbedingungen&lt;/a&gt;
@@ -524,11 +519,11 @@ Gerbergasse 30<br>
     </unit>
     <unit id="tMVJqBI" name="Mit Ihrer Spende bringen wir diese Kampagne weiter.">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:45</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:55</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:66</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:75</note>
-        <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:6</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:45</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:55</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:66</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:75</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/Partials/donate.html.twig:6</note>
       </notes>
       <segment>
         <source>Mit Ihrer Spende bringen wir diese Kampagne weiter.</source>
@@ -537,10 +532,10 @@ Gerbergasse 30<br>
     </unit>
     <unit id="R7nEkeq" name="Jetzt spenden">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:47</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:57</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:68</note>
-        <note category="file-source" priority="1">www/templates/campaign/statements.html.twig:77</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:47</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:57</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:68</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/statements.html.twig:77</note>
       </notes>
       <segment>
         <source>Jetzt spenden</source>
@@ -549,7 +544,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="MFDlgfK" name="Teilen">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:19</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/Partials/donate.html.twig:19</note>
       </notes>
       <segment>
         <source>Teilen</source>
@@ -558,7 +553,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="DQXm3S4" name="4accb57">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:21</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/Partials/donate.html.twig:21</note>
       </notes>
       <segment>
         <source>                            Bitte helfen Sie mit und teilen Sie die Kampagne mit Ihren FreundInnen, Familien, Verwandten und Bekannten.
@@ -568,7 +563,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="2xfq0_2" name="kopieren">
       <notes>
-        <note category="file-source" priority="1">www/templates/campaign/Partials/donate.html.twig:38</note>
+        <note category="file-source" priority="1">20200520124005/templates/campaign/Partials/donate.html.twig:38</note>
       </notes>
       <segment>
         <source>kopieren</source>
@@ -577,7 +572,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="EaYsI0E" name="city">
       <notes>
-        <note category="file-source" priority="1">www/src/Form/PersonType.php:17</note>
+        <note category="file-source" priority="1">20200520124005/src/Form/PersonType.php:17</note>
       </notes>
       <segment>
         <source>city</source>
@@ -586,7 +581,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="giREF.l" name="email">
       <notes>
-        <note category="file-source" priority="1">www/src/Form/PersonType.php:17</note>
+        <note category="file-source" priority="1">20200520124005/src/Form/PersonType.php:17</note>
       </notes>
       <segment>
         <source>email</source>
@@ -595,7 +590,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="VbXFH4Z" name="lastname">
       <notes>
-        <note category="file-source" priority="1">www/src/Form/PersonType.php:17</note>
+        <note category="file-source" priority="1">20200520124005/src/Form/PersonType.php:17</note>
       </notes>
       <segment>
         <source>lastname</source>
@@ -604,7 +599,7 @@ Gerbergasse 30<br>
     </unit>
     <unit id="TP3eab3" name="firstname">
       <notes>
-        <note category="file-source" priority="1">www/src/Form/PersonType.php:17</note>
+        <note category="file-source" priority="1">20200520124005/src/Form/PersonType.php:17</note>
       </notes>
       <segment>
         <source>firstname</source>
