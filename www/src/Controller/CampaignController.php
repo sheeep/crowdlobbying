@@ -424,9 +424,17 @@ class CampaignController extends AbstractController
     private function sendConfirmationMail(Person $person, Politician $politician, Campaign $campaign, Argument $argument): void
     {
         $router = $this->get('router');
+        $entityManger = $this->get('doctrine')->getManager();
 
         /** @var Request $request */
         $request = $this->get('request_stack')->getCurrentRequest();
+
+        $argumentDe = clone $argument;
+
+        $argument->setTranslatableLocale('fr');
+        $entityManger->refresh($argument);
+
+        $argumentFr = clone $argument;
 
         $message = (new \Swift_Message('Crowd-Lobbying: Bitte bestätigen Sie Ihre Nachricht'))
             ->setFrom('team@crowdlobbying.ch')
@@ -437,7 +445,8 @@ class CampaignController extends AbstractController
                         'person' => $person,
                         'politician' => $politician,
                         'campaign' => $campaign,
-                        'argument' => $argument,
+                        'argumentDe' => $argumentDe,
+                        'argumentFr' => $argumentFr,
                         'urlConfirmation' => $router->generate('app_campaign_lobby_confirm', [
                             'slug' => $politician->getSlug(),
                             'campaign' => $campaign->getSlug(),
