@@ -168,7 +168,16 @@
                     <li class="menu__item"><a class="menu__link" onclick="app.menu.hide(); utils.scrollTo('#media-contact', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Medienkontakt{% endtrans %}</a></li>
                     <li class="menu__item"><a class="menu__link" onclick="app.menu.hide(); utils.scrollTo('#privacy', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Datenschutz{% endtrans %}</a></li>
                 </ul>
-            </div>
+                <br />
+                {% if campaign is defined %}
+                    {% set hrefDE = path('app_campaign_index', { campaign: campaign.slug, _locale: 'de' }) %}
+                    {% set hrefFR = path('app_campaign_index', { campaign: campaign.slug, _locale: 'fr' }) %}
+                {% else %}
+                    {% set hrefDE = path('default_index') %}
+                    {% set hrefFR = path('default_index') %}
+                {% endif %}
+
+                <a href="{{ hrefDE }}" title="Deutsch">DE</a> / <a href="{{ hrefFR }}" title="Français">FR</a>
         </div>
     </div>
 </nav>
