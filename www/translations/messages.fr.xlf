@@ -366,7 +366,7 @@ Gerbergasse 30<br>
       </notes>
       <segment>
         <source>mit uns</source>
-        <target>Pour nous</target>
+        <target>Pour</target>
       </segment>
     </unit>
     <unit id="8zkoEXi" name="gegen uns">
@@ -376,7 +376,7 @@ Gerbergasse 30<br>
       </notes>
       <segment>
         <source>gegen uns</source>
-        <target>Contre nous</target>
+        <target>Contre</target>
       </segment>
     </unit>
     <unit id="pBjmnp_" name="unbekannt">
@@ -386,7 +386,7 @@ Gerbergasse 30<br>
       </notes>
       <segment>
         <source>unbekannt</source>
-        <target>Inconnue</target>
+        <target>Ex aequo</target>
       </segment>
     </unit>
     <unit id="YxZ9.2W" name="Stimmabsicht">

@@ -45,7 +45,7 @@
       </notes>
       <segment>
         <source>Crowd-Lobbying</source>
-        <target>Crowd-Lobbying</target>
+        <target>Crowd-Lobbying: Jetzt im Nationalrat!</target>
       </segment>
     </unit>
     <unit id="7RZServ" name="Nach oben">
@@ -375,7 +375,7 @@ Gerbergasse 30<br>
       </notes>
       <segment>
         <source>mit uns</source>
-        <target>mit uns</target>
+        <target>Dafür</target>
       </segment>
     </unit>
     <unit id="8zkoEXi" name="gegen uns">
@@ -385,7 +385,7 @@ Gerbergasse 30<br>
       </notes>
       <segment>
         <source>gegen uns</source>
-        <target>gegen uns</target>
+        <target>Dagegen</target>
       </segment>
     </unit>
     <unit id="pBjmnp_" name="unbekannt">
@@ -395,7 +395,7 @@ Gerbergasse 30<br>
       </notes>
       <segment>
         <source>unbekannt</source>
-        <target>unbekannt</target>
+        <target>Unentschieden</target>
       </segment>
     </unit>
     <unit id="YxZ9.2W" name="Stimmabsicht">
