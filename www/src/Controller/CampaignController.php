@@ -196,7 +196,11 @@ class CampaignController extends AbstractController
                     $person = $existingPerson;
                 }
 
-                if ($campaign->isDoubleOptIn() && !$person->isConfirmed() && null === $person->getConfirmationToken()) {
+                if (!$campaign->isDoubleOptIn()) {
+                    $person->setConfirmed(true);
+                }
+
+                if (!$person->isConfirmed() && null === $person->getConfirmationToken()) {
                     $person->setConfirmationToken($this->get(TokenGenerator::class)->generateToken());
                     $person->setConfirmationExpires(new \DateTime('+7 days'));
                 }
@@ -206,7 +210,7 @@ class CampaignController extends AbstractController
 
                 $campaignEntry = $this->createCampaignEntry($request, $person, $campaign, $argument, $politician);
 
-                if (!$campaign->isDoubleOptIn() || $person->isConfirmed()) {
+                if ($person->isConfirmed()) {
                     $campaignEntry->setConfirmed(true);
                     $em->persist($campaignEntry);
 
