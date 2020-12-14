@@ -156,7 +156,7 @@ class CampaignController extends AbstractController
      * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
      * @MVC\ParamConverter("politician", options={"mapping": {"slug": "slug"}})
      */
-    public function lobby(Campaign $campaign, Politician $politician, Request $request, bool $doubleOptIn): Response
+    public function lobby(Campaign $campaign, Politician $politician, Request $request): Response
     {
         if ('GET' === $request->getMethod() && $request->getLocale() !== $request->get('_locale')) {
             return $this->redirectToRoute('app_campaign_lobby', [
@@ -196,7 +196,7 @@ class CampaignController extends AbstractController
                     $person = $existingPerson;
                 }
 
-                if ($doubleOptIn && !$person->isConfirmed() && null === $person->getConfirmationToken()) {
+                if ($campaign->isDoubleOptIn() && !$person->isConfirmed() && null === $person->getConfirmationToken()) {
                     $person->setConfirmationToken($this->get(TokenGenerator::class)->generateToken());
                     $person->setConfirmationExpires(new \DateTime('+7 days'));
                 }
@@ -206,7 +206,7 @@ class CampaignController extends AbstractController
 
                 $campaignEntry = $this->createCampaignEntry($request, $person, $campaign, $argument, $politician);
 
-                if (!$doubleOptIn || $person->isConfirmed()) {
+                if (!$campaign->isDoubleOptIn() || $person->isConfirmed()) {
                     $campaignEntry->setConfirmed(true);
                     $em->persist($campaignEntry);
 

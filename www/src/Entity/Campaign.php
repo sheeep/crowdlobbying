@@ -251,6 +251,13 @@ class Campaign
      */
     private $mailThanksText;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $doubleOptIn = false;
+
     public function __construct()
     {
         $this->campaignEntries = new ArrayCollection();
@@ -807,6 +814,18 @@ class Campaign
     public function setMailThanksText(?string $mailThanksText): self
     {
         $this->mailThanksText = $mailThanksText;
+
+        return $this;
+    }
+
+    public function isDoubleOptIn(): bool
+    {
+        return $this->doubleOptIn;
+    }
+
+    public function setDoubleOptIn(bool $doubleOptIn): self
+    {
+        $this->doubleOptIn = $doubleOptIn;
 
         return $this;
     }

@@ -34,6 +34,7 @@ easy_admin:
           - faqTitle
           - faqText
           - mailThanksText
+          - doubleOptIn
       list:
         fields:
             - name
@@ -41,6 +42,7 @@ easy_admin:
             - start
             - end
             - campaignTitle
+            - doubleOptIn
       show:
         fields:
           - { property: 'ogImageDe', type: 'image', base_path: '%app.path.campaign_images%' }
