@@ -110,7 +110,7 @@ class Politician
 
     public function __toString(): string
     {
-        return (string) $this->name;
+        return sprintf('%s %s', $this->name, $this->lastName);
     }
 
     public function getId(): ?int
