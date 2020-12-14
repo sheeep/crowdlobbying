@@ -1,17 +1,3 @@
-<section class="donorbox" id="donate">
-    <div class="viewport-width">
-        <div class="page-width">
-            <div class="layout-width">
-                <div class="richtext readable-width"><h1>{% trans %}Spenden{% endtrans %}</h1>
-                    <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p>
-                </div>
-                <div class="donorbox__inner readable-width">
-                    {{ campaign.donorBox | raw }}
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <section class="share">
     <div class="viewport-width vertical-space">
         <div class="page-width">
@@ -36,6 +22,20 @@
                         {% trans %}kopieren{% endtrans %}
                         <div class="action-button__overlay"></div>
                     </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="donorbox" id="donate">
+    <div class="viewport-width">
+        <div class="page-width">
+            <div class="layout-width">
+                <div class="richtext readable-width"><h1>{% trans %}Spenden{% endtrans %}</h1>
+                    <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p>
+                </div>
+                <div class="donorbox__inner readable-width">
+                    {{ campaign.donorBox | raw }}
                 </div>
             </div>
         </div>
