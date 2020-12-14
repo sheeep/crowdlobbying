@@ -20,8 +20,8 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  */
 class Politician
 {
-    use TimestampableEntity;
     use SoftDeleteableEntity;
+    use TimestampableEntity;
 
     /**
      * @ORM\Id()
