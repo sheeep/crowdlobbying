@@ -20,10 +20,18 @@
     <meta charset="UTF-8">
     <title>{{ title }}</title>
     <meta name="description" content="{{ description }}">
-    <meta property="og:image" content="{{ ogImage }}">
-    <meta property=og:title content="{{ title }}"/>
-    <meta property=og:description content="{{ ogDescription }}"/>
-    <meta property=og:url content="{{ app.request.schemeAndHttpHost }}"/>
+    {% block ogImage %}
+        <meta property="og:image" content="{{ ogImage }}">
+    {% endblock %}
+    {% block ogTitle %}
+        <meta property=og:title content="{{ title }}"/>
+    {% endblock %}
+    {% block ogDescription %}
+        <meta property=og:description content="{{ ogDescription }}"/>
+    {% endblock %}
+    {% block ogUrl %}
+        <meta property=og:url content="{{ app.request.schemeAndHttpHost }}"/>
+    {% endblock %}
     <meta name=twitter:card content=summary_large_image/>
     <meta name=twitter:description content="{{ ogDescription }}"/>
     <meta name=twitter:title content="{{ title }}"/>

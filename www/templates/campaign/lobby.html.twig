@@ -3,6 +3,22 @@
 {% set headerClass = 'force-background' %}
 {% set hasFAQ = false %}
 
+{% block ogImage %}
+    <meta property="og:image" content="{{ app.request.schemeAndHttpHost }}{% if politician.image | length %}{{ vich_uploader_asset(politician) }}{% else %}/assets/officials/{{ politician.name }} {{ politician.lastName }}.jpg{% endif %}">
+{% endblock %}
+
+{% block ogDescription %}
+    <meta property=og:description content="{% trans %}Lobbyiere jetzt bei{% endtrans %} {{ politician }} ({{ politician.party.short }}/{{ politician.region.short }})"/>
+{% endblock %}
+
+{% block ogUrl %}
+    <meta property=og:url content="{{ app.request.uri }}"/>
+{% endblock %}
+
+{% block ogTitle %}
+    <meta property=og:title content="{{ campaign.name }}"/>
+{% endblock %}
+
 {% block body %}
     <section class="act">
         <div class="viewport-width">
