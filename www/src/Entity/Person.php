@@ -26,11 +26,19 @@ class Person
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Regex(
+     *     pattern     = "/^[a-z\s]+$/i",
+     *     htmlPattern = "^[a-zA-Z\s]+$"
+     * )
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Regex(
+     *     pattern     = "/^[a-z\s]+$/i",
+     *     htmlPattern = "^[a-zA-Z\s]+$"
+     * )
      */
     private $lastname;
 
