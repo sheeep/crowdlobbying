@@ -8,6 +8,7 @@ parameters:
     domain: '%env(DOMAIN)%'
     app.path.politician_images: /uploads/images/politicians
     app.path.campaign_images: /uploads/images/campaigns
+    app.double_opt_in: false
 
 services:
     # default configuration for services in *this* file
@@ -16,6 +17,7 @@ services:
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
         bind:
             $projectDir: '%kernel.project_dir%' # matches on constructor argument name
+            $doubleOptIn: '%app.double_opt_in%'
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
