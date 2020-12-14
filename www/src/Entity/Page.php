@@ -54,9 +54,9 @@ class Page
         $this->files = new ArrayCollection();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
-        return $this->getTitle();
+        return (string) $this->getTitle();
     }
 
     public function getId(): ?int

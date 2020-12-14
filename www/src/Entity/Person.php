@@ -81,7 +81,7 @@ class Person
         $this->campaignEntries = new ArrayCollection();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->getFirstname() . ' ' . $this->getLastname();
     }

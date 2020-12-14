@@ -43,7 +43,7 @@ class Argument implements Translatable
      */
     private $locale;
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->argument;
     }

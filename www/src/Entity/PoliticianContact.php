@@ -91,7 +91,7 @@ class PoliticianContact
      */
     private $website;
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->getNameString();
     }
