@@ -9,11 +9,12 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
+use Gedmo\Translatable\Translatable;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PartyRepository")
  */
-class Party
+class Party implements Translatable
 {
     use TimestampableEntity;
 
@@ -26,14 +27,9 @@ class Party
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Gedmo\Translatable
      */
     private $name;
-
-    /**
-     * @ORM\Column(type="string", length=128, unique=true)
-     * @Gedmo\Slug(fields={"short"})
-     */
-    private $slug;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Politician", mappedBy="party")
@@ -47,8 +43,16 @@ class Party
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Gedmo\Translatable
      */
     private $short;
+
+    /**
+     * @Gedmo\Locale
+     * Used locale to override Translation listener`s locale
+     * this is not a mapped field of entity metadata, just a simple property
+     */
+    private $locale;
 
     public function __construct()
     {
@@ -58,6 +62,11 @@ class Party
     public function __toString(): string
     {
         return (string) $this->getName();
+    }
+
+    public function setTranslatableLocale($locale): void
+    {
+        $this->locale = $locale;
     }
 
     public function getId(): ?int
@@ -73,18 +82,6 @@ class Party
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
 
         return $this;
     }
