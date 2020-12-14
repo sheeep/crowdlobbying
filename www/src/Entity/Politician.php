@@ -36,8 +36,13 @@ class Politician
     private $name;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lastName;
+
+    /**
      * @ORM\Column(type="string", length=128, unique=true)
-     * @Gedmo\Slug(fields={"name"})
+     * @Gedmo\Slug(fields={"name", "lastName"})
      */
     private $slug;
 
@@ -121,6 +126,18 @@ class Politician
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->lastName;
+    }
+
+    public function setLastName($lastName): self
+    {
+        $this->lastName = $lastName;
 
         return $this;
     }
