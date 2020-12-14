@@ -207,12 +207,14 @@ class CampaignController extends AbstractController
 
                 $person->setLanguage($request->getLocale());
                 $em->persist($person);
+                $em->flush();
 
                 $campaignEntry = $this->createCampaignEntry($request, $person, $campaign, $argument, $politician);
 
                 if ($person->isConfirmed()) {
                     $campaignEntry->setConfirmed(true);
                     $em->persist($campaignEntry);
+                    $em->flush();
 
                     $this->sendThanksMail($person, $politician, $campaign);
 
