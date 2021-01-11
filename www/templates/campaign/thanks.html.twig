@@ -3,7 +3,7 @@
 {% set headerClass = 'force-background' %}
 
 {% block ogImage %}
-    <meta property="og:image" content="{{ app.request.schemeAndHttpHost }}{% if campaignEntry.politician.image | length %}{{ vich_uploader_asset(campaignEntry.politician) }}{% else %}/assets/officials/{{ campaignEntry.politician.name }} {{ campaignEntry.politician.lastName }}.jpg{% endif %}">
+    <meta property="og:image" content="{{ app.request.schemeAndHttpHost }}{% if campaignEntry.politician.image | length %}{{ vich_uploader_asset(campaignEntry.politician) }}{% else %}/assets/officials/{{ campaignEntry.politician.name }} {{ campaignEntry.politician.lastname }}.jpg{% endif %}">
 {% endblock %}
 
 {% block ogDescription %}

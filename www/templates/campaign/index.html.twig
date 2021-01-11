@@ -95,7 +95,7 @@
                 <div class="officials__list">
                     {% for politician in politicians %}
                         <section class="official officials__card" data-region="{{ politician.region.id }}">
-                            <div class="official__portrait" style="background-image: url({% if politician.image | length %}'{{ vich_uploader_asset(politician) }}'{% else %}'/assets/officials/{{ politician.name }} {{ politician.lastName }}.jpg'{% endif %})">
+                            <div class="official__portrait" style="background-image: url({% if politician.image | length %}'{{ vich_uploader_asset(politician) }}'{% else %}'/assets/officials/{{ politician.name }} {{ politician.lastname }}.jpg'{% endif %})">
                                 {% set voteCount = campaign.entryCountByPolitician(politician) %}
                                 <div class="badge official__badge">{{ voteCount > 999 ? '999+' : voteCount }}</div>
                             </div>

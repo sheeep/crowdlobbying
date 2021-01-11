@@ -38,11 +38,11 @@ class Politician
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $lastName;
+    private $lastname;
 
     /**
      * @ORM\Column(type="string", length=128, unique=true)
-     * @Gedmo\Slug(fields={"name", "lastName"})
+     * @Gedmo\Slug(fields={"name", "lastname"})
      */
     private $slug;
 
@@ -110,7 +110,7 @@ class Politician
 
     public function __toString(): string
     {
-        return sprintf('%s %s', $this->name, $this->lastName);
+        return sprintf('%s %s', $this->name, $this->lastname);
     }
 
     public function getId(): ?int
@@ -130,14 +130,14 @@ class Politician
         return $this;
     }
 
-    public function getLastName(): ?string
+    public function getLastname(): ?string
     {
-        return $this->lastName;
+        return $this->lastname;
     }
 
-    public function setLastName($lastName): self
+    public function setLastname($lastname): self
     {
-        $this->lastName = $lastName;
+        $this->lastname = $lastname;
 
         return $this;
     }

@@ -68,7 +68,7 @@ easy_admin:
       form:
         fields:
           - name
-          - lastName
+          - lastname
           - slug
           - since
           - lang
@@ -80,9 +80,9 @@ easy_admin:
           - politicianType
           - commissions
       list:
-        sort: ['lastName', 'ASC']
+        sort: ['lastname', 'ASC']
         fields:
-          - lastName
+          - lastname
           - name
           - { property: 'image', type: 'image', base_path: '%app.path.politician_images%' }
           - region

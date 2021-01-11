@@ -4,7 +4,7 @@
 {% set hasFAQ = false %}
 
 {% block ogImage %}
-    <meta property="og:image" content="{{ app.request.schemeAndHttpHost }}{% if politician.image | length %}{{ vich_uploader_asset(politician) }}{% else %}/assets/officials/{{ politician.name }} {{ politician.lastName }}.jpg{% endif %}">
+    <meta property="og:image" content="{{ app.request.schemeAndHttpHost }}{% if politician.image | length %}{{ vich_uploader_asset(politician) }}{% else %}/assets/officials/{{ politician.name }} {{ politician.lastname }}.jpg{% endif %}">
 {% endblock %}
 
 {% block ogDescription %}
@@ -26,7 +26,7 @@
                 <div class="layout-width">
                     <div class="act__richtext act__center-col center-text richtext">
                         <h1>{% trans %}Wählen Sie eine Nachricht{% endtrans %}</h1>
-                        <img src="{% if politician.image | length %}{{ vich_uploader_asset(politician) }}{% else %}/assets/officials/{{ politician.name }} {{ politician.lastName }}.jpg{% endif %}" />
+                        <img src="{% if politician.image | length %}{{ vich_uploader_asset(politician) }}{% else %}/assets/officials/{{ politician.name }} {{ politician.lastname }}.jpg{% endif %}" />
                         <p>
                             {% trans %}An:{% endtrans %} <strong>{{ politician }}</strong> ({{ politician.party.short }}/{{ politician.region.short }})<br>
                             {% trans %}Betreff:{% endtrans %} {{ campaign }}
