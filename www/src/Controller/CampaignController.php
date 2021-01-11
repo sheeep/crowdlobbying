@@ -357,8 +357,6 @@ class CampaignController extends AbstractController
             ]
         );
 
-        shuffle($entries);
-
         if ('GET' === $request->getMethod() && $request->getLocale() !== $request->get('_locale')) {
             if ($request->query->get('id', 0) > 0) {
                 return $this->redirectToRoute('app_campaign_statement', [

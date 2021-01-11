@@ -105,7 +105,8 @@
                             {% endif %}
                             <div class="official__footer">
                                 <span class="official__name">
-                                    <strong>{{ politician }}</strong> ({{ politician.party.short }}/{{ politician.region.short }})
+                                    <strong>{{ politician }}</strong> <br />
+                                    ({{ politician.party.short }}/{{ politician.region.short }})
                                 </span>
                                 <span class="official__state {% if wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}with-us{% elseif wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_NO') %}against-us{% else %}unknown{% endif %}" title="{% if wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_YES') %}{% trans %}mit uns{% endtrans %}{% elseif wipCount == constant('App\\Entity\\WipCount::WIP_COUNT_TYPE_NO') %}{% trans %}gegen uns{% endtrans %}{% else %}{% trans %}unbekannt{% endtrans %}{% endif %}">
                                     {% trans %}Stimmabsicht{% endtrans %}

@@ -1,4 +1,10 @@
 framework:
+    assets:
+        packages:
+            app:
+                json_manifest_path: '%kernel.project_dir%/public/assets/rev-manifest.json'
+                base_path: '/assets'
+
     secret: '%env(APP_SECRET)%'
     default_locale: de
     #csrf_protection: true
