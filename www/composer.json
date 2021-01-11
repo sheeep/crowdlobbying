@@ -5,6 +5,7 @@
         "php": "^7.4",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "ext-json": "*",
         "doctrine/doctrine-migrations-bundle": "^2.1",
         "doctrine/migrations": "^2.0",
         "easycorp/easyadmin-bundle": "^2.1",
