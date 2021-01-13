@@ -9,7 +9,7 @@ use App\Repository\CampaignEntryRepository;
 use App\Repository\PoliticianRepository;
 use Symfony\Component\Filesystem\Filesystem;
 
-class JsonWriter
+class JsonWriter implements WriterInterface
 {
     protected $projectDir;
     protected $politicianRepository;
@@ -22,8 +22,8 @@ class JsonWriter
         $this->campaignEntryRepository = $campaignEntryRepository;
     }
 
-    public function write(Campaign $campaign): void
-    {// EntityManagerInterface $em,
+    public function write(Campaign $campaign): ?string
+    {
         $data = ['date' => date('Y-m-d H:i:s'), 'campaign' => $campaign->getName(), 'politicians' => []];
         foreach ($this->politicianRepository->findByCampaign($campaign) as $politician) {
             $contact = $politician->getContact();
@@ -61,5 +61,7 @@ class JsonWriter
 
         $fileSystem = new Filesystem();
         $fileSystem->dumpFile($this->projectDir . '/../data/messages.json', json_encode($data));
+
+        return null;
     }
 }

@@ -121,6 +121,9 @@
     "egulias/email-validator": {
         "version": "2.1.7"
     },
+    "ezyang/htmlpurifier": {
+        "version": "v4.13.0"
+    },
     "friendsofapi/localise.biz": {
         "version": "1.0.1"
     },
@@ -166,8 +169,20 @@
     "laminas/laminas-zendframework-bridge": {
         "version": "1.1.1"
     },
+    "maennchen/zipstream-php": {
+        "version": "2.1.0"
+    },
+    "markbaker/complex": {
+        "version": "2.0.0"
+    },
+    "markbaker/matrix": {
+        "version": "2.0.0"
+    },
     "monolog/monolog": {
         "version": "1.24.0"
+    },
+    "myclabs/php-enum": {
+        "version": "1.7.7"
     },
     "nikic/php-parser": {
         "version": "v4.2.1"
@@ -274,6 +289,9 @@
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
     },
+    "phpoffice/phpspreadsheet": {
+        "version": "1.16.0"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -294,6 +312,9 @@
     },
     "psr/log": {
         "version": "1.1.0"
+    },
+    "psr/simple-cache": {
+        "version": "1.0.1"
     },
     "ralouphie/getallheaders": {
         "version": "3.0.3"

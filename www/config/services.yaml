@@ -31,3 +31,12 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Command\ExportXlsCommand:
+        arguments:
+            - '@App\Repository\CampaignRepository'
+            - '@App\Utils\XlsWriter'
+
+    App\Controller\AdminController:
+        arguments:
+            - '@App\Utils\XlsWriter'

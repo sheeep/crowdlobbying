@@ -43,6 +43,8 @@ easy_admin:
             - end
             - campaignTitle
             - doubleOptIn
+        actions:
+          - { name: 'export' }
       show:
         fields:
           - { property: 'ogImageDe', type: 'image', base_path: '%app.path.campaign_images%' }
