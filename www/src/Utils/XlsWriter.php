@@ -7,6 +7,7 @@ namespace App\Utils;
 use App\Entity\Argument;
 use App\Entity\Campaign;
 use App\Entity\Person;
+use App\Entity\PersonArgument;
 use App\Entity\Politician;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
@@ -65,6 +66,9 @@ class XlsWriter implements WriterInterface
             /** @var Argument $argument */
             $argument = $campaignEntry->getArgument();
 
+            /** @var PersonArgument $personArgument */
+            $personArgument = $campaignEntry->getPersonArgument();
+
             $data[] = [
                 $campaignEntry->getId(),
                 $person->getLastname(),
@@ -77,7 +81,7 @@ class XlsWriter implements WriterInterface
                 $person->getUpdatedAt()->format('d.m.Y H:i:s'),
                 $politician->getLastname(),
                 $politician->getName(),
-                $argument->getArgument(),
+                $argument ? (string) $argument->getArgument() : (string) $personArgument->getArgument(),
                 $campaignEntry->getCreatedAt()->format('d.m.Y H:i:s'),
                 $campaignEntry->getUpdatedAt()->format('d.m.Y H:i:s'),
             ];

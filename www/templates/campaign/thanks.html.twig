@@ -36,7 +36,14 @@
                                         <span class="card__meta-line">{% trans %}Betreff:{% endtrans %} {{ campaignEntry.campaign }}</span>
                                     </cite>
                                 </header>
-                                <p class="card__quote">{% trans %}«{% endtrans %}{{ campaignEntry.argument }}{% trans %}»{% endtrans %}</p>
+                                    <p class="card__quote">
+                                        {% if campaignEntry.argument %}
+                                            {% trans %}«{% endtrans %}{{ campaignEntry.argument }}{% trans %}»{% endtrans %}
+                                        {% endif %}
+                                        {% if campaignEntry.personArgument %}
+                                            {% trans %}«{% endtrans %}{{ campaignEntry.personArgument }}{% trans %}»{% endtrans %}
+                                        {% endif %}
+                                    </p>
                             </blockquote>
                         </div>
                         <div class="act__richtext richtext center-text">

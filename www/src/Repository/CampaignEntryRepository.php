@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Repository;
 
+use App\Entity\Campaign;
 use App\Entity\CampaignEntry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -21,32 +22,36 @@ class CampaignEntryRepository extends ServiceEntityRepository
         parent::__construct($registry, CampaignEntry::class);
     }
 
-    // /**
-    //  * @return CampaignEntry[] Returns an array of CampaignEntry objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function findByCampaign(Campaign $campaign, bool $confirmed = true, int $limit = null, $locale = null)
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
+        $qb = $this->createQueryBuilder('ce')
+            ->andWhere('ce.campaign = :campaign')
+            ->setParameter('campaign', $campaign)
+        ;
+
+        if ($locale) {
+            $qb
+                ->leftJoin('ce.personArgument', 'pa')
+                ->andWhere('pa.locale = :locale OR pa.locale IS NULL')
+                ->setParameter('locale', $locale)
+            ;
+        }
+
+        if ($confirmed) {
+            $qb
+                ->andWhere('ce.confirmed = :confirmed')
+                ->setParameter('confirmed', $confirmed)
+            ;
+        }
+
+        if ($limit) {
+            $qb->setMaxResults($limit);
+        }
+
+        return $qb
+            ->addOrderBy('ce.createdAt', 'DESC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?CampaignEntry
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

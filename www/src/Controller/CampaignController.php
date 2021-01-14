@@ -8,6 +8,7 @@ use App\Entity\Argument;
 use App\Entity\Campaign;
 use App\Entity\CampaignEntry;
 use App\Entity\Person;
+use App\Entity\PersonArgument;
 use App\Entity\Politician;
 use App\Entity\Region;
 use App\Form\PersonType;
@@ -65,16 +66,7 @@ class CampaignController extends AbstractController
         $campaignEntryRepository = $this->get(CampaignEntryRepository::class);
         $politicianRepository = $this->get(PoliticianRepository::class);
 
-        $entries = $campaignEntryRepository->findBy(
-            [
-                'campaign' => $campaign,
-                'confirmed' => true,
-            ],
-            [
-                'id' => 'desc',
-            ],
-            10
-        );
+        $entries = $campaignEntryRepository->findByCampaign($campaign, true, 10, $request->getLocale());
 
         shuffle($entries);
 
@@ -129,16 +121,7 @@ class CampaignController extends AbstractController
         $campaignEntryRepository = $this->get(CampaignEntryRepository::class);
         $politicianRepository = $this->get(PoliticianRepository::class);
 
-        $entries = $campaignEntryRepository->findBy(
-            [
-                'campaign' => $campaign,
-                'confirmed' => true,
-            ],
-            [
-                'id' => 'desc',
-            ],
-            10
-        );
+        $entries = $campaignEntryRepository->findByCampaign($campaign, true, 10, $request->getLocale());
 
         shuffle($entries);
 
@@ -146,7 +129,7 @@ class CampaignController extends AbstractController
             'campaign' => $campaign,
             'politicians' => $politicianRepository->findByTypeAndRegions($campaign->getPoliticianType(), [$region]),
             'latestEntries' => $entries,
-            'total' => \count($campaignEntryRepository->findBy(['campaign' => $campaign])),
+            'total' => \count($campaignEntryRepository->findByCampaign($campaign, true, null, $request->getLocale())),
             'region' => $region,
         ]);
     }
@@ -173,13 +156,15 @@ class CampaignController extends AbstractController
         $form = $this->createForm(PersonType::class, $person);
         $form->handleRequest($request);
 
+        $customArgument = $request->request->get('custom-argument');
+
         if ($form->isSubmitted() && $form->isValid() && $this->isCsrfTokenValid('person', $request->request->get('token'))) {
             $argument = $argumentRepository->findOneBy([
                 'campaign' => $campaign,
                 'id' => $request->request->get('argument', 0),
             ]);
 
-            if ($argument) {
+            if ($argument || $customArgument) {
                 /** @var Person $person */
                 $person = $form->getData();
 
@@ -209,11 +194,26 @@ class CampaignController extends AbstractController
                 $em->persist($person);
                 $em->flush();
 
-                $campaignEntry = $this->createCampaignEntry($request, $person, $campaign, $argument, $politician);
+                $personArgument = null;
+
+                if (!$argument && null !== $customArgument) {
+                    $personArgument = new PersonArgument();
+                    $personArgument
+                        ->setPerson($person)
+                        ->setCampaign($campaign)
+                        ->setArgument(strip_tags($customArgument))
+                        ->setLocale($request->getLocale())
+                    ;
+
+                    $em->persist($personArgument);
+                }
+
+                $campaignEntry = $this->createCampaignEntry($request, $person, $campaign, $argument, $politician, $personArgument);
 
                 if ($person->isConfirmed()) {
                     $campaignEntry->setConfirmed(true);
                     $em->persist($campaignEntry);
+
                     $em->flush();
 
                     $this->sendThanksMail($person, $politician, $campaign);
@@ -224,7 +224,7 @@ class CampaignController extends AbstractController
                     ]);
                 }
 
-                $this->sendConfirmationMail($person, $politician, $campaign, $argument);
+                $this->sendConfirmationMail($person, $politician, $campaign, $argument, $personArgument);
 
                 return $this->redirectToRoute('app_campaign_confirm', [
                     'campaign' => $campaign->getSlug(),
@@ -238,6 +238,7 @@ class CampaignController extends AbstractController
             'politician' => $politician,
             'form' => $form->createView(),
             'person' => $person,
+            'customArgument' => $customArgument,
         ]);
     }
 
@@ -347,15 +348,7 @@ class CampaignController extends AbstractController
     {
         $campaignEntryRepository = $this->get(CampaignEntryRepository::class);
 
-        $entries = $campaignEntryRepository->findBy(
-            [
-                'campaign' => $campaign,
-                'confirmed' => true,
-            ],
-            [
-                'id' => 'desc',
-            ]
-        );
+        $entries = $campaignEntryRepository->findByCampaign($campaign, true, null, $request->getLocale());
 
         if ('GET' === $request->getMethod() && $request->getLocale() !== $request->get('_locale')) {
             if ($request->query->get('id', 0) > 0) {
@@ -381,7 +374,7 @@ class CampaignController extends AbstractController
         ]);
     }
 
-    private function createCampaignEntry(Request $request, Person $person, Campaign $campaign, Argument $argument, Politician $politician): CampaignEntry
+    private function createCampaignEntry(Request $request, Person $person, Campaign $campaign, ?Argument $argument, Politician $politician, ?PersonArgument $personArgument = null): CampaignEntry
     {
         $em = $this->getDoctrine()->getManager();
         $repository = $this->get(CampaignEntryRepository::class);
@@ -391,6 +384,7 @@ class CampaignController extends AbstractController
             'person' => $person,
             'argument' => $argument,
             'campaign' => $campaign,
+            'personArgument' => $personArgument,
         ]);
 
         if ($existing instanceof CampaignEntry) {
@@ -404,6 +398,7 @@ class CampaignController extends AbstractController
         $campaignEntry->setArgument($argument);
         $campaignEntry->setPolitician($politician);
         $campaignEntry->setColor($campaignEntry->getRandomColor());
+        $campaignEntry->setPersonArgument($personArgument);
 
         $em->persist($campaignEntry);
         $em->flush();
@@ -432,7 +427,7 @@ class CampaignController extends AbstractController
         $this->get(\Swift_Mailer::class)->send($message);
     }
 
-    private function sendConfirmationMail(Person $person, Politician $politician, Campaign $campaign, Argument $argument): void
+    private function sendConfirmationMail(Person $person, Politician $politician, Campaign $campaign, ?Argument $argument, ?PersonArgument $personArgument = null): void
     {
         $router = $this->get('router');
         $entityManger = $this->get('doctrine')->getManager();
@@ -440,12 +435,19 @@ class CampaignController extends AbstractController
         /** @var Request $request */
         $request = $this->get('request_stack')->getCurrentRequest();
 
-        $argumentDe = clone $argument;
+        if ($argument instanceof Argument) {
+            $argumentDe = clone $argument;
 
-        $argument->setTranslatableLocale('fr');
-        $entityManger->refresh($argument);
+            $argument->setTranslatableLocale('fr');
+            $entityManger->refresh($argument);
 
-        $argumentFr = clone $argument;
+            $argumentFr = clone $argument;
+        }
+
+        if ($personArgument instanceof PersonArgument) {
+            $argumentDe = $personArgument;
+            $argumentFr = $personArgument;
+        }
 
         $message = (new \Swift_Message('Crowd-Lobbying: Bitte bestätigen Sie Ihre Nachricht'))
             ->setFrom('team@crowdlobbying.ch')

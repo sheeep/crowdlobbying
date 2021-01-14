@@ -50,11 +50,18 @@ class CampaignEntry
     private $color;
 
     /**
-     * @var Argument
+     * @var Argument|null
      * @ORM\ManyToOne(targetEntity="App\Entity\Argument")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $argument;
+
+    /**
+     * @var PersonArgument|null
+     * @ORM\ManyToOne(targetEntity="App\Entity\PersonArgument", inversedBy="campaignEntry")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $personArgument;
 
     /**
      * @var bool
@@ -65,7 +72,15 @@ class CampaignEntry
 
     public function __toString(): string
     {
-        return (string) $this->argument->getArgument();
+        if (null !== $this->argument) {
+            return (string) $this->argument->getArgument();
+        }
+
+        if (null !== $this->personArgument) {
+            return (string) $this->personArgument->getArgument();
+        }
+
+        return '';
     }
 
     public function getRandomColor(): string
@@ -179,6 +194,18 @@ class CampaignEntry
     public function setConfirmed(bool $confirmed): self
     {
         $this->confirmed = $confirmed;
+
+        return $this;
+    }
+
+    public function getPersonArgument(): ?PersonArgument
+    {
+        return $this->personArgument;
+    }
+
+    public function setPersonArgument(?PersonArgument $personArgument): self
+    {
+        $this->personArgument = $personArgument;
 
         return $this;
     }

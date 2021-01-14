@@ -99,3 +99,20 @@ easy_admin:
       class: App\Entity\PoliticianContact
     Commission:
       class: App\Entity\Commission
+    PersonArgument:
+      class: App\Entity\PersonArgument
+      list:
+        fields:
+          - id
+          - createdAt
+          - campaign
+          - person
+          - argument
+      edit:
+        fields:
+          - argument
+          - locale
+          - createdAt
+          - updatedAt
+          - campaign
+          - person
