@@ -51,7 +51,7 @@ class WipCount
 
     public function __toString(): string
     {
-        return (string) $this->politician->getName();
+        return sprintf('%s %s', $this->politician->getName(), $this->politician->getLastname());
     }
 
     public function getId(): ?int

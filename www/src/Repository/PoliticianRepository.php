@@ -57,7 +57,11 @@ class PoliticianRepository extends ServiceEntityRepository
         $byTypeAndReqions = $this->findByTypeAndRegions($campaign->getPoliticianType(), $campaign->getRegions());
         $byCommissions = $this->findByCommissions($campaign->getCommissions());
 
-        $politicians = array_unique(array_merge($byTypeAndReqions, $byCommissions));
+        $politicians = $byTypeAndReqions;
+
+        if (\count($byCommissions) > 0) {
+            $politicians = $byCommissions;
+        }
 
         uasort($politicians, static function (Politician $first, Politician $second) {
             return $first->getLastName() > $second->getLastName() ? 1 : -1;
