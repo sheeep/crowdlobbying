@@ -149,10 +149,15 @@ class CampaignController extends AbstractController
             ]);
         }
 
+        $session = $request->getSession();
         $argumentRepository = $this->get(ArgumentRepository::class);
         $personRepository = $this->get(PersonRepository::class);
-
         $person = new Person();
+
+        if ($session->has('person')) {
+            $person = $personRepository->find($session->get('person'));
+        }
+
         $form = $this->createForm(PersonType::class, $person);
         $form->handleRequest($request);
 
@@ -209,6 +214,8 @@ class CampaignController extends AbstractController
                 }
 
                 $campaignEntry = $this->createCampaignEntry($request, $person, $campaign, $argument, $politician, $personArgument);
+
+                $session->set('person', $person->getId());
 
                 if ($person->isConfirmed()) {
                     $campaignEntry->setConfirmed(true);
