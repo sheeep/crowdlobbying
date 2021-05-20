@@ -22,6 +22,7 @@ easy_admin:
           - { property: 'ogImageFileFr', type: 'vich_image' }
           - { property: 'heroBackgroundFile', type: 'vich_image' }
           - hero
+          - heroSubline
           - total
           - campaignInfoLead
           - campaignInfo

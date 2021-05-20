@@ -258,6 +258,13 @@ class Campaign
      */
     private $doubleOptIn = false;
 
+    /**
+     * @var string|null
+     * @ORM\Column(type="string", nullable=true)
+     * @Gedmo\Translatable
+     */
+    private $heroSubline;
+
     public function __construct()
     {
         $this->campaignEntries = new ArrayCollection();
@@ -826,6 +833,18 @@ class Campaign
     public function setDoubleOptIn(bool $doubleOptIn): self
     {
         $this->doubleOptIn = $doubleOptIn;
+
+        return $this;
+    }
+
+    public function getHeroSubline(): ?string
+    {
+        return $this->heroSubline;
+    }
+
+    public function setHeroSubline(?string $heroSubline): self
+    {
+        $this->heroSubline = $heroSubline;
 
         return $this;
     }
