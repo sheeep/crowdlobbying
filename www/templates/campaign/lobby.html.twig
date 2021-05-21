@@ -46,7 +46,7 @@
                         <div class="act__custom-message act__center-col"><a class="act__custom-message--toggler" href="#" onclick="app.act.addCustomMessage(); return false;">{% trans %}Eigene Nachricht erfassen{% endtrans %}</a>
                             <div class="mdc-text-field mdc-text-field--textarea act__input act__textarea {% if customArgument %}act__textarea--visible{% endif %}">
                                 <div class="mdc-text-field-character-counter"></div>
-                                <textarea class="mdc-text-field__input" name="custom-argument" id="custom-argument" type="textarea" maxlength="100">{% if customArgument %}{{ customArgument }}{% endif %}</textarea>
+                                <textarea class="mdc-text-field__input" name="custom-argument" id="custom-argument" type="textarea" maxlength="100" autocomplete="on">{% if customArgument %}{{ customArgument }}{% endif %}</textarea>
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">
@@ -59,7 +59,7 @@
                         <div class="act__center-col center-text richtext">
                             <h2>{% trans %}Absender{% endtrans %}</h2>
                             <div class="mdc-text-field mdc-text-field--outlined act__input">
-                                <input class="mdc-text-field__input" id="tf-outlined" name="person[firstname]"{% if person and person.firstname %} value="{{ person.firstname }}"{% endif %} type="text" required pattern="^[^@]+$">
+                                <input class="mdc-text-field__input" id="tf-outlined" name="person[firstname]"{% if person and person.firstname %} value="{{ person.firstname }}"{% endif %} type="text" required pattern="^[^@]+$" autocomplete="on">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">
@@ -70,7 +70,7 @@
 
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined act__input">
-                                <input class="mdc-text-field__input" id="tf-outlined" name="person[lastname]"{% if person and person.lastname %} value="{{ person.lastname }}"{% endif %} type="text" required pattern="^[^@]+$">
+                                <input class="mdc-text-field__input" id="tf-outlined" name="person[lastname]"{% if person and person.lastname %} value="{{ person.lastname }}"{% endif %} type="text" required pattern="^[^@]+$" autocomplete="on">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">
@@ -80,7 +80,7 @@
                                 </div>
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined act__input">
-                                <input class="mdc-text-field__input" id="tf-outlined" name="person[email]"{% if person and person.email %} value="{{ person.email }}"{% endif %} type="email" required>
+                                <input class="mdc-text-field__input" id="tf-outlined" name="person[email]"{% if person and person.email %} value="{{ person.email }}"{% endif %} type="email" required autocomplete="on">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">
@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined act__input">
-                                <input class="mdc-text-field__input" id="tf-outlined" name="person[city]"{% if person and person.city %} value="{{ person.city }}"{% endif %} type="text" required pattern="^[^@]+$">
+                                <input class="mdc-text-field__input" id="tf-outlined" name="person[city]"{% if person and person.city %} value="{{ person.city }}"{% endif %} type="text" required pattern="^[^@]+$" autocomplete="on">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">
