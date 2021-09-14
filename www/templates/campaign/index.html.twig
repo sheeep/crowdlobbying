@@ -24,7 +24,7 @@
         <div class="messages-carousel__cards">
             {% for entry in latestEntries %}
                 <div class="messages-carousel__slide">
-                    <blockquote class="card pink" style="background-color: {{ entry.color }};">
+                    <blockquote class="card pink" style="background-color: {{ entry|color }};">
                         <header class="card__header">
                             <cite class="card__meta">
                                 <span class="card__meta-line">{% trans %}An:{% endtrans %} <strong>{{ entry.politician }}</strong> ({{ entry.politician.party.short }}/{{ entry.politician.region.short }})</span>

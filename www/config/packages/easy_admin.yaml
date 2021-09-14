@@ -1,4 +1,9 @@
 easy_admin:
+  design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@WandiColorPicker/form/fields.html.twig'
+
   site_name: 'CrowdLobbying'
   entities:
     Campaign:
@@ -21,6 +26,7 @@ easy_admin:
           - { property: 'ogImageFileDe', type: 'vich_image' }
           - { property: 'ogImageFileFr', type: 'vich_image' }
           - { property: 'heroBackgroundFile', type: 'vich_image' }
+          - colors
           - hero
           - heroSubline
           - total
@@ -100,6 +106,25 @@ easy_admin:
       class: App\Entity\PoliticianContact
     Commission:
       class: App\Entity\Commission
+    Color:
+      class: App\Entity\Color
+      list:
+        fields:
+          - name
+          - { property: color, label: 'Color', template: 'wandi_color_picker.html.twig' }
+      show:
+        fields:
+          - name
+          - { property: color, label: 'Color', template: 'wandi_color_picker.html.twig' }
+      edit:
+        fields:
+          - name
+          - { property: color, label: 'Color', type: 'App\Form\ColorType' }
+      new:
+        fields:
+          - name
+          - { property: color, label: 'Color', type: 'App\Form\ColorType' }
+
     PersonArgument:
       class: App\Entity\PersonArgument
       list:

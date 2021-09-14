@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Entity\Argument;
 use App\Entity\Campaign;
 use App\Entity\CampaignEntry;
+use App\Entity\Color;
 use App\Entity\Person;
 use App\Entity\PersonArgument;
 use App\Entity\Politician;
@@ -404,8 +405,20 @@ class CampaignController extends AbstractController
         $campaignEntry->setCampaign($campaign);
         $campaignEntry->setArgument($argument);
         $campaignEntry->setPolitician($politician);
-        $campaignEntry->setColor($campaignEntry->getRandomColor());
         $campaignEntry->setPersonArgument($personArgument);
+        $campaignEntry->setColor($campaignEntry->getRandomColor());
+
+        $colors = $campaign->getColors();
+
+        if ($colors->count()) {
+            $colors = $colors->toArray();
+
+            $color = $colors[array_rand($colors)];
+
+            if ($color instanceof Color) {
+                $campaignEntry->setColor($color->getColor());
+            }
+        }
 
         $em->persist($campaignEntry);
         $em->flush();

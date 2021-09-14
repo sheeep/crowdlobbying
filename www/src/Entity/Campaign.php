@@ -265,6 +265,15 @@ class Campaign
      */
     private $heroSubline;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Color")
+     * @ORM\JoinTable(name="campaigns_colors",
+     *     joinColumns={@ORM\JoinColumn(name="campaign_id", referencedColumnName="id", onDelete="CASCADE")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="color_id", referencedColumnName="id", onDelete="CASCADE")}
+     * )
+     */
+    private $colors;
+
     public function __construct()
     {
         $this->campaignEntries = new ArrayCollection();
@@ -273,6 +282,7 @@ class Campaign
         $this->wipCounts = new ArrayCollection();
         $this->pages = new ArrayCollection();
         $this->commissions = new ArrayCollection();
+        $this->colors = new ArrayCollection();
     }
 
     public function __toString(): string
@@ -845,6 +855,32 @@ class Campaign
     public function setHeroSubline(?string $heroSubline): self
     {
         $this->heroSubline = $heroSubline;
+
+        return $this;
+    }
+
+    public function addColor(Color $color): self
+    {
+        $this->colors->add($color);
+
+        return $this;
+    }
+
+    public function removeColor(Color $color): self
+    {
+        $this->colors->removeElement($color);
+
+        return $this;
+    }
+
+    public function getColors(): Collection
+    {
+        return $this->colors;
+    }
+
+    public function setColors(Collection $colors): self
+    {
+        $this->colors = $colors;
 
         return $this;
     }
