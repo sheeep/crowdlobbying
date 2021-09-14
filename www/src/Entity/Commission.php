@@ -41,7 +41,7 @@ class Commission
 
     /**
      * @var PoliticianType|null
-     * @ORM\OneToOne(targetEntity="App\Entity\PoliticianType")
+     * @ORM\ManyToOne(targetEntity="App\Entity\PoliticianType")
      * @ORM\JoinColumn(name="politician_type_id", referencedColumnName="id")
      */
     private $politicianType;
