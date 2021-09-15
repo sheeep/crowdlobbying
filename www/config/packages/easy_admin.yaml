@@ -20,6 +20,7 @@ easy_admin:
           - pages
           - politicianType
           - commissions
+          - campaignSubject
           - campaignTitle
           - campaignDescription
           - ogCampaignDescription

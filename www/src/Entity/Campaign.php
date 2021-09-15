@@ -102,6 +102,13 @@ class Campaign
      * @ORM\Column(type="string", nullable=true)
      * @Gedmo\Translatable
      */
+    private $campaignSubject;
+
+    /**
+     * @var string|null
+     * @ORM\Column(type="string", nullable=true)
+     * @Gedmo\Translatable
+     */
     private $campaignTitle;
 
     /**
@@ -287,6 +294,10 @@ class Campaign
 
     public function __toString(): string
     {
+        if ($this->campaignSubject && '' !== $this->campaignSubject) {
+            return $this->campaignSubject;
+        }
+
         return $this->name;
     }
 
@@ -881,6 +892,18 @@ class Campaign
     public function setColors(Collection $colors): self
     {
         $this->colors = $colors;
+
+        return $this;
+    }
+
+    public function getCampaignSubject(): ?string
+    {
+        return $this->campaignSubject;
+    }
+
+    public function setCampaignSubject(?string $campaignSubject): self
+    {
+        $this->campaignSubject = $campaignSubject;
 
         return $this;
     }
