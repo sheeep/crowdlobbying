@@ -52,7 +52,8 @@ class XlsWriter implements WriterInterface
             'Argument',
             'CampaignEntry created',
             'CampaignEntry updated',
-            'Möchte informiert bleiben',
+            'Möchte informiert bleiben (Plattform)',
+            'Möchte informiert bleiben (Projekt)',
         ];
 
         $data = [];
@@ -86,6 +87,7 @@ class XlsWriter implements WriterInterface
                 $campaignEntry->getCreatedAt()->format('d.m.Y H:i:s'),
                 $campaignEntry->getUpdatedAt()->format('d.m.Y H:i:s'),
                 $campaignEntry->getOptInInformation() ? 'Ja' : 'Nein',
+                $campaignEntry->getOptInInformationPartner() ? 'Ja' : 'Nein',
             ];
         }
 

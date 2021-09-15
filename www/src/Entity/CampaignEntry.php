@@ -27,6 +27,11 @@ class CampaignEntry
     private $optInInformation;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $optInInformationPartner;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="campaignEntries")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -127,6 +132,18 @@ class CampaignEntry
     public function setOptInInformation(bool $optInInformation): self
     {
         $this->optInInformation = $optInInformation;
+
+        return $this;
+    }
+
+    public function getOptInInformationPartner(): ?bool
+    {
+        return $this->optInInformationPartner;
+    }
+
+    public function setOptInInformationPartner(bool $optInInformationPartner): self
+    {
+        $this->optInInformationPartner = $optInInformationPartner;
 
         return $this;
     }

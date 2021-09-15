@@ -401,6 +401,7 @@ class CampaignController extends AbstractController
 
         $campaignEntry = new CampaignEntry();
         $campaignEntry->setOptInInformation((bool) ($request->request->get('optInInformation', 0)));
+        $campaignEntry->setOptInInformationPartner((bool) ($request->request->get('optInInformationPartner', 0)));
         $campaignEntry->setPerson($person);
         $campaignEntry->setCampaign($campaign);
         $campaignEntry->setArgument($argument);
