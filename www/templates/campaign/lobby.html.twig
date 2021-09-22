@@ -37,14 +37,14 @@
                             {% for argument in campaign.arguments %}
                                 <label for="argument-{{ loop.index }}">
                                     <input type="radio" name="argument" id="argument-{{ loop.index }}" value="{{ argument.id }}" style="visibility: hidden;" />
-                                    <blockquote class="act__message" onclick="app.act.selectMessage()">
+                                    <blockquote class="act__message" onclick="app.act.selectMessage()" data-color="{{ campaign|color }}">
                                         {% trans %}«{% endtrans %}{{ argument }}{% trans %}»{% endtrans %}
                                     </blockquote>
                                 </label>
                             {% endfor %}
                         </div>
-                        <div class="act__custom-message act__center-col"><a class="act__custom-message--toggler" href="#" onclick="app.act.addCustomMessage(); return false;">{% trans %}Eigene Nachricht erfassen{% endtrans %}</a>
-                            <div class="mdc-text-field mdc-text-field--textarea act__input act__textarea {% if customArgument %}act__textarea--visible{% endif %}">
+                        <div class="act__custom-message act__center-col"><a class="act__custom-message--toggler" href="#" onclick="app.act.addCustomMessage(); return false;">{% trans %}✍️ Eigene Nachricht...{% endtrans %}</a>
+                            <div class="mdc-text-field mdc-text-field--textarea act__input act__textarea {% if customArgument %}act__textarea--visible{% endif %}" style="background-color: {{ campaign|color }} !important;"><a class="act__close" href="#" onclick="app.act.addCustomMessage(); return false;">{% trans %}Schliessen X{% endtrans %}</a>
                                 <div class="mdc-text-field-character-counter"></div>
                                 <textarea class="mdc-text-field__input" name="custom-argument" id="custom-argument" type="textarea" maxlength="100" autocomplete="on">{% if customArgument %}{{ customArgument }}{% endif %}</textarea>
                                 <div class="mdc-notched-outline">

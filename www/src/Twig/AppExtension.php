@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Twig;
 
+use App\Entity\Campaign;
 use App\Entity\CampaignEntry;
 use App\Entity\Color;
 use Twig\Extension\AbstractExtension;
@@ -36,16 +37,23 @@ class AppExtension extends AbstractExtension
 
     public function getColor($context): string
     {
-        /** @var CampaignEntry|null $campaignEntry */
-        $campaignEntry = $context['entry'] ?? $context['campaignEntry'];
+        $campaign = $context['campaign'] ?? null;
+        $campaignEntry = $context['entry'] ?? $context['campaignEntry'] ?? null;
+        $colors = null;
 
-        if (!$campaignEntry instanceof CampaignEntry) {
+        if (null === $campaignEntry && null === $campaign) {
             return $this->colors[array_rand($this->colors)];
         }
 
-        $colors = $campaignEntry->getCampaign()->getColors();
+        if ($campaignEntry instanceof CampaignEntry) {
+            $colors = $campaignEntry->getCampaign()->getColors();
+        }
 
-        if (!$colors->count()) {
+        if ($campaign instanceof Campaign) {
+            $colors = $campaign->getColors();
+        }
+
+        if (null === $colors || !$colors->count()) {
             return $this->colors[array_rand($this->colors)];
         }
 
