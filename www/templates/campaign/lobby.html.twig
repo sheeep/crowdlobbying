@@ -94,7 +94,7 @@
                                 </div>
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined act__input">
-                                <input class="mdc-text-field__input" id="tf-outlined" name="person[city]"{% if person and person.city %} value="{{ person.city }}"{% endif %} type="text" required pattern="^[^@]+$" autocomplete="on">
+                                <input class="mdc-text-field__input" id="tf-outlined" name="person[city]"{% if person and person.city %} value="{{ person.city }}"{% endif %} type="text" required pattern="^[^0-9]+$" autocomplete="on" title="{% trans %}Bitte nur Ort (ohne PLZ) eingeben{% endtrans %}">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">

@@ -55,6 +55,10 @@ class Person
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Regex(
+     *     pattern     = "/^[^0-9]+$/i",
+     *     htmlPattern = "^[^0-9]+$"
+     * )
      */
     private $city;
 
