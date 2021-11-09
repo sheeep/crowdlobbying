@@ -18,7 +18,7 @@
                 <div class="share__textbox textbox readable-width">
                     <div class="textbox__content">{{ campaign.shareTextBox | raw }}</div>
                     {% set copyText = campaign.shareTextBox | replace({'<p>': '', '</p>': '\n\n'}) | escape('js') %}
-                    <button class="action-button outline textbox__button" onclick="utils.copy('{{ copyText }}'); app.actionButton.showOverlay();" data-overlay-state="ok" data-overlay-label="kopiert" data-overlay-autohide="true">
+                    <button class="action-button outline textbox__button" onclick="utils.copy('{{ copyText }}'); app.actionButton.showOverlay();" data-overlay-state="ok" data-overlay-label="{% trans %}kopiert{% endtrans %}" data-overlay-autohide="true">
                         {% trans %}kopieren{% endtrans %}
                         <div class="action-button__overlay"></div>
                     </button>
