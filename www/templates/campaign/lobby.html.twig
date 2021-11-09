@@ -26,7 +26,11 @@
                 <div class="layout-width">
                     <div class="act__richtext act__center-col center-text richtext">
                         <h1>{% trans %}Wählen Sie eine Nachricht{% endtrans %}</h1>
-                        <img src="{% if politician.image | length %}{{ vich_uploader_asset(politician) }}{% else %}/assets/officials/{{ politician.name }} {{ politician.lastname }}.jpg{% endif %}" />
+                        <div class="official__portrait-lobby">
+                            <img src="{% if politician.image | length %}{{ vich_uploader_asset(politician) }}{% else %}/assets/officials/{{ politician.name }} {{ politician.lastname }}.jpg{% endif %}" />
+                            {% set voteCount = campaign.entryCountByPolitician(politician) %}
+                            <div class="badge official__badge">{{ voteCount > 999 ? '999+' : voteCount }}</div>
+                        </div>
                         <p>
                             {% trans %}An:{% endtrans %} <strong>{{ politician }}</strong> ({{ politician.party.short }}/{{ politician.region.short }})<br>
                             {% trans %}Betreff:{% endtrans %} {{ campaign }}
