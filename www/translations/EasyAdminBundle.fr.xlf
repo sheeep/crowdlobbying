@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="fr">
+  <file id="EasyAdminBundle.fr">
+    <unit id="LmKkqt9" name="label.null">
+      <notes>
+        <note category="file-source" priority="1">20211109143838/templates/wandi_color_picker.html.twig:6</note>
+      </notes>
+      <segment>
+        <source>label.null</source>
+        <target></target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

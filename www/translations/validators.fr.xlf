@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="fr">
+  <file id="validators.fr">
+    <unit id="DJAxmjH" name="You must choose a color.">
+      <notes>
+        <note category="file-source" priority="1">20211109143838/src/Entity/Color.php:0</note>
+      </notes>
+      <segment>
+        <source>You must choose a color.</source>
+        <target></target>
+      </segment>
+    </unit>
+  </file>
+</xliff>
