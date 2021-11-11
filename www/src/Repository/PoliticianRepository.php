@@ -8,6 +8,7 @@ use App\Entity\Campaign;
 use App\Entity\Commission;
 use App\Entity\Politician;
 use App\Entity\PoliticianType;
+use App\Entity\WipCount;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Persistence\ManagerRegistry;
@@ -64,9 +65,27 @@ class PoliticianRepository extends ServiceEntityRepository
         }
 
         uasort($politicians, static function (Politician $first, Politician $second) {
-            return $first->getLastName() > $second->getLastName() ? 1 : -1;
+            return $first->getLastName() <=> $second->getLastName();
         });
 
-        return $politicians;
+        $yes = array_filter($politicians, static function($politician) use ($campaign) {
+            $wipCount = $campaign->getWipCountByPolitician($politician);
+
+            return $wipCount && $wipCount->getStatus() === WipCount::WIP_COUNT_TYPE_YES;
+        });
+
+        $no = array_filter($politicians, static function($politician) use ($campaign) {
+            $wipCount = $campaign->getWipCountByPolitician($politician);
+
+            return $wipCount && $wipCount->getStatus() === WipCount::WIP_COUNT_TYPE_NO;
+        });
+
+        $undef = array_filter($politicians, static function($politician) use ($campaign) {
+            $wipCount = $campaign->getWipCountByPolitician($politician);
+
+            return null === $wipCount || $wipCount->getStatus() === WipCount::WIP_COUNT_TYPE_UNKNOWN;
+        });
+
+        return [...$undef, ...$no, ...$yes];
     }
 }
