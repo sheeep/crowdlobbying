@@ -255,6 +255,7 @@ class Campaign
     /**
      * @var string|null
      * @ORM\Column(type="text", nullable=true)
+     * @Gedmo\Translatable()
      */
     private $mailThanksText;
 
