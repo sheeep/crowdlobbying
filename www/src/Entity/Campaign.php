@@ -282,6 +282,20 @@ class Campaign
      */
     private $colors;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $projectUpdatesDefault = false;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $platformUpdatesDefault = false;
+
     public function __construct()
     {
         $this->campaignEntries = new ArrayCollection();
@@ -905,6 +919,30 @@ class Campaign
     public function setCampaignSubject(?string $campaignSubject): self
     {
         $this->campaignSubject = $campaignSubject;
+
+        return $this;
+    }
+
+    public function getProjectUpdatesDefault(): bool
+    {
+        return $this->projectUpdatesDefault;
+    }
+
+    public function setProjectUpdatesDefault(bool $projectUpdatesDefault): self
+    {
+        $this->projectUpdatesDefault = $projectUpdatesDefault;
+
+        return $this;
+    }
+
+    public function getPlatformUpdatesDefault(): bool
+    {
+        return $this->platformUpdatesDefault;
+    }
+
+    public function setPlatformUpdatesDefault(bool $platformUpdatesDefault): self
+    {
+        $this->platformUpdatesDefault = $platformUpdatesDefault;
 
         return $this;
     }

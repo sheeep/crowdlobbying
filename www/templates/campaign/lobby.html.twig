@@ -108,7 +108,7 @@
                             </div>
                             <div class="mdc-form-field act__input act__checkbox">
                                 <div class="mdc-checkbox">
-                                    <input class="mdc-checkbox__native-control" id="checkbox-2" type="checkbox" value="1" name="optInInformationPartner">
+                                    <input class="mdc-checkbox__native-control" id="checkbox-2" type="checkbox" value="1" name="optInInformationPartner" {% if campaign.projectUpdatesDefault %} checked="checked" {% endif %}>
                                     <div class="mdc-checkbox__background">
                                         <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                                             <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
@@ -120,7 +120,7 @@
                             </div>
                             <div class="mdc-form-field act__input act__checkbox">
                                 <div class="mdc-checkbox">
-                                    <input class="mdc-checkbox__native-control" id="checkbox-1" type="checkbox" value="1" name="optInInformation">
+                                    <input class="mdc-checkbox__native-control" id="checkbox-1" type="checkbox" value="1" name="optInInformation" {% if campaign.platformUpdatesDefault %} checked="checked" {% endif %}>
                                     <div class="mdc-checkbox__background">
                                         <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                                             <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
