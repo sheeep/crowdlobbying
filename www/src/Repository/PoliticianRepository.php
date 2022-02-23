@@ -68,22 +68,22 @@ class PoliticianRepository extends ServiceEntityRepository
             return $first->getLastName() <=> $second->getLastName();
         });
 
-        $yes = array_filter($politicians, static function($politician) use ($campaign) {
+        $yes = array_filter($politicians, static function ($politician) use ($campaign) {
             $wipCount = $campaign->getWipCountByPolitician($politician);
 
-            return $wipCount && $wipCount->getStatus() === WipCount::WIP_COUNT_TYPE_YES;
+            return $wipCount && WipCount::WIP_COUNT_TYPE_YES === $wipCount->getStatus();
         });
 
-        $no = array_filter($politicians, static function($politician) use ($campaign) {
+        $no = array_filter($politicians, static function ($politician) use ($campaign) {
             $wipCount = $campaign->getWipCountByPolitician($politician);
 
-            return $wipCount && $wipCount->getStatus() === WipCount::WIP_COUNT_TYPE_NO;
+            return $wipCount && WipCount::WIP_COUNT_TYPE_NO === $wipCount->getStatus();
         });
 
-        $undef = array_filter($politicians, static function($politician) use ($campaign) {
+        $undef = array_filter($politicians, static function ($politician) use ($campaign) {
             $wipCount = $campaign->getWipCountByPolitician($politician);
 
-            return null === $wipCount || $wipCount->getStatus() === WipCount::WIP_COUNT_TYPE_UNKNOWN;
+            return null === $wipCount || WipCount::WIP_COUNT_TYPE_UNKNOWN === $wipCount->getStatus();
         });
 
         return [...$undef, ...$no, ...$yes];
