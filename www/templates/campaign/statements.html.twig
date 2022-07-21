@@ -93,7 +93,7 @@
     </section>
     <div class="floating-cta">
         <a href="{{ path('app_campaign_index', {'campaign': campaign.slug}) }}#how-it-works">
-            <button class="action-button medium">{% trans %}Mitmachen{% endtrans %}</button>
+            <button class="action-button medium {% if campaign.archived %} action-button--disabled {% endif %}">{% trans %}Mitmachen{% endtrans %}</button>
         </a>
     </div>
 {% endblock %}

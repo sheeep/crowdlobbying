@@ -296,6 +296,13 @@ class Campaign
      */
     private $platformUpdatesDefault = false;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $archived = false;
+
     public function __construct()
     {
         $this->campaignEntries = new ArrayCollection();
@@ -943,6 +950,18 @@ class Campaign
     public function setPlatformUpdatesDefault(bool $platformUpdatesDefault): self
     {
         $this->platformUpdatesDefault = $platformUpdatesDefault;
+
+        return $this;
+    }
+
+    public function isArchived(): bool
+    {
+        return $this->archived;
+    }
+
+    public function setArchived(bool $archived): self
+    {
+        $this->archived = $archived;
 
         return $this;
     }

@@ -63,7 +63,7 @@
                         <div class="act__center-col center-text richtext">
                             <h2>{% trans %}Absender{% endtrans %}</h2>
                             <div class="mdc-text-field mdc-text-field--outlined act__input">
-                                <input class="mdc-text-field__input" id="tf-outlined" name="person[firstname]"{% if person and person.firstname %} value="{{ person.firstname }}"{% endif %} type="text" required pattern="^[^@]+$" autocomplete="on">
+                                <input class="mdc-text-field__input" id="tf-outlined" name="person[firstname]"{% if person and person.firstname %} value="{{ person.firstname }}"{% endif %} type="text" required pattern="^[^@]+$" autocomplete="on" {% if campaign.archived %}disabled="disabled"{% endif %}>
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">
@@ -74,7 +74,7 @@
 
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined act__input">
-                                <input class="mdc-text-field__input" id="tf-outlined" name="person[lastname]"{% if person and person.lastname %} value="{{ person.lastname }}"{% endif %} type="text" required pattern="^[^@]+$" autocomplete="on">
+                                <input class="mdc-text-field__input" id="tf-outlined" name="person[lastname]"{% if person and person.lastname %} value="{{ person.lastname }}"{% endif %} type="text" required pattern="^[^@]+$" autocomplete="on" {% if campaign.archived %}disabled="disabled"{% endif %}>
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">
@@ -84,7 +84,7 @@
                                 </div>
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined act__input">
-                                <input class="mdc-text-field__input" id="tf-outlined" name="person[email]"{% if person and person.email %} value="{{ person.email }}"{% endif %} type="email" required autocomplete="on">
+                                <input class="mdc-text-field__input" id="tf-outlined" name="person[email]"{% if person and person.email %} value="{{ person.email }}"{% endif %} type="email" required autocomplete="on" {% if campaign.archived %}disabled="disabled"{% endif %}>
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">
@@ -94,7 +94,7 @@
                                 </div>
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined act__input">
-                                <input class="mdc-text-field__input" id="tf-outlined" name="person[city]"{% if person and person.city %} value="{{ person.city }}"{% endif %} type="text" required pattern="^[^0-9]+$" autocomplete="on" title="{% trans %}Bitte nur Ort (ohne PLZ) eingeben{% endtrans %}">
+                                <input class="mdc-text-field__input" id="tf-outlined" name="person[city]"{% if person and person.city %} value="{{ person.city }}"{% endif %} type="text" required pattern="^[^0-9]+$" autocomplete="on" title="{% trans %}Bitte nur Ort (ohne PLZ) eingeben{% endtrans %}" {% if campaign.archived %}disabled="disabled"{% endif %}>
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">
@@ -132,7 +132,7 @@
                             </div>
                             <input type="hidden" name="color" id="card-color">
                             <input type="hidden" name="token" value="{{ csrf_token('person') }}" />
-                            <button class="action-button medium act__button" type="submit">{% trans %}Abschicken{% endtrans %}</button>
+                            <button class="action-button medium act__button {% if campaign.archived %} action-button--disabled {% endif %}" {% if campaign.archived %} disabled="disabled" {% endif %} type="submit">{% trans %}Abschicken{% endtrans %}</button>
                         </div>
                     </form>
                     <div class="act__legal act__center-col richtext">

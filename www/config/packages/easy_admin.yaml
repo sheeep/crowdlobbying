@@ -14,6 +14,7 @@ easy_admin:
           - slug
           - start
           - end
+          - archived
           - arguments
           - regions
           - wipCounts
@@ -51,6 +52,7 @@ easy_admin:
             - slug
             - start
             - end
+            - archived
             - campaignTitle
             - doubleOptIn
         actions:
