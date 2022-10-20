@@ -8,12 +8,6 @@ public/opcache-reset.php
 # QA
 .ecs_cache
 /tools/**/vendor
-
-###> friendsofphp/php-cs-fixer ###
-/.php_cs
-/.php_cs.cache
-###< friendsofphp/php-cs-fixer ###
-
 ###> symfony/framework-bundle ###
 /.env
 /.env.local
