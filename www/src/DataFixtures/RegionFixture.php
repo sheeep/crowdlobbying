@@ -6,7 +6,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Region;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 
 class RegionFixture extends Fixture
 {
@@ -40,6 +40,7 @@ class RegionFixture extends Fixture
             'GE' => 'Genf',
             'JU' => 'Jura',
         ];
+
         foreach ($regions as $code => $name) {
             $region = new Region();
             $region->setShort($code);

@@ -7,7 +7,7 @@ namespace App\DataFixtures;
 use App\Entity\Argument;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 
 class ArgumentFixtures extends Fixture implements DependentFixtureInterface
@@ -15,6 +15,7 @@ class ArgumentFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager): void
     {
         $faker = Factory::create('de_CH');
+
         for ($i = 0; $i < 5; $i = $i + 2) {
             $argument = new Argument();
             $argument->setArgument($faker->text);
