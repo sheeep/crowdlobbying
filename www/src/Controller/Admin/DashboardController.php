@@ -14,6 +14,7 @@ use App\Entity\Politician;
 use App\Entity\PoliticianContact;
 use App\Entity\PoliticianType;
 use App\Entity\Region;
+use App\Entity\User;
 use App\Entity\WipCount;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -48,5 +49,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Commission', 'fas fa-folder-open', Commission::class);
         yield MenuItem::linkToCrud('Color', 'fas fa-folder-open', Color::class);
         yield MenuItem::linkToCrud('PersonArgument', 'fas fa-folder-open', PersonArgument::class);
+        yield MenuItem::linkToCrud('User', 'fas fa-folder-open', User::class);
     }
 }

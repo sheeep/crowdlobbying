@@ -1,4 +1,4 @@
-{% if field.value | default(false) %}
+{% if field.value|default(false) %}
     <div class="text-center py-2 rounded {{ (field.value|wandi_color_picker_get_brightness == constant("Wandi\\ColorPickerBundle\\Twig\\Extension\\ColorExtension::BRIGHTNESS_DARK") ? 'text-white' : 'text-dark') }}" style="background-color: {{ field.value }} !important;">
         {{ field.value }}
     </div>
