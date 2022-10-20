@@ -456,6 +456,10 @@ class CampaignController extends AbstractController
         /** @var Request $request */
         $request = $this->get('request_stack')->getCurrentRequest();
 
+        if (null === $argument) {
+            return;
+        }
+
         if ($argument instanceof Argument) {
             $argumentDe = clone $argument;
 

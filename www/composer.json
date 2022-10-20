@@ -120,6 +120,7 @@
             "@php tools/ecs/vendor/bin/ecs check src/ tests/ --fix --ansi"
         ],
         "ecs": "@php tools/ecs/vendor/bin/ecs check src/ tests/ --ansi",
+        "phpstan": "@php tools/phpstan/vendor/bin/phpstan analyze src/ --level 1 --ansi --memory-limit=-1 -c phpstan.neon",
         "pipeline": [
             "@quality"
         ],

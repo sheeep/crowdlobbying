@@ -1,0 +1,8 @@
+{
+    "php": "7.4",
+    "require": {
+        "phpstan/phpstan": "^1.4",
+        "phpstan/phpstan-doctrine": "^1.2",
+        "phpstan/phpstan-symfony": "^1.1"
+    }
+}
