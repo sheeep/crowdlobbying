@@ -10,14 +10,14 @@
                 <div class="share__social readable-width">
                     <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="{{ app.request.schemeAndHttpHost }}" data-a2a-title="{{ campaign.campaignTitle }}">
                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.schemeAndHttpHost }}" target="_blank" class="action-button social facebook"></a>
-                        <a href="https://twitter.com/share?url={{ app.request.schemeAndHttpHost }}&text={{ campaign.ogCampaignDescription | url_encode }}" target="_blank" class="action-button social twitter"></a>
-                        <a href="https://api.whatsapp.com/send?text={{ campaign.ogCampaignDescription | url_encode }}%20{{ app.request.schemeAndHttpHost }}" target="_blank" class="action-button social whatsapp"></a>
-                        <a href="mailto:?subject={{ campaign.campaignTitle }}&body={{ campaign.ogCampaignDescription | url_encode }}%20{{ app.request.schemeAndHttpHost }}" target="_blank" class="action-button social email"></a>
+                        <a href="https://twitter.com/share?url={{ app.request.schemeAndHttpHost }}&text={{ campaign.ogCampaignDescription|url_encode }}" target="_blank" class="action-button social twitter"></a>
+                        <a href="https://api.whatsapp.com/send?text={{ campaign.ogCampaignDescription|url_encode }}%20{{ app.request.schemeAndHttpHost }}" target="_blank" class="action-button social whatsapp"></a>
+                        <a href="mailto:?subject={{ campaign.campaignTitle }}&body={{ campaign.ogCampaignDescription|url_encode }}%20{{ app.request.schemeAndHttpHost }}" target="_blank" class="action-button social email"></a>
                     </div>
                 </div>
                 <div class="share__textbox textbox readable-width">
-                    <div class="textbox__content">{{ campaign.shareTextBox | raw }}</div>
-                    {% set copyText = campaign.shareTextBox | replace({'<p>': '', '</p>': '\n\n'}) | escape('js') %}
+                    <div class="textbox__content">{{ campaign.shareTextBox|raw }}</div>
+                    {% set copyText = campaign.shareTextBox|replace({'<p>': '', '</p>': '\n\n'})|escape('js') %}
                     <button class="action-button outline textbox__button" onclick="utils.copy('{{ copyText }}'); app.actionButton.showOverlay();" data-overlay-state="ok" data-overlay-label="{% trans %}kopiert{% endtrans %}" data-overlay-autohide="true">
                         {% trans %}kopieren{% endtrans %}
                         <div class="action-button__overlay"></div>
@@ -35,7 +35,7 @@
                     <p>{% trans %}Mit Ihrer Spende bringen wir diese Kampagne weiter.{% endtrans %}</p>
                 </div>
                 <div class="donorbox__inner readable-width">
-                    {{ campaign.donorBox | raw }}
+                    {{ campaign.donorBox|raw }}
                 </div>
             </div>
         </div>
