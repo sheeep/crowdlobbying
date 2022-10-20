@@ -31,10 +31,12 @@ class WriteJsonCommand extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output): void
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         foreach ($this->campaignRepository->findActiveCampaigns() as $campaign) {
             $this->jsonWriter->write($campaign);
         }
+
+        return 0;
     }
 }

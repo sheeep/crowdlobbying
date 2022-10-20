@@ -40,3 +40,4 @@ services:
     App\Controller\AdminController:
         arguments:
             - '@App\Utils\XlsWriter'
+            - '@doctrine.orm.entity_manager'

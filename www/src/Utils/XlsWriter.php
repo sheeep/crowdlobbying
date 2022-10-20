@@ -65,7 +65,7 @@ class XlsWriter implements WriterInterface
             /** @var Politician $politician */
             $politician = $campaignEntry->getPolitician();
 
-            /** @var Argument $argument */
+            /** @var Argument|null $argument */
             $argument = $campaignEntry->getArgument();
 
             /** @var PersonArgument $personArgument */

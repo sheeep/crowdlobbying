@@ -21,7 +21,6 @@ class CampaignRepository extends ServiceEntityRepository
         parent::__construct($registry, Campaign::class);
     }
 
-    /** @return Campaign[] */
     public function findActiveCampaigns(\DateTime $dateTime = null): array
     {
         if (!$dateTime) {
@@ -34,6 +33,6 @@ class CampaignRepository extends ServiceEntityRepository
             ->setParameter('dateTime', $dateTime)
             ->orderBy('e.id', 'ASC')
             ->getQuery()
-            ->getResult();
+            ->execute();
     }
 }
