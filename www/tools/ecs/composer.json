@@ -1,5 +1,4 @@
 {
-    "php": "7.4",
     "require": {
         "symplify/easy-coding-standard": "^10.0"
     }

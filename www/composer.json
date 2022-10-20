@@ -117,17 +117,20 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "fix": [
-            "@php tools/ecs/vendor/bin/ecs check src/ tests/ --fix --ansi"
+            "@php tools/ecs/vendor/bin/ecs check src/ tests/ --fix --ansi",
+            "@php tools/twig-cs-fixer/vendor/bin/twig-cs-fixer lint --fix templates --ansi"
         ],
         "ecs": "@php tools/ecs/vendor/bin/ecs check src/ tests/ --ansi",
-        "phpstan": "@php tools/phpstan/vendor/bin/phpstan analyze src/ --level 2 --ansi --memory-limit=-1 -c phpstan.neon",
+        "phpstan": "@php tools/phpstan/vendor/bin/phpstan analyze src/ --level max --ansi --memory-limit=-1 -c phpstan.neon",
         "pipeline": [
             "@quality"
         ],
         "quality": [
             "@ecs",
-            "@phpstan"
+            "@phpstan",
+            "@twig-cs-fixer"
         ],
-        "require-checker": "@php -d xdebug.max_nesting_level=-1 tools/require-checker/vendor/bin/composer-require-checker check --config-file=tools/require-checker/config.json composer.json --ansi"
+        "require-checker": "@php -d xdebug.max_nesting_level=-1 tools/require-checker/vendor/bin/composer-require-checker check --config-file=tools/require-checker/config.json composer.json --ansi",
+        "twig-cs-fixer": "@php tools/twig-cs-fixer/vendor/bin/twig-cs-fixer lint templates --ansi"
     }
 }

@@ -2,15 +2,15 @@
 {% if headerClass is not defined %}{% set headerClass = '' %}{% endif %}
 {% if hasFAQ is not defined %}{% set hasFAQ = true %}{% endif %}
 
-{% set title = 'default_title' | trans %}
-{% set description = 'default_description' | trans %}
-{% set ogImage = '/assets/meta/crowd-lobbying-og-image.jpg' | trans %}
-{% set ogDescription = 'default_og_description' | trans %}
+{% set title = 'default_title'|trans %}
+{% set description = 'default_description'|trans %}
+{% set ogImage = '/assets/meta/crowd-lobbying-og-image.jpg'|trans %}
+{% set ogDescription = 'default_og_description'|trans %}
 
 {% if campaign is defined %}
-    {% set description = campaign.campaignDescription | trim %}
+    {% set description = campaign.campaignDescription|trim %}
     {% set title = campaign.campaignTitle %}
-    {% set ogImage = app.request.getUriForPath(vich_uploader_asset(campaign, 'ogImageFile' ~ (app.request.locale | capitalize))) %}
+    {% set ogImage = app.request.getUriForPath(vich_uploader_asset(campaign, 'ogImageFile' ~ (app.request.locale|capitalize))) %}
     {% set ogDescription = campaign.ogCampaignDescription %}
 {% endif %}
 
@@ -81,7 +81,7 @@
             <svg class="logotype">
                 <use xlink:href="#spriteIcon-logo-crowd-lobbying-quer"></use>
             </svg>
-            <span class="visually-hidden">{% if campaign is defined and campaign.heroSubline | length > 0 %}{{ campaign.heroSubline }}{% else %}{% trans %}Crowd-Lobbying{% endtrans %}{% endif %}</span></a></h1>
+            <span class="visually-hidden">{% if campaign is defined and campaign.heroSubline|length > 0 %}{{ campaign.heroSubline }}{% else %}{% trans %}Crowd-Lobbying{% endtrans %}{% endif %}</span></a></h1>
     <button class="hamburger hamburger--spin" id="hamburger" type="button" onclick="app.menu.toggle()"><span
                 class="hamburger-box"><span class="hamburger-inner"></span></span></button>
 </header>
@@ -94,7 +94,7 @@
                     <div class="richtext readable-width">
                         {% if campaign is defined %}
                             <h1>{{ campaign.faqTitle }}</h1>
-                            {{ campaign.faqText | raw }}
+                            {{ campaign.faqText|raw }}
                         {% else %}
                             <div class="row">
                                 <div class="col">
@@ -156,7 +156,7 @@
                     {% trans %}DatenschutzText{% endtrans %}
                     <hr>
                     <p class="no-space">
-                        © {{ 'now' | date('Y') }} <a href="https://www.publicbeta.ch/">{% trans %}Verein Public Beta, Basel{% endtrans %}</a>
+                        © {{ 'now'|date('Y') }} <a href="https://www.publicbeta.ch/">{% trans %}Verein Public Beta, Basel{% endtrans %}</a>
                     </p>
                 </section>
             </div>
@@ -178,8 +178,8 @@
                 </ul>
                 <br />
                 {% if campaign is defined %}
-                    {% set hrefDE = path('app_campaign_index', { campaign: campaign.slug, _locale: 'de' }) %}
-                    {% set hrefFR = path('app_campaign_index', { campaign: campaign.slug, _locale: 'fr' }) %}
+                    {% set hrefDE = path('app_campaign_index', {campaign: campaign.slug, _locale: 'de'}) %}
+                    {% set hrefFR = path('app_campaign_index', {campaign: campaign.slug, _locale: 'fr'}) %}
                 {% else %}
                     {% set hrefDE = path('default_index') %}
                     {% set hrefFR = path('default_index') %}

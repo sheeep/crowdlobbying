@@ -4,7 +4,7 @@
 {% set hasFAQ = false %}
 
 {% block ogImage %}
-    <meta property="og:image" content="{{ app.request.schemeAndHttpHost }}{% if politician.image | length %}{{ vich_uploader_asset(politician) }}{% else %}/assets/officials/{{ politician.name }} {{ politician.lastname }}.jpg{% endif %}">
+    <meta property="og:image" content="{{ app.request.schemeAndHttpHost }}{% if politician.image|length %}{{ vich_uploader_asset(politician) }}{% else %}/assets/officials/{{ politician.name }} {{ politician.lastname }}.jpg{% endif %}">
 {% endblock %}
 
 {% block ogDescription %}
@@ -27,7 +27,7 @@
                     <div class="act__richtext act__center-col center-text richtext">
                         <h1>{% trans %}Wählen Sie eine Nachricht{% endtrans %}</h1>
                         <div class="official__portrait-lobby">
-                            <img src="{% if politician.image | length %}{{ vich_uploader_asset(politician) }}{% else %}/assets/officials/{{ politician.name }} {{ politician.lastname }}.jpg{% endif %}" />
+                            <img src="{% if politician.image|length %}{{ vich_uploader_asset(politician) }}{% else %}/assets/officials/{{ politician.name }} {{ politician.lastname }}.jpg{% endif %}" />
                             {% set voteCount = campaign.entryCountByPolitician(politician) %}
                             <div class="badge official__badge">{{ voteCount > 999 ? '999+' : voteCount }}</div>
                         </div>

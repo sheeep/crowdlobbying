@@ -7,7 +7,7 @@
         <div class="viewport-width">
             <div class="page-width">
                 <div class="layout-width">
-                    <div class="hero__content"><h2>{% if campaign is defined and campaign.heroSubline | length > 0 %}{{ campaign.heroSubline }}{% else %}{% trans %}Crowd-Lobbying{% endtrans %}{% endif %}</h2>
+                    <div class="hero__content"><h2>{% if campaign is defined and campaign.heroSubline|length > 0 %}{{ campaign.heroSubline }}{% else %}{% trans %}Crowd-Lobbying{% endtrans %}{% endif %}</h2>
                         <h1>{{ campaign.hero }}</h1>
                         <p>{{ total }} {{ campaign.total }}</p>
                         <button class="action-button medium" onclick="utils.scrollTo('.how-it-works', { offset: document.querySelector('.header').offsetHeight * -1 })">
@@ -51,7 +51,7 @@
         <div class="page-width">
             <div class="layout-width">
                 <div class="campaign-info__content"><p class="lead">{{ campaign.campaignInfoLead }}</p>
-                    {{ campaign.campaignInfo | raw }}
+                    {{ campaign.campaignInfo|raw }}
                     <p>
                         <a onclick="utils.scrollTo('.faq', { offset: document.querySelector('.header').offsetHeight * -1 })">{% trans %}Mehr erfahren{% endtrans %}</a>
                     </p>
@@ -78,7 +78,7 @@
     <div class="viewport-width">
         <div class="page-width">
             <div class="layout-width">
-                {% if 0 == campaign.commissions | length %}
+                {% if 0 == campaign.commissions|length %}
                     <div class="officials__canton-chooser">
                         <div class="mdc-select mdc-select--outlined officials__select"><i class="mdc-select__dropdown-icon"></i>
                             <select class="mdc-select__native-control" onchange="reloadWithRegion(this.value)">
@@ -103,7 +103,7 @@
                 <div class="officials__list">
                     {% for politician in politicians %}
                         <section class="official officials__card" data-region="{{ politician.region.id }}">
-                            <div class="official__portrait" style="background-image: url({% if politician.image | length %}'{{ vich_uploader_asset(politician) }}'{% else %}'/assets/officials/{{ politician.name }} {{ politician.lastname }}.jpg'{% endif %})">
+                            <div class="official__portrait" style="background-image: url({% if politician.image|length %}'{{ vich_uploader_asset(politician) }}'{% else %}'/assets/officials/{{ politician.name }} {{ politician.lastname }}.jpg'{% endif %})">
                                 {% set voteCount = campaign.entryCountByPolitician(politician) %}
                                 <div class="badge official__badge">{{ voteCount > 999 ? '999+' : voteCount }}</div>
                             </div>
