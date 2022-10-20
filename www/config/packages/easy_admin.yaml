@@ -93,6 +93,8 @@ easy_admin:
                 item_permission: 'ROLE_ADMIN'
             new:
                 item_permission: 'ROLE_ADMIN'
+            show:
+                item_permission: 'ROLE_ADMIN'
 
             # This does not work yet
             delete:
@@ -100,12 +102,44 @@ easy_admin:
 
         Person:
             class: App\Entity\Person
+            list:
+                item_permission: 'ROLE_ADMIN'
+            edit:
+                item_permission: 'ROLE_ADMIN'
+            new:
+                item_permission: 'ROLE_ADMIN'
+            show:
+                item_permission: 'ROLE_ADMIN'
         Region:
             class: App\Entity\Region
+            list:
+                item_permission: 'ROLE_ADMIN'
+            edit:
+                item_permission: 'ROLE_ADMIN'
+            new:
+                item_permission: 'ROLE_ADMIN'
+            show:
+                item_permission: 'ROLE_ADMIN'
         Party:
             class: App\Entity\Party
+            list:
+                item_permission: 'ROLE_ADMIN'
+            edit:
+                item_permission: 'ROLE_ADMIN'
+            new:
+                item_permission: 'ROLE_ADMIN'
+            show:
+                item_permission: 'ROLE_ADMIN'
         PoliticianType:
             class: App\Entity\PoliticianType
+            list:
+                item_permission: 'ROLE_ADMIN'
+            edit:
+                item_permission: 'ROLE_ADMIN'
+            new:
+                item_permission: 'ROLE_ADMIN'
+            show:
+                item_permission: 'ROLE_ADMIN'
         Politician:
             class: App\Entity\Politician
             form:
@@ -133,28 +167,49 @@ easy_admin:
                     - lang
                     - twitter
             show:
+                item_permission: 'ROLE_ADMIN'
                 fields:
                     - { property: 'image', type: 'image', base_path: '%app.path.politician_images%' }
 
         PoliticianContact:
             class: App\Entity\PoliticianContact
+            list:
+                item_permission: 'ROLE_ADMIN'
+            edit:
+                item_permission: 'ROLE_ADMIN'
+            new:
+                item_permission: 'ROLE_ADMIN'
+            show:
+                item_permission: 'ROLE_ADMIN'
         Commission:
             class: App\Entity\Commission
+            list:
+                item_permission: 'ROLE_ADMIN'
+            edit:
+                item_permission: 'ROLE_ADMIN'
+            new:
+                item_permission: 'ROLE_ADMIN'
+            show:
+                item_permission: 'ROLE_ADMIN'
         Color:
             class: App\Entity\Color
             list:
+                item_permission: 'ROLE_ADMIN'
                 fields:
                     - name
                     - { property: color, label: 'Color', template: 'wandi_color_picker.html.twig' }
             show:
+                item_permission: 'ROLE_ADMIN'
                 fields:
                     - name
                     - { property: color, label: 'Color', template: 'wandi_color_picker.html.twig' }
             edit:
+                item_permission: 'ROLE_ADMIN'
                 fields:
                     - name
                     - { property: color, label: 'Color', type: 'App\Form\ColorType' }
             new:
+                item_permission: 'ROLE_ADMIN'
                 fields:
                     - name
                     - { property: color, label: 'Color', type: 'App\Form\ColorType' }
@@ -179,21 +234,28 @@ easy_admin:
                     - updatedAt
                     - campaign
                     - person
+            show:
+                item_permission: 'ROLE_ADMIN'
 
         User:
             class: App\Entity\User
             list:
+                item_permission: 'ROLE_ADMIN'
                 fields:
                     - id
                     - username
                     - campaigns
             new:
+                item_permission: 'ROLE_ADMIN'
                 fields:
                     - username
                     - plainPassword
                     - campaigns
             edit:
+                item_permission: 'ROLE_ADMIN'
                 fields:
                     - username
                     - plainPassword
                     - campaigns
+            show:
+                item_permission: 'ROLE_ADMIN'
