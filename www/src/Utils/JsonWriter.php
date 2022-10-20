@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Utils;
 
 use App\Entity\Campaign;
+use App\Entity\Person;
+use App\Entity\PoliticianContact;
 use App\Repository\CampaignEntryRepository;
 use App\Repository\PoliticianRepository;
 use Symfony\Component\Filesystem\Filesystem;
@@ -26,7 +28,9 @@ class JsonWriter implements WriterInterface
     {
         $data = ['date' => date('Y-m-d H:i:s'), 'campaign' => $campaign->getName(), 'politicians' => []];
         foreach ($this->politicianRepository->findByCampaign($campaign) as $politician) {
+            /** @var PoliticianContact $contact */
             $contact = $politician->getContact();
+
             $entry = [
                 'salutation' => $contact->getSalutation() ?: '',
                 'name' => $contact->getPrename() ?: '',
@@ -47,7 +51,9 @@ class JsonWriter implements WriterInterface
             foreach ($campaign->getArguments() as $argument) {
                 $message = ['text' => $argument->getArgument(), 'senders' => []];
                 foreach ($this->campaignEntryRepository->findBy(['campaign' => $campaign, 'politician' => $politician, 'argument' => $argument], ['id' => 'ASC']) as $campaignEntry) {
+                    /** @var Person $person */
                     $person = $campaignEntry->getPerson();
+
                     $message['senders'][] = [
                         'name' => $person->getFirstname() . ' ' . $person->getLastname(),
                         'location' => $person->getCity(),
@@ -61,7 +67,7 @@ class JsonWriter implements WriterInterface
         }
 
         $fileSystem = new Filesystem();
-        $fileSystem->dumpFile($this->projectDir . '/../data/messages.json', json_encode($data));
+        $fileSystem->dumpFile($this->projectDir . '/../data/messages.json', (string) json_encode($data));
 
         return null;
     }
