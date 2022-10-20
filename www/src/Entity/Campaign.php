@@ -56,19 +56,19 @@ class Campaign
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\CampaignEntry", mappedBy="campaign", orphanRemoval=true)
-     * @ORM\OrderBy({"id" = "DESC"})
+     * @ORM\OrderBy({"id"="DESC"})
      */
     private $campaignEntries;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Argument", mappedBy="campaign", orphanRemoval=true)
-     * @ORM\OrderBy({"argument" = "ASC"})
+     * @ORM\OrderBy({"argument"="ASC"})
      */
     private $arguments;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Region")
-     * @ORM\OrderBy({"name" = "ASC"})
+     * @ORM\OrderBy({"name"="ASC"})
      */
     private $regions;
 
@@ -91,9 +91,9 @@ class Campaign
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Commission")
      * @ORM\JoinTable(name="campaigns_commissions",
-     *      joinColumns={@ORM\JoinColumn(name="campaign_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="commission_id", referencedColumnName="id", unique=true)}
-     *      )
+     *     joinColumns={@ORM\JoinColumn(name="campaign_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="commission_id", referencedColumnName="id", unique=true)}
+     * )
      */
     private $commissions;
 

@@ -53,7 +53,7 @@ class CampaignController extends AbstractController
 
     /**
      * @Route("/", name="app_campaign_index", methods={"GET"}, requirements={"region"="\d+"})
-     * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
+     * @MVC\ParamConverter("campaign", options={"mapping"={"campaign"="slug"}})
      */
     public function index(Campaign $campaign, Request $request): Response
     {
@@ -84,8 +84,8 @@ class CampaignController extends AbstractController
 
     /**
      * @Route("/{region}", name="app_campaign_region_redirect", methods={"GET"}, requirements={"region"="\d+"})
-     * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
-     * @MVC\ParamConverter("region", options={"mapping": {"region": "id"}})
+     * @MVC\ParamConverter("campaign", options={"mapping"={"campaign"="slug"}})
+     * @MVC\ParamConverter("region", options={"mapping"={"region"="id"}})
      */
     public function regionRedirect(Campaign $campaign, Request $request, Region $region = null): RedirectResponse
     {
@@ -106,8 +106,8 @@ class CampaignController extends AbstractController
 
     /**
      * @Route("/{region}", name="app_campaign_region", methods={"GET"}, requirements={"region"="[\w]{2}"})
-     * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
-     * @MVC\ParamConverter("region", options={"mapping": {"region": "slug"}})
+     * @MVC\ParamConverter("campaign", options={"mapping"={"campaign"="slug"}})
+     * @MVC\ParamConverter("region", options={"mapping"={"region"="slug"}})
      */
     public function region(Campaign $campaign, Request $request, Region $region = null): Response
     {
@@ -137,8 +137,8 @@ class CampaignController extends AbstractController
 
     /**
      * @Route("/lobby/{slug}", name="app_campaign_lobby", methods={"GET", "POST"}, requirements={"slug"="[\w\.-]+"})
-     * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
-     * @MVC\ParamConverter("politician", options={"mapping": {"slug": "slug"}})
+     * @MVC\ParamConverter("campaign", options={"mapping"={"campaign"="slug"}})
+     * @MVC\ParamConverter("politician", options={"mapping"={"slug"="slug"}})
      */
     public function lobby(Campaign $campaign, Politician $politician, Request $request): Response
     {
@@ -252,8 +252,8 @@ class CampaignController extends AbstractController
 
     /**
      * @Route("/lobby/{slug}/confirm/{token}", name="app_campaign_lobby_confirm", methods={"GET"}, requirements={"slug"="[\w\.-]+"})
-     * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
-     * @MVC\ParamConverter("politician", options={"mapping": {"slug": "slug"}})
+     * @MVC\ParamConverter("campaign", options={"mapping"={"campaign"="slug"}})
+     * @MVC\ParamConverter("politician", options={"mapping"={"slug"="slug"}})
      */
     public function lobbyConfirm(Campaign $campaign, Politician $politician, string $token, Request $request): Response
     {
@@ -317,7 +317,7 @@ class CampaignController extends AbstractController
 
     /**
      * @Route("/thanks/{id}", name="app_campaign_thanks", methods={"GET"}, requirements={"id"="\d+"})
-     * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
+     * @MVC\ParamConverter("campaign", options={"mapping"={"campaign"="slug"}})
      */
     public function thanks(Campaign $campaign, CampaignEntry $campaignEntry, Request $request): Response
     {
@@ -337,7 +337,7 @@ class CampaignController extends AbstractController
 
     /**
      * @Route("/confirm/{id}", name="app_campaign_confirm", methods={"GET"}, requirements={"id"="\d+"})
-     * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
+     * @MVC\ParamConverter("campaign", options={"mapping"={"campaign"="slug"}})
      */
     public function confirm(Campaign $campaign, CampaignEntry $campaignEntry, Request $request): Response
     {
@@ -350,7 +350,7 @@ class CampaignController extends AbstractController
     /**
      * @Route("/statements", name="app_campaign_statements", methods={"GET"}, defaults={"id"="0"})
      * @Route("/statement/{id}", name="app_campaign_statement", methods={"GET"}, requirements={"id"="\d+"})
-     * @MVC\ParamConverter("campaign", options={"mapping": {"campaign": "slug"}})
+     * @MVC\ParamConverter("campaign", options={"mapping"={"campaign"="slug"}})
      */
     public function statements(Campaign $campaign, Request $request, CampaignEntry $campaignEntry = null): Response
     {
@@ -475,7 +475,8 @@ class CampaignController extends AbstractController
             ->setTo($person->getEmail())
             ->setBody(
                 $this->renderView(
-                    'emails/confirmation.html.twig', [
+                    'emails/confirmation.html.twig',
+                    [
                         'person' => $person,
                         'politician' => $politician,
                         'campaign' => $campaign,
@@ -492,7 +493,8 @@ class CampaignController extends AbstractController
                             'campaign' => $campaign->getSlug(),
                             '_locale' => $request->getLocale(),
                         ], UrlGeneratorInterface::ABSOLUTE_URL),
-                    ]),
+                    ]
+                ),
                 'text/html'
             );
 

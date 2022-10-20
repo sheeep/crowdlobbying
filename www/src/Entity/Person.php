@@ -27,8 +27,8 @@ class Person
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Regex(
-     *     pattern     = "/^[^@]+$/i",
-     *     htmlPattern = "^[^@]+$"
+     *     pattern="/^[^@]+$/i",
+     *     htmlPattern="^[^@]+$"
      * )
      */
     private $firstname;
@@ -36,8 +36,8 @@ class Person
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Regex(
-     *     pattern     = "/^[^@]+$/i",
-     *     htmlPattern = "^[^@]+$"
+     *     pattern="/^[^@]+$/i",
+     *     htmlPattern="^[^@]+$"
      * )
      */
     private $lastname;
@@ -56,8 +56,8 @@ class Person
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Regex(
-     *     pattern     = "/^[^0-9]+$/i",
-     *     htmlPattern = "^[^0-9]+$"
+     *     pattern="/^[^0-9]+$/i",
+     *     htmlPattern="^[^0-9]+$"
      * )
      */
     private $city;

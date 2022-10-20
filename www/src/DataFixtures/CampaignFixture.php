@@ -23,7 +23,7 @@ class CampaignFixture extends Fixture implements DependentFixtureInterface
         $campaign->setEnd(new \DateTime('2019-05-01'));
 
         foreach ($manager->getRepository(Region::class)->findAll() as $region) {
-            /* @var Region $region */
+            /** @var Region $region */
             $campaign->addRegion($region);
         }
 
