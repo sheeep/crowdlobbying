@@ -1,8 +1,13 @@
 public/uploads/*
 public/xls-export/*
 
+# Infrastructure
 .mage.yml
 public/opcache-reset.php
+
+# QA
+.ecs_cache
+/tools/**/vendor
 
 ###> friendsofphp/php-cs-fixer ###
 /.php_cs
