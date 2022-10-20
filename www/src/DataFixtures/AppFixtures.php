@@ -69,7 +69,7 @@ class AppFixtures extends Fixture implements DependentFixtureInterface
 
                 $manager->persist($campaignEntry);
             }
-            
+
             $manager->flush();
             $manager->clear();
         }

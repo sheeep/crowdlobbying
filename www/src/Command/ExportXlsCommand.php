@@ -14,8 +14,6 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 class ExportXlsCommand extends Command
 {
-    protected static $defaultName = 'app:export-xls';
-
     private CampaignRepository $campaignRepository;
     private WriterInterface $xlsWriter;
 
@@ -24,12 +22,13 @@ class ExportXlsCommand extends Command
         $this->campaignRepository = $campaignRepository;
         $this->xlsWriter = $xlsWriter;
 
-        parent::__construct(self::$defaultName);
+        parent::__construct(null);
     }
 
     protected function configure(): void
     {
         $this
+            ->setName('app:export-xls')
             ->setDescription('Generates an export in .xls format.')
             ->addArgument('campaign', InputArgument::REQUIRED, 'ID of the campaign to export')
         ;

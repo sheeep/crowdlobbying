@@ -36,7 +36,7 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
  */
 class CampaignController extends AbstractController
 {
-    public static function getSubscribedServices()
+    public static function getSubscribedServices(): array
     {
         $services = parent::getSubscribedServices();
         $services += [
@@ -431,7 +431,7 @@ class CampaignController extends AbstractController
     {
         $template = $this->get('twig')->createTemplate($campaign->getMailThanksText());
 
-        // @TODO call PDF generator
+        // TODO call PDF generator
         $message = (new \Swift_Message('Crowd-Lobbying'))
             ->setFrom('team@crowdlobbying.ch')
             ->setTo($person->getEmail())
