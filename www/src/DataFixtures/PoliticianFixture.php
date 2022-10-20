@@ -21,7 +21,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class PoliticianFixture extends Fixture implements DependentFixtureInterface
 {
-    protected $projectDir;
+    private string $projectDir;
 
     public function __construct(string $projectDir)
     {
@@ -128,8 +128,6 @@ class PoliticianFixture extends Fixture implements DependentFixtureInterface
             }
             fclose($fp);
         }
-        // $product = new Product();
-        // $manager->persist($product);
 
         $manager->flush();
     }

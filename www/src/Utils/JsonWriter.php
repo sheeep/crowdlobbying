@@ -11,9 +11,9 @@ use Symfony\Component\Filesystem\Filesystem;
 
 class JsonWriter implements WriterInterface
 {
-    protected $projectDir;
-    protected $politicianRepository;
-    protected $campaignEntryRepository;
+    private string $projectDir;
+    private PoliticianRepository $politicianRepository;
+    private CampaignEntryRepository $campaignEntryRepository;
 
     public function __construct(string $projectDir, PoliticianRepository $politicianRepository, CampaignEntryRepository $campaignEntryRepository)
     {
@@ -43,6 +43,7 @@ class JsonWriter implements WriterInterface
                 'id' => $politician->getId(),
                 'messages' => [],
             ];
+
             foreach ($campaign->getArguments() as $argument) {
                 $message = ['text' => $argument->getArgument(), 'senders' => []];
                 foreach ($this->campaignEntryRepository->findBy(['campaign' => $campaign, 'politician' => $politician, 'argument' => $argument], ['id' => 'ASC']) as $campaignEntry) {

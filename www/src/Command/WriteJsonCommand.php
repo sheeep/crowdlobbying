@@ -12,22 +12,21 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class WriteJsonCommand extends Command
 {
-    protected static $defaultName = 'app:write-json';
+    private JsonWriter $jsonWriter;
+    private CampaignRepository $campaignRepository;
 
-    protected $jsonWriter;
-    protected $campaignRepository;
-
-    public function __construct(string $name = null, JsonWriter $jsonWriter, CampaignRepository $campaignRepository)
+    public function __construct(JsonWriter $jsonWriter, CampaignRepository $campaignRepository)
     {
         $this->jsonWriter = $jsonWriter;
         $this->campaignRepository = $campaignRepository;
 
-        parent::__construct(self::$defaultName);
+        parent::__construct(null);
     }
 
     protected function configure(): void
     {
         $this
+            ->setName('app:write-json')
             ->setDescription('Dumps Current arguments to a json file for export')
         ;
     }
