@@ -178,9 +178,6 @@
     "ocramius/package-versions": {
         "version": "1.5.1"
     },
-    "pagerfanta/pagerfanta": {
-        "version": "v2.1.2"
-    },
     "php": {
         "version": "7.2"
     },
