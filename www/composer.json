@@ -121,7 +121,7 @@
             "@php tools/twig-cs-fixer/vendor/bin/twig-cs-fixer lint --fix templates --ansi"
         ],
         "ecs": "@php tools/ecs/vendor/bin/ecs check src/ tests/ --ansi",
-        "phpstan": "@php tools/phpstan/vendor/bin/phpstan analyze src/ --level max --ansi --memory-limit=-1 -c phpstan.neon",
+        "phpstan": "@php tools/phpstan/vendor/bin/phpstan analyze src/ --level 6 --ansi --memory-limit=-1 -c phpstan.neon",
         "pipeline": [
             "@quality"
         ],
