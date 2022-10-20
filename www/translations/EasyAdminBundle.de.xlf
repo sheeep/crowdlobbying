@@ -3,7 +3,7 @@
   <file id="EasyAdminBundle.de">
     <unit id="LmKkqt9" name="label.null">
       <notes>
-        <note category="file-source" priority="1">20211109143838/templates/wandi_color_picker.html.twig:6</note>
+        <note category="file-source" priority="1">20220721100946/templates/wandi_color_picker.html.twig:6</note>
       </notes>
       <segment>
         <source>label.null</source>
