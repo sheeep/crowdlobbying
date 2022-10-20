@@ -41,3 +41,15 @@ services:
         arguments:
             - '@App\Utils\XlsWriter'
             - '@doctrine.orm.entity_manager'
+
+    App\EventListener\UserPasswordHasherListener:
+        tags:
+            - { name: kernel.event_listener, event: 'easy_admin.pre_persist' }
+            - { name: kernel.event_listener, event: 'easy_admin.pre_edit' }
+            - { name: kernel.event_listener, event: 'easy_admin.pre_update' }
+
+    App\EventListener\UserRoleListener:
+        tags:
+            - { name: kernel.event_listener, event: 'easy_admin.pre_persist' }
+            - { name: kernel.event_listener, event: 'easy_admin.pre_edit' }
+            - { name: kernel.event_listener, event: 'easy_admin.pre_update' }

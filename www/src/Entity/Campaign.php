@@ -303,6 +303,11 @@ class Campaign
      */
     private $archived = false;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\User", mappedBy="campaigns")
+     */
+    private Collection $campaignManagers;
+
     public function __construct()
     {
         $this->campaignEntries = new ArrayCollection();
@@ -312,6 +317,7 @@ class Campaign
         $this->pages = new ArrayCollection();
         $this->commissions = new ArrayCollection();
         $this->colors = new ArrayCollection();
+        $this->campaignManagers = new ArrayCollection();
     }
 
     public function __toString(): string
@@ -964,5 +970,26 @@ class Campaign
         $this->archived = $archived;
 
         return $this;
+    }
+
+    public function addCampaignManager(User $user): self
+    {
+        $this->campaignManagers->add($user);
+
+        return $this;
+    }
+
+    public function removeCampaignManager(User $user): self
+    {
+        if ($this->campaignManagers->contains($user)) {
+            $this->campaignManagers->removeElement($user);
+        }
+
+        return $this;
+    }
+
+    public function getCampaignManagers(): Collection
+    {
+        return $this->campaignManagers;
     }
 }

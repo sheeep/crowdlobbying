@@ -1,5 +1,9 @@
 security:
     providers:
+        chain_provider:
+            chain:
+                providers: [in_memory, entity_provider]
+
         in_memory:
             memory:
                 users:
@@ -7,10 +11,20 @@ security:
                         password: $2y$12$gQznyOZE1dZwA8POTYKBZup5Dy0zWkuM0gyAhU282g6aCGH8TzDG.
                         roles: 'ROLE_ADMIN'
 
+        entity_provider:
+            entity:
+                class: App\Entity\User
+                property: username
+
     encoders:
-        Symfony\Component\Security\Core\User\User:
+        Symfony\Component\Security\Core\User\UserInterface:
             algorithm: bcrypt
             cost: 12
+
+    role_hierarchy:
+        ROLE_USER:
+        ROLE_CAMPAIGN_MANAGER: ROLE_USER
+        ROLE_ADMIN: ROLE_CAMPAIGN_MANAGER
 
     firewalls:
         dev:
@@ -18,8 +32,10 @@ security:
             security: false
         main:
             anonymous: true
-            http_basic: true
+            http_basic:
+            provider: chain_provider
+            logout: ~
 
     access_control:
-        - { path: "^/admin", roles: ROLE_ADMIN }
-        - { path: "^/[a-z]{2}/admin", roles: ROLE_ADMIN }
+        - { path: "^/admin", roles: ROLE_CAMPAIGN_MANAGER }
+        - { path: "^/[a-z]{2}/admin", roles: ROLE_CAMPAIGN_MANAGER }

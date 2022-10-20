@@ -1,149 +1,199 @@
 easy_admin:
-  design:
-    form_theme:
-      - '@EasyAdmin/form/bootstrap_4.html.twig'
-      - '@WandiColorPicker/form/fields.html.twig'
+    design:
+        form_theme:
+            - '@EasyAdmin/form/bootstrap_4.html.twig'
+            - '@WandiColorPicker/form/fields.html.twig'
+        menu:
+            - { entity: 'Campaign', permission: 'ROLE_CAMPAIGN_MANAGER' }
+            - { entity: 'CampaignEntry', permission: 'ROLE_ADMIN' }
+            - { entity: 'Argument', permission: 'ROLE_ADMIN' }
+            - { entity: 'WipCount', permission: 'ROLE_CAMPAIGN_MANAGER' }
+            - { entity: 'Person', permission: 'ROLE_ADMIN' }
+            - { entity: 'Region', permission: 'ROLE_ADMIN' }
+            - { entity: 'Party', permission: 'ROLE_ADMIN' }
+            - { entity: 'PoliticianType', permission: 'ROLE_ADMIN' }
+            - { entity: 'Politician', permission: 'ROLE_ADMIN' }
+            - { entity: 'PoliticianContact', permission: 'ROLE_ADMIN' }
+            - { entity: 'Commission', permission: 'ROLE_ADMIN' }
+            - { entity: 'Color', permission: 'ROLE_ADMIN' }
+            - { entity: 'PersonArgument', permission: 'ROLE_CAMPAIGN_MANAGER' }
+            - { entity: 'User', permission: 'ROLE_ADMIN' }
 
-  site_name: 'CrowdLobbying'
-  entities:
-    Campaign:
-      class: App\Entity\Campaign
-      form:
-        fields:
-          - name
-          - slug
-          - start
-          - end
-          - archived
-          - arguments
-          - regions
-          - wipCounts
-          - pages
-          - politicianType
-          - commissions
-          - campaignSubject
-          - campaignTitle
-          - campaignDescription
-          - ogCampaignDescription
-          - { property: 'ogImageFileDe', type: 'vich_image' }
-          - { property: 'ogImageFileFr', type: 'vich_image' }
-          - { property: 'heroBackgroundFile', type: 'vich_image' }
-          - colors
-          - hero
-          - heroSubline
-          - total
-          - campaignInfoLead
-          - campaignInfo
-          - howItWorksStep1
-          - howItWorksStep2
-          - howItWorksStep3
-          - howItWorksFinish
-          - donorBox
-          - shareTextBox
-          - faqTitle
-          - faqText
-          - mailThanksText
-          - doubleOptIn
-          - projectUpdatesDefault
-          - platformUpdatesDefault
-      list:
-        fields:
-            - name
-            - slug
-            - start
-            - end
-            - archived
-            - campaignTitle
-            - doubleOptIn
-        actions:
-          - { name: 'export' }
-      show:
-        fields:
-          - { property: 'ogImageDe', type: 'image', base_path: '%app.path.campaign_images%' }
-          - { property: 'ogImageFr', type: 'image', base_path: '%app.path.campaign_images%' }
-          - { property: 'heroBackground', type: 'image', base_path: '%app.path.campaign_images%' }
+    site_name: 'CrowdLobbying'
+    entities:
+        Campaign:
+            class: App\Entity\Campaign
+            form:
+                item_permission: ['ROLE_ADMIN', 'ADMIN_MANAGE_CAMPAIGN']
+                fields:
+                    - name
+                    - slug
+                    - start
+                    - end
+                    - archived
+                    - arguments
+                    - regions
+                    - wipCounts
+                    - pages
+                    - politicianType
+                    - commissions
+                    - campaignSubject
+                    - campaignTitle
+                    - campaignDescription
+                    - ogCampaignDescription
+                    - { property: 'ogImageFileDe', type: 'vich_image' }
+                    - { property: 'ogImageFileFr', type: 'vich_image' }
+                    - { property: 'heroBackgroundFile', type: 'vich_image' }
+                    - colors
+                    - hero
+                    - heroSubline
+                    - total
+                    - campaignInfoLead
+                    - campaignInfo
+                    - howItWorksStep1
+                    - howItWorksStep2
+                    - howItWorksStep3
+                    - howItWorksFinish
+                    - donorBox
+                    - shareTextBox
+                    - faqTitle
+                    - faqText
+                    - mailThanksText
+                    - doubleOptIn
+                    - projectUpdatesDefault
+                    - platformUpdatesDefault
+            list:
+                item_permission: ['ROLE_ADMIN', 'ADMIN_MANAGE_CAMPAIGN']
+                fields:
+                    - name
+                    - slug
+                    - start
+                    - end
+                    - archived
+                    - campaignTitle
+                    - doubleOptIn
+                actions:
+                    - { name: 'export' }
+            show:
+                item_permission: ['ROLE_ADMIN', 'ADMIN_MANAGE_CAMPAIGN']
+                fields:
+                    - { property: 'ogImageDe', type: 'image', base_path: '%app.path.campaign_images%' }
+                    - { property: 'ogImageFr', type: 'image', base_path: '%app.path.campaign_images%' }
+                    - { property: 'heroBackground', type: 'image', base_path: '%app.path.campaign_images%' }
+            new:
+                item_permission: ['ROLE_ADMIN']
 
-    CampaignEntry:
-      class: App\Entity\CampaignEntry
-    Argument:
-      class: App\Entity\Argument
-    WipCount:
-      class: App\Entity\WipCount
-    Person:
-      class: App\Entity\Person
-    Region:
-      class: App\Entity\Region
-    Party:
-      class: App\Entity\Party
-    PoliticianType:
-      class: App\Entity\PoliticianType
-    Politician:
-      class: App\Entity\Politician
-      form:
-        fields:
-          - name
-          - lastname
-          - slug
-          - since
-          - lang
-          - twitter
-          - { property: 'imageFile', type: 'vich_image' }
-          - region
-          - contact
-          - party
-          - politicianType
-          - commissions
-      list:
-        sort: ['lastname', 'ASC']
-        fields:
-          - lastname
-          - name
-          - { property: 'image', type: 'image', base_path: '%app.path.politician_images%' }
-          - region
-          - party
-          - lang
-          - twitter
-      show:
-        fields:
-          - { property: 'image', type: 'image', base_path: '%app.path.politician_images%' }
+        CampaignEntry:
+            class: App\Entity\CampaignEntry
+        Argument:
+            class: App\Entity\Argument
+        WipCount:
+            class: App\Entity\WipCount
+            edit:
+                item_permission: 'ROLE_ADMIN'
+            new:
+                item_permission: 'ROLE_ADMIN'
 
-    PoliticianContact:
-      class: App\Entity\PoliticianContact
-    Commission:
-      class: App\Entity\Commission
-    Color:
-      class: App\Entity\Color
-      list:
-        fields:
-          - name
-          - { property: color, label: 'Color', template: 'wandi_color_picker.html.twig' }
-      show:
-        fields:
-          - name
-          - { property: color, label: 'Color', template: 'wandi_color_picker.html.twig' }
-      edit:
-        fields:
-          - name
-          - { property: color, label: 'Color', type: 'App\Form\ColorType' }
-      new:
-        fields:
-          - name
-          - { property: color, label: 'Color', type: 'App\Form\ColorType' }
+            # This does not work yet
+            delete:
+                item_permission: 'ROLE_ADMIN'
 
-    PersonArgument:
-      class: App\Entity\PersonArgument
-      list:
-        fields:
-          - id
-          - createdAt
-          - campaign
-          - person
-          - argument
-      edit:
-        fields:
-          - argument
-          - locale
-          - createdAt
-          - updatedAt
-          - campaign
-          - person
+        Person:
+            class: App\Entity\Person
+        Region:
+            class: App\Entity\Region
+        Party:
+            class: App\Entity\Party
+        PoliticianType:
+            class: App\Entity\PoliticianType
+        Politician:
+            class: App\Entity\Politician
+            form:
+                fields:
+                    - name
+                    - lastname
+                    - slug
+                    - since
+                    - lang
+                    - twitter
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - region
+                    - contact
+                    - party
+                    - politicianType
+                    - commissions
+            list:
+                sort: ['lastname', 'ASC']
+                fields:
+                    - lastname
+                    - name
+                    - { property: 'image', type: 'image', base_path: '%app.path.politician_images%' }
+                    - region
+                    - party
+                    - lang
+                    - twitter
+            show:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.politician_images%' }
+
+        PoliticianContact:
+            class: App\Entity\PoliticianContact
+        Commission:
+            class: App\Entity\Commission
+        Color:
+            class: App\Entity\Color
+            list:
+                fields:
+                    - name
+                    - { property: color, label: 'Color', template: 'wandi_color_picker.html.twig' }
+            show:
+                fields:
+                    - name
+                    - { property: color, label: 'Color', template: 'wandi_color_picker.html.twig' }
+            edit:
+                fields:
+                    - name
+                    - { property: color, label: 'Color', type: 'App\Form\ColorType' }
+            new:
+                fields:
+                    - name
+                    - { property: color, label: 'Color', type: 'App\Form\ColorType' }
+
+        PersonArgument:
+            class: App\Entity\PersonArgument
+            list:
+                item_permission: ['ROLE_ADMIN', 'ADMIN_MANAGE_PERSON_ARGUMENT']
+                fields:
+                    - id
+                    - createdAt
+                    - campaign
+                    - person
+                    - argument
+            new:
+                item_permission: ['ROLE_ADMIN']
+            edit:
+                fields:
+                    - argument
+                    - locale
+                    - createdAt
+                    - updatedAt
+                    - campaign
+                    - person
+
+        User:
+            class: App\Entity\User
+            list:
+                fields:
+                    - id
+                    - username
+                    - campaigns
+            new:
+                fields:
+                    - username
+                    - plainPassword
+                    - campaigns
+            edit:
+                fields:
+                    - username
+                    - plainPassword
+                    - campaigns
