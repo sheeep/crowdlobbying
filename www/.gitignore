@@ -1,6 +1,9 @@
 public/uploads/*
 public/xls-export/*
 
+.mage.yml
+public/opcache-reset.php
+
 ###> friendsofphp/php-cs-fixer ###
 /.php_cs
 /.php_cs.cache
